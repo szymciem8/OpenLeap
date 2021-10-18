@@ -4,16 +4,11 @@ import numpy as np
 import math
 from dataclasses import dataclass
 import math
-import uuid
-import os
 
 #Initiate camera
 cap = cv2.VideoCapture(0)
 
 #CONSTANTS
-FOCAL_LEN = 200
-DIST_AT_F_LEN = 116000
-
 WIDTH = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 HEIGHT = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 DIMENSIONS = [WIDTH, HEIGHT]
@@ -64,7 +59,7 @@ def left_or_right(index, hand, results, mode='AI'):
                 score = classification.classification[0].score
                 #text = '{} {}'.format(label, round(score, 2))
 
-                coords = tuple(np.multiply(coords, [640, 480]).astype(int))
+                coords = tuple(np.multiply(coords, DIMENSIONS).astype(int))
 
     elif mode == 'position':
         #Get x values from both hands and compare
@@ -77,16 +72,14 @@ def left_or_right(index, hand, results, mode='AI'):
                     else:
                         label='left' 
 
-        coords = tuple(np.multiply(coords, [640, 480]).astype(int))
+        else:
+            return left_or_right(index, hand, results, mode='AI')
 
-    elif mode == 'auto':
-        #If there is only one hand, use AI mode. For more than one use position mode.
-        pass
+        coords = tuple(np.multiply(coords, DIMENSIONS).astype(int))
 
     if output is None:
         label='right'
-
-        coords = tuple(np.multiply(coords, [640, 480]).astype(int))
+        coords = tuple(np.multiply(coords, DIMENSIONS).astype(int))
 
     output = label, coords
 
@@ -176,10 +169,17 @@ def get_angle(results, index, landmark_idx, mode='half', unit='radians'):
 
     return angle
 
-def show_data():
+def show_data(data, img, console=True):
     """
     Shows collected and calculated data in opencv window. 
     """
+
+    # cv2.putText(img, )
+
+    if console:
+        for index, (key, d) in enumerate(data.items()):
+            print('%s Hand:\tX=%d,\tY=%d,\tZ=%d,\tdistance=%f,\tangle=%f' %(key.capitalize(), d.x, d.y, d.z, d.distance, d.angle))
+
     pass
 
 def main():
@@ -241,7 +241,7 @@ def main():
                                                                                         
                             data[hand_type].angle = get_angle(results, index, mp_hands.HandLandmark.MIDDLE_FINGER_MCP, unit='degree')
 
-                            cv2.putText(image, hand_type, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
+                            cv2.putText(background, hand_type, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
 
                             x1, y1, z1 = get_position(results, index, mp_hands.HandLandmark.INDEX_FINGER_TIP, DIMENSIONS)
                             x2, y2, z2 = get_position(results, index, mp_hands.HandLandmark.THUMB_TIP, DIMENSIONS)
@@ -249,7 +249,7 @@ def main():
                             #Draw line that connects index finger tip and thumb tip
                             cv2.line(background, (x1, y1), (x2, y2), (255, 125, 100), 2)
 
-                    print(data)
+                    show_data(data, background)
 
             cv2.imshow("Hand Tracking", background)
             background.fill(0)
