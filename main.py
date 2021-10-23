@@ -20,7 +20,7 @@ background = np.zeros([HEIGHT,WIDTH,3], dtype=np.uint8)
 background.fill(0)
 
 
-#Dataclass that describes position and other vales of each hand
+#Dataclass that describes position and other values of each hand
 @dataclass
 class Data:
     x : int = 0
@@ -43,7 +43,6 @@ def left_or_right(index, hand, results, mode='AI'):
     parameters: int, mediapipe.framework.formats.landmark_pb2.NormalizedLandmarkList, type, string
 
     returns: tuple (label, coordinates)
-
     """
 
     output=None
@@ -56,7 +55,7 @@ def left_or_right(index, hand, results, mode='AI'):
             if classification.classification[0].index == index:
 
                 label = classification.classification[0].label.lower()
-                score = classification.classification[0].score
+                #core = classification.classification[0].score
                 #text = '{} {}'.format(label, round(score, 2))
 
                 coords = tuple(np.multiply(coords, DIMENSIONS).astype(int))
@@ -88,7 +87,6 @@ def left_or_right(index, hand, results, mode='AI'):
 
 #Get position of given hand landmark, such as wrist or tip on an index finger
 def get_position(results, index=0, landmark_idx = mp_hands.HandLandmark.INDEX_FINGER_TIP, dim=None):
-
     """
     Finds normalized position or of given hand landmark. Additionally, it can calculate the position on the screen
     if dimensions are give. 
@@ -114,8 +112,7 @@ def get_position(results, index=0, landmark_idx = mp_hands.HandLandmark.INDEX_FI
     return x, y, z
 
 #Calculate distance between two different hand landmarks
-def get_distance_bettween_landmarks(results, index, landmark_1, landmark_2, dim):
-
+def get_distance_bettween_landmarks(results, index, landmark_1, landmark_2):
     """
     Calculates distance between two given hand landmarks. 
 
@@ -127,14 +124,14 @@ def get_distance_bettween_landmarks(results, index, landmark_1, landmark_2, dim)
     returns: float
     """
 
-    x1, y1, z1 = get_position(results, 0, landmark_1, dim)
-    x2, y2, z2 = get_position(results, 0, landmark_2, dim)
+    x1, y1, z1 = get_position(results, index, landmark_1, DIMENSIONS)
+    x2, y2, z2 = get_position(results, index, landmark_2, DIMENSIONS)
 
-    x1 *= dim[0]
-    x2 *= dim[0]
+    x1 *= WIDTH
+    x2 *= HEIGHT
 
-    y1 *= dim[1]
-    y2 *= dim[1]
+    y1 *= WIDTH
+    y2 *= HEIGHT
 
     distance = math.sqrt(((x1-x2)**2 + (y1-y2)**2))
 
@@ -144,7 +141,7 @@ def get_angle(results, index, landmark_idx, mode='half', unit='radians'):
     """
     Calculates angle using atan2 with wrist as a base. 
 
-    parameters:
+    parameters: 
 
     returns:
     """
@@ -183,7 +180,6 @@ def show_data(data, img, console=True):
     pass
 
 def main():
-
     """
     Main function that runs the core of the program. 
     """
@@ -220,7 +216,6 @@ def main():
                                             mp_drawing.DrawingSpec(color=(0,0,255), thickness=2, circle_radius=4))
 
                     
-                    
                     if n_hands > 0:
                         #If there are two hands
                         if left_or_right(index, hand, results, 'position'):
@@ -235,8 +230,7 @@ def main():
                                                                                         results,
                                                                                         index, 
                                                                                         mp_hands.HandLandmark.INDEX_FINGER_TIP, 
-                                                                                        mp_hands.HandLandmark.THUMB_TIP, 
-                                                                                        DIMENSIONS
+                                                                                        mp_hands.HandLandmark.THUMB_TIP
                                                                                         )
                                                                                         
                             data[hand_type].angle = get_angle(results, index, mp_hands.HandLandmark.MIDDLE_FINGER_MCP, unit='degree')
