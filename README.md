@@ -6,7 +6,7 @@
 * [Setup](#setup)
 
 ## General Info
-OpenLeap is an open-source project that allows you to use gesture control in your Python projects. 
+OpenLeap is an open source project that allows you to add hand gesture control to your Python projects. 
 
 ## Technologies
 
