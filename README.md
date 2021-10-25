@@ -19,5 +19,5 @@ Project was created with technologies:
 
 ## Setup
 ```
-test
+$ pip install OpenLeap
 ```
