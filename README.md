@@ -18,3 +18,5 @@ Project was created with technologies:
 * SciKit Learn
 
 ## Setup
+
+$ vim .bashrc
