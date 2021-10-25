@@ -19,5 +19,5 @@ Project was created with technologies:
 
 ## Setup
 '''
-$ vim .bashrc
+test
 '''
