@@ -12,6 +12,6 @@ Library is based on MediaPipe, OpenCV and SciKit Learn.
 
 ## General Info
 
-##Technologies
+## Technologies
 
 ## Setup
