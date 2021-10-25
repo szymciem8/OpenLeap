@@ -18,6 +18,6 @@ Project was created with technologies:
 * SciKit Learn
 
 ## Setup
-'''
+```
 test
-'''
+```
