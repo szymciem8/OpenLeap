@@ -5,13 +5,13 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 
-Library is based on MediaPipe, OpenCV and SciKit Learn.
-
-
 ## General Info
 OpenLeap is an open-source project that allows you to use gesture controll in your projects. 
 
 ## Technologies
+
+Project was created with technologies:
+
 * Python
 * OpenCV
 * MediaPipe
