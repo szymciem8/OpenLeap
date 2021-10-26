@@ -1,11 +1,19 @@
 \babel@toc {polish}{}
 \babel@toc {polish}{}
 \contentsline {chapter}{\numberline {1}Wstęp}{2}%
-\contentsline {section}{\numberline {1.1}Wykorzystane technologie}{2}%
+\contentsline {section}{\numberline {1.1}Ogólnie}{2}%
+\contentsline {section}{\numberline {1.2}Wykorzystane technologie}{2}%
+\contentsline {subsection}{\numberline {1.2.1}OpenCV}{2}%
+\contentsline {subsection}{\numberline {1.2.2}MediaPipe}{2}%
+\contentsline {subsection}{\numberline {1.2.3}SciKit Learn}{2}%
 \contentsline {chapter}{\numberline {2}Założenia projektowe}{3}%
 \contentsline {section}{\numberline {2.1}Budowa modułu}{3}%
 \contentsline {section}{\numberline {2.2}Dostęp}{3}%
 \contentsline {chapter}{\numberline {3}Część techniczna/praktyczna}{4}%
 \contentsline {section}{\numberline {3.1}Biblioteka MediaPipe - możliwości}{4}%
 \contentsline {section}{\numberline {3.2}SciKit Learn - uczenie maszynowe}{4}%
+\contentsline {subsection}{\numberline {3.2.1}Metody Uczenia maszynowego}{4}%
 \contentsline {chapter}{\numberline {4}Możliwości wykorzystania}{5}%
+\contentsline {section}{\numberline {4.1}Gry}{5}%
+\contentsline {section}{\numberline {4.2}Obsługa komputera}{5}%
+\contentsline {section}{\numberline {4.3}Sterowanie Robotami Mobilnymi}{5}%
