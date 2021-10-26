@@ -38,7 +38,7 @@ class OpenLeap():
 
         #OPTIONS
         self.SCREEN_SHOW=True
-        self.SCREEN_TYPE='CAM' # black or cam
+        self.SCREEN_TYPE='BLACK' # black or cam
 
         self.SHOW_DATA_IN_CONSOLE=True
         self.SHOW_DATA_ON_IMAGE=True
@@ -103,7 +103,7 @@ class OpenLeap():
                         return label
 
             else:
-                return self.left_or_right(index, hand, self.results, mode='AI')
+                return self.left_or_right(index, hand, mode='AI')
 
 
         return label
@@ -315,7 +315,9 @@ class OpenLeap():
                                     #Show on screen
                                     cv2.putText(background, hand_type, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
 
-                            self.show_data(background, console=self.SHOW_DATA_IN_CONSOLE, on_image=self.SHOW_DATA_ON_IMAGE)
+                                self.show_data(background, console=self.SHOW_DATA_IN_CONSOLE, on_image=self.SHOW_DATA_ON_IMAGE)
+
+                            self.show_data(console=self.SHOW_DATA_IN_CONSOLE, on_image=self.SHOW_DATA_ON_IMAGE)
 
             if self.SCREEN_SHOW:
                 cv2.imshow("Hand Tracking", background)

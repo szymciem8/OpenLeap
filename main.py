@@ -4,9 +4,16 @@ import numpy as np
 import math
 from dataclasses import dataclass
 import math
+import pickle
+import pandas as pd
+import warnings
 
 #Initiate camera
 cap = cv2.VideoCapture(0)
+
+#OPTIONS
+SCREEN_SHOW=True
+SCREEN_TYPE='CAM' # black or cam
 
 #CONSTANTS
 WIDTH = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -16,18 +23,15 @@ DIMENSIONS = [WIDTH, HEIGHT]
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
-background = np.zeros([HEIGHT,WIDTH,3], dtype=np.uint8)
-background.fill(0)
-
-
 #Dataclass that describes position and other values of each hand
 @dataclass
 class Data:
     x : int = 0
     y : int = 0
     z : int = 0
-    angle: float = 0.0
     distance: float = 0.0
+    angle: float = 0.0
+    gesture: str = None
 
 data = {
     'right' : Data(), 
@@ -35,17 +39,15 @@ data = {
     }
 
 
-#Find if the hand is right of left
 def left_or_right(index, hand, results, mode='AI'):
     """
     Recognizes if visible hands (or hand) are left or right. 
 
-    parameters: int, mediapipe.framework.formats.landmark_pb2.NormalizedLandmarkList, type, string
+    parameters: int, mediapipe.framework.formats.landmark_pb2.NormalizedLandmarkList, type, str
 
-    returns: tuple (label, coordinates)
+    returns: str
     """
 
-    output=None
     label = 'right'
 
     coords = np.array((hand.landmark[mp_hands.HandLandmark.WRIST].x, hand.landmark[mp_hands.HandLandmark.WRIST].y))
@@ -58,7 +60,8 @@ def left_or_right(index, hand, results, mode='AI'):
                 #core = classification.classification[0].score
                 #text = '{} {}'.format(label, round(score, 2))
 
-                coords = tuple(np.multiply(coords, DIMENSIONS).astype(int))
+                return label
+
 
     elif mode == 'position':
         #Get x values from both hands and compare
@@ -71,21 +74,20 @@ def left_or_right(index, hand, results, mode='AI'):
                     else:
                         label='left' 
 
+                    return label
+
         else:
             return left_or_right(index, hand, results, mode='AI')
 
-        coords = tuple(np.multiply(coords, DIMENSIONS).astype(int))
+    # if output is None:
+    #     label='right'
+    #     coords = tuple(np.multiply(coords, DIMENSIONS).astype(int))
 
-    if output is None:
-        label='right'
-        coords = tuple(np.multiply(coords, DIMENSIONS).astype(int))
+    # output = label, coords
 
-    output = label, coords
-
-    return output
+    return label
 
 
-#Get position of given hand landmark, such as wrist or tip on an index finger
 def get_position(results, index=0, landmark_idx = mp_hands.HandLandmark.INDEX_FINGER_TIP, dim=None):
     """
     Finds normalized position or of given hand landmark. Additionally, it can calculate the position on the screen
@@ -111,15 +113,15 @@ def get_position(results, index=0, landmark_idx = mp_hands.HandLandmark.INDEX_FI
 
     return x, y, z
 
-#Calculate distance between two different hand landmarks
-def get_distance_bettween_landmarks(results, index, landmark_1, landmark_2):
+def get_distance_bettween_landmarks(results, index, landmark_1, landmark_2, normalized=True):
     """
     Calculates distance between two given hand landmarks. 
 
     parameters: int, 
                 mediapipe.framework.formats.landmark_pb2.NormalizedLandmarkList, 
                 mediapipe.framework.formats.landmark_pb2.NormalizedLandmarkList, 
-                list
+                list, 
+                boolean
 
     returns: float
     """
@@ -128,9 +130,9 @@ def get_distance_bettween_landmarks(results, index, landmark_1, landmark_2):
     x2, y2, z2 = get_position(results, index, landmark_2, DIMENSIONS)
 
     x1 *= WIDTH
-    x2 *= HEIGHT
+    x2 *= WIDTH
 
-    y1 *= WIDTH
+    y1 *= HEIGHT
     y2 *= HEIGHT
 
     distance = math.sqrt(((x1-x2)**2 + (y1-y2)**2))
@@ -141,9 +143,9 @@ def get_angle(results, index, landmark_idx, mode='half', unit='radians'):
     """
     Calculates angle using atan2 with wrist as a base. 
 
-    parameters: 
+    parameters: list, int, int, str, str
 
-    returns:
+    returns: float
     """
 
     angle=0
@@ -166,20 +168,60 @@ def get_angle(results, index, landmark_idx, mode='half', unit='radians'):
 
     return angle
 
-def show_data(data, img, console=True):
+
+def show_data(data, img=None, console=True, on_image=True):
     """
     Shows collected and calculated data in opencv window. 
-    """
 
-    # cv2.putText(img, )
+    parameters: dictionary, 2D list, Boolean, Boolean
+
+    returns: None
+    """
 
     if console:
         for index, (key, d) in enumerate(data.items()):
-            print('%s Hand:\tX=%d,\tY=%d,\tZ=%d,\tdistance=%f,\tangle=%f' %(key.capitalize(), d.x, d.y, d.z, d.distance, d.angle))
+            print('%s hand:\tX=%d,\tY=%d,\tZ=%d,\tdistance=%.2f,\tangle=%f,\tgesture="%s"' %(key.capitalize(), d.x, d.y, d.z, d.distance, d.angle, d.gesture))
 
-    pass
+    
+    if on_image:
+        for index, (key, d) in enumerate(data.items()):
+            i=1
+            for field in d.__dataclass_fields__:
+                value = getattr(d, field)
+                #print(field, value)
 
-def main():
+                if field == 'distance' or field == 'angle':
+                    #vars(d)['distnace'] = "{:.2f}".format(value)
+                    text = "%s = %s" %(field, str(int(value)))
+                    cv2.putText(img, text, (10+(1-index)*400, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
+                else:
+                    text = "%s = %s" %(field, str(value))
+                    cv2.putText(img, text, (10+(1-index)*400, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
+                i+=1
+    
+
+def get_gesture(results, model, index):
+    """
+    Returns rocognized gesture based on pretrained model.
+
+    parameters: list, sklearn.pipleine.Pipeline, int
+
+    returns: str
+    """
+
+    hand_landmarks = results.multi_hand_landmarks[index].landmark
+    hand_coords = list(np.array([[landmark.x, landmark.y, landmark.z] for landmark in hand_landmarks]).flatten())
+
+    with warnings.catch_warnings():
+        warnings.filterwarnings("ignore")
+
+        x = pd.DataFrame([hand_coords])
+        gesture_class = model.predict(x)[0]
+
+    return gesture_class
+
+
+def main(model):
     """
     Main function that runs the core of the program. 
     """
@@ -207,20 +249,22 @@ def main():
             #RGB to BGR
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
+            if SCREEN_SHOW:
+                if SCREEN_TYPE=='BLACK':
+                    background = np.zeros([HEIGHT,WIDTH,3], dtype=np.uint8)
+                    background.fill(0)
+                elif SCREEN_TYPE == 'CAM':
+                    background = image
+
             #Rendering results
             if results.multi_hand_landmarks:
                 n_hands = len(results.multi_hand_landmarks)
                 for index, hand in enumerate(results.multi_hand_landmarks):
-                    mp_drawing.draw_landmarks(background, hand, mp_hands.HAND_CONNECTIONS,
-                                            mp_drawing.DrawingSpec(color=(0,255,0), thickness=2, circle_radius=4),
-                                            mp_drawing.DrawingSpec(color=(0,0,255), thickness=2, circle_radius=4))
-
-                    
-                    if n_hands > 0:
+        
+                    if n_hands >= 1:
                         #If there are two hands
                         if left_or_right(index, hand, results, 'position'):
-                            hand_type, coord = left_or_right(index, hand, results, 'position')
-                            cv2.putText(background, hand_type, coord, cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
+                            hand_type = left_or_right(index, hand, results, 'position')
                             x, y, z = get_position(results, index, mp_hands.HandLandmark.WRIST, DIMENSIONS)
 
                             data[hand_type].x = x
@@ -232,21 +276,32 @@ def main():
                                                                                         mp_hands.HandLandmark.INDEX_FINGER_TIP, 
                                                                                         mp_hands.HandLandmark.THUMB_TIP
                                                                                         )
-                                                                                        
+                                                                                    
                             data[hand_type].angle = get_angle(results, index, mp_hands.HandLandmark.MIDDLE_FINGER_MCP, unit='degree')
-
-                            cv2.putText(background, hand_type, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
-
+                            data[hand_type].gesture = get_gesture(results, model, index)
+                            
                             x1, y1, z1 = get_position(results, index, mp_hands.HandLandmark.INDEX_FINGER_TIP, DIMENSIONS)
                             x2, y2, z2 = get_position(results, index, mp_hands.HandLandmark.THUMB_TIP, DIMENSIONS)
-                            
-                            #Draw line that connects index finger tip and thumb tip
-                            cv2.line(background, (x1, y1), (x2, y2), (255, 125, 100), 2)
 
-                    show_data(data, background)
+                            if SCREEN_SHOW:
 
-            cv2.imshow("Hand Tracking", background)
-            background.fill(0)
+                                #Show on screen
+                                cv2.putText(background, hand_type, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
+                                #Draw line that connects index finger tip and thumb tip
+                                cv2.line(background, (x1, y1), (x2, y2), (255, 125, 100), 2)
+
+                                mp_drawing.draw_landmarks(background, hand, mp_hands.HAND_CONNECTIONS,
+                                            mp_drawing.DrawingSpec(color=(0,255,0), thickness=2, circle_radius=4),
+                                            mp_drawing.DrawingSpec(color=(0,0,255), thickness=2, circle_radius=4))
+
+                                show_data(data, background)
+
+                            else:
+                                show_data(data, on_image=False)
+
+            if SCREEN_SHOW:
+                cv2.imshow("Hand Tracking", background)
+                background.fill(0)
 
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
@@ -256,4 +311,7 @@ def main():
 
 
 if __name__=='__main__':
-    main()
+    with open('gesture_recognition.pkl', 'rb') as f:
+        model = pickle.load(f)
+
+    main(model)
