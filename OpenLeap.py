@@ -38,7 +38,7 @@ class OpenLeap():
 
         #OPTIONS
         self.SCREEN_SHOW=True
-        self.SCREEN_TYPE='BLACK' # black or cam
+        self.SCREEN_TYPE='CAM' # black or cam
 
         self.SHOW_DATA_IN_CONSOLE=True
         self.SHOW_DATA_ON_IMAGE=True

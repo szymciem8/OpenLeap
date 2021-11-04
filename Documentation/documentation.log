@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  26 OCT 2021 23:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  4 NOV 2021 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -82,28 +82,38 @@ Package: iftex 2019/11/07 v1.0c TeX engine tests
 \Gm@layoutvoffset=\dimen147
 \Gm@dimlist=\toks17
 )
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip49
+\enit@outerparindent=\dimen148
+\enit@toks=\toks18
+\enit@inbox=\box45
+\enit@count@id=\count181
+\enitdp@description=\count182
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count181
-\l__pdf_internal_box=\box45
+\l__kernel_color_stack_int=\count183
+\l__pdf_internal_box=\box46
 )
-(./documentation.aux (./introduction.aux) (./assumptions.aux))
+(./documentation.aux (./introduction.aux) (./assumptions.aux) (./practical.aux)
+)
 \openout1 = `documentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -140,9 +150,9 @@ LaTeX Font Info:    ... okay on input line 19.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 21.
+(Font)              <14.4> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 21.
+(Font)              <7> on input line 22.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./documentation.toc
@@ -167,47 +177,53 @@ Rozdzia\l  1.
 ) [2
 
 
-]
+] [3]
 \openout2 = `assumptions.aux'.
 
  (./assumptions.tex
 Rozdzia\l  2.
-) [3
+) [4
 
 
 
 ]
+\openout2 = `practical.aux'.
+
+ (./practical.tex
 Rozdzia\l  3.
-[4
+) [5
+
 
 
 ]
 Rozdzia\l  4.
-[5
+[6
 
-] (./documentation.aux (./introduction.aux) (./assumptions.aux)) ) 
+
+] (./documentation.aux (./introduction.aux) (./assumptions.aux)
+(./practical.aux)) ) 
 Here is how much of TeX's memory you used:
- 1899 strings out of 483148
- 26102 string characters out of 5965415
- 271739 words of memory out of 5000000
- 16927 multiletter control sequences out of 15000+600000
- 542933 words of font info for 45 fonts, out of 8000000 for 9000
+ 2232 strings out of 483148
+ 31626 string characters out of 5965415
+ 281637 words of memory out of 5000000
+ 17248 multiletter control sequences out of 15000+600000
+ 543270 words of font info for 46 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 30i,6n,27p,194b,187s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/ubunt
-u/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/ubu
-ntu/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/u
-buntu/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home
-/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </ho
-me/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </
-home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> 
-</home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk
-> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600
-pk>
-Output written on documentation.pdf (6 pages, 89093 bytes).
+ 30i,6n,27p,196b,190s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/tcrm1200.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecbx1440.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1728.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecrm1200.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecbx1200.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/lj
+four/jknappen/ec/ecbx2488.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecrm1440.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecrm1728.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts
+/pk/ljfour/jknappen/ec/ecrm2074.600pk>
+Output written on documentation.pdf (7 pages, 97772 bytes).
 PDF statistics:
- 293 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 327 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

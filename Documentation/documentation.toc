@@ -5,15 +5,24 @@
 \contentsline {section}{\numberline {1.2}Wykorzystane technologie}{2}%
 \contentsline {subsection}{\numberline {1.2.1}OpenCV}{2}%
 \contentsline {subsection}{\numberline {1.2.2}MediaPipe}{2}%
-\contentsline {subsection}{\numberline {1.2.3}SciKit Learn}{2}%
-\contentsline {chapter}{\numberline {2}Założenia projektowe}{3}%
-\contentsline {section}{\numberline {2.1}Budowa modułu}{3}%
-\contentsline {section}{\numberline {2.2}Dostęp}{3}%
-\contentsline {chapter}{\numberline {3}Część techniczna/praktyczna}{4}%
-\contentsline {section}{\numberline {3.1}Biblioteka MediaPipe - możliwości}{4}%
-\contentsline {section}{\numberline {3.2}SciKit Learn - uczenie maszynowe}{4}%
-\contentsline {subsection}{\numberline {3.2.1}Metody Uczenia maszynowego}{4}%
-\contentsline {chapter}{\numberline {4}Możliwości wykorzystania}{5}%
-\contentsline {section}{\numberline {4.1}Gry}{5}%
-\contentsline {section}{\numberline {4.2}Obsługa komputera}{5}%
-\contentsline {section}{\numberline {4.3}Sterowanie Robotami Mobilnymi}{5}%
+\contentsline {subsection}{\numberline {1.2.3}SciKit Learn}{3}%
+\contentsline {chapter}{\numberline {2}Założenia projektowe}{4}%
+\contentsline {section}{\numberline {2.1}Budowa modułu}{4}%
+\contentsline {section}{\numberline {2.2}Dostęp}{4}%
+\contentsline {chapter}{\numberline {3}Część techniczna/praktyczna}{5}%
+\contentsline {section}{\numberline {3.1}Rozpoznawanie dłoni}{5}%
+\contentsline {subsection}{\numberline {3.1.1}Elementy charakterystyczne}{5}%
+\contentsline {subsection}{\numberline {3.1.2}Generowanie grafiki dłoni}{5}%
+\contentsline {section}{\numberline {3.2}SciKit Learn - uczenie maszynowe}{5}%
+\contentsline {subsection}{\numberline {3.2.1}Budowa programu}{5}%
+\contentsline {subsection}{\numberline {3.2.2}Zebranie danych}{5}%
+\contentsline {subsection}{\numberline {3.2.3}Metody klasyfikacji - uczenie maszynowe}{5}%
+\contentsline {subsection}{\numberline {3.2.4}Ponowne wykorzystanie modelu}{5}%
+\contentsline {section}{\numberline {3.3}Paczka PyPi}{5}%
+\contentsline {subsection}{\numberline {3.3.1}Budowa paczki}{5}%
+\contentsline {subsection}{\numberline {3.3.2}Plik setup.py}{5}%
+\contentsline {subsection}{\numberline {3.3.3}Załadowanie paczki do repozytorium}{5}%
+\contentsline {chapter}{\numberline {4}Możliwości wykorzystania}{6}%
+\contentsline {section}{\numberline {4.1}Gry}{6}%
+\contentsline {section}{\numberline {4.2}Obsługa komputera}{6}%
+\contentsline {section}{\numberline {4.3}Sterowanie Robotami Mobilnymi}{6}%
