@@ -1,0 +1,381 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k+kn}{import} \PYG{n+nn}{mediapipe} \PYG{k}{as} \PYG{n+nn}{mp}
+\PYG{k+kn}{import} \PYG{n+nn}{cv2}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{math}
+\PYG{k+kn}{from} \PYG{n+nn}{dataclasses} \PYG{k+kn}{import} \PYG{n}{dataclass}
+\PYG{k+kn}{import} \PYG{n+nn}{math}
+\PYG{k+kn}{import} \PYG{n+nn}{pickle}
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{import} \PYG{n+nn}{warnings}
+\PYG{k+kn}{import} \PYG{n+nn}{os}
+
+
+\PYG{k}{class} \PYG{n+nc}{OpenLeap}\PYG{p}{():}
+
+    \PYG{c+c1}{\PYGZsh{}Dataclass that describes position and other values of each hand}
+    \PYG{n+nd}{@dataclass}
+    \PYG{k}{class} \PYG{n+nc}{Data}\PYG{p}{:}
+        \PYG{n}{x} \PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{n}{y} \PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{n}{z} \PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{n}{distance}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+        \PYG{n}{angle}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+        \PYG{n}{gesture}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{=} \PYG{k+kc}{None}
+
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} 
+                \PYG{n}{SCREEN\PYGZus{}SHOW}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} 
+                \PYG{n}{SCREEN\PYGZus{}TYPE}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}BLACK\PYGZsq{}}\PYG{p}{,} 
+                \PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}IN\PYGZus{}CONSOLE}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} 
+                \PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}ON\PYGZus{}IMAGE}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} 
+                \PYG{n}{NORMALIZED\PYGZus{}POSITION}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,}
+                \PYG{n}{GESTURE\PYGZus{}MODEL}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}sign\PYGZus{}language\PYGZsq{}}
+        \PYG{p}{):}
+
+        \PYG{n+nb}{super}\PYG{p}{()}\PYG{o}{.}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{()}
+
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s1}{\PYGZsq{}right\PYGZsq{}} \PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{Data}\PYG{p}{(),} 
+                \PYG{l+s+s1}{\PYGZsq{}left\PYGZsq{}} \PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{Data}\PYG{p}{()}
+                \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{if} \PYG{n}{GESTURE\PYGZus{}MODEL}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}basic\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{file\PYGZus{}name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}gesture\PYGZus{}recognition.pkl\PYGZsq{}}
+        \PYG{k}{elif} \PYG{n}{GESTURE\PYGZus{}MODEL}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}sign\PYGZus{}language\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{file\PYGZus{}name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}sign\PYGZus{}language\PYGZus{}alphabet.pkl\PYGZsq{}}
+
+        \PYG{n}{this\PYGZus{}dir}\PYG{p}{,} \PYG{n}{this\PYGZus{}filename} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{split}\PYG{p}{(}\PYG{n+nv+vm}{\PYGZus{}\PYGZus{}file\PYGZus{}\PYGZus{}}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Get path of data.pkl}
+        \PYG{n}{data\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{this\PYGZus{}dir}\PYG{p}{,} \PYG{n}{file\PYGZus{}name}\PYG{p}{)}
+        \PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{n}{data\PYGZus{}path}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}rb\PYGZsq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{f}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{model} \PYG{o}{=} \PYG{n}{pickle}\PYG{o}{.}\PYG{n}{load}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{}Initiate camera}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{cap} \PYG{o}{=} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{VideoCapture}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{}OPTIONS}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SCREEN\PYGZus{}SHOW}\PYG{o}{=}\PYG{n}{SCREEN\PYGZus{}SHOW}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SCREEN\PYGZus{}TYPE}\PYG{o}{=}\PYG{n}{SCREEN\PYGZus{}TYPE} \PYG{c+c1}{\PYGZsh{} black or cam}
+
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}IN\PYGZus{}CONSOLE}\PYG{o}{=}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}IN\PYGZus{}CONSOLE}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}ON\PYGZus{}IMAGE}\PYG{o}{=}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}ON\PYGZus{}IMAGE}
+
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{NORMALIZED\PYGZus{}POSITION}\PYG{o}{=}\PYG{n}{NORMALIZED\PYGZus{}POSITION}
+
+        \PYG{c+c1}{\PYGZsh{}CONSTANTS}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{WIDTH} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{cap}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{CAP\PYGZus{}PROP\PYGZus{}FRAME\PYGZus{}WIDTH}\PYG{p}{))}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{HEIGHT} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{cap}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{CAP\PYGZus{}PROP\PYGZus{}FRAME\PYGZus{}HEIGHT}\PYG{p}{))}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{DIMENSIONS} \PYG{o}{=} \PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{WIDTH}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{HEIGHT}\PYG{p}{]}
+
+        \PYG{c+c1}{\PYGZsh{}MediaPipe}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}drawing} \PYG{o}{=} \PYG{n}{mp}\PYG{o}{.}\PYG{n}{solutions}\PYG{o}{.}\PYG{n}{drawing\PYGZus{}utils}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands} \PYG{o}{=} \PYG{n}{mp}\PYG{o}{.}\PYG{n}{solutions}\PYG{o}{.}\PYG{n}{hands}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{hands} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{Hands}\PYG{p}{(}\PYG{n}{min\PYGZus{}detection\PYGZus{}confidence}\PYG{o}{=}\PYG{l+m+mf}{0.8}\PYG{p}{,} \PYG{n}{min\PYGZus{}tracking\PYGZus{}confidence}\PYG{o}{=}\PYG{l+m+mf}{0.5}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results} \PYG{o}{=} \PYG{k+kc}{None}
+
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{relative\PYGZus{}position} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{relative\PYGZus{}position}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}right\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{l+m+mi}{21}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{))}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{relative\PYGZus{}position}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}left\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{l+m+mi}{21}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{))}
+
+
+    \PYG{k}{def} \PYG{n+nf}{close\PYGZus{}window}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{cap}\PYG{o}{.}\PYG{n}{release}\PYG{p}{()}
+        \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{destroyAllWindows}\PYG{p}{()}
+
+    \PYG{k}{def} \PYG{n+nf}{detect\PYGZus{}key}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{key}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{waitKey}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0xFF} \PYG{o}{==} \PYG{n+nb}{ord}\PYG{p}{(}\PYG{n}{key}\PYG{p}{):}
+            \PYG{k}{return} \PYG{k+kc}{True}
+
+        \PYG{k}{return} \PYG{k+kc}{False}
+
+    \PYG{k}{def} \PYG{n+nf}{left\PYGZus{}or\PYGZus{}right}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{index}\PYG{p}{,} \PYG{n}{hand}\PYG{p}{,} \PYG{n}{mode}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}AI\PYGZsq{}}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Recognizes if visible hands (or hand) are left or right. }
+
+\PYG{l+s+sd}{        parameters: int, mediapipe.framework.formats.landmark\PYGZus{}pb2.NormalizedLandmarkList, type, str}
+
+\PYG{l+s+sd}{        returns: str}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+        \PYG{n}{label} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}right\PYGZsq{}}
+
+        \PYG{n}{coords} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{((}\PYG{n}{hand}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{WRIST}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{hand}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{WRIST}\PYG{p}{]}\PYG{o}{.}\PYG{n}{y}\PYG{p}{))}
+
+        \PYG{k}{if} \PYG{n}{mode} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}AI\PYGZsq{}}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{idx}\PYG{p}{,} \PYG{n}{classification} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}handedness}\PYG{p}{):}
+                \PYG{k}{if} \PYG{n}{classification}\PYG{o}{.}\PYG{n}{classification}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{index} \PYG{o}{==} \PYG{n}{index}\PYG{p}{:}
+
+                    \PYG{n}{label} \PYG{o}{=} \PYG{n}{classification}\PYG{o}{.}\PYG{n}{classification}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{label}\PYG{o}{.}\PYG{n}{lower}\PYG{p}{()}
+                    \PYG{c+c1}{\PYGZsh{}core = classification.classification[0].score}
+                    \PYG{c+c1}{\PYGZsh{}text = \PYGZsq{}\PYGZob{}\PYGZcb{} \PYGZob{}\PYGZcb{}\PYGZsq{}.format(label, round(score, 2))}
+
+                    \PYG{k}{return} \PYG{n}{label}
+
+
+        \PYG{k}{elif} \PYG{n}{mode} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}position\PYGZsq{}}\PYG{p}{:}
+            \PYG{c+c1}{\PYGZsh{}Get x values from both hands and compare}
+            \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}handedness}\PYG{p}{)} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{2}\PYG{p}{:}
+                \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]:}
+                    \PYG{k}{if} \PYG{n}{index} \PYG{o}{==} \PYG{n}{i}\PYG{p}{:}
+                        \PYG{n}{another\PYGZus{}hand\PYGZus{}x} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{WRIST}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}
+                        \PYG{k}{if} \PYG{n}{coords}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{another\PYGZus{}hand\PYGZus{}x}\PYG{p}{:}
+                            \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}right\PYGZsq{}}
+                        \PYG{k}{else}\PYG{p}{:}
+                            \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}left\PYGZsq{}} 
+
+                        \PYG{k}{return} \PYG{n}{label}
+
+            \PYG{k}{else}\PYG{p}{:}
+                \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{left\PYGZus{}or\PYGZus{}right}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n}{hand}\PYG{p}{,} \PYG{n}{mode}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}AI\PYGZsq{}}\PYG{p}{)}
+
+
+        \PYG{k}{return} \PYG{n}{label}
+
+
+    \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}position}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{index}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{landmark\PYGZus{}idx}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{normalized}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Finds normalized position or of given hand landmark. Additionally, it can calculate the position on the screen}
+\PYG{l+s+sd}{        if dimensions are give. }
+
+\PYG{l+s+sd}{        parameters: int, mediapipe.framework.formats.landmark\PYGZus{}pb2.NormalizedLandmarkList, list}
+
+\PYG{l+s+sd}{        returns: int, int, int}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+        \PYG{c+c1}{\PYGZsh{}TODO add right or left hand detection.}
+        \PYG{n}{x} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n}{landmark\PYGZus{}idx}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}
+        \PYG{n}{y} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n}{landmark\PYGZus{}idx}\PYG{p}{]}\PYG{o}{.}\PYG{n}{y}
+        \PYG{n}{z} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n}{landmark\PYGZus{}idx}\PYG{p}{]}\PYG{o}{.}\PYG{n}{y}
+
+        \PYG{k}{if} \PYG{n}{normalized}\PYG{p}{:}
+            \PYG{c+c1}{\PYGZsh{}Choose proper index instead of fixed one (idx=0)}
+            \PYG{k}{return} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{z}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{n}{x} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{x}\PYG{o}{*}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{WIDTH}\PYG{p}{)}
+            \PYG{n}{y} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{y}\PYG{o}{*}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{HEIGHT}\PYG{p}{)}
+            \PYG{n}{z} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{z}\PYG{o}{*}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{WIDTH}\PYG{p}{)}
+
+        \PYG{k}{return} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{z}
+
+    \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}distance\PYGZus{}bettween\PYGZus{}landmarks}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{index}\PYG{p}{,} \PYG{n}{landmark\PYGZus{}1}\PYG{p}{,} \PYG{n}{landmark\PYGZus{}2}\PYG{p}{,} \PYG{n}{normalized}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Calculates distance between two given hand landmarks. }
+
+\PYG{l+s+sd}{        parameters: int, }
+\PYG{l+s+sd}{                    mediapipe.framework.formats.landmark\PYGZus{}pb2.NormalizedLandmarkList, }
+\PYG{l+s+sd}{                    mediapipe.framework.formats.landmark\PYGZus{}pb2.NormalizedLandmarkList, }
+\PYG{l+s+sd}{                    list, }
+\PYG{l+s+sd}{                    boolean}
+
+\PYG{l+s+sd}{        returns: float}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{k}{if} \PYG{n}{normalized}\PYG{p}{:}
+            \PYG{n}{x1}\PYG{p}{,} \PYG{n}{y1}\PYG{p}{,} \PYG{n}{z1} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}position}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n}{landmark\PYGZus{}1}\PYG{p}{,} \PYG{n}{normalized}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+            \PYG{n}{x2}\PYG{p}{,} \PYG{n}{y2}\PYG{p}{,} \PYG{n}{z2} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}position}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n}{landmark\PYGZus{}2}\PYG{p}{,} \PYG{n}{normalized}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{n}{x1}\PYG{p}{,} \PYG{n}{y1}\PYG{p}{,} \PYG{n}{z1} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}position}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n}{landmark\PYGZus{}1}\PYG{p}{)}
+            \PYG{n}{x2}\PYG{p}{,} \PYG{n}{y2}\PYG{p}{,} \PYG{n}{z2} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}position}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n}{landmark\PYGZus{}2}\PYG{p}{)}
+
+        \PYG{n}{distance} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(((}\PYG{n}{x1}\PYG{o}{\PYGZhy{}}\PYG{n}{x2}\PYG{p}{)}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{p}{(}\PYG{n}{y1}\PYG{o}{\PYGZhy{}}\PYG{n}{y2}\PYG{p}{)}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{))}
+
+        \PYG{k}{return} \PYG{n}{distance}
+
+    \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}angle}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{index}\PYG{p}{,} \PYG{n}{landmark\PYGZus{}idx}\PYG{p}{,} \PYG{n}{mode}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}half\PYGZsq{}}\PYG{p}{,} \PYG{n}{unit}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}radians\PYGZsq{}}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Calculates angle using atan2 with wrist as a base. }
+
+\PYG{l+s+sd}{        parameters: list, int, int, str, str}
+
+\PYG{l+s+sd}{        returns: float}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+        \PYG{n}{angle}\PYG{o}{=}\PYG{l+m+mi}{0}
+
+        \PYG{n}{wrist\PYGZus{}x} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{WRIST}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}
+        \PYG{n}{wrist\PYGZus{}y} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{WRIST}\PYG{p}{]}\PYG{o}{.}\PYG{n}{y}
+
+        \PYG{n}{landmark\PYGZus{}x} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n}{landmark\PYGZus{}idx}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}
+        \PYG{n}{landmark\PYGZus{}y} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{landmark}\PYG{p}{[}\PYG{n}{landmark\PYGZus{}idx}\PYG{p}{]}\PYG{o}{.}\PYG{n}{y}
+
+        \PYG{n}{realitive\PYGZus{}x} \PYG{o}{=} \PYG{n}{landmark\PYGZus{}x} \PYG{o}{\PYGZhy{}} \PYG{n}{wrist\PYGZus{}x}
+        \PYG{n}{realitive\PYGZus{}y} \PYG{o}{=} \PYG{n}{landmark\PYGZus{}y} \PYG{o}{\PYGZhy{}} \PYG{n}{wrist\PYGZus{}y}
+
+        \PYG{n}{angle} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{atan2}\PYG{p}{(}\PYG{n}{realitive\PYGZus{}y}\PYG{p}{,} \PYG{n}{realitive\PYGZus{}x}\PYG{p}{)}
+
+        \PYG{k}{if} \PYG{n}{mode}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}half\PYGZsq{}} \PYG{o+ow}{and} \PYG{n}{angle}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{p}{:} \PYG{n}{angle}\PYG{o}{=}\PYG{l+m+mi}{0}
+
+        \PYG{k}{if} \PYG{n}{unit}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}degree\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{angle} \PYG{o}{=} \PYG{l+m+mi}{180}\PYG{o}{*}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{angle}\PYG{p}{)}\PYG{o}{/}\PYG{n}{math}\PYG{o}{.}\PYG{n}{pi}
+
+        \PYG{k}{return} \PYG{n}{angle}
+
+
+    \PYG{k}{def} \PYG{n+nf}{show\PYGZus{}data}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{image}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{console}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} \PYG{n}{on\PYGZus{}image}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Shows collected and calculated data in opencv window.}
+
+\PYG{l+s+sd}{        parameters: dictionary, 2D list, Boolean, Boolean}
+
+\PYG{l+s+sd}{        returns: None}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+        \PYG{k}{if} \PYG{n}{console}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{index}\PYG{p}{,} \PYG{p}{(}\PYG{n}{key}\PYG{p}{,} \PYG{n}{d}\PYG{p}{)} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{items}\PYG{p}{()):}
+                \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s1}{ hand:}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{X=}\PYG{l+s+si}{\PYGZpc{}f}\PYG{l+s+s1}{,}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{Y=}\PYG{l+s+si}{\PYGZpc{}f}\PYG{l+s+s1}{,}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{Z=}\PYG{l+s+si}{\PYGZpc{}f}\PYG{l+s+s1}{,}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{distance=}\PYG{l+s+si}{\PYGZpc{}.2f}\PYG{l+s+s1}{,}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{angle=}\PYG{l+s+si}{\PYGZpc{}f}\PYG{l+s+s1}{,}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{gesture=\PYGZdq{}}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s1}{\PYGZdq{}\PYGZsq{}} \PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{key}\PYG{o}{.}\PYG{n}{capitalize}\PYG{p}{(),} \PYG{n}{d}\PYG{o}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{d}\PYG{o}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{d}\PYG{o}{.}\PYG{n}{z}\PYG{p}{,} \PYG{n}{d}\PYG{o}{.}\PYG{n}{distance}\PYG{p}{,} \PYG{n}{d}\PYG{o}{.}\PYG{n}{angle}\PYG{p}{,} \PYG{n}{d}\PYG{o}{.}\PYG{n}{gesture}\PYG{p}{))}
+
+        
+        \PYG{k}{if} \PYG{n}{on\PYGZus{}image}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{index}\PYG{p}{,} \PYG{p}{(}\PYG{n}{key}\PYG{p}{,} \PYG{n}{d}\PYG{p}{)} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{items}\PYG{p}{()):}
+                \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{1}
+                \PYG{k}{for} \PYG{n}{field} \PYG{o+ow}{in} \PYG{n}{d}\PYG{o}{.}\PYG{n}{\PYGZus{}\PYGZus{}dataclass\PYGZus{}fields\PYGZus{}\PYGZus{}}\PYG{p}{:}
+                    \PYG{n}{value} \PYG{o}{=} \PYG{n+nb}{getattr}\PYG{p}{(}\PYG{n}{d}\PYG{p}{,} \PYG{n}{field}\PYG{p}{)}
+                    \PYG{c+c1}{\PYGZsh{}print(field, value)}
+
+                    \PYG{k}{if} \PYG{n}{field} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}distance\PYGZsq{}} \PYG{o+ow}{or} \PYG{n}{field} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}angle\PYGZsq{}}\PYG{p}{:}
+                        \PYG{c+c1}{\PYGZsh{}vars(d)[\PYGZsq{}distnace\PYGZsq{}] = \PYGZdq{}\PYGZob{}:.2f\PYGZcb{}\PYGZdq{}.format(value)}
+                        \PYG{n}{text} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{ = }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{field}\PYG{p}{,} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{value}\PYG{p}{)))}
+                        \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{putText}\PYG{p}{(}\PYG{n}{image}\PYG{p}{,} \PYG{n}{text}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{10}\PYG{o}{+}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{index}\PYG{p}{)}\PYG{o}{*}\PYG{l+m+mi}{400}\PYG{p}{,} \PYG{l+m+mi}{25}\PYG{o}{*}\PYG{n}{i}\PYG{p}{),} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{FONT\PYGZus{}HERSHEY\PYGZus{}SIMPLEX}\PYG{p}{,} \PYG{l+m+mf}{0.75}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{,} \PYG{l+m+mi}{255}\PYG{p}{,} \PYG{l+m+mi}{255}\PYG{p}{),} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{LINE\PYGZus{}AA}\PYG{p}{)}
+                    \PYG{k}{else}\PYG{p}{:}
+                        \PYG{n}{text} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{ = }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{field}\PYG{p}{,} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{value}\PYG{p}{))}
+                        \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{putText}\PYG{p}{(}\PYG{n}{image}\PYG{p}{,} \PYG{n}{text}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{10}\PYG{o}{+}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{index}\PYG{p}{)}\PYG{o}{*}\PYG{l+m+mi}{400}\PYG{p}{,} \PYG{l+m+mi}{25}\PYG{o}{*}\PYG{n}{i}\PYG{p}{),} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{FONT\PYGZus{}HERSHEY\PYGZus{}SIMPLEX}\PYG{p}{,} \PYG{l+m+mf}{0.75}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{,} \PYG{l+m+mi}{255}\PYG{p}{,} \PYG{l+m+mi}{255}\PYG{p}{),} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{LINE\PYGZus{}AA}\PYG{p}{)}
+                    \PYG{n}{i}\PYG{o}{+=}\PYG{l+m+mi}{1}
+    
+    \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}gesture}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{index}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Returns rocognized gesture based on pretrained model.}
+
+\PYG{l+s+sd}{        parameters: list, sklearn.pipleine.Pipeline, int}
+
+\PYG{l+s+sd}{        returns: str}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+        \PYG{n}{hand\PYGZus{}landmarks} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]}\PYG{o}{.}\PYG{n}{landmark}
+        \PYG{n}{wrist} \PYG{o}{=} \PYG{n}{hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+            
+        \PYG{n}{hand\PYGZus{}landmarks\PYGZus{}row} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{l+m+mi}{20}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{))}
+        \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{hand\PYGZus{}landmarks}\PYG{p}{)):}
+            \PYG{n}{hand\PYGZus{}landmarks\PYGZus{}row}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{=}\PYG{p}{[}\PYG{n}{hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{wrist}\PYG{o}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{wrist}\PYG{o}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{hand\PYGZus{}landmarks}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{z}\PYG{o}{\PYGZhy{}}\PYG{n}{wrist}\PYG{o}{.}\PYG{n}{z}\PYG{p}{]}
+            
+        \PYG{n}{hand\PYGZus{}landmarks\PYGZus{}row} \PYG{o}{=} \PYG{n}{hand\PYGZus{}landmarks\PYGZus{}row}\PYG{o}{.}\PYG{n}{flatten}\PYG{p}{()}
+        \PYG{n}{hand\PYGZus{}landmarks\PYGZus{}row} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{hand\PYGZus{}landmarks\PYGZus{}row}\PYG{o}{/}\PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{absolute}\PYG{p}{(}\PYG{n}{hand\PYGZus{}landmarks\PYGZus{}row}\PYG{p}{)))}
+        
+        \PYG{c+c1}{\PYGZsh{}Make Detections}
+        \PYG{n}{x} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{([}\PYG{n}{hand\PYGZus{}landmarks\PYGZus{}row}\PYG{p}{])}
+
+        \PYG{k}{with} \PYG{n}{warnings}\PYG{o}{.}\PYG{n}{catch\PYGZus{}warnings}\PYG{p}{():}
+            \PYG{n}{warnings}\PYG{o}{.}\PYG{n}{filterwarnings}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ignore\PYGZdq{}}\PYG{p}{)}
+
+            \PYG{n}{x} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{([}\PYG{n}{hand\PYGZus{}landmarks\PYGZus{}row}\PYG{p}{])}
+            \PYG{n}{gesture\PYGZus{}class} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{model}\PYG{o}{.}\PYG{n}{predict}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)[}\PYG{l+m+mi}{0}\PYG{p}{]}
+
+        \PYG{k}{return} \PYG{n}{gesture\PYGZus{}class}
+
+
+    \PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Main function that runs the core of the program. }
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+        \PYG{n}{hand\PYGZus{}type} \PYG{o}{=} \PYG{k+kc}{None}
+        \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{cap}\PYG{o}{.}\PYG{n}{isOpened}\PYG{p}{():}
+            \PYG{n}{ret}\PYG{p}{,} \PYG{n}{frame} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{cap}\PYG{o}{.}\PYG{n}{read}\PYG{p}{()}
+
+            \PYG{c+c1}{\PYGZsh{}BGR to RGB}
+            \PYG{n}{image} \PYG{o}{=} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{cvtColor}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{,} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{COLOR\PYGZus{}BGR2RGB}\PYG{p}{)}
+
+            \PYG{c+c1}{\PYGZsh{}Flip horizontal}
+            \PYG{n}{image} \PYG{o}{=} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{flip}\PYG{p}{(}\PYG{n}{image}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+
+            \PYG{c+c1}{\PYGZsh{}Set flag}
+            \PYG{n}{image}\PYG{o}{.}\PYG{n}{flags}\PYG{o}{.}\PYG{n}{writeable} \PYG{o}{=} \PYG{k+kc}{False}
+
+            \PYG{c+c1}{\PYGZsh{}Detections}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{hands}\PYG{o}{.}\PYG{n}{process}\PYG{p}{(}\PYG{n}{image}\PYG{p}{)}
+
+            \PYG{c+c1}{\PYGZsh{}Set flag back to True}
+            \PYG{n}{image}\PYG{o}{.}\PYG{n}{flags}\PYG{o}{.}\PYG{n}{writeable} \PYG{o}{=} \PYG{k+kc}{True}
+
+            \PYG{c+c1}{\PYGZsh{}RGB to BGR}
+            \PYG{n}{image} \PYG{o}{=} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{cvtColor}\PYG{p}{(}\PYG{n}{image}\PYG{p}{,} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{COLOR\PYGZus{}RGB2BGR}\PYG{p}{)}
+
+            \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SCREEN\PYGZus{}SHOW}\PYG{p}{:}
+                \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SCREEN\PYGZus{}TYPE}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}BLACK\PYGZsq{}}\PYG{p}{:}
+                    \PYG{n}{background} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{([}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{HEIGHT}\PYG{p}{,}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{WIDTH}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{],} \PYG{n}{dtype}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{uint8}\PYG{p}{)}
+                    \PYG{n}{background}\PYG{o}{.}\PYG{n}{fill}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+                \PYG{k}{elif} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SCREEN\PYGZus{}TYPE} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}CAM\PYGZsq{}}\PYG{p}{:}
+                    \PYG{n}{background} \PYG{o}{=} \PYG{n}{image}
+
+            \PYG{c+c1}{\PYGZsh{}Rendering results}
+            \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{:}
+                \PYG{n}{n\PYGZus{}hands} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{)}
+                \PYG{k}{for} \PYG{n}{index}\PYG{p}{,} \PYG{n}{hand} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{results}\PYG{o}{.}\PYG{n}{multi\PYGZus{}hand\PYGZus{}landmarks}\PYG{p}{):}
+        
+                    \PYG{k}{if} \PYG{n}{n\PYGZus{}hands} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1}\PYG{p}{:}
+                        \PYG{c+c1}{\PYGZsh{}If there are two hands}
+                        \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{left\PYGZus{}or\PYGZus{}right}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n}{hand}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}position\PYGZsq{}}\PYG{p}{):}
+                            \PYG{n}{hand\PYGZus{}type} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{left\PYGZus{}or\PYGZus{}right}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n}{hand}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}position\PYGZsq{}}\PYG{p}{)}
+                            \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{z} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}position}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{WRIST}\PYG{p}{,} \PYG{n}{normalized}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{NORMALIZED\PYGZus{}POSITION}\PYG{p}{)}
+
+                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{hand\PYGZus{}type}\PYG{p}{]}\PYG{o}{.}\PYG{n}{x} \PYG{o}{=} \PYG{n}{x}
+                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{hand\PYGZus{}type}\PYG{p}{]}\PYG{o}{.}\PYG{n}{y} \PYG{o}{=} \PYG{n}{y}
+                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{hand\PYGZus{}type}\PYG{p}{]}\PYG{o}{.}\PYG{n}{z} \PYG{o}{=} \PYG{n}{z}
+                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{hand\PYGZus{}type}\PYG{p}{]}\PYG{o}{.}\PYG{n}{distance} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}distance\PYGZus{}bettween\PYGZus{}landmarks}\PYG{p}{(}
+                                                                                        \PYG{n}{index}\PYG{p}{,} 
+                                                                                        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{INDEX\PYGZus{}FINGER\PYGZus{}TIP}\PYG{p}{,} 
+                                                                                        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{THUMB\PYGZus{}TIP}\PYG{p}{,} 
+                                                                                        \PYG{n}{normalized}\PYG{o}{=}\PYG{k+kc}{False}
+                                                                                        \PYG{p}{)}
+                                                                                    
+                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{hand\PYGZus{}type}\PYG{p}{]}\PYG{o}{.}\PYG{n}{angle} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}angle}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{MIDDLE\PYGZus{}FINGER\PYGZus{}MCP}\PYG{p}{,} \PYG{n}{unit}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}degree\PYGZsq{}}\PYG{p}{)}
+                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{hand\PYGZus{}type}\PYG{p}{]}\PYG{o}{.}\PYG{n}{gesture} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}gesture}\PYG{p}{(}\PYG{n}{index}\PYG{p}{)}
+
+                            \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SCREEN\PYGZus{}SHOW}\PYG{p}{:}
+
+                                \PYG{n}{x1}\PYG{p}{,} \PYG{n}{y1}\PYG{p}{,} \PYG{n}{z1} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}position}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{INDEX\PYGZus{}FINGER\PYGZus{}TIP}\PYG{p}{,} \PYG{n}{normalized}\PYG{o}{=} \PYG{o+ow}{not} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{NORMALIZED\PYGZus{}POSITION}\PYG{p}{)}
+                                \PYG{n}{x2}\PYG{p}{,} \PYG{n}{y2}\PYG{p}{,} \PYG{n}{z2} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}position}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{THUMB\PYGZus{}TIP}\PYG{p}{,} \PYG{n}{normalized}\PYG{o}{=} \PYG{o+ow}{not} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{NORMALIZED\PYGZus{}POSITION}\PYG{p}{)}
+
+                                \PYG{c+c1}{\PYGZsh{}Draw line that connects index finger tip and thumb tip}
+                                \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{line}\PYG{p}{(}\PYG{n}{background}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x1}\PYG{p}{,} \PYG{n}{y1}\PYG{p}{),} \PYG{p}{(}\PYG{n}{x2}\PYG{p}{,} \PYG{n}{y2}\PYG{p}{),} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{,} \PYG{l+m+mi}{125}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{),} \PYG{l+m+mi}{2}\PYG{p}{)}
+
+                                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}drawing}\PYG{o}{.}\PYG{n}{draw\PYGZus{}landmarks}\PYG{p}{(}\PYG{n}{background}\PYG{p}{,} \PYG{n}{hand}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HAND\PYGZus{}CONNECTIONS}\PYG{p}{,}
+                                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}drawing}\PYG{o}{.}\PYG{n}{DrawingSpec}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{255}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{),} \PYG{n}{thickness}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{circle\PYGZus{}radius}\PYG{o}{=}\PYG{l+m+mi}{4}\PYG{p}{),}
+                                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}drawing}\PYG{o}{.}\PYG{n}{DrawingSpec}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{255}\PYG{p}{),} \PYG{n}{thickness}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{circle\PYGZus{}radius}\PYG{o}{=}\PYG{l+m+mi}{4}\PYG{p}{))}
+                                
+                                \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}ON\PYGZus{}IMAGE}\PYG{p}{:}
+                                    \PYG{c+c1}{\PYGZsh{}Show on screen}
+                                    \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{z} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}position}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{mp\PYGZus{}hands}\PYG{o}{.}\PYG{n}{HandLandmark}\PYG{o}{.}\PYG{n}{WRIST}\PYG{p}{,} \PYG{n}{normalized}\PYG{o}{=} \PYG{o+ow}{not} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{NORMALIZED\PYGZus{}POSITION}\PYG{p}{)}
+                                    \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{putText}\PYG{p}{(}\PYG{n}{background}\PYG{p}{,} \PYG{n}{hand\PYGZus{}type}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{),} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{FONT\PYGZus{}HERSHEY\PYGZus{}SIMPLEX}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{),} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{LINE\PYGZus{}AA}\PYG{p}{)}
+
+                                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{show\PYGZus{}data}\PYG{p}{(}\PYG{n}{background}\PYG{p}{,} \PYG{n}{console}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}IN\PYGZus{}CONSOLE}\PYG{p}{,} \PYG{n}{on\PYGZus{}image}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}ON\PYGZus{}IMAGE}\PYG{p}{)}
+
+                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{show\PYGZus{}data}\PYG{p}{(}\PYG{n}{console}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}IN\PYGZus{}CONSOLE}\PYG{p}{,} \PYG{n}{on\PYGZus{}image}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}ON\PYGZus{}IMAGE}\PYG{p}{)}
+
+            \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SCREEN\PYGZus{}SHOW}\PYG{p}{:}
+                \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Hand Tracking\PYGZdq{}}\PYG{p}{,} \PYG{n}{background}\PYG{p}{)}
+                \PYG{n}{background}\PYG{o}{.}\PYG{n}{fill}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{loop}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+\PYG{l+s+sd}{        Runs main function perpetually. }
+\PYG{l+s+sd}{        \PYGZsq{}\PYGZsq{}\PYGZsq{}}
+
+        \PYG{k}{while} \PYG{k+kc}{True}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{main}\PYG{p}{()}
+
+            \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{detect\PYGZus{}key}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}q\PYGZsq{}}\PYG{p}{):}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{close\PYGZus{}window}\PYG{p}{()}
+                \PYG{k}{break}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{:}
+    \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+\PYG{l+s+sd}{    Use example of OpenLeap object. }
+\PYG{l+s+sd}{    \PYGZsq{}\PYGZsq{}\PYGZsq{}}
+
+    \PYG{n}{controller} \PYG{o}{=} \PYG{n}{OpenLeap}\PYG{p}{(}\PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}IN\PYGZus{}CONSOLE}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} \PYG{n}{SCREEN\PYGZus{}SHOW}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,} \PYG{n}{SCREEN\PYGZus{}TYPE}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}CAM\PYGZsq{}}\PYG{p}{,} \PYG{n}{SHOW\PYGZus{}DATA\PYGZus{}ON\PYGZus{}IMAGE}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+
+    \PYG{k}{while} \PYG{k+kc}{True}\PYG{p}{:}
+        \PYG{n}{controller}\PYG{o}{.}\PYG{n}{main}\PYG{p}{()}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{controller}\PYG{o}{.}\PYG{n}{relative\PYGZus{}position}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}right\PYGZsq{}}\PYG{p}{])}
+        \PYG{k}{if} \PYG{n}{controller}\PYG{o}{.}\PYG{n}{detect\PYGZus{}key}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}q\PYGZsq{}}\PYG{p}{):}
+            \PYG{n}{controller}\PYG{o}{.}\PYG{n}{close\PYGZus{}window}\PYG{p}{()}
+            \PYG{k}{break}
+\end{Verbatim}

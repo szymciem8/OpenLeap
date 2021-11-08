@@ -7,6 +7,7 @@ import math
 import pickle
 import pandas as pd
 import warnings
+import os
 
 
 class OpenLeap():
@@ -14,14 +15,21 @@ class OpenLeap():
     #Dataclass that describes position and other values of each hand
     @dataclass
     class Data:
-        x : int = 0
-        y : int = 0
-        z : int = 0
+        x : float = 0
+        y : float = 0
+        z : float = 0
         distance: float = 0.0
         angle: float = 0.0
         gesture: str = None
 
-    def __init__(self):
+    def __init__(self, 
+                SCREEN_SHOW=False, 
+                SCREEN_TYPE='BLACK', 
+                SHOW_DATA_IN_CONSOLE=False, 
+                SHOW_DATA_ON_IMAGE=False, 
+                NORMALIZED_POSITION=True,
+                GESTURE_MODEL='sign_language'
+        ):
 
         super().__init__()
 
@@ -30,18 +38,27 @@ class OpenLeap():
                 'left' : self.Data()
                 }
 
-        with open('gesture_recognition.pkl', 'rb') as f:
+        if GESTURE_MODEL=='basic':
+            file_name='gesture_recognition.pkl'
+        elif GESTURE_MODEL=='sign_language':
+            file_name='sign_language_alphabet.pkl'
+
+        this_dir, this_filename = os.path.split(__file__)  # Get path of data.pkl
+        data_path = os.path.join(this_dir, file_name)
+        with open(data_path, 'rb') as f:
             self.model = pickle.load(f)
 
         #Initiate camera
         self.cap = cv2.VideoCapture(0)
 
         #OPTIONS
-        self.SCREEN_SHOW=True
-        self.SCREEN_TYPE='CAM' # black or cam
+        self.SCREEN_SHOW=SCREEN_SHOW
+        self.SCREEN_TYPE=SCREEN_TYPE # black or cam
 
-        self.SHOW_DATA_IN_CONSOLE=True
-        self.SHOW_DATA_ON_IMAGE=True
+        self.SHOW_DATA_IN_CONSOLE=SHOW_DATA_IN_CONSOLE
+        self.SHOW_DATA_ON_IMAGE=SHOW_DATA_ON_IMAGE
+
+        self.NORMALIZED_POSITION=NORMALIZED_POSITION
 
         #CONSTANTS
         self.WIDTH = int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -53,6 +70,10 @@ class OpenLeap():
         self.mp_hands = mp.solutions.hands
         self.hands = self.mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5)
         self.results = None
+
+        self.relative_position = {}
+        self.relative_position['right'] = np.zeros((21,3))
+        self.relative_position['left'] = np.zeros((21,3))
 
 
     def close_window(self):
@@ -109,7 +130,7 @@ class OpenLeap():
         return label
 
 
-    def get_position(self, index=0, landmark_idx=1, dim=None):
+    def get_position(self, index=0, landmark_idx=1, normalized=False):
         """
         Finds normalized position or of given hand landmark. Additionally, it can calculate the position on the screen
         if dimensions are give. 
@@ -124,17 +145,16 @@ class OpenLeap():
         y = self.results.multi_hand_landmarks[index].landmark[landmark_idx].y
         z = self.results.multi_hand_landmarks[index].landmark[landmark_idx].y
 
-        if dim is None:
+        if normalized:
             #Choose proper index instead of fixed one (idx=0)
             return x, y, z
         else:
-            x = int(x*dim[0])
-            y = int(y*dim[1])
-            z = int(z*dim[0])
+            x = int(x*self.WIDTH)
+            y = int(y*self.HEIGHT)
+            z = int(z*self.WIDTH)
 
         return x, y, z
 
-    # TODO -> Normalization
     def get_distance_bettween_landmarks(self, index, landmark_1, landmark_2, normalized=True):
         """
         Calculates distance between two given hand landmarks. 
@@ -147,15 +167,12 @@ class OpenLeap():
 
         returns: float
         """
-
-        x1, y1, z1 = self.get_position(index, landmark_1, self.DIMENSIONS)
-        x2, y2, z2 = self.get_position(index, landmark_2, self.DIMENSIONS)
-
-        x1 *= self.WIDTH
-        x2 *= self.WIDTH
-
-        y1 *= self.HEIGHT
-        y2 *= self.HEIGHT
+        if normalized:
+            x1, y1, z1 = self.get_position(index, landmark_1, normalized=True)
+            x2, y2, z2 = self.get_position(index, landmark_2, normalized=True)
+        else:
+            x1, y1, z1 = self.get_position(index, landmark_1)
+            x2, y2, z2 = self.get_position(index, landmark_2)
 
         distance = math.sqrt(((x1-x2)**2 + (y1-y2)**2))
 
@@ -202,7 +219,7 @@ class OpenLeap():
 
         if console:
             for index, (key, d) in enumerate(self.data.items()):
-                print('%s hand:\tX=%d,\tY=%d,\tZ=%d,\tdistance=%.2f,\tangle=%f,\tgesture="%s"' %(key.capitalize(), d.x, d.y, d.z, d.distance, d.angle, d.gesture))
+                print('%s hand:\tX=%f,\tY=%f,\tZ=%f,\tdistance=%.2f,\tangle=%f,\tgesture="%s"' %(key.capitalize(), d.x, d.y, d.z, d.distance, d.angle, d.gesture))
 
         
         if on_image:
@@ -231,12 +248,22 @@ class OpenLeap():
         """
 
         hand_landmarks = self.results.multi_hand_landmarks[index].landmark
-        hand_coords = list(np.array([[landmark.x, landmark.y, landmark.z] for landmark in hand_landmarks]).flatten())
+        wrist = hand_landmarks[0]
+            
+        hand_landmarks_row = np.zeros((20,3))
+        for i in range(1, len(hand_landmarks)):
+            hand_landmarks_row[i-1]=[hand_landmarks[i].x-wrist.x, hand_landmarks[i].y-wrist.y, hand_landmarks[i].z-wrist.z]
+            
+        hand_landmarks_row = hand_landmarks_row.flatten()
+        hand_landmarks_row = list(hand_landmarks_row/np.max(np.absolute(hand_landmarks_row)))
+        
+        #Make Detections
+        x = pd.DataFrame([hand_landmarks_row])
 
         with warnings.catch_warnings():
             warnings.filterwarnings("ignore")
 
-            x = pd.DataFrame([hand_coords])
+            x = pd.DataFrame([hand_landmarks_row])
             gesture_class = self.model.predict(x)[0]
 
         return gesture_class
@@ -285,7 +312,7 @@ class OpenLeap():
                         #If there are two hands
                         if self.left_or_right(index, hand, 'position'):
                             hand_type = self.left_or_right(index, hand, 'position')
-                            x, y, z = self.get_position(index, self.mp_hands.HandLandmark.WRIST, self.DIMENSIONS)
+                            x, y, z = self.get_position(index, self.mp_hands.HandLandmark.WRIST, normalized=self.NORMALIZED_POSITION)
 
                             self.data[hand_type].x = x
                             self.data[hand_type].y = y
@@ -293,7 +320,8 @@ class OpenLeap():
                             self.data[hand_type].distance = self.get_distance_bettween_landmarks(
                                                                                         index, 
                                                                                         self.mp_hands.HandLandmark.INDEX_FINGER_TIP, 
-                                                                                        self.mp_hands.HandLandmark.THUMB_TIP
+                                                                                        self.mp_hands.HandLandmark.THUMB_TIP, 
+                                                                                        normalized=False
                                                                                         )
                                                                                     
                             self.data[hand_type].angle = self.get_angle(index, self.mp_hands.HandLandmark.MIDDLE_FINGER_MCP, unit='degree')
@@ -301,8 +329,8 @@ class OpenLeap():
 
                             if self.SCREEN_SHOW:
 
-                                x1, y1, z1 = self.get_position(index, self.mp_hands.HandLandmark.INDEX_FINGER_TIP, self.DIMENSIONS)
-                                x2, y2, z2 = self.get_position(index, self.mp_hands.HandLandmark.THUMB_TIP, self.DIMENSIONS)
+                                x1, y1, z1 = self.get_position(index, self.mp_hands.HandLandmark.INDEX_FINGER_TIP, normalized= not self.NORMALIZED_POSITION)
+                                x2, y2, z2 = self.get_position(index, self.mp_hands.HandLandmark.THUMB_TIP, normalized= not self.NORMALIZED_POSITION)
 
                                 #Draw line that connects index finger tip and thumb tip
                                 cv2.line(background, (x1, y1), (x2, y2), (255, 125, 100), 2)
@@ -313,6 +341,7 @@ class OpenLeap():
                                 
                                 if self.SHOW_DATA_ON_IMAGE:
                                     #Show on screen
+                                    x, y, z = self.get_position(index, self.mp_hands.HandLandmark.WRIST, normalized= not self.NORMALIZED_POSITION)
                                     cv2.putText(background, hand_type, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
 
                                 self.show_data(background, console=self.SHOW_DATA_IN_CONSOLE, on_image=self.SHOW_DATA_ON_IMAGE)
@@ -340,11 +369,11 @@ if __name__=='__main__':
     Use example of OpenLeap object. 
     '''
 
-    controller = OpenLeap()
+    controller = OpenLeap(SHOW_DATA_IN_CONSOLE=False, SCREEN_SHOW=True, SCREEN_TYPE='CAM', SHOW_DATA_ON_IMAGE=True)
 
     while True:
         controller.main()
-
+        print(controller.relative_position['right'])
         if controller.detect_key('q'):
             controller.close_window()
             break

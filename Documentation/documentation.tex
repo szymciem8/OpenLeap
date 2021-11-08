@@ -4,6 +4,15 @@
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{minted}
+
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+
+\graphicspath{{./images/}}
+
 \selectlanguage{polish}
 
 \geometry{
@@ -11,6 +20,15 @@
     right=20mm, 
     top=20mm,
     bottom=20mm
+}
+
+\definecolor{my-bg}{rgb}{0.95,0.95,0.95}
+\setminted[python]{
+    breaklines=true,
+    mathescape=true,
+    linenos=true,
+    numbersep=5pt,
+    bgcolor=my-bg
 }
 
 \title{Praca Inżynierska\\{\Large Politechnika Śląska}}

@@ -12,17 +12,18 @@
 \contentsline {chapter}{\numberline {3}Część techniczna/praktyczna}{5}%
 \contentsline {section}{\numberline {3.1}Rozpoznawanie dłoni}{5}%
 \contentsline {subsection}{\numberline {3.1.1}Elementy charakterystyczne}{5}%
-\contentsline {subsection}{\numberline {3.1.2}Generowanie grafiki dłoni}{5}%
-\contentsline {section}{\numberline {3.2}SciKit Learn - uczenie maszynowe}{5}%
-\contentsline {subsection}{\numberline {3.2.1}Budowa programu}{5}%
-\contentsline {subsection}{\numberline {3.2.2}Zebranie danych}{5}%
-\contentsline {subsection}{\numberline {3.2.3}Metody klasyfikacji - uczenie maszynowe}{5}%
-\contentsline {subsection}{\numberline {3.2.4}Ponowne wykorzystanie modelu}{5}%
-\contentsline {section}{\numberline {3.3}Paczka PyPi}{5}%
-\contentsline {subsection}{\numberline {3.3.1}Budowa paczki}{5}%
-\contentsline {subsection}{\numberline {3.3.2}Plik setup.py}{5}%
-\contentsline {subsection}{\numberline {3.3.3}Załadowanie paczki do repozytorium}{5}%
-\contentsline {chapter}{\numberline {4}Możliwości wykorzystania}{6}%
-\contentsline {section}{\numberline {4.1}Kioski samoobsługowe}{6}%
-\contentsline {section}{\numberline {4.2}Obsługa komputera}{6}%
-\contentsline {section}{\numberline {4.3}Sterowanie Robotami Mobilnymi}{6}%
+\contentsline {subsection}{\numberline {3.1.2}OpenCV - przygotowanie obrazu z kamery}{5}%
+\contentsline {subsection}{\numberline {3.1.3}Generowanie grafiki dłoni}{6}%
+\contentsline {section}{\numberline {3.2}SciKit Learn - uczenie maszynowe}{6}%
+\contentsline {subsection}{\numberline {3.2.1}Budowa programu}{6}%
+\contentsline {subsection}{\numberline {3.2.2}Zebranie danych}{6}%
+\contentsline {subsection}{\numberline {3.2.3}Metody klasyfikacji - uczenie maszynowe}{6}%
+\contentsline {subsection}{\numberline {3.2.4}Ponowne wykorzystanie modelu}{6}%
+\contentsline {section}{\numberline {3.3}Paczka PyPi}{6}%
+\contentsline {subsection}{\numberline {3.3.1}Budowa paczki}{6}%
+\contentsline {subsection}{\numberline {3.3.2}Plik setup.py}{6}%
+\contentsline {subsection}{\numberline {3.3.3}Załadowanie paczki do repozytorium}{6}%
+\contentsline {chapter}{\numberline {4}Możliwości wykorzystania}{7}%
+\contentsline {section}{\numberline {4.1}Kioski samoobsługowe}{7}%
+\contentsline {section}{\numberline {4.2}Obsługa komputera}{7}%
+\contentsline {section}{\numberline {4.3}Sterowanie Robotami Mobilnymi}{7}%
