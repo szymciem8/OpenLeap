@@ -23,6 +23,6 @@
 \contentsline {subsection}{\numberline {3.3.2}Plik setup.py}{5}%
 \contentsline {subsection}{\numberline {3.3.3}Załadowanie paczki do repozytorium}{5}%
 \contentsline {chapter}{\numberline {4}Możliwości wykorzystania}{6}%
-\contentsline {section}{\numberline {4.1}Gry}{6}%
+\contentsline {section}{\numberline {4.1}Kioski samoobsługowe}{6}%
 \contentsline {section}{\numberline {4.2}Obsługa komputera}{6}%
 \contentsline {section}{\numberline {4.3}Sterowanie Robotami Mobilnymi}{6}%

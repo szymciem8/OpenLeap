@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  4 NOV 2021 23:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  5 NOV 2021 11:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -97,7 +97,7 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__pdf_internal_box=\box46
 )
 (./documentation.aux (./introduction.aux) (./assumptions.aux) (./practical.aux)
-)
+(./use_cases.aux))
 \openout1 = `documentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -196,33 +196,37 @@ Rozdzia\l  3.
 
 
 ]
+\openout2 = `use_cases.aux'.
+
+ (./use_cases.tex
 Rozdzia\l  4.
-[6
+) [6
+
 
 
 ] (./documentation.aux (./introduction.aux) (./assumptions.aux)
-(./practical.aux)) ) 
+(./practical.aux) (./use_cases.aux)) ) 
 Here is how much of TeX's memory you used:
- 2232 strings out of 483148
- 31626 string characters out of 5965415
- 281637 words of memory out of 5000000
- 17248 multiletter control sequences out of 15000+600000
+ 2243 strings out of 483148
+ 31767 string characters out of 5965415
+ 281886 words of memory out of 5000000
+ 17252 multiletter control sequences out of 15000+600000
  543270 words of font info for 46 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  30i,6n,27p,196b,190s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/tcrm1200.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/jkn
-appen/ec/ecbx1440.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecbx1728.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecrm1200.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/ljfo
-ur/jknappen/ec/ecbx1200.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/lj
-four/jknappen/ec/ecbx2488.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecrm1440.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts/p
-k/ljfour/jknappen/ec/ecrm1728.600pk> </home/ubuntu/.texlive2019/texmf-var/fonts
-/pk/ljfour/jknappen/ec/ecrm2074.600pk>
-Output written on documentation.pdf (7 pages, 97772 bytes).
+ </home/ubuntu/.texlive2019/texmf-var/fon
+ts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </home/ubuntu/.texlive2019/texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/ubuntu/.texlive2019/texmf-var
+/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/ubuntu/.texlive2019/texmf-v
+ar/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/ubuntu/.texlive2019/texmf
+-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/ubuntu/.texlive2019/tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/ubuntu/.texlive2019/t
+exmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/ubuntu/.texlive2019
+/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/ubuntu/.texlive20
+19/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk>
+Output written on documentation.pdf (7 pages, 97361 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
+ 326 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
