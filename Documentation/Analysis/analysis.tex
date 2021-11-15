@@ -1,0 +1,35 @@
+\chapter{[Analiza tematu]}
+
+\begin{itemize}
+\item sformułowanie problemu
+\item osadzenie tematu w kontekście aktualnego stanu wiedzy ( state of the art ) o poruszanym problemie
+\item  studia literaturowe \cite{bib:artykul,bib:ksiazka,bib:konferencja,bib:url} -  opis znanych rozwiązań (także opisanych naukowo, jeżeli problem jest poruszany w publikacjach naukowych), algorytmów, 
+\end{itemize}
+
+\section {Sformułowanie problemu}
+\quad Cele projektowe można podzielić na trzy części. 
+
+\begin{itemize}
+    \item Wyznaczenie pozyci dłoni, odległości pomiędzy wybranymi palcami oraz jej kąta obrotu. 
+    \item Rozpoznawanie gestów dłoni w dwóch trybach: prostym (parę dostępnych gestów) oraz zaawansowanym, który rozoznaje alfabet języka migowego. 
+    \item Dostępność biblioteki poprzez platfromę PyPi. 
+\end{itemize}
+
+\quad Stworzenie modułu będzie wymagało napisania klasy wykorzystującej odpowiednie biblioteki pozwalających na rozpoznanie elementów charakterystycznych dłoni oraz przetworzenia obrazu. Obraz będzie pochodził z kamerki internetowej, który zostanie odpowiednio przetworzony z wykorzystaniem funkcji dostępnych poprzez bibliotekę OpenCV. Przetworzony obraz zostanie wykorzystany przez metody biblioteki MediaPipe, która pozowli na rozpoznanie elementów charakterystycznych dłoni. W napisanej klasie zostaną zaimplementowane metody, które pozowlą na rozpoznanie typu dłoni (prawa, lewa), odległości między paliczkiem palca wskazującego oraz kciuka, oraz obrotu dłoni. 
+
+\quad Kolejnym elementem jest wygenerowanie modelu matematycznych klasyfikujących gesty dłoni. W tym celu zostanie wykorzystana bibliotegk SciKit Learn wraz z dostępnymi poprzez nią algorytmamy ucznia maszynowego. Odpowiednio zebrane dane pozowlą na przeprowadzeni procesu ucznie dla paru wybranych algorytmów. 
+
+\quad Najważniejszym elementem pracy jest powyżej wymieniony ostatni punkt listy. Dzięki wykorzystaniu platformy PyPi deweloperzy będą mogli przy pomocy programu \textbf{pip} za pomocą jednej komendy zainstalować paczkę wraz ze wszystkimi wymaganymi zależnościami. 
+
+% \chapter{Założenia projektowe}
+
+% \section{Budowa modułu}
+% Moduł został napisany przy pomocy paradygmatu programowania
+% obiektowego, co pozwala na przystępne wykorzystanie biblioteki w dowonych 
+% projektach wymagających osbługi gestów. 
+
+% \section{Dostęp}
+% Całość projektu będzie dostępna na platformie GitHub wraz z możliwością 
+% pobrania przy pomocy programu pip ze zdlanego repozytorium PyPi, dzięki czemu 
+% pozowli to na sprawne i proste wykorzystanie modułu w dowolnym 
+% projekcie. 

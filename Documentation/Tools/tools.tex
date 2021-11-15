@@ -1,0 +1,111 @@
+% \chapter{Część techniczna/praktyczna}
+
+\chapter{Wymagania i narzędzia}
+
+\begin{itemize}
+\item wymagania funkcjonalne i niefunkcjonalne
+\item przypadki użycia (diagramy UML) - dla prac, w których mają zastosowanie
+\item opis narzędzi, metod eksperymentalnych, metod modelowania itp.
+\item metodyka pracy nad projektowaniem i implementacją - dla prac, w których ma to zastosowanie
+\end{itemize}
+
+\section{Rozpoznawanie dłoni}
+
+\quad Pierwszym elementem projektu jest rozpoznanie dłoni poprzez wyznacznie pozycji elementów charakterystycznych. Pozycja każdego z tych elementów jest względna wedłgu pozycji nadgarstka. ????
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPEN CV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{OpenCV - przygotowanie obrazu z kamery}
+
+\quad Poprawne działanie modelu MediaPipe wymaga odpowiedniego przygotowania obrazu kamery. Działanie kontrolerolera odbywa się poprzez główną metodę \textbf{main()}.
+
+Metoda \textbf{main()} jest główną funkcją, w której dokonywane są obliczenia oraz przeszktałcenia pozwalające na obliczenie obrotu dłonie, odległości między wybranymi palcami oraz na wykrycie gestu. 
+
+% \inputminted[firstline=51, lastline=52]{python}{../OpenLeap.py}
+
+\lstinputlisting[language=python, firstline=51, lastline=52]{../OpenLeap.py}
+
+\quad W pierwszym kroku tworzymy instancję klasy \textbf{VideoCapture} biblioteki \textbf{OpenCV}, która pozwoli na odczytywanie obrazu kamery. 
+
+\lstinputlisting[language=python, firstline=272, lastline=297]{../OpenLeap.py}
+
+% \inputminted[firstline=272, lastline=297]{python}{../OpenLeap.py}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIA PIPE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{MediaPipe - Elementy charakterystyczne}
+
+\quad Biblioteka MediaPipe o otwartym źródle, udostępnia wieloplatformowe oraz konfigurowalne rozwiązania wykrzustujące uczenie maszynowe w dziedzienie rozpoznawania, segmentacji oraz klasyfikacji obiektów wizji komputerowej. Niektórymi z rozwiązań są:
+
+\begin{itemize}
+    \item Rozpoznawanie twarzy
+    \item Segmentacjia włosów oraz twarzy
+    \item Rozpoznawnie oraz określanie rozmiarów obiektów trójwymiarowych 
+          na podstawie obrazu dwuwymiarowego. 
+\end{itemize}
+
+\quad Model modułu MediaPipe pozwala na wyznaczenie pozycji 21 elementów charakterystycznych dłoni. Współrzędne X i Y są znomralizowane względem rozdzielczości obrazu kamery. Współrzędna X względem liczby pikseli w osi X, a współrzędna Y względem liczby pikseli w osi Y. Oś Z jest prostopadła do osi X i Y, z punktem początkowym w punkcie określającym pozycję nadgarstka. Współrzędna Z jest znormalizowana względem szerokości obrazu kamery, tak jak współrzędna X. 
+
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=15cm]{../images/hand_landmarks.png}
+    \caption{Elementy charakterystyczne dłoni}
+\end{center}
+\end{figure}
+
+\quad Pozycje nadgarstka, paliczków oraz stawów dłoni zostaną wykorzystane do obliczenia obrotu dłoni względem punkut 0 oraz do wytrenowania modeli uczenia maszynowego, których zadaniem będzie rozpoznawnie wybranych gestów. 
+
+\subsection{Generowanie grafiki dłoni}
+
+\quad Generowanie grafiki nałożonej na daną dłoń wykonuje się przy pomocy przygotowanej funkcji biblioteki MediaPipe, która współpracuje z OpenCV. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% SciKit Learn %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{SciKit Learn - uczenie maszynowe}
+
+\quad Biblioteka SciKit Learn to bilbioteka ... tu opis ... 
+
+\subsection{Budowa programu}
+Celem programu będzie stworzenie modeli matematycznych przy pomocy metod uczenia maszynowego, których celem będzie rozpoznawanie gestów dłoni. Proces tworzenie takiego modelu można podzielić na trzy kroki.
+
+\begin{itemize}
+    \item Zebranie i przetworzenie danych. 
+    \item Przygotowanie algorytmów klasyfikacji i znalezenie najdokładniejszego. 
+    \item Zapis modelu do pliku typu \textbf{pickle}
+\end{itemize}
+
+\subsection{Zebranie danych}
+
+\quad Przygotowanie danych do przetworzenia będzie wymagało paru opercaji matematycznych. Współrzędne opisujące pozycje elementów charakterystycznych są znormalizowane względem wielkości obrazu pobranego z kamery, z czego wynika, że środek układu współrzęnych jest w prawym górnym rogu obrazu pobranego z kamery. W takim wypadku należy przprowadzić transformację, tutaj akurat przesunięcie układu współrzędnych do pozycji nadgarstka. Taka operacja pozwoli na pozbycie się uniezależnienie zmiennych od pozycji elementów dłoni na obrazie. Ostatecznie pozbywamy się pozycji nadarstka z wektora danych, ponieważ jest ona środkiem nowego układu współrzędnych. 
+
+\quad \textbf{Tutaj równanie transformacji}
+
+\quad Drugim krokiem jest uniezależnienie pozycji elementów od odległości dłoni od kamery. Najprostszym rozwiązaniem jest normalizacja wektora danych względem największej bezwzględnej wartości. 
+
+\quad \textbf{Normalizacja}
+
+\quad Każdy nowy wektor zostaje zapisany do pliku CSV z odpwowiednią etykietą. Zebrane dane posłużą do wytrenowania algorytmów uczenia maszynowego. 
+
+
+
+\subsection{Metody klasyfikacji - uczenie maszynowe}
+
+\quad Przygotowane dane zostają odczytane z pliku CSV. W pierwszym kroku należy rozdzielić je na dwie części: współrzędne (dane wejściowe) oraz etykiety (dane wyjściowe). W kolejnym kroku należy te dwie grupy podzielić na grupę trenującą i grupę testową. Zadaniem grupy testowej będzie trenowanie wybranych modeli matematycznych, a grupy testowej przetestowanie ich dokładności. 
+
+\quad W celu wybrania najlepszej metody klasyfikacji, zostnie wybranych kilka algorytmów. Każdy z nich stworzy swój model, a ostatecznie zostanie sprawdzona ich poprawności z wykorzystaniem grupy testowej. Model z najepszym wynikiem zostanie zapisany do pliku typu \textbf{pickle}. W języku Python pliki typu \textbf{pickle} pozwalają na zapis zmiennych, obiektów lub innych struktur danych, które mają zostać wykorzystane w po zakończeniu programu. 
+
+\subsection{Ponowne wykorzystanie modelu}
+
+\quad Gotowy model pobieramy i testujemy w przykładowym programie. 
+
+\section{Paczka PyPi}
+\subsection{Budowa paczki}
+% \subsection{Plik setup.py}
+\subsection{Załadowanie paczki do repozytorium}

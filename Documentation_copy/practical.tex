@@ -18,11 +18,21 @@
 
 \quad Pozycje nadgarstka, paliczków oraz stawów dłoni zostaną wykorzystane do obliczenia obrotu dłoni względem punkut 0 oraz do wytrenowania modeli uczenia maszynowego, których zadaniem będzie rozpoznawnie wybranych gestów. 
 
+\newpage
 \subsection{OpenCV - przygotowanie obrazu z kamery}
 
-\quad Poprawne działanie modelu MediaPipe wymaga odpowiedniego przygotowania obrazu kamery. 
+\quad Poprawne działanie modelu MediaPipe wymaga odpowiedniego przygotowania obrazu kamery. Działanie kontrolerolera odbywa się poprzez główną metodę \textbf{main()}.
+
+Metoda \textbf{main()} jest główną funkcją, w której dokonywane są obliczenia oraz przeszktałcenia pozwalające na obliczenie obrotu dłonie, odległości między wybranymi palcami oraz na wykrycie gestu. 
+
+\inputminted[firstline=51, lastline=52]{python}{../OpenLeap.py}
+
+\quad W pierwszym kroku tworzymy instancję klasy \textbf{VideoCapture} biblioteki \textbf{OpenCV}, która pozwoli na odczytywanie obrazu kamery. 
 
 \inputminted[firstline=272, lastline=297]{python}{../OpenLeap.py}
+
+
+\quad tekst testowy
 
 \subsection{Generowanie grafiki dłoni}
 
