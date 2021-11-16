@@ -85,11 +85,62 @@ Celem programu będzie stworzenie modeli matematycznych przy pomocy metod uczeni
 
 \quad Przygotowanie danych do przetworzenia będzie wymagało paru opercaji matematycznych. Współrzędne opisujące pozycje elementów charakterystycznych są znormalizowane względem wielkości obrazu pobranego z kamery, z czego wynika, że środek układu współrzęnych jest w prawym górnym rogu obrazu pobranego z kamery. W takim wypadku należy przprowadzić transformację, tutaj akurat przesunięcie układu współrzędnych do pozycji nadgarstka. Taka operacja pozwoli na pozbycie się uniezależnienie zmiennych od pozycji elementów dłoni na obrazie. Ostatecznie pozbywamy się pozycji nadarstka z wektora danych, ponieważ jest ona środkiem nowego układu współrzędnych. 
 
-\quad \textbf{Tutaj równanie transformacji}
+\quad \textbf{Macierz przesunięcia}
+
+\begin{equation*}
+    M_p = 
+    \begin{bmatrix}
+    1 & 0 & 0 & -x_0 \\
+    0 & 1 & 0 & -y_0 \\
+    0 & 0 & 1 & -z_0 \\
+    0 & 0 & 0 & 1
+    \end{bmatrix}
+\end{equation*}
+
+\quad Aby dane mogły zostać zinterpretowane przez algorytmy ucznenia maszynowego muszą one zostać przedstawione w postaci jednowymiarowej. Aktualna postać macierzy przedstawiającej wpółrzędne elementów charakterystycznych ma następującą postać. Indeksy współrzędnych są równoznaczne z indeksami elementów dłoni. 
+
+\begin{equation*}
+    M_p = 
+    \begin{bmatrix}
+    x_1' & y_1' & z_1' \\
+    x_2' & y_2' & z_2' \\
+     & \vdots &     \\
+    x_{21}' & y_{21}' & z_{21}'
+    \end{bmatrix}
+\end{equation*}
+
+Dane w postaci jednowymiarowej mają postać następującego wektora. 
+
+\begin{equation*}
+    A_n=
+    \begin{bmatrix}
+        x_1 & y_1 & z_1 & x_2 & y_2 & \cdots & y_{21} & z_{21}
+    \end{bmatrix}
+\end{equation*}
+
 
 \quad Drugim krokiem jest uniezależnienie pozycji elementów od odległości dłoni od kamery. Najprostszym rozwiązaniem jest normalizacja wektora danych względem największej bezwzględnej wartości. 
 
 \quad \textbf{Normalizacja}
+
+% \begin{equation*}
+%     A_n=
+    % \begin{bmatrix}
+    %     x_1 & y_1 & z_1 & x_2 & y_2 & \cdots & y_{21} & z_{21}
+    % \end{bmatrix}
+% \end{equation*}
+
+
+\begin{equation*}
+    \dfrac{    
+        \begin{bmatrix}
+            x_1 & y_1 & z_1 & x_2 & y_2 & \cdots & y_{21} & z_{21}
+        \end{bmatrix}}
+        {max()
+            \begin{bmatrix}
+            x_1 & y_1 & z_1 & x_2 & y_2 & \cdots & y_{21} & z_{21}
+        \end{bmatrix})}
+\end{equation*}
 
 \quad Każdy nowy wektor zostaje zapisany do pliku CSV z odpwowiednią etykietą. Zebrane dane posłużą do wytrenowania algorytmów uczenia maszynowego. 
 
