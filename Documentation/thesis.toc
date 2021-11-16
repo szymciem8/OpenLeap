@@ -20,7 +20,7 @@
 \contentsline {subsection}{\numberline {4.2.4}Ponowne wykorzystanie modelu}{11}{subsection.4.2.4}%
 \contentsline {section}{\numberline {4.3}Paczka PyPi}{11}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Budowa paczki}{11}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Załadowanie paczki do repozytorium}{11}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Załadowanie paczki do repozytorium}{12}{subsection.4.3.2}%
 \contentsline {chapter}{\numberline {5}[Właściwy dla kierunku - np. Specyfikacja zewnętrzna]}{13}{chapter.5}%
 \contentsline {chapter}{\numberline {6}[Właściwy dla kierunku - np.Specyfikacja wewnętrzna]}{15}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{17}{chapter.7}%

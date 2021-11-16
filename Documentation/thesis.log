@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  16 NOV 2021 00:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  16 NOV 2021 01:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -774,17 +774,17 @@ Overfull \hbox (8.53766pt too wide) in paragraph at lines 55--56
                                                   \fi \fi 
 l.62 \subsection
                 {Generowanie grafiki dłoni} <./images/../images/hand_landmarks
-.png>] [10]) [11] [12
-
-
-]
+.png>] [10]) [11] [12]
 Rozdzia\l  5.
 File: logo_pl.jpg Graphic file (type jpg)
 <use logo_pl.jpg>
 Package pdftex.def Info: logo_pl.jpg  used on input line 308.
 (pdftex.def)             Requested size: 85.35826pt x 109.78381pt.
-[13] [14pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.5.1}) has been already used, duplicate ignored
+[13
+
+
+] [14pdfTeX warning (ext4): destination with the same identifier (name{figure.5
+.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -883,7 +883,7 @@ pe1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb><
 /public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
 vb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (36 pages, 422089 bytes).
+Output written on thesis.pdf (36 pages, 422358 bytes).
 PDF statistics:
  555 PDF objects out of 1000 (max. 8388607)
  496 compressed objects within 5 object streams
