@@ -16,20 +16,22 @@
 \contentsline {section}{\numberline {4.2}SciKit Learn - uczenie maszynowe}{10}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Budowa programu}{10}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Zebranie danych}{10}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Metody klasyfikacji - uczenie maszynowe}{12}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.3}Metody klasyfikacji - uczenie maszynowe}{11}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}Ponowne wykorzystanie modelu}{12}{subsection.4.2.4}%
 \contentsline {section}{\numberline {4.3}Paczka PyPi}{12}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Budowa paczki}{12}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Załadowanie paczki do repozytorium}{12}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}[Właściwy dla kierunku - np. Specyfikacja zewnętrzna]}{13}{chapter.5}%
-\contentsline {chapter}{\numberline {6}[Właściwy dla kierunku - np.Specyfikacja wewnętrzna]}{15}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{17}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Podsumowanie i wnioski}{19}{chapter.8}%
-\contentsline {chapter}{Bibliografia}{19}{chapter.8}%
-\contentsline {chapter}{Spis skrótów i symboli}{23}{appendix*.2}%
+\contentsline {subsection}{\numberline {4.3.2}Struktura Paczki}{12}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Pliki Konfiguracyjne}{13}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Załadowanie paczki do repozytorium}{13}{subsection.4.3.4}%
+\contentsline {chapter}{\numberline {5}[Właściwy dla kierunku - np. Specyfikacja zewnętrzna]}{15}{chapter.5}%
+\contentsline {chapter}{\numberline {6}[Właściwy dla kierunku - np.Specyfikacja wewnętrzna]}{17}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{19}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Podsumowanie i wnioski}{21}{chapter.8}%
+\contentsline {chapter}{Bibliografia}{21}{chapter.8}%
+\contentsline {chapter}{Spis skrótów i symboli}{25}{appendix*.2}%
 \babel@toc {british}{}
 \babel@toc {polish}{}
 \babel@toc {british}{}
 \babel@toc {polish}{}
-\contentsline {chapter}{Źródła}{25}{appendix*.3}%
-\contentsline {chapter}{Zawartość dołączonej płyty}{29}{appendix*.4}%
+\contentsline {chapter}{Źródła}{27}{appendix*.3}%
+\contentsline {chapter}{Zawartość dołączonej płyty}{31}{appendix*.4}%

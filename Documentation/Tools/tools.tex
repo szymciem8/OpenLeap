@@ -112,7 +112,7 @@ Celem programu będzie stworzenie modeli matematycznych przy pomocy metod uczeni
 Dane w postaci jednowymiarowej mają postać następującego wektora. 
 
 \begin{equation*}
-    A_n=
+    A_f=
     \begin{bmatrix}
         x_1 & y_1 & z_1 & x_2 & y_2 & \cdots & y_{21} & z_{21}
     \end{bmatrix}
@@ -132,14 +132,7 @@ Dane w postaci jednowymiarowej mają postać następującego wektora.
 
 
 \begin{equation*}
-    \dfrac{    
-        \begin{bmatrix}
-            x_1 & y_1 & z_1 & x_2 & y_2 & \cdots & y_{21} & z_{21}
-        \end{bmatrix}}
-        {max()
-            \begin{bmatrix}
-            x_1 & y_1 & z_1 & x_2 & y_2 & \cdots & y_{21} & z_{21}
-        \end{bmatrix})}
+    A_n=\dfrac{A_f}{max(abs(A_f))}
 \end{equation*}
 
 \quad Każdy nowy wektor zostaje zapisany do pliku CSV z odpwowiednią etykietą. Zebrane dane posłużą do wytrenowania algorytmów uczenia maszynowego. 
@@ -161,5 +154,35 @@ Dane w postaci jednowymiarowej mają postać następującego wektora.
 
 \quad Ostatecznym krokiem jest przygotowanie programu w formie paczki, która zostanie udostępniona na platformie PyPi. Wygama to przygotowania odpowiednich plików konfiguracyjnych oraz zostosowania stosownych narzędzi do stworznie pliku \textbf{wheel} oraz \textbf{tar}. 
 
+\subsection{Struktura Paczki}
+\quad Pierwszm krokiem jest przygotowanie odpowiedniej struktury paczki. Do tego celu został stworzony folder o poniższej strukturze. W tym folderze znajdują się wszystkie potrzebne elementy paczki. W podfolderze o tej samej nazwie znajduje się główna części modułu, czyli plik .py, w którym zapisana jest klasa OpenLeap. Dodatkowo w tym folderze znajdują się pliki typu \textbf{pickle}, w których zapisane są modele rozpoznające gesty.
+
+\begin{figure}
+\centering
+    \begin{minipage}{7cm}
+        \dirtree{%
+        .1 openleap.
+        .2 openleap.
+        .3 \hyperref[openleap-file1]{\_\_init\_\_.py}.
+        .3 \hyperref[openleap-file2]{OpenLeap.py}.
+        .3 \hyperref[openleap-file3]{gesture\_recognition.pkl}.
+        .3 \hyperref[openleap-file4]{sign\_language\_alphabet.pkl}.
+        .2 LICENSE.
+        .2 MANIFEST.
+        .2 README.md.
+        .2 setup.py.
+        } 
+    \end{minipage}
+    \caption{Struktura paczki PyPi}
+\end{figure}
+
+\subsection{Pliki Konfiguracyjne}
+\quad Pliki setup.py oraz MANIFEST są plikami, które odpowiadają za konfigurację oraz opis paczki. W pliku setup.py zapisany jest numer aktualnej wersji, autor, kontakt do autora, nazwa paczki itp. 
+
+\quad 
+
+
 % \subsection{Plik setup.py}
 \subsection{Załadowanie paczki do repozytorium}
+
+\quad Przed załadowaniem paczki do repozytorium, należy stworzyć zapakowaną paczkę źródłową, na przykład typu .tar oraz plik typu WHEEL. Oba pliki spełniają tą samą funkcję, czyli przechowywnie niezbędnych elementów paczki oraz umożliwiają ich instalację na systemie użytkownika. Plik WHEEL pozwala na dużo szybszy proces instalacji niż instalacja ze źródła, czyli paczki typu .tar. 
