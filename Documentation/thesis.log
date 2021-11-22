@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  22 NOV 2021 00:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  22 NOV 2021 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -649,7 +649,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<logo_pl.jpg, id=178, 746.79pt x 960.58875pt>
+<logo_pl.jpg, id=182, 746.79pt x 960.58875pt>
 File: logo_pl.jpg Graphic file (type jpg)
 <use logo_pl.jpg>
 Package pdftex.def Info: logo_pl.jpg  used on input line 192.
@@ -780,24 +780,24 @@ Underfull \vbox (badness 7362) has occurred while \output is active []
 
 
 ]
-Overfull \hbox (7.95677pt too wide) in paragraph at lines 35--37
+[8]
+Overfull \hbox (7.95677pt too wide) in paragraph at lines 38--40
 \T1/lmr/m/n/12 czemu nie jest wy-ma-gany kom-pi-la-tor po stro-nie u�yt-kow-nik
 a. Osta-tecz-nie, \T1/lmr/bx/n/12 WHEEL
  []
 
-[8] [9]) [10]
+[9]) [10]
 \openout2 = `Internal_specification/internal.aux'.
 
  (./Internal_specification/internal.tex
-Rozdzia\l  5.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 28.
+ (../OpenLeap.py)
 (../OpenLeap.py [11
 
 
-
-]) (../OpenLeap.py) [12]
-<./images/../images/hand_landmarks.png, id=329, 1548.78625pt x 540.0175pt>
+]) [12]
+<./images/../images/hand_landmarks.png, id=332, 1548.78625pt x 540.0175pt>
 File: ./images/../images/hand_landmarks.png Graphic file (type png)
 <use ./images/../images/hand_landmarks.png>
 Package pdftex.def Info: ./images/../images/hand_landmarks.png  used on input l
@@ -808,33 +808,34 @@ Overfull \hbox (8.53766pt too wide) in paragraph at lines 55--56
  [] 
  []
 
-[13pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.62 \subsection
-                {Generowanie grafiki dłoni} <./images/../images/hand_landmarks
-.png>] [14] [15] [16]
+l.76     \item L
+                as losowy - polegająca na konstruowaniu wielu drzew decyzyj...
+ <./images/../images/hand_landmarks.png>] [14] [15]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 84.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Hyper reference `openleap-file1' on page 17 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file1' on page 16 undefined on input l
 ine 184.
 
 
-LaTeX Warning: Hyper reference `openleap-file2' on page 17 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file2' on page 16 undefined on input l
 ine 184.
 
 
-LaTeX Warning: Hyper reference `openleap-file3' on page 17 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file3' on page 16 undefined on input l
 ine 184.
 
 
-LaTeX Warning: Hyper reference `openleap-file4' on page 17 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file4' on page 16 undefined on input l
 ine 184.
 
 
@@ -842,49 +843,53 @@ Overfull \hbox (10.71848pt too wide) in paragraph at lines 184--184
 []|\T1/lmtt/m/n/12 sign_language_alphabet.pkl| 
  []
 
-) [17pdfTeX warning (ext4): destination with the same identifier (name{figure.5
-.2}) has been already used, duplicate ignored
+
+Underfull \vbox (badness 1953) has occurred while \output is active []
+
+ [16])
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.292 \include{Internal_specification/internal}
-                                               ] [18]
-Rozdzia\l  6.
+                                               ] [18
+
+
+]
+Rozdzia\l  5.
 File: logo_pl.jpg Graphic file (type jpg)
 <use logo_pl.jpg>
 Package pdftex.def Info: logo_pl.jpg  used on input line 312.
 (pdftex.def)             Requested size: 85.35826pt x 109.78381pt.
-[19
-
-
-] [20pdfTeX warning (ext4): destination with the same identifier (name{figure.6
-.1}) has been already used, duplicate ignored
+[19] [20pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.5.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.319 \chapter
               {[Właściwy dla kierunku - np.Specyfikacja wewnętrzna]}]
-Rozdzia\l  7.
+Rozdzia\l  6.
 [21
 
-] [22pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+] [22pdfTeX warning (ext4): destination with the same identifier (name{figure.6
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.366 \chapter
               {Weryfikacja i walidacja}]
-Rozdzia\l  8.
+Rozdzia\l  7.
 [23
 
-] [24pdfTeX warning (ext4): destination with the same identifier (name{table.8.
+] [24pdfTeX warning (ext4): destination with the same identifier (name{table.7.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.404 \chapter
               {Podsumowanie i wnioski}]
-Rozdzia\l  9.
+Rozdzia\l  8.
 No file thesis.bbl.
 [25
 
@@ -923,15 +928,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 533.
 (./Internal_specification/internal.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 533.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 533.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 16179F4A5DC110F517B742DDCD279823;3175.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: AD7F68BD7879784161B896A30D132EE6;3111
-(rerunfilecheck)             After:  7674B71C21C16DB6D84359362FA08CC1;3232.
 
 LaTeX Warning: There were undefined references.
 
@@ -939,12 +938,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 533.
  ) 
 Here is how much of TeX's memory you used:
  11308 strings out of 483148
- 163091 string characters out of 5965415
+ 163107 string characters out of 5965415
  673028 words of memory out of 5000000
- 25800 multiletter control sequences out of 15000+600000
+ 25801 multiletter control sequences out of 15000+600000
  599751 words of font info for 65 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 34i,12n,45p,753b,2035s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,45p,753b,1933s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -961,10 +960,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (42 pages, 461431 bytes).
+Output written on thesis.pdf (42 pages, 462117 bytes).
 PDF statistics:
- 680 PDF objects out of 1000 (max. 8388607)
- 610 compressed objects within 7 object streams
- 221 named destinations out of 1000 (max. 500000)
- 363 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 683 PDF objects out of 1000 (max. 8388607)
+ 613 compressed objects within 7 object streams
+ 220 named destinations out of 1000 (max. 500000)
+ 371 words of extra memory for PDF output out of 10000 (max. 10000000)
 
