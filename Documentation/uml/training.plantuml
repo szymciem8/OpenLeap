@@ -1,0 +1,10 @@
+@startuml Interpretacja Obrazu
+start
+
+    group Initialization 
+        :read config file;
+        :init internal variable;
+    end group
+
+stop
+@enduml
