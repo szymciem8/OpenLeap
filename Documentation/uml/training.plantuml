@@ -1,10 +1,39 @@
-@startuml Interpretacja Obrazu
+@startuml
+
+title Trenowanie modelu uczenia maszynowego\n
+
 start
 
-    group Initialization 
-        :read config file;
-        :init internal variable;
-    end group
+partition "Przygotowanie danych"{
+    repeat
+        :Wybór odpowiedniej etykiety gestu;
+        :Przesunięcie układu współrzędnych;
+        :Zapis danych do wektora;
+        :Normalizacja wektora względem największej wartości;
+        :Zapis danych do pliku CSV;
+    repeat while (nowy gest?) is (tak)
+    ->nie;
+}
+
+partition "Przygotowanie danych do trenowania"{
+    :Odczyt wszytkich danych z pliku CSV;
+    :Rozdzielenie danych na etykiety i współrzędne;
+    :Podział danych na grupę trenującą i testującą;
+}
+
+partition "Trenowanie modeli"{
+    :Wybór paru modeli uczenia maszynowego;
+    repeat
+        :trenowanie modelu na grupy trenującej;
+    repeat while (kolejny model?) is (tak)
+    ->nie;
+}
+partition "Wybór modelu"{
+    :Określenie dokładności modelu na podstawie grupy testowej;
+    :Zapis najdokładniejszego modelu do pliku typu **pickle**;
+}
+
 
 stop
+
 @enduml
