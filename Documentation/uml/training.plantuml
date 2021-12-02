@@ -1,36 +1,19 @@
 @startuml
 
-title Trenowanie modelu uczenia maszynowego\n
+skinparam defaultTextAlignment center
 
 start
 
 partition "Przygotowanie danych"{
-    repeat
-        :Wybór odpowiedniej etykiety gestu;
-        :Przesunięcie układu współrzędnych;
-        :Zapis danych do wektora;
-        :Normalizacja wektora względem największej wartości;
-        :Zapis danych do pliku CSV;
-    repeat while (nowy gest?) is (tak)
-    ->nie;
+:Algorytm przygotowujący \ndane do zapisu w pliku CSV.;
 }
 
 partition "Przygotowanie danych do trenowania"{
-    :Odczyt wszytkich danych z pliku CSV;
-    :Rozdzielenie danych na etykiety i współrzędne;
-    :Podział danych na grupę trenującą i testującą;
+:Dane zostają odpwiednio \nrozdzielone i przygotowane do \ntrenowania.;
 }
 
 partition "Trenowanie modeli"{
-    :Wybór paru modeli uczenia maszynowego;
-    repeat
-        :trenowanie modelu na grupy trenującej;
-    repeat while (kolejny model?) is (tak)
-    ->nie;
-}
-partition "Wybór modelu"{
-    :Określenie dokładności modelu na podstawie grupy testowej;
-    :Zapis najdokładniejszego modelu do pliku typu **pickle**;
+:Trenowanie paru wybranych \nmodeli uczenia maszynowego.;
 }
 
 

@@ -16,13 +16,53 @@ Jeśli to Specyfikacja zewnętrzna:
 \item  scenariusze korzystania z systemu (ilustrowane zrzutami z ekranu lub generowanymi dokumentami)
 \end{itemize}
 
-\section{Wymagania sprzętowe i programowe}
+\section{Wymagania sprzętowe}
+\subsection{Kamera}
+\quad Elementem niezbędnym do korzystania z modułu OpenLeap jest kamera, która pozwoli na pozyskanie obrazu dłoni. Rozdzielczość matrycy kamery powinna pozwolić na rozpoznanie dłoni. Liczba klatek na sekundę powinna być wystarczająco wysoka, tak aby można było sprawnie korzystać z paczki. 
+
+\section{Wymagania programowe}
+\quad Pierszym elementem jest język Python, który pozwoli na interpetację napisanego modułu. 
+\quad Reszta potrzebnych zależności zostanie zainstalowana automatycznie. 
+
+\section{Instalacja paczki}
+\quad Instalcja paczki odbywa się poprzez wykorzystanie programu pip, który jest instalowany automatycznie razem z językiem Python. W zależności od wybranego systemu operacyjnego, komenda może przybierać inne formy 
+
+\begin{lstlisting}[language=bash]
+    $ pip install openleap
+\end{lstlisting}
+
+\section{Przykładowy program}
 
 \section{Przykład działania}
+\quad Paczkę można wykorzystać tam gdzie wymagane jest wykorzystanie gestów oraz ruchów dłoni. Paczka może znaleźć zastosowanie aplikacjach użytku codziennego, robotyce lub pełnić formę peryferium komputerowego.  
 
-\begin{figure}
-\centering
-\includegraphics[width=3cm]{logo_pl.jpg}
-\caption{Podpis rysunku po rysunkiem.}
-\label{fig:2}
+\subsection{Rozpoznawanie alfabetu w języku migowym}
+\quad Pierwszym przykładem zastosowania jest wykorzystanie paczki do rozpoznawnia alfabetu języka migowego. Taki program może umożliwić komunikację między osobą głuchoniemą posługującą się językiem migowym, a osobą, które takiego jęzka nie zna. 
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{example-image-a}
+        \caption{Zrzut ekranu aplikacji roznającej język migowy}
+    \end{center}
+\end{figure}
+
+\subsection{Interaktywny Kioski}
+\quad Kolejnym przykładem jest interktywny kiosk, który pozwala na złożenie zamówienia w sposób, który nie wymaga dotykania ekranu dotykowego. W dobie pandemii takie rozwiązanie może potencjalnie przyczynić się do spowolnienia rozprzestrzeniania się różnego rodzaju wirusów i drobnoustrojów. 
+
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{example-image-a}
+        \caption{Zrzut ekranu kiosku interaktywnego}
+    \end{center}
+\end{figure}
+
+\subsection{Dobór koloru}
+\quad Ostatnim przykładem jest wykorzystanie dłoni jako kontrolera, za którego pomocą można wybrać dowolny kolor. Takie zastosowanie może zostać wykorzystane w pracy grafika komputerowego. Dzięki temu użytkownik będzie mógł zmieniać kolor wykorzysytywanego narzędzia bez przerywania pracy, na przykład malowania. 
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{example-image-a}
+        \caption{Zrzut ekranu aplikacji ustawiającej kolor}
+    \end{center}
 \end{figure}

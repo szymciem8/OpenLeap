@@ -22,14 +22,7 @@ Jeśli to Specyfikacja wewnętrzna:
     
     \quad Pierwszym elementem projektu jest rozpoznanie dłoni poprzez wyznacznie pozycji elementów charakterystycznych. Pozycja każdego z tych elementów jest względna wedłgu pozycji nadgarstka. ????
 
-    \subsection{Interpetacja obrazu - schemat UML}
 
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[width=10cm]{../images/image_processing.png}
-            \caption{Elementy charakterystyczne dłoni}
-        \end{center}
-    \end{figure}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPEN CV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,15 +31,22 @@ Jeśli to Specyfikacja wewnętrzna:
     
     \quad Poprawne działanie modelu MediaPipe wymaga odpowiedniego przygotowania obrazu kamery. Działanie kontrolerolera odbywa się poprzez główną metodę \textbf{main()}.
     
-    Metoda \textbf{main()} jest główną funkcją, w której dokonywane są obliczenia oraz przeszktałcenia pozwalające na obliczenie obrotu dłonie, odległości między wybranymi palcami oraz na wykrycie gestu. 
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=10cm]{../images/image_processing.png}
+            \caption{Elementy charakterystyczne dłoni}
+        \end{center}
+    \end{figure}
+
+    \quad Metoda \textbf{main()} jest główną funkcją, w której dokonywane są obliczenia oraz przeszktałcenia pozwalające na obliczenie obrotu dłonie, odległości między wybranymi palcami oraz na wykrycie gestu. 
     
     % \inputminted[firstline=51, lastline=52]{python}{../OpenLeap.py}
     
-    \lstinputlisting[language=python, firstline=51, lastline=52]{../OpenLeap.py}
+    % \lstinputlisting[language=python, firstline=51, lastline=52]{../OpenLeap.py}
     
     \quad W pierwszym kroku tworzymy instancję klasy \textbf{VideoCapture} biblioteki \textbf{OpenCV}, która pozwoli na odczytywanie obrazu kamery. 
     
-    \lstinputlisting[language=python, firstline=272, lastline=297]{../OpenLeap.py}
+    % \lstinputlisting[language=python, firstline=272, lastline=297]{../OpenLeap.py}
     
     % \inputminted[firstline=272, lastline=297]{python}{../OpenLeap.py}
     
@@ -88,34 +88,34 @@ Jeśli to Specyfikacja wewnętrzna:
     \section{SciKit Learn - uczenie maszynowe}
     
     \quad SciKit Learn to biblioteka, która oferuje różnego typu metody uczenia maszynowego. Biblioteka zawiera algorytmy klasyfikacji, regresjii oraz analizy skupień. Przykładowym algorytmami w bibliotece są:
-    
     \begin{itemize}
         \item Las losowy - polegająca na konstruowaniu wielu drzew decyzyjnych w czasie uczenia. 
         \item Algorytm centroidów - algorytm wykorzystywany w analizie skupień.
         \item Maszyna wektorów nośnoych - algorytm klasyfikujący, często wykorzystywany w procesie rozpoznawania obrazów. 
     \end{itemize}
-    
     O wszystkich dostępnych algorytmach informacje można znaleźć w ogólnodostępnej dokumentacji biblioteki. 
     
-    \subsection{Algorytm uczenia maszynowego - schemat UML}
+    \subsection{Przygotowanie modeli uczenia maszynowego}
+    \quad Celem programu będzie stworzenie modeli matematycznych przy pomocy metod uczenia maszynowego, których celem będzie rozpoznawanie gestów dłoni. Proces tworzenie takiego modelu można podzielić na trzy kroki przedstawione na schemacie 6.3. 
 
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[width=6cm]{../images/machine_learning_gestures.png}
-            \caption{Elementy charakterystyczne dłoni}
+            \includegraphics[width=8cm]{../images/full_algorithm.png}
+            \caption{Ogólny algorytm przygotowania modeli uczenia maszynowego}
         \end{center}
     \end{figure}
 
-    \subsection{Budowa programu}
-    Celem programu będzie stworzenie modeli matematycznych przy pomocy metod uczenia maszynowego, których celem będzie rozpoznawanie gestów dłoni. Proces tworzenie takiego modelu można podzielić na trzy kroki.
-    
-    \begin{itemize}
-        \item Zebranie i przetworzenie danych. 
-        \item Przygotowanie algorytmów klasyfikacji i znalezenie najdokładniejszego. 
-        \item Zapis modelu do pliku typu \textbf{pickle}
-    \end{itemize}
-    
+    \quad Całość programu została napisana w notatniku Jupyter. Pozwala to na wykonanie pewnych części programu osobno, niezależnie od reszty programu. W praktyce każdy blok opisany w powyższym schemacie UML ma swoje odwzorowanie w notatniku. Na przykład, część zapisująca współrzędne do pliku będzie wykonywana tyle razy ile jest gestów do wytrenowania. 
+
     \subsection{Zebranie danych}
+    \quad Algorytm zebrania danych polega na pobraniu współrzędnych oszacowanych przez model MediaPipe. Należy pamiętać o tym, że środek układu współrzędnych znajduje się lewym górnym rogu obrazu kamery. Oznacza to, że współrzędne w tej postaci nie nadają się do wyuczenia modelu matematycznego. Gest nie powinnien być rozpoznawany na podstawie pozycji dłoni w obrazie lub jej odległości od kamery. Należy się tych zależności pozbyć. 
+    
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=9cm]{../images/get_data.png}
+            \caption{Ogólny algorytm przygotowania modeli uczenia maszynowego}
+        \end{center}
+    \end{figure}
     
     \quad Przygotowanie danych do przetworzenia będzie wymagało paru opercaji matematycznych. Współrzędne opisujące pozycje elementów charakterystycznych są znormalizowane względem wielkości obrazu pobranego z kamery, z czego wynika, że środek układu współrzęnych jest w prawym górnym rogu obrazu pobranego z kamery. W takim wypadku należy przprowadzić transformację, tutaj akurat przesunięcie układu współrzędnych do pozycji nadgarstka. Taka operacja pozwoli na pozbycie się uniezależnienie zmiennych od pozycji elementów dłoni na obrazie. Ostatecznie pozbywamy się pozycji nadarstka z wektora danych, ponieważ jest ona środkiem nowego układu współrzędnych. 
     
@@ -169,13 +169,18 @@ Jeśli to Specyfikacja wewnętrzna:
         A_n=\dfrac{A_f}{max(abs(A_f))}
     \end{equation*}
     
-    \quad Każdy nowy wektor zostaje zapisany do pliku CSV z odpwowiednią etykietą. Zebrane dane posłużą do wytrenowania algorytmów uczenia maszynowego. 
-    
-    
+    \quad Każdy nowy wektor zostaje zapisany do pliku CSV z odpwowiednią etykietą. Zebrane dane posłużą do wytrenowania algorytmów uczenia maszynowego.     
     
     \subsection{Metody klasyfikacji - uczenie maszynowe}
     
     \quad Przygotowane dane zostają odczytane z pliku CSV. W pierwszym kroku należy rozdzielić je na dwie części: współrzędne (dane wejściowe) oraz etykiety (dane wyjściowe). W kolejnym kroku należy te dwie grupy podzielić na grupę trenującą i grupę testową. Zadaniem grupy testowej będzie trenowanie wybranych modeli matematycznych, a grupy testowej przetestowanie ich dokładności. 
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=9cm]{../images/train_models.png}
+            \caption{Ogólny algorytm przygotowania modeli uczenia maszynowego}
+        \end{center}
+    \end{figure}
     
     \quad W celu wybrania najlepszej metody klasyfikacji, zostnie wybranych kilka algorytmów. Każdy z nich stworzy swój model, a ostatecznie zostanie sprawdzona ich poprawności z wykorzystaniem grupy testowej. Model z najepszym wynikiem zostanie zapisany do pliku typu \textbf{pickle}. W języku Python pliki typu \textbf{pickle} pozwalają na zapis zmiennych, obiektów lub innych struktur danych, które mają zostać wykorzystane w po zakończeniu programu. 
     
@@ -184,6 +189,7 @@ Jeśli to Specyfikacja wewnętrzna:
     \quad Gotowy model pobieramy i testujemy w przykładowym programie. 
     
     \section{Paczka PyPi}
+
     \subsection{Budowa paczki}
     
     \quad Ostatecznym krokiem jest przygotowanie programu w formie paczki, która zostanie udostępniona na platformie PyPi. Wygama to przygotowania odpowiednich plików konfiguracyjnych oraz zostosowania stosownych narzędzi do stworznie pliku \textbf{wheel} oraz \textbf{tar}. 
@@ -220,3 +226,10 @@ Jeśli to Specyfikacja wewnętrzna:
     \subsection{Załadowanie paczki do repozytorium}
     
     \quad Przed załadowaniem paczki do repozytorium, należy stworzyć zapakowaną paczkę źródłową, na przykład typu .tar oraz plik typu WHEEL. Oba pliki spełniają tą samą funkcję, czyli przechowywnie niezbędnych elementów paczki oraz umożliwiają ich instalację na systemie użytkownika. Plik WHEEL pozwala na dużo szybszy proces instalacji niż instalacja ze źródła, czyli paczki typu .tar. 
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=9cm]{example-image-a}
+            \caption{Strona modułu OpenLeap na PyPi}
+        \end{center}
+    \end{figure}
