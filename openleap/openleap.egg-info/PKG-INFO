@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: openleap
+Version: 0.5.0
+Summary: Hand tracking and gesture recognition module
+Home-page: https://github.com/szymciem8/OpenLeap
+Author: Szymon Ciemała
+Author-email: szymciem@protonmail.com
+License: LICENSE
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# OpenLeap
+
+## Table of contents
+* [General Info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+
+## General Info
+OpenLeap is an open source project that allows you to add hand gesture control to your Python projects. 
+
+## Technologies
+
+Project was created with technologies:
+
+* Python
+* OpenCV
+* MediaPipe
+* SciKit Learn
+
+## Setup
+```
+$ pip install openleap
+```
+
+

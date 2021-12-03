@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+openleap/OpenLeap.py
+openleap/__init__.py
+openleap/gesture_recognition.pkl
+openleap/sign_language_alphabet.pkl
+openleap.egg-info/PKG-INFO
+openleap.egg-info/SOURCES.txt
+openleap.egg-info/dependency_links.txt
+openleap.egg-info/requires.txt
+openleap.egg-info/top_level.txt
