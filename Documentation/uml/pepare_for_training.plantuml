@@ -1,0 +1,13 @@
+@startuml
+
+start
+
+partition "Przygotowanie danych do trenowania"{
+    :Odczyt wszytkich danych z pliku CSV.;
+    :Rozdzielenie danych na etykiety i współrzędne.;
+    :Podział danych na grupę trenującą i testującą.;
+}
+
+stop
+
+@enduml

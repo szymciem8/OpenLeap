@@ -26,6 +26,8 @@
 \renewcommand{\appendixpagename}{Dodatki}
 \renewcommand{\appendixname}{Dodatek}
 
+\usepackage{xcolor}
+
 \usepackage{graphicx}
 \usepackage{float}
 \graphicspath{{./images/}}
@@ -48,22 +50,53 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % listingi 
-\usepackage{listings}
+% \usepackage{listings}
+% \lstset{%
+% 	language=python,%
+% 	commentstyle=\textit,%
+% 	identifierstyle=\textsf,%
+% 	keywordstyle=\sffamily\bfseries, %\texttt, %
+% 	%captionpos=b,%
+% 	tabsize=3,%
+% 	frame=lines,%
+% 	numbers=left,%
+% 	numberstyle=\tiny,%
+% 	numbersep=5pt,%
+% 	breaklines=true,%
+% 	morekeywords={descriptor_gaussian,descriptor,partition,fcm_possibilistic,dataset,my_exception,exception,std,vector},%
+% 	escapeinside={@*}{*@},%
+% 	%texcl=true, % wylacza tryb verbatim w komentarzach jednolinijkowych
+% }
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
 \lstset{%
-language=python,%
-commentstyle=\textit,%
-identifierstyle=\textsf,%
-keywordstyle=\sffamily\bfseries, %\texttt, %
-%captionpos=b,%
-tabsize=3,%
-frame=lines,%
-numbers=left,%
-numberstyle=\tiny,%
-numbersep=5pt,%
-breaklines=true,%
-morekeywords={descriptor_gaussian,descriptor,partition,fcm_possibilistic,dataset,my_exception,exception,std,vector},%
-escapeinside={@*}{*@},%
-%texcl=true, % wylacza tryb verbatim w komentarzach jednolinijkowych
+	language=bash,%
+	commentstyle=\textit,%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -289,78 +322,11 @@ escapeinside={@*}{*@},%
 
 %%%%%%%%%%%%%% Specyfikacja Zewnętrzna %%%%%%%%%%%%%%
 
+\include{External_specification/external}
+
+%%%%%%%%%%%%%% Specyfikacja Wewnętrzna %%%%%%%%%%%%%%
+
 \include{Internal_specification/internal}
-
-% \include{External_specification/}
-
-\chapter{[Właściwy dla kierunku - np. Specyfikacja zewnętrzna]}
-Jeśli to Specyfikacja zewnętrzna:
-\begin{itemize}
-\item  wymagania sprzętowe i programowe
-\item  sposób instalacji
-\item  sposób aktywacji
-\item  kategorie użytkowników
-\item  sposób obsługi
-\item   administracja systemem
-\item  kwestie bezpieczeństwa
-\item  przykład działania
-\item  scenariusze korzystania z systemu (ilustrowane zrzutami z ekranu lub generowanymi dokumentami)
-\end{itemize}
-
-\begin{figure}
-\centering
-\includegraphics[width=3cm]{logo_pl.jpg}
-\caption{Podpis rysunku po rysunkiem.}
-\label{fig:2}
-\end{figure}
-
-%%%%%%%%%%%%%%% Specyfikacja Wewnętrzna %%%%%%%%%%%%%%%%
-
-\chapter{[Właściwy dla kierunku - np.Specyfikacja wewnętrzna]}
-Jeśli to Specyfikacja wewnętrzna:
-\begin{itemize}
-\item przedstawienie idei
-\item architektura systemu
-\item opis struktur danych (i organizacji baz danych)
-\item komponenty, moduły, biblioteki, przegląd ważniejszych klas (jeśli występują)
-\item przegląd ważniejszych algorytmów (jeśli występują)
-\item szczegóły implementacji wybranych fragmentów, zastosowane wzorce projektowe
-\item diagramy UML
-\end{itemize}
-
-
-
-Krótka wstawka kodu w linii tekstu jest możliwa, np. \lstinline|descriptor|, a nawet \lstinline|descriptor_gaussian|. 
-Dłuższe fragmenty lepiej jest umieszczać jako rysunek, np. kod na rysunku \ref{fig:pseudokod}, a naprawdę długie fragmenty – w załączniku.
-
-\begin{figure}
-\centering
-\begin{lstlisting}
-class descriptor_gaussian : virtual public descriptor
-{
-   protected:
-      /** core of the gaussian fuzzy set */
-      double _mean;
-      /** fuzzyfication of the gaussian fuzzy set */
-      double _stddev;
-      
-   public:
-      /** @param mean core of the set
-          @param stddev standard deviation */
-      descriptor_gaussian (double mean, double stddev);
-      descriptor_gaussian (const descriptor_gaussian & w);
-      virtual ~descriptor_gaussian();
-      virtual descriptor * clone () const;
-      
-      /** The method elaborates membership to the gaussian fuzzy set. */
-      virtual double getMembership (double x) const;
-     
-};
-\end{lstlisting}
-\caption{Klasa \lstinline|descriptor_gaussian|.}
-\label{fig:pseudokod}
-\end{figure}
-
 
 %%%%%%%%%%%%%%% Weryfikacja i Walidacje %%%%%%%%%%%%%%%%
 \chapter{Weryfikacja i walidacja}
@@ -435,84 +401,6 @@ class descriptor_gaussian : virtual public descriptor
 
 Jeżeli w pracy konieczne jest umieszczenie długich fragmentów kodu źródłowego, należy je przenieść do załącznika.
 
-\begin{lstlisting}
-partition fcm_possibilistic::doPartition
-                             (const dataset & ds)
-{
-   try
-   {
-      if (_nClusters < 1)
-         throw std::string ("unknown number of clusters");
-      if (_nIterations < 1 and _epsilon < 0)
-         throw std::string ("You should set a maximal number of iteration or minimal difference -- epsilon.");
-      if (_nIterations > 0 and _epsilon > 0)
-         throw std::string ("Both number of iterations and minimal epsilon set -- you should set either number of iterations or minimal epsilon.");
-   
-      auto mX = ds.getMatrix();
-      std::size_t nAttr = ds.getNumberOfAttributes();
-      std::size_t nX    = ds.getNumberOfData();
-      std::vector<std::vector<double>> mV;
-      mU = std::vector<std::vector<double>> (_nClusters);
-      for (auto & u : mU)
-         u = std::vector<double> (nX);
-      randomise(mU);
-      normaliseByColumns(mU);
-      calculateEtas(_nClusters, nX, ds);
-      if (_nIterations > 0)
-      {
-         for (int iter = 0; iter < _nIterations; iter++)
-         {
-            mV = calculateClusterCentres(mU, mX);
-            mU = modifyPartitionMatrix (mV, mX);
-         }
-      }
-      else if (_epsilon > 0)
-      {
-         double frob;
-         do 
-         {
-            mV = calculateClusterCentres(mU, mX);
-            auto mUnew = modifyPartitionMatrix (mV, mX);
-            
-            frob = Frobenius_norm_of_difference (mU, mUnew);
-            mU = mUnew;
-         } while (frob > _epsilon);
-      }
-      mV = calculateClusterCentres(mU, mX);
-      std::vector<std::vector<double>> mS = calculateClusterFuzzification(mU, mV, mX);
-      
-      partition part;
-      for (int c = 0; c < _nClusters; c++)
-      {
-         cluster cl; 
-         for (std::size_t a = 0; a < nAttr; a++)
-         {
-            descriptor_gaussian d (mV[c][a], mS[c][a]);
-            cl.addDescriptor(d);
-         }
-         part.addCluster(cl);
-      }
-      return part;
-   }
-   catch (my_exception & ex)                                  
-   {                                                       
-      throw my_exception (__FILE__, __FUNCTION__, __LINE__, ex.what()); 
-   }                                                          
-   catch (std::exception & ex)                                 
-   {                                                            
-      throw my_exceptionn (__FILE__, __FUNCTION__, __LINE__, ex.what()); 
-   }                                                            
-   catch (std::string & ex)                                     
-   {                                                            
-      throw my_exception (__FILE__, __FUNCTION__, __LINE__, ex);        
-   }                                                             
-   catch (...)                                                   
-   {                                                             
-      throw my_exception (__FILE__, __FUNCTION__, __LINE__, "unknown expection");       
-   }  
-}
-\end{lstlisting}
- 
 
 \chapter*{Zawartość dołączonej płyty}
 \addcontentsline{toc}{chapter}{Zawartość dołączonej płyty}

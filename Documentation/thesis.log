@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  22 NOV 2021 23:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.22)  3 DEC 2021 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,6 +417,23 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@ppsavesec=\count279
 \c@@ppsaveapp=\count280
 )
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count281
@@ -478,13 +495,8 @@ Package: listings 2019/09/10 1.8c (Carsten Heinz)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 147.
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
@@ -507,27 +519,28 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__pdf_internal_box=\box51
 )
 (./thesis.aux (./Introduction/introduction.aux) (./Analysis/analysis.aux)
-(./Tools/tools.aux) (./Internal_specification/internal.aux))
+(./Tools/tools.aux) (./External_specification/external.aux)
+(./Internal_specification/internal.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 177.
-LaTeX Font Info:    ... okay on input line 177.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 177.
-LaTeX Font Info:    ... okay on input line 177.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 177.
-LaTeX Font Info:    ... okay on input line 177.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 177.
-LaTeX Font Info:    ... okay on input line 177.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 177.
-LaTeX Font Info:    ... okay on input line 177.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 177.
-LaTeX Font Info:    ... okay on input line 177.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 177.
-LaTeX Font Info:    ... okay on input line 177.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 177.
-LaTeX Font Info:    ... okay on input line 177.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 17
-7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 21
+0.
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -555,7 +568,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box53
-Package hyperref Info: Link coloring OFF on input line 177.
+Package hyperref Info: Link coloring OFF on input line 210.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -568,9 +581,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count302
 )
-LaTeX Info: Redefining \ref on input line 177.
-LaTeX Info: Redefining \pageref on input line 177.
-LaTeX Info: Redefining \nameref on input line 177.
+LaTeX Info: Redefining \ref on input line 210.
+LaTeX Info: Redefining \pageref on input line 210.
+LaTeX Info: Redefining \nameref on input line 210.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
@@ -644,18 +657,18 @@ LaTeX Info: Redefining \nameref on input line 177.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-88.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
+21.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<logo_pl.jpg, id=182, 746.79pt x 960.58875pt>
+<logo_pl.jpg, id=223, 746.79pt x 960.58875pt>
 File: logo_pl.jpg Graphic file (type jpg)
 <use logo_pl.jpg>
-Package pdftex.def Info: logo_pl.jpg  used on input line 192.
+Package pdftex.def Info: logo_pl.jpg  used on input line 225.
 (pdftex.def)             Requested size: 82.51299pt x 106.13412pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 19
-6.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 22
+9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -720,7 +733,7 @@ This may cause the page layout to be inconsistent, however.
 [2]
 Rozdzia\l  1.
 
-Overfull \hbox (27.60684pt too wide) in paragraph at lines 264--265
+Overfull \hbox (27.60684pt too wide) in paragraph at lines 297--298
 [] \T1/lmr/m/n/12 Praca in-»y-nier-ska ›oz-po-zna-wa-nie obiek-tów z wy-ko-rzy-
 sta-niem bi-blio-teki OpenCV",
  []
@@ -729,7 +742,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.280 \include{Introduction/introduction}
+l.313 \include{Introduction/introduction}
                                           [1
 
 
@@ -773,7 +786,7 @@ LaTeX Warning: Citation `bib:url' on page 5 undefined on input line 6.
  (./Tools/tools.tex
 Rozdzia\l  4.
 
-Underfull \vbox (badness 7362) has occurred while \output is active []
+Underfull \vbox (badness 3849) has occurred while \output is active []
 
  [7
 
@@ -781,169 +794,284 @@ Underfull \vbox (badness 7362) has occurred while \output is active []
 
 ]
 [8]
-Overfull \hbox (7.95677pt too wide) in paragraph at lines 38--40
+Overfull \hbox (7.95677pt too wide) in paragraph at lines 40--42
 \T1/lmr/m/n/12 czemu nie jest wy-ma-gany kom-pi-la-tor po stro-nie u»yt-kow-nik
 a. Osta-tecz-nie, \T1/lmr/bx/n/12 WHEEL
  []
 
-[9]) [10]
-\openout2 = `Internal_specification/internal.aux'.
+) [9]
+\openout2 = `External_specification/external.aux'.
 
- (./Internal_specification/internal.tex
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 28.
- (../OpenLeap.py)
-(../OpenLeap.py [11
+ (./External_specification/external.tex [10
 
-
-]) [12]
-<./images/../images/hand_landmarks.png, id=332, 1548.78625pt x 540.0175pt>
-File: ./images/../images/hand_landmarks.png Graphic file (type png)
-<use ./images/../images/hand_landmarks.png>
-Package pdftex.def Info: ./images/../images/hand_landmarks.png  used on input l
-ine 55.
-(pdftex.def)             Requested size: 426.79134pt x 148.80603pt.
-
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 55--56
- [] 
- []
-
-[13pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.76     \item L
-                as losowy - polegajÄ…ca na konstruowaniu wielu drzew decyzyj...
- <./images/../images/hand_landmarks.png>] [14] [15]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-84.
-
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-LaTeX Warning: Hyper reference `openleap-file1' on page 16 undefined on input l
-ine 184.
-
-
-LaTeX Warning: Hyper reference `openleap-file2' on page 16 undefined on input l
-ine 184.
-
-
-LaTeX Warning: Hyper reference `openleap-file3' on page 16 undefined on input l
-ine 184.
-
-
-LaTeX Warning: Hyper reference `openleap-file4' on page 16 undefined on input l
-ine 184.
-
-
-Overfull \hbox (10.71848pt too wide) in paragraph at lines 184--184
-[]|\T1/lmtt/m/n/12 sign_language_alphabet.pkl| 
- []
-
-
-Underfull \vbox (badness 1953) has occurred while \output is active []
-
- [16])
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.292 \include{Internal_specification/internal}
-                                               ] [18
 
 
 ]
 Rozdzia\l  5.
-File: logo_pl.jpg Graphic file (type jpg)
-<use logo_pl.jpg>
-Package pdftex.def Info: logo_pl.jpg  used on input line 312.
-(pdftex.def)             Requested size: 85.35826pt x 109.78381pt.
-[19] [20pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.5.1}) has been already used, duplicate ignored
+[11]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+9.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+) [12]
+<example-image-a.pdf, id=359, 321.2pt x 240.9pt>
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 49.
+(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 62.
+(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.319 \chapter
-              {[WÅ‚aÅ›ciwy dla kierunku - np.Specyfikacja wewnÄ™trzna]}]
-Rozdzia\l  6.
-[21
+Underfull \vbox (badness 3108) has occurred while \output is active []
 
-] [22pdfTeX warning (ext4): destination with the same identifier (name{figure.6
-.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.366 \chapter
-              {Weryfikacja i walidacja}]
-Rozdzia\l  7.
-[23
-
-] [24pdfTeX warning (ext4): destination with the same identifier (name{table.7.
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.404 \chapter
+l.66 
+      </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image-a.pdf>]
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 79.
+(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
+
+[14pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.82 \end{figure}
+                 ]
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 90.
+(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.94 
+     ]
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 100.
+(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.325 \include{External_specification/external}
+                                               ] [17pdfTeX warning (ext4): dest
+ination with the same identifier (name{figure.5.5}) has been already used, dupl
+icate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.325 \include{External_specification/external}
+                                               ]
+\openout2 = `Internal_specification/internal.aux'.
+
+
+(./Internal_specification/internal.tex [18
+
+
+
+]
+Rozdzia\l  6.
+[19]
+<./images/../images/image_processing.png, id=400, 354.32375pt x 249.93375pt>
+File: ./images/../images/image_processing.png Graphic file (type png)
+<use ./images/../images/image_processing.png>
+Package pdftex.def Info: ./images/../images/image_processing.png  used on input
+ line 36.
+(pdftex.def)             Requested size: 284.52756pt x 200.70619pt.
+
+Underfull \vbox (badness 1533) has occurred while \output is active []
+
+ [20pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.60 
+      <./images/../images/image_processing.png (PNG copy)>]
+<./images/../images/hand_landmarks.png, id=406, 1548.78625pt x 540.0175pt>
+File: ./images/../images/hand_landmarks.png Graphic file (type png)
+<use ./images/../images/hand_landmarks.png>
+Package pdftex.def Info: ./images/../images/hand_landmarks.png  used on input l
+ine 72.
+(pdftex.def)             Requested size: 426.79134pt x 148.80603pt.
+
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 72--73
+ [] 
+ []
+
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.6.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.79     \subsection
+                    {Generowanie grafiki dÅ‚oni} <./images/../images/hand_landm
+arks.png>]
+<./images/../images/full_algorithm.png, id=414, 310.15875pt x 422.57875pt>
+File: ./images/../images/full_algorithm.png Graphic file (type png)
+<use ./images/../images/full_algorithm.png>
+Package pdftex.def Info: ./images/../images/full_algorithm.png  used on input l
+ine 103.
+(pdftex.def)             Requested size: 227.62204pt x 310.12416pt.
+ [22]
+<./images/../images/get_data.png, id=421, 439.6425pt x 732.7375pt>
+File: ./images/../images/get_data.png Graphic file (type png)
+<use ./images/../images/get_data.png>
+Package pdftex.def Info: ./images/../images/get_data.png  used on input line 11
+5.
+(pdftex.def)             Requested size: 256.0748pt x 426.79932pt.
+ [23pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.118     \end{figure}
+                       <./images/../images/full_algorithm.png (PNG copy)>]
+[24pdfTeX warning (ext4): destination with the same identifier (name{figure.6.4
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.121 
+       <./images/../images/get_data.png (PNG copy)>] [25]
+<./images/../images/train_models.png, id=443, 443.6575pt x 452.69125pt>
+File: ./images/../images/train_models.png Graphic file (type png)
+<use ./images/../images/train_models.png>
+Package pdftex.def Info: ./images/../images/train_models.png  used on input lin
+e 180.
+(pdftex.def)             Requested size: 256.0748pt x 261.28322pt.
+ [26pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.191     \section
+                  {Paczka PyPi} <./images/../images/train_models.png (PNG copy)
+>]
+
+LaTeX Warning: Hyper reference `openleap-file1' on page 27 undefined on input l
+ine 214.
+
+
+LaTeX Warning: Hyper reference `openleap-file2' on page 27 undefined on input l
+ine 214.
+
+
+LaTeX Warning: Hyper reference `openleap-file3' on page 27 undefined on input l
+ine 214.
+
+
+LaTeX Warning: Hyper reference `openleap-file4' on page 27 undefined on input l
+ine 214.
+
+
+Overfull \hbox (10.71848pt too wide) in paragraph at lines 214--214
+[]|\T1/lmtt/m/n/12 sign_language_alphabet.pkl| 
+ []
+
+[27pdfTeX warning (ext4): destination with the same identifier (name{figure.6.6
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.221 
+      ]
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 232.
+(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
+) [28pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.329 \include{Internal_specification/internal}
+                                               ]
+Rozdzia\l  7.
+[29
+
+
+] [30pdfTeX warning (ext4): destination with the same identifier (name{table.7.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.370 \chapter
               {Podsumowanie i wnioski}]
 Rozdzia\l  8.
 No file thesis.bbl.
-[25
+[31
 
-] [26
+] [32
 
-] [27] [28] [29
+] [33] [34] [35
 
-] [30
+] [36
 
-]
-Underfull \vbox (badness 5726) has occurred while \output is active []
+] [37] [38
 
- [31]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [32]
-[33] [34
-
-] [35] [36
+] [39] [40
 
 ] (./thesis.lof)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [37] [38
+ [41] [42
 
-] (./thesis.lot)
+]
+(./thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 533.
- [39]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 533.
- (./thesis.aux
-(./Introduction/introduction.aux) (./Analysis/analysis.aux) (./Tools/tools.aux)
-(./Internal_specification/internal.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 533.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 533.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 421.
+ [43]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 421.
+ (./thesis.aux (./Introduction/introduction.aux)
+(./Analysis/analysis.aux) (./Tools/tools.aux)
+(./External_specification/external.aux) (./Internal_specification/internal.aux)
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 421.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 421.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 16179F4A5DC110F517B742DDCD279823;3175.
+(rerunfilecheck)             Checksum: 6D516666DC762D154F24BD8D74FAEF92;3835.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 533.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 421.
  ) 
 Here is how much of TeX's memory you used:
- 11308 strings out of 483148
- 163107 string characters out of 5965415
- 673028 words of memory out of 5000000
- 25801 multiletter control sequences out of 15000+600000
- 599751 words of font info for 65 fonts, out of 8000000 for 9000
+ 11634 strings out of 483148
+ 167134 string characters out of 5965415
+ 636823 words of memory out of 5000000
+ 26212 multiletter control sequences out of 15000+600000
+ 600292 words of font info for 66 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 37i,12n,45p,753b,1933s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,11n,49p,757b,1311s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -954,16 +1082,16 @@ f/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
 8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (42 pages, 462117 bytes).
+blic/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on thesis.pdf (46 pages, 535971 bytes).
 PDF statistics:
- 683 PDF objects out of 1000 (max. 8388607)
- 613 compressed objects within 7 object streams
- 220 named destinations out of 1000 (max. 500000)
- 371 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 631 PDF objects out of 1000 (max. 8388607)
+ 553 compressed objects within 6 object streams
+ 123 named destinations out of 1000 (max. 500000)
+ 476 words of extra memory for PDF output out of 10000 (max. 10000000)
 

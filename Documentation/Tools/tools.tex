@@ -1,5 +1,3 @@
-% \chapter{Część techniczna/praktyczna}
-
 \chapter{Wymagania i narzędzia}
 
 \begin{itemize}
@@ -13,16 +11,20 @@
 \section{Wymagania}
 
 \quad Klasa powinna zawierać w sobie wszystkie niezbędne funkcje oraz parametry pozwalające na wykorzysatnie jej w dowolnym projekcie. Modele rozpoznające gesty powinny zostać uprzednio przygotowane. 
+
 \quad Pobranie modułu powinno być możliwe poprzez wykorzystanie standardowego programu do zarządzania paczkami \textbf{pip}. Ten menedżer pozwala na instalacje paczki wraz z jej zależnościami, czyli innymi paczkami wymaganami do porwanego działania pobieranego modułu. 
 
 \section{Narzędzia}
+
+\subsection{System operacyjny Ubuntu}
+\quad Do stworzenia oprogramowania została wybrana dystrybucja Ubuntu systemu Linux. Dzięki takim elementom jak menedżer pakietów lub wbudowane wspracie dla języka Python.
 
 \subsection{Python}
 \quad Do napisanie biblioteki został wykorzystany język skryptowy Python. Ze względu na swoją budowę, Python nie należy do najbardziej wydajnych języków. Python jest językiem interpretowalnym, co oznacza, że jego program nie zostaje przekompilowany do kodu maszynowego, a zostaje on zinterpretowany przez program nazywany interpreterem. 
 \quad Pomimo niskiej wydajności języka Python, jest on dobrym narzędziem do tworzenia aplikacji wykorzystujących wizję komputerową oraz uczenia maszynowe. Głównie ze względu na dostępność oraz jakość bibliotek o wolnym źródle.  
 
 \subsection{iPython}
-\quad 
+\quad To iteraktywna powłoka dla języka Python, która rozszerza jego działanie o interospekcję, czyli możliwość wykonywania poprzednich części programu zapisanych w komórkach. Dodatkowo IPython oferuje dodatkową składnię powołoki oraz wykonywanie komend wiersza poleceń. 
 
 \subsection{Jupyter Notebook}
 \quad Dodatkowym narzędziem jest Jupyter Notebook, który pozwala na wykonwyanie części programu w osobnych komórkach. Pozwala to na łatwiejsze odnajdowanie błędów w programie.
@@ -39,50 +41,23 @@
 \quad Kolejnym programem jest \textbf{bdist\_wheel}, który odpowiada za stworzenie uprzednio paczki typu \textbf{WHEEL}, która w przypadku wykorzystania plików napisanych w języku \textbf{C} uprzednio je kompiluje, dzięki czemu nie jest wymagany kompilator po stronie użytkownika. Ostatecznie, \textbf{WHEEL} pozwala na szybszą instalację paczki w porównaniu z budowaniem jej z plików źródłowych. 
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPEN CV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{OpenCV - przygotowanie obrazu z kamery}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIA PIPE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{MediaPipe - Elementy charakterystyczne}
-
-\quad Biblioteka MediaPipe o otwartym źródle, udostępnia wieloplatformowe oraz konfigurowalne rozwiązania wykrzustujące uczenie maszynowe w dziedzienie rozpoznawania, segmentacji oraz klasyfikacji obiektów wizji komputerowej. Niektórymi z rozwiązań są:
-
-\begin{itemize}
-    \item Rozpoznawanie twarzy
-    \item Segmentacjia włosów oraz twarzy
-    \item Rozpoznawnie oraz określanie rozmiarów obiektów trójwymiarowych 
-          na podstawie obrazu dwuwymiarowego. 
-\end{itemize}
-
-\quad Model modułu MediaPipe pozwala na wyznaczenie pozycji 21 elementów charakterystycznych dłoni. Współrzędne X i Y są znomralizowane względem rozdzielczości obrazu kamery. Współrzędna X względem liczby pikseli w osi X, a współrzędna Y względem liczby pikseli w osi Y. Oś Z jest prostopadła do osi X i Y, z punktem początkowym w punkcie określającym pozycję nadgarstka. Współrzędna Z jest znormalizowana względem szerokości obrazu kamery, tak jak współrzędna X. 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPEN CV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{OpenCV - przygotowanie obrazu z kamery}
 
 
-\quad Pozycje nadgarstka, paliczków oraz stawów dłoni zostaną wykorzystane do obliczenia obrotu dłoni względem punkut 0 oraz do wytrenowania modeli uczenia maszynowego, których zadaniem będzie rozpoznawnie wybranych gestów. 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIA PIPE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Generowanie grafiki dłoni}
+% \subsection{MediaPipe - Elementy charakterystyczne}
 
-\quad Generowanie grafiki nałożonej na daną dłoń wykonuje się przy pomocy przygotowanej funkcji biblioteki MediaPipe, która współpracuje z OpenCV. 
+% \subsection{Generowanie grafiki dłoni}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%% SciKit Learn %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%% SciKit Learn %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% \section{SciKit Learn - uczenie maszynowe}
 
-\section{SciKit Learn - uczenie maszynowe}
-
-\quad SciKit Learn to biblioteka, która oferuje różnego typu metody uczenia maszynowego. Biblioteka zawiera algorytmy klasyfikacji, regresjii oraz analizy skupień. Przykładowym algorytmami w bibliotece są:
-
-\begin{itemize}
-    \item Las losowy - polegająca na konstruowaniu wielu drzew decyzyjnych w czasie uczenia. 
-    \item Algorytm centroidów - algorytm wykorzystywany w analizie skupień.
-    \item Maszyna wektorów nośnoych - algorytm klasyfikujący, często wykorzystywany w procesie rozpoznawania obrazów. 
-\end{itemize}
-
-O wszystkich dostępnych algorytmach informacje można znaleźć w ogólnodostępnej dokumentacji biblioteki. 

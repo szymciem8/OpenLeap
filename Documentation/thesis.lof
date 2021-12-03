@@ -3,12 +3,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Elementy charakterystyczne dłoni}}{13}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Struktura paczki PyPi}}{17}{figure.4.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Podpis rysunku po rysunkiem.}}{20}{figure.5.1}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Zrzut ekranu programu testowego}}{13}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Przykład wykorzystania parametrów}}{14}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Zrzut ekranu aplikacji roznającej język migowy}}{15}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Zrzut ekranu kiosku interaktywnego}}{16}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Zrzut ekranu aplikacji ustawiającej kolor}}{17}{figure.5.5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Klasa \lstinline |descriptor_gaussian|.}}{22}{figure.6.1}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Elementy charakterystyczne dłoni}}{20}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Elementy charakterystyczne dłoni}}{21}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Ogólny algorytm przygotowania modeli uczenia maszynowego}}{23}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Ogólny algorytm przygotowania modeli uczenia maszynowego}}{24}{figure.6.4}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Ogólny algorytm przygotowania modeli uczenia maszynowego}}{26}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Struktura paczki PyPi}}{27}{figure.6.6}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Strona modułu OpenLeap na PyPi}}{28}{figure.6.7}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {british}{}
