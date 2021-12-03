@@ -21,8 +21,7 @@ Jeśli to Specyfikacja zewnętrzna:
 \quad Elementem niezbędnym do korzystania z modułu OpenLeap jest kamera, która pozwoli na pozyskanie obrazu dłoni. Rozdzielczość matrycy kamery powinna pozwolić na rozpoznanie dłoni. Liczba klatek na sekundę powinna być wystarczająco wysoka, tak aby można było sprawnie korzystać z paczki. 
 
 \section{Wymagania programowe}
-\quad Pierszym elementem jest język Python, który pozwoli na interpetację napisanego modułu. 
-\quad Reszta potrzebnych zależności zostanie zainstalowana automatycznie. 
+\quad Pierszym elementem jest język Python, który pozwoli na interpetację napisanego modułu. Reszta potrzebnych zależności zostanie zainstalowana automatycznie. 
 
 \section{Instalacja paczki}
 \quad Instalcja paczki odbywa się poprzez wykorzystanie programu pip, który jest instalowany automatycznie razem z językiem Python. W zależności od wybranego systemu operacyjnego, komenda może przybierać inne formy 
@@ -33,9 +32,45 @@ Jeśli to Specyfikacja zewnętrzna:
 
 \section{Przykładowy program}
 
-\section{Przykład działania}
+\quad Paczkę można przetestować korzystając z wybodowanych gotowych funkcji. Program można napisać w powłoce języka Python lub po prostu zapisać go do pliku. 
+
+\begin{lstlisting}[language=python]
+    import openleap 
+
+    controller = openleap.OpenLeap()
+
+    controller.loop()
+\end{lstlisting}
+
+\quad Taki krótki program pozwoli na wyświetlenie okna z widocznymi dłońmi z oznaczonymi punktami charakterystycznymi wraz z opisem parametrów, takich jak obrót dłoni, jej pozycja czy rozpoznany gest. Zrzut ekranu testowego programu znajduje się poniżej. 
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{example-image-a}
+        \caption{Zrzut ekranu programu testowego}
+    \end{center}
+\end{figure}
+
+\section{Funkcjonalność modułu}
 \quad Paczkę można wykorzystać tam gdzie wymagane jest wykorzystanie gestów oraz ruchów dłoni. Paczka może znaleźć zastosowanie aplikacjach użytku codziennego, robotyce lub pełnić formę peryferium komputerowego.  
 
+\subsection{Paramety}
+\quad Obiekt kontrolera może zostać stworzony z wybranymi parametrami. Można wybrać czy należy wyświetlić podgląd kamery, czy wyświetlić dane na podglądzie oraz w konsoli oraz wybrać tło podglądu, czarne lub obraz z kamery. 
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{example-image-a}
+        \caption{Przykład wykorzystania parametrów}
+    \end{center}
+\end{figure}
+
+\subsection{Dostępne funkcje}
+
+\subsection{Główny wątek}
+\quad Działanie kontrolera opiera się na wywoływaniu funkcji \textbf{main()}. Tą funkcję można wywołać za pomocą wybudowanej funkcji \textbf{loop()}, która po prostu wywołuje funkcję \textbf{main()} w pętli wraz z warunkiem wyjścia z programu. Takie podejście może ułatwić stosowanie kontrolera w osobnym wątku aplikacji. 
+\quad Alternatywnym podejściem jest po prostu zastosowanie funkcji \textbf{main()} w pętli budowanego programu. Takie rozwiązanie daje podobny rezultat, ale bez konieczności wykorzystania osobnego wątku. 
+
+\section{Przykładu użycia}
 \subsection{Rozpoznawanie alfabetu w języku migowym}
 \quad Pierwszym przykładem zastosowania jest wykorzystanie paczki do rozpoznawnia alfabetu języka migowego. Taki program może umożliwić komunikację między osobą głuchoniemą posługującą się językiem migowym, a osobą, które takiego jęzka nie zna. 
 
