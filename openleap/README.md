@@ -46,7 +46,7 @@ OpenLeap object can be created with couple of options.
 
 Recognized gestures, hand position, tilt and so on are stored in a dictionary called 'data' that consists of two dataclass objects for right and left hand. Dataclass object is of given structure:
 
-'''
+```
 @dataclass
 class Data:
     x : float = 0
@@ -55,6 +55,6 @@ class Data:
     distance: float = 0.0
     angle: float = 0.0
     gesture: str = None
-'''
+```
 
 
