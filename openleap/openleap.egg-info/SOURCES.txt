@@ -1,6 +1,5 @@
 LICENSE
 MANIFEST.in
-README.md
 setup.py
 openleap/OpenLeap.py
 openleap/__init__.py

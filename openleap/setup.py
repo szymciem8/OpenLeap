@@ -5,7 +5,7 @@ with open("../README.md", "r") as fh:
 
 setup(
     name='openleap', 
-    version='0.5.02',
+    version='0.5.03',
     author='Szymon Ciemała',
     author_email='szymciem@protonmail.com',
     long_description=long_description,

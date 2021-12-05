@@ -12,10 +12,10 @@ OpenLeap is an open source project that allows you to add hand gesture control t
 
 Project was created with technologies:
 
-* Python
-* OpenCV
-* MediaPipe
-* SciKit Learn
+- Python
+- OpenCV
+- MediaPipe
+- SciKit Learn
 
 ## Setup
 OpenLeap can be installed using pip, as shown below.
@@ -26,21 +26,25 @@ $ pip install openleap
 
 ## Simple Example
 
+Test openleap controller with an example program. Code below will create an instance of opencv window with feed from the camera. 
+
+
+
 ```
 import openleap
 
-controller = openleap.OpenLeap(SCREEN_SHOW=True, SHOW_DATA_ON_IMAGE=True, GESTURE_MODEL='sign_language')
+controller = openleap.OpenLeap(screen_show=True, screeen_type='BLACK', show_data_on_image=True, gesture_model='sign_language')
 
 controller.loop()
 
 ```
 
 OpenLeap object can be created with couple of options. 
-1. SCREEN_SHOW - if set to True, window with camera feed will be created. 
-2. SCREEN_TYPE - 'cam' or 'black' background. 
-3. SHOW_DATA_ON_IMAGE - descriptive
-4. SHOW_DATA_IN_CONSOLE - descriptive
-5. GESTURE_MODEL - chose gesture recognition model, 'basic' or 'sign_language'
+- **screen_show** - if set to True, window with camera feed will be created. 
+- **screen_type** - 'cam' or 'black' background. 
+- **show_data_on_image** - descriptive
+- **show_data_in_console** - descriptive
+- **gesture_model** - chose gesture recognition model, 'basic' or 'sign_language'
 
 ## Access hand information
 
@@ -57,4 +61,4 @@ class Data:
     gesture: str = None
 ```
 
-
+Dataclass containing all of the data above is continuously being updated in **main()** or **loop()** function depending on which one is being used. 

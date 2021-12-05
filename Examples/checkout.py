@@ -1,18 +1,8 @@
 from openleap import OpenLeap
 import pygame
 from pygame.locals import *
+import os
 
-controller = OpenLeap(SHOW_DATA_IN_CONSOLE=False, SCREEN_SHOW=True, SCREEN_TYPE='CAM', SHOW_DATA_ON_IMAGE=True)
-
-HEIGHT, WIDTH = 900, 880
-pygame.init()
-
-# # flags = FULLSCREEN | DOUBLEBUF
-
-flags = DOUBLEBUF
-
-screen = pygame.display.set_mode((HEIGHT, WIDTH), flags, 16)
-screen.fill(pygame.Color(0, 150, 150))
 
 def sort_dict(dictionary):
     ret_dict = {}
@@ -26,7 +16,7 @@ def sort_dict(dictionary):
 def draw_cursor():
     global cursor
 
-    x = (controller.data['right'].x-0.25)/0.75 
+    x = (controller.data['right'].x-0.25)/0.75
     if x>1: x=1
     if x<0: x=0
     x *= WIDTH
@@ -48,8 +38,22 @@ def draw_cursor():
         pygame.draw.rect(screen, pygame.Color(0,0,0), cursor)
     pygame.display.update(cursor)
 
+
+
+controller = OpenLeap(SHOW_DATA_IN_CONSOLE=False, SCREEN_SHOW=True, SCREEN_TYPE='BLACK', SHOW_DATA_ON_IMAGE=True)
+
+HEIGHT, WIDTH = 900, 880
+pygame.init()
+
+# # flags = FULLSCREEN | DOUBLEBUF
+
+flags = DOUBLEBUF
+
+screen = pygame.display.set_mode((HEIGHT, WIDTH), flags, 16)
+screen.fill(pygame.Color(0, 150, 150))
+
 '''
-CURSOS
+CURSOR
 '''
 cursor = pygame.Rect(0, 0, 10, 10)
 
@@ -68,9 +72,12 @@ buttons['taco'] = pygame.Rect(buttons_x, 450, 250, 200)
 buttons['fries'] = pygame.Rect(buttons_x, 670, 250, 200)
 
 images = {}
-images['burger'] = pygame.image.load('graphics/burger.png')
+
+this_dir, this_filename = os.path.split(__file__)  # Get path of data.pkl
+# images['burger'] = pygame.image.load('graphics/burger.png')
 for key, element in buttons.items():
-    images[key] = pygame.image.load('graphics/'+key+'.png')
+    data_path = os.path.join(this_dir, 'graphics/'+key+'.png')
+    images[key] = pygame.image.load(data_path)
 
 '''
 ORDER LIST
@@ -116,7 +123,7 @@ while True:
         if element > 0:
             screen.blit(order_list_font_small.render(f'{i+1}. {key}, x {element}', False, (0,0,0)), (480, 150+50*i))
         i += 1
-    
+
 
     #Cursor
     draw_cursor()

@@ -23,12 +23,12 @@ class OpenLeap():
         gesture: str = None
 
     def __init__(self, 
-                SCREEN_SHOW=False, 
-                SCREEN_TYPE='BLACK', 
-                SHOW_DATA_IN_CONSOLE=False, 
-                SHOW_DATA_ON_IMAGE=False, 
-                NORMALIZED_POSITION=True,
-                GESTURE_MODEL='sign_language'
+                screen_show=False, 
+                screen_type='BLACK', 
+                show_data_in_console=False, 
+                show_data_on_image=False, 
+                normalized_position=True,
+                gesture_model='sign_language'
         ):
 
         super().__init__()
@@ -38,9 +38,9 @@ class OpenLeap():
                 'left' : self.Data()
                 }
 
-        if GESTURE_MODEL=='basic':
+        if gesture_model=='basic':
             file_name='gesture_recognition.pkl'
-        elif GESTURE_MODEL=='sign_language':
+        elif gesture_model=='sign_language':
             file_name='sign_language_alphabet.pkl'
 
         this_dir, this_filename = os.path.split(__file__)  # Get path of data.pkl
@@ -52,13 +52,13 @@ class OpenLeap():
         self.cap = cv2.VideoCapture(0)
 
         #OPTIONS
-        self.SCREEN_SHOW=SCREEN_SHOW
-        self.SCREEN_TYPE=SCREEN_TYPE # black or cam
+        self.screen_show=screen_show
+        self.screen_type=screen_type # black or cam
 
-        self.SHOW_DATA_IN_CONSOLE=SHOW_DATA_IN_CONSOLE
-        self.SHOW_DATA_ON_IMAGE=SHOW_DATA_ON_IMAGE
+        self.show_data_in_console=show_data_in_console
+        self.show_data_on_image=show_data_on_image
 
-        self.NORMALIZED_POSITION=NORMALIZED_POSITION
+        self.normalized_position=normalized_position
 
         #CONSTANTS
         self.WIDTH = int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -227,14 +227,15 @@ class OpenLeap():
                 i=1
                 for field in d.__dataclass_fields__:
                     value = getattr(d, field)
-                    #print(field, value)
 
                     if field == 'distance' or field == 'angle':
-                        #vars(d)['distnace'] = "{:.2f}".format(value)
-                        text = "%s = %s" %(field, str(int(value)))
+                        text = f'{field} = {int(value)}'
+                        cv2.putText(image, text, (10+(1-index)*400, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
+                    elif field in ['x', 'y', 'z']:
+                        text = f'{field} = {round(value, 3)}'
                         cv2.putText(image, text, (10+(1-index)*400, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
                     else:
-                        text = "%s = %s" %(field, str(value))
+                        text = f'{field} = {value}'
                         cv2.putText(image, text, (10+(1-index)*400, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
                     i+=1
     
@@ -296,11 +297,11 @@ class OpenLeap():
             #RGB to BGR
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
-            if self.SCREEN_SHOW:
-                if self.SCREEN_TYPE=='BLACK':
+            if self.screen_show:
+                if self.screen_type=='BLACK':
                     background = np.zeros([self.HEIGHT,self.WIDTH,3], dtype=np.uint8)
                     background.fill(0)
-                elif self.SCREEN_TYPE == 'CAM':
+                elif self.screen_type == 'CAM':
                     background = image
 
             #Rendering results
@@ -312,7 +313,7 @@ class OpenLeap():
                         #If there are two hands
                         if self.left_or_right(index, hand, 'position'):
                             hand_type = self.left_or_right(index, hand, 'position')
-                            x, y, z = self.get_position(index, self.mp_hands.HandLandmark.WRIST, normalized=self.NORMALIZED_POSITION)
+                            x, y, z = self.get_position(index, self.mp_hands.HandLandmark.WRIST, normalized=self.normalized_position)
 
                             self.data[hand_type].x = x
                             self.data[hand_type].y = y
@@ -327,10 +328,10 @@ class OpenLeap():
                             self.data[hand_type].angle = self.get_angle(index, self.mp_hands.HandLandmark.MIDDLE_FINGER_MCP, unit='degree')
                             self.data[hand_type].gesture = self.get_gesture(index)
 
-                            if self.SCREEN_SHOW:
+                            if self.screen_show:
 
-                                x1, y1, z1 = self.get_position(index, self.mp_hands.HandLandmark.INDEX_FINGER_TIP, normalized= not self.NORMALIZED_POSITION)
-                                x2, y2, z2 = self.get_position(index, self.mp_hands.HandLandmark.THUMB_TIP, normalized= not self.NORMALIZED_POSITION)
+                                x1, y1, z1 = self.get_position(index, self.mp_hands.HandLandmark.INDEX_FINGER_TIP, normalized= not self.normalized_position)
+                                x2, y2, z2 = self.get_position(index, self.mp_hands.HandLandmark.THUMB_TIP, normalized= not self.normalized_position)
 
                                 #Draw line that connects index finger tip and thumb tip
                                 cv2.line(background, (x1, y1), (x2, y2), (255, 125, 100), 2)
@@ -339,16 +340,16 @@ class OpenLeap():
                                             self.mp_drawing.DrawingSpec(color=(0,255,0), thickness=2, circle_radius=4),
                                             self.mp_drawing.DrawingSpec(color=(0,0,255), thickness=2, circle_radius=4))
                                 
-                                if self.SHOW_DATA_ON_IMAGE:
+                                if self.show_data_on_image:
                                     #Show on screen
-                                    x, y, z = self.get_position(index, self.mp_hands.HandLandmark.WRIST, normalized= not self.NORMALIZED_POSITION)
+                                    x, y, z = self.get_position(index, self.mp_hands.HandLandmark.WRIST, normalized= not self.normalized_position)
                                     cv2.putText(background, hand_type, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
 
-                                self.show_data(background, console=self.SHOW_DATA_IN_CONSOLE, on_image=self.SHOW_DATA_ON_IMAGE)
+                                self.show_data(background, console=self.show_data_in_console, on_image=self.show_data_on_image)
 
-                            self.show_data(console=self.SHOW_DATA_IN_CONSOLE, on_image=self.SHOW_DATA_ON_IMAGE)
+                            self.show_data(console=self.show_data_in_console, on_image=self.show_data_on_image)
 
-            if self.SCREEN_SHOW:
+            if self.screen_show:
                 cv2.imshow("Hand Tracking", background)
                 background.fill(0)
 
@@ -369,11 +370,11 @@ if __name__=='__main__':
     Use example of OpenLeap object. 
     '''
 
-    controller = OpenLeap(SHOW_DATA_IN_CONSOLE=False, SCREEN_SHOW=True, SCREEN_TYPE='CAM', SHOW_DATA_ON_IMAGE=True)
+    controller = OpenLeap(show_data_in_console=True, screen_show=True, screen_type='CAM', show_data_on_image=True)
 
     while True:
         controller.main()
-        print(controller.relative_position['right'])
+        # print(controller.relative_position['right'])
         if controller.detect_key('q'):
             controller.close_window()
             break
