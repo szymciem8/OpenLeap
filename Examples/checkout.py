@@ -40,7 +40,8 @@ def draw_cursor():
 
 
 
-controller = OpenLeap(SHOW_DATA_IN_CONSOLE=False, SCREEN_SHOW=True, SCREEN_TYPE='BLACK', SHOW_DATA_ON_IMAGE=True)
+# controller = OpenLeap(show_data_in_console==False, screen_show==True, screen_type=='BLACK', show_data_on_image==True)
+controller = OpenLeap(screen_show=True, show_data_on_image=True, screen_type='BLACK', show_data_in_console=True)
 
 HEIGHT, WIDTH = 900, 880
 pygame.init()

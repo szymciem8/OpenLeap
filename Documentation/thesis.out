@@ -25,12 +25,12 @@
 \BOOKMARK [1][-]{section.5.3}{Instalacja paczki}{chapter.5}% 25
 \BOOKMARK [1][-]{section.5.4}{Przyk\233adowy program}{chapter.5}% 26
 \BOOKMARK [1][-]{section.5.5}{Funkcjonalnosc modu\233u}{chapter.5}% 27
-\BOOKMARK [2][-]{subsection.5.5.1}{Paramety}{section.5.5}% 28
+\BOOKMARK [2][-]{subsection.5.5.1}{Parametry}{section.5.5}% 28
 \BOOKMARK [2][-]{subsection.5.5.2}{Dostepne funkcje}{section.5.5}% 29
 \BOOKMARK [2][-]{subsection.5.5.3}{G\233\363wny watek}{section.5.5}% 30
-\BOOKMARK [1][-]{section.5.6}{Przyk\233adu uzycia}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.6}{Przyk\233ady uzycia}{chapter.5}% 31
 \BOOKMARK [2][-]{subsection.5.6.1}{Rozpoznawanie alfabetu w jezyku migowym}{section.5.6}% 32
-\BOOKMARK [2][-]{subsection.5.6.2}{Interaktywny Kioski}{section.5.6}% 33
+\BOOKMARK [2][-]{subsection.5.6.2}{Interaktywny Kiosk}{section.5.6}% 33
 \BOOKMARK [2][-]{subsection.5.6.3}{Dob\363r koloru}{section.5.6}% 34
 \BOOKMARK [0][-]{chapter.6}{[W\233asciwy dla kierunku - np.Specyfikacja wewnetrzna]}{}% 35
 \BOOKMARK [1][-]{section.6.1}{Rozpoznawanie d\233oni}{chapter.6}% 36
@@ -42,14 +42,15 @@
 \BOOKMARK [2][-]{subsection.6.2.2}{Zebranie danych}{section.6.2}% 42
 \BOOKMARK [2][-]{subsection.6.2.3}{Metody klasyfikacji - uczenie maszynowe}{section.6.2}% 43
 \BOOKMARK [2][-]{subsection.6.2.4}{Ponowne wykorzystanie modelu}{section.6.2}% 44
-\BOOKMARK [1][-]{section.6.3}{Paczka PyPi}{chapter.6}% 45
-\BOOKMARK [2][-]{subsection.6.3.1}{Budowa paczki}{section.6.3}% 46
-\BOOKMARK [2][-]{subsection.6.3.2}{Struktura Paczki}{section.6.3}% 47
-\BOOKMARK [2][-]{subsection.6.3.3}{Pliki Konfiguracyjne}{section.6.3}% 48
-\BOOKMARK [2][-]{subsection.6.3.4}{Za\233adowanie paczki do repozytorium}{section.6.3}% 49
-\BOOKMARK [0][-]{chapter.7}{Weryfikacja i walidacja}{}% 50
-\BOOKMARK [0][-]{chapter.8}{Podsumowanie i wnioski}{}% 51
-\BOOKMARK [0][-]{chapter.8}{Bibliografia}{}% 52
-\BOOKMARK [0][-]{appendix*.2}{Spis skr\363t\363w i symboli}{}% 53
-\BOOKMARK [0][-]{appendix*.3}{Zr\363d\233a}{}% 54
-\BOOKMARK [0][-]{appendix*.4}{Zawartosc do\233aczonej p\233yty}{}% 55
+\BOOKMARK [1][-]{section.6.3}{Budowa Klasy}{chapter.6}% 45
+\BOOKMARK [1][-]{section.6.4}{Paczka PyPi}{chapter.6}% 46
+\BOOKMARK [2][-]{subsection.6.4.1}{Budowa paczki}{section.6.4}% 47
+\BOOKMARK [2][-]{subsection.6.4.2}{Struktura Paczki}{section.6.4}% 48
+\BOOKMARK [2][-]{subsection.6.4.3}{Pliki Konfiguracyjne}{section.6.4}% 49
+\BOOKMARK [2][-]{subsection.6.4.4}{Za\233adowanie paczki do repozytorium}{section.6.4}% 50
+\BOOKMARK [0][-]{chapter.7}{Weryfikacja i walidacja}{}% 51
+\BOOKMARK [0][-]{chapter.8}{Podsumowanie i wnioski}{}% 52
+\BOOKMARK [0][-]{chapter.8}{Bibliografia}{}% 53
+\BOOKMARK [0][-]{appendix*.16}{Spis skr\363t\363w i symboli}{}% 54
+\BOOKMARK [0][-]{appendix*.17}{Zr\363d\233a}{}% 55
+\BOOKMARK [0][-]{appendix*.18}{Zawartosc do\233aczonej p\233yty}{}% 56

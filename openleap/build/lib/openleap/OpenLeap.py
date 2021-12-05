@@ -330,20 +330,20 @@ class OpenLeap():
 
                             if self.screen_show:
 
-                                x1, y1, z1 = self.get_position(index, self.mp_hands.HandLandmark.INDEX_FINGER_TIP, normalized= not self.normalized_position)
-                                x2, y2, z2 = self.get_position(index, self.mp_hands.HandLandmark.THUMB_TIP, normalized= not self.normalized_position)
+                                x1, y1, z1 = self.get_position(index, self.mp_hands.HandLandmark.INDEX_FINGER_TIP, normalized = not self.normalized_position)
+                                x2, y2, z2 = self.get_position(index, self.mp_hands.HandLandmark.THUMB_TIP, normalized = not self.normalized_position)
 
                                 #Draw line that connects index finger tip and thumb tip
                                 cv2.line(background, (x1, y1), (x2, y2), (255, 125, 100), 2)
 
                                 self.mp_drawing.draw_landmarks(background, hand, self.mp_hands.HAND_CONNECTIONS,
-                                            self.mp_drawing.DrawingSpec(color=(0,255,0), thickness=2, circle_radius=4),
-                                            self.mp_drawing.DrawingSpec(color=(0,0,255), thickness=2, circle_radius=4))
+                                            self.mp_drawing.DrawingSpec(color=(75,50,200), thickness=2, circle_radius=2),
+                                            self.mp_drawing.DrawingSpec(color=(225,180,10), thickness=2, circle_radius=2))
                                 
                                 if self.show_data_on_image:
                                     #Show on screen
                                     x, y, z = self.get_position(index, self.mp_hands.HandLandmark.WRIST, normalized= not self.normalized_position)
-                                    cv2.putText(background, hand_type, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
+                                    cv2.putText(background, hand_type, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
                                 self.show_data(background, console=self.show_data_in_console, on_image=self.show_data_on_image)
 
@@ -370,7 +370,7 @@ if __name__=='__main__':
     Use example of OpenLeap object. 
     '''
 
-    controller = OpenLeap(show_data_in_console=True, screen_show=True, screen_type='CAM', show_data_on_image=True)
+    controller = OpenLeap(show_data_in_console=True, screen_show=True, screen_type='BLACK', show_data_on_image=True)
 
     while True:
         controller.main()
