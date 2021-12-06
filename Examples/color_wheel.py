@@ -4,7 +4,7 @@ from pygame.locals import *
 import colorsys
 
 
-controller = OpenLeap(SHOW_DATA_IN_CONSOLE=False, SCREEN_SHOW=True, SCREEN_TYPE='CAM', SHOW_DATA_ON_IMAGE=True)
+controller = OpenLeap(screen_show=True, show_data_on_image=True, screen_type='BLACK', show_data_in_console=True, gesture_model='basic')
 
 HEIGHT, WIDTH = 900, 900
 pygame.init()

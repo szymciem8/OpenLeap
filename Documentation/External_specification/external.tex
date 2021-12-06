@@ -30,6 +30,15 @@ Jeśli to Specyfikacja zewnętrzna:
     $ pip install openleap
 \end{lstlisting}
 
+\quad Informacje na temat biblioteki można znaleźć na platfomie PyPi pod linkiem: \href{https://pypi.org/project/openleap/}{https://pypi.org/project/openleap/}. Na tej stronie znajduje się opis modułu, instrukcja instalacji oraz przykładowy program.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{example-image-a}
+        \caption{Strona modułu OpenLeap na PyPi}
+    \end{center}
+\end{figure}
+
 \section{Przykładowy program}
 
 \quad Paczkę można przetestować korzystając z wybodowanych gotowych funkcji. Program można napisać w powłoce języka Python lub po prostu zapisać go do pliku. 
@@ -148,23 +157,43 @@ Jeśli to Specyfikacja zewnętrzna:
 \quad Odległość między tymi dwoma punktami jest obliczana automatycznie poprzez wbudowaną funkcję klasy OpenLeap. 
 
 \subsection{Dobór koloru}
-\quad Ostatnim przykładem jest wykorzystanie dłoni jako kontrolera, za którego pomocą można wybrać dowolny kolor. Takie zastosowanie może zostać wykorzystane w pracy grafika komputerowego. Dzięki temu użytkownik będzie mógł zmieniać kolor wykorzysytywanego narzędzia bez przerywania pracy, na przykład malowania. 
+\quad Ostatnim przykładem jest wykorzystanie dłoni jako kontrolera, za którego pomocą można wybrać dowolny kolor. Takie zastosowanie może zostać wykorzystane w pracy grafika komputerowego. Dzięki temu użytkownik będzie mógł zmieniać kolor wykorzysytywanego narzędzia bez przerywania pracy, na przykład malowania. Kolor można ustawiać tyko wtedy kiedy gest lewej ręki jest gestem otwartej dłoni. 
 
 
 \begin{figure}[H]
     \centering
-    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f1}}
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/yellow_hand_deg.png}\label{fig:f1}}
     \hfill
-    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f2}}
-    \caption{Obrót dłoni o.}
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/yellow.png}\label{fig:f2}}
+    \caption{Obrót dłoni o 30 stopni.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f1}}
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/blueish_hand_deg.png}\label{fig:f1}}
     \hfill
-    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f2}}
-    \caption{Obrót dłoni o.}
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/blueish.png}\label{fig:f2}}
+    \caption{Obrót dłoni o 96 stopni.}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/pink_hand_deg.png}\label{fig:f1}}
+    \hfill
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/pink.png}\label{fig:f2}}
+    \caption{Obrót dłoni o 174 stopni.}
+\end{figure}
+
+\quad Dodatkową opcją jest ustawienie saturacji poprzez obliczenie jej wartości na podstawie odległości między palcem wskazującym, a kciukiem. 
+
+\begin{figure}[H]
+    \centering
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/zero_sat_hand_deg.png}\label{fig:f1}}
+    \hfill
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/zero_sat.png}\label{fig:f2}}
+    \caption{Ustawienie saturacji}
+\end{figure}
+
+
 
 \quad Podobnie jak obliczenie odległości między palcami, biblioteka oblicza obrót dłoni wokół osi Z punktu opisującego pozycję nadgarstka.

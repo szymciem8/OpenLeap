@@ -26,42 +26,42 @@
 \contentsline {subsection}{\numberline {5.1.1}Kamera}{11}{subsection.5.1.1}%
 \contentsline {section}{\numberline {5.2}Wymagania programowe}{12}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Instalacja paczki}{12}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Przykładowy program}{12}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Funkcjonalność modułu}{13}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Parametry}{13}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Dostępne funkcje}{14}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Główny wątek}{14}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.4}Przykładowy program}{13}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Funkcjonalność modułu}{14}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Parametry}{14}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Dostępne funkcje}{15}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Główny wątek}{15}{subsection.5.5.3}%
 \contentsline {section}{\numberline {5.6}Przykłady użycia}{15}{section.5.6}%
 \contentsline {subsection}{\numberline {5.6.1}Rozpoznawanie alfabetu w języku migowym}{15}{subsection.5.6.1}%
 \contentsline {subsection}{\numberline {5.6.2}Interaktywny Kiosk}{17}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Dobór koloru}{18}{subsection.5.6.3}%
-\contentsline {chapter}{\numberline {6}[Właściwy dla kierunku - np.Specyfikacja wewnętrzna]}{21}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Budowa klasy}{21}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Struktury danych}{22}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Dataclass}{22}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Pickle}{22}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Rozpoznawanie dłoni}{22}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}OpenCV - przygotowanie obrazu z kamery}{22}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}MediaPipe - Elementy charakterystyczne}{23}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Generowanie grafiki dłoni}{24}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}SciKit Learn - uczenie maszynowe}{24}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Przygotowanie modeli uczenia maszynowego}{25}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Zebranie danych}{26}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Metody klasyfikacji - uczenie maszynowe}{29}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}Ponowne wykorzystanie modelu}{30}{subsection.6.4.4}%
-\contentsline {section}{\numberline {6.5}Budowa Klasy}{30}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Paczka PyPi}{30}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}Budowa paczki}{30}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}Struktura Paczki}{30}{subsection.6.6.2}%
-\contentsline {subsection}{\numberline {6.6.3}Pliki Konfiguracyjne}{30}{subsection.6.6.3}%
-\contentsline {subsection}{\numberline {6.6.4}Załadowanie paczki do repozytorium}{31}{subsection.6.6.4}%
-\contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{33}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Podsumowanie i wnioski}{35}{chapter.8}%
-\contentsline {chapter}{Bibliografia}{35}{chapter.8}%
-\contentsline {chapter}{Spis skrótów i symboli}{39}{appendix*.17}%
+\contentsline {subsection}{\numberline {5.6.3}Dobór koloru}{19}{subsection.5.6.3}%
+\contentsline {chapter}{\numberline {6}[Właściwy dla kierunku - np.Specyfikacja wewnętrzna]}{23}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Budowa klasy}{23}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Struktury danych}{24}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Dataclass}{24}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Pickle}{24}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Rozpoznawanie dłoni}{24}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}OpenCV - przygotowanie obrazu z kamery}{24}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}MediaPipe - Elementy charakterystyczne}{25}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Generowanie grafiki dłoni}{26}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}SciKit Learn - uczenie maszynowe}{26}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Przygotowanie modeli uczenia maszynowego}{27}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Zebranie danych}{28}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Metody klasyfikacji - uczenie maszynowe}{31}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Ponowne wykorzystanie modelu}{32}{subsection.6.4.4}%
+\contentsline {section}{\numberline {6.5}Budowa Klasy}{32}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Paczka PyPi}{32}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Budowa paczki}{32}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Struktura Paczki}{32}{subsection.6.6.2}%
+\contentsline {subsection}{\numberline {6.6.3}Pliki Konfiguracyjne}{32}{subsection.6.6.3}%
+\contentsline {subsection}{\numberline {6.6.4}Załadowanie paczki do repozytorium}{33}{subsection.6.6.4}%
+\contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{35}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Podsumowanie i wnioski}{37}{chapter.8}%
+\contentsline {chapter}{Bibliografia}{37}{chapter.8}%
+\contentsline {chapter}{Spis skrótów i symboli}{41}{appendix*.19}%
 \babel@toc {british}{}
 \babel@toc {polish}{}
 \babel@toc {british}{}
 \babel@toc {polish}{}
-\contentsline {chapter}{Źródła}{41}{appendix*.18}%
-\contentsline {chapter}{Zawartość dołączonej płyty}{43}{appendix*.19}%
+\contentsline {chapter}{Źródła}{43}{appendix*.20}%
+\contentsline {chapter}{Zawartość dołączonej płyty}{45}{appendix*.21}%

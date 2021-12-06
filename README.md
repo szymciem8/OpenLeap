@@ -1,9 +1,13 @@
 # OpenLeap
 
 ## Table of contents
-* [General Info](#general-info)
-* [Technologies](#technologies)
-* [Setup](#setup)
+- [OpenLeap](#openleap)
+  - [Table of contents](#table-of-contents)
+  - [General Info](#general-info)
+  - [Technologies](#technologies)
+  - [Setup](#setup)
+  - [Simple Example](#simple-example)
+  - [Access Hand Information](#access-hand-information)
 
 ## General Info
 OpenLeap is an open source project that allows you to add hand gesture control to your Python projects. 
@@ -29,15 +33,19 @@ $ pip install openleap
 Test openleap controller with an example program. Code below will create an instance of opencv window with feed from the camera. 
 
 
-
 ```
 import openleap
 
-controller = openleap.OpenLeap(screen_show=True, screeen_type='BLACK', show_data_on_image=True, gesture_model='sign_language')
+controller = openleap.OpenLeap(screen_show=True, 
+                               screeen_type='BLACK', 
+                               show_data_on_image=True,
+                               gesture_model='sign_language')
 
 controller.loop()
 
 ```
+
+![](Documentation/images/example_program.gif)
 
 OpenLeap object can be created with couple of options. 
 - **screen_show** - if set to True, window with camera feed will be created. 
@@ -46,7 +54,7 @@ OpenLeap object can be created with couple of options.
 - **show_data_in_console** - descriptive
 - **gesture_model** - chose gesture recognition model, 'basic' or 'sign_language'
 
-## Access hand information
+## Access Hand Information
 
 Recognized gestures, hand position, tilt and so on are stored in a dictionary called 'data' that consists of two dataclass objects for right and left hand. Dataclass object is of given structure:
 

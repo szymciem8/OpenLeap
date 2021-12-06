@@ -370,7 +370,7 @@ if __name__=='__main__':
     Use example of OpenLeap object. 
     '''
 
-    controller = OpenLeap(show_data_in_console=True, screen_show=True, screen_type='CAM', show_data_on_image=True, gesture_model='basic')
+    controller = OpenLeap(show_data_in_console=True, screen_show=True, screen_type='BLACK', show_data_on_image=True, gesture_model='basic')
 
     while True:
         controller.main()
