@@ -41,7 +41,7 @@ controller.loop()
 
 OpenLeap object can be created with couple of options. 
 - **screen_show** - if set to True, window with camera feed will be created. 
-- **screen_type** - 'cam' or 'black' background. 
+- **screen_type** - "CAM" or "BLACK" background. 
 - **show_data_on_image** - descriptive
 - **show_data_in_console** - descriptive
 - **gesture_model** - chose gesture recognition model, 'basic' or 'sign_language'
