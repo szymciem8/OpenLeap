@@ -66,14 +66,31 @@ Jeśli to Specyfikacja zewnętrzna:
 \subsection{Parametry}
 \quad Obiekt kontrolera może zostać stworzony z wybranymi parametrami. Można wybrać czy należy wyświetlić podgląd kamery, czy wyświetlić dane na podglądzie oraz w konsoli oraz wybrać tło podglądu, czarne lub obraz z kamery. 
 
-\begin{itemize}
-    \item \textbf{screen\_show} - podgląd okna
-    \item \textbf{screen\_type} - typ tła: kamera ("CAM") lub czarne ("BLACK")
-    \item \textbf{show\_data\_in\_console} - wyświetlanie danych w konsoli
-    \item \textbf{show\_data\_on\_image} - wyświetlanie danych w oknie graficznym
-    \item \textbf{normalized\_position} - wyświetlanie
+% \begin{itemize}
+%     \item \textbf{screen\_show} - podgląd okna
+%     \item \textbf{screen\_type} - typ tła: kamera ("CAM") lub czarne ("BLACK")
+%     \item \textbf{show\_data\_in\_console} - wyświetlanie danych w konsoli
+%     \item \textbf{show\_data\_on\_image} - wyświetlanie danych w oknie graficznym
+%     \item \textbf{normalized\_position} - wyświetlanie
+%     \item \textbf{gestrure\_model} - wybór modelu rozpoznającego gesty
+% \end{itemize}
+
+\begin{enumerate}
+    \item \textbf{screen\_show} - podgląd okna, typ \textbf{boolean}
+    \item \textbf{screen\_type} - typ tła
+    \begin{enumerate}
+        \item \enquote{CAM} - obraz z kamery
+        \item \enquote{BLACK} - czarne tło
+    \end{enumerate}
+    \item \textbf{show\_data\_in\_console} - wyświetlanie danych w konsoli, typ \textbf{boolean}
+    \item \textbf{show\_data\_on\_image} - wyświetlanie danych w oknie graficznym, typ \textbf{boolean}
+    \item \textbf{normalized\_position} - wyświetlanie znormalizowanej pozycji, typ \textbf{boolean}
     \item \textbf{gestrure\_model} - wybór modelu rozpoznającego gesty
-\end{itemize}
+    \begin{enumerate}
+        \item \enquote{basic} - gesty podstawowe
+        \item \enquote{sign\_language} - język migowy
+    \end{enumerate}
+\end{enumerate}
 
 
 \begin{figure}[H]
@@ -129,9 +146,27 @@ Jeśli to Specyfikacja zewnętrzna:
 \subsection{Dobór koloru}
 \quad Ostatnim przykładem jest wykorzystanie dłoni jako kontrolera, za którego pomocą można wybrać dowolny kolor. Takie zastosowanie może zostać wykorzystane w pracy grafika komputerowego. Dzięki temu użytkownik będzie mógł zmieniać kolor wykorzysytywanego narzędzia bez przerywania pracy, na przykład malowania. 
 
+
 \begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=9cm]{example-image-a}
-        \caption{Zrzut ekranu aplikacji ustawiającej kolor}
-    \end{center}
+    \centering
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f1}}
+    \hfill
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f2}}
+    \caption{Obrót dłoni o.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f1}}
+    \hfill
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f2}}
+    \caption{Obrót dłoni o.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f1}}
+    \hfill
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f2}}
+    \caption{Obrót dłoni o.}
 \end{figure}

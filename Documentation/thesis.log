@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  5 DEC 2021 23:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  6 DEC 2021 01:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,6 +417,39 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@ppsavesec=\count279
 \c@@ppsaveapp=\count280
 )
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count281
+)
+\csq@reset=\count282
+\csq@gtype=\count283
+\csq@glevel=\count284
+\csq@qlevel=\count285
+\csq@maxlvl=\count286
+\csq@tshold=\count287
+\csq@ltx@everypar=\toks29
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip60
+\enit@outerparindent=\dimen185
+\enit@toks=\toks30
+\enit@inbox=\box47
+\enit@count@id=\count288
+\enitdp@description=\count289
+)
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
@@ -443,40 +476,40 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen185
-\captionmargin@=\dimen186
-\captionwidth=\dimen187
-\caption@tempdima=\dimen188
-\caption@indent=\dimen189
-\caption@parindent=\dimen190
-\caption@hangindent=\dimen191
+\captionmargin=\dimen186
+\captionmargin@=\dimen187
+\captionwidth=\dimen188
+\caption@tempdima=\dimen189
+\caption@indent=\dimen190
+\caption@parindent=\dimen191
+\caption@hangindent=\dimen192
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count281
-\c@continuedfloat=\count282
+\c@caption@flags=\count290
+\c@continuedfloat=\count291
 Package caption Info: hyperref package is loaded.
 )
-\c@KVtest=\count283
-\sf@farskip=\skip60
-\sf@captopadj=\dimen192
-\sf@capskip=\skip61
-\sf@nearskip=\skip62
-\c@subfigure=\count284
-\c@subfigure@save=\count285
-\c@lofdepth=\count286
-\c@subtable=\count287
-\c@subtable@save=\count288
-\c@lotdepth=\count289
-\sf@top=\skip63
-\sf@bottom=\skip64
+\c@KVtest=\count292
+\sf@farskip=\skip61
+\sf@captopadj=\dimen193
+\sf@capskip=\skip62
+\sf@nearskip=\skip63
+\c@subfigure=\count293
+\c@subfigure@save=\count294
+\c@lofdepth=\count295
+\c@subtable=\count296
+\c@subtable@save=\count297
+\c@lotdepth=\count298
+\sf@top=\skip64
+\sf@bottom=\skip65
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count290
-\float@exts=\toks29
-\float@box=\box47
-\@float@everytoks=\toks30
-\@floatcapt=\box48
+\c@float@type=\count299
+\float@exts=\toks31
+\float@box=\box48
+\@float@everytoks=\toks32
+\@floatcapt=\box49
 )
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
@@ -486,42 +519,42 @@ Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 
 (/usr/share/texlive/texmf-dist/tex/generic/dirtree/dirtree.tex
 `dirtree' v0.32, 2012/12/11 (jcc)
-\DT@offset=\dimen193
-\DT@width=\dimen194
-\DT@sep=\dimen195
-\DT@all=\dimen196
-\DT@rulewidth=\dimen197
-\DT@dotwidth=\dimen198
-\DTbaselineskip=\dimen199
-\DT@counti=\count291
-\DT@countii=\count292
-\DT@countiii=\count293
-\DT@countiv=\count294
-\DT@indent=\dimen256
-\DT@parskip=\dimen257
-\DT@baselineskip=\dimen258
+\DT@offset=\dimen194
+\DT@width=\dimen195
+\DT@sep=\dimen196
+\DT@all=\dimen197
+\DT@rulewidth=\dimen198
+\DT@dotwidth=\dimen199
+\DTbaselineskip=\dimen256
+\DT@counti=\count300
+\DT@countii=\count301
+\DT@countiii=\count302
+\DT@countiv=\count303
+\DT@indent=\dimen257
+\DT@parskip=\dimen258
+\DT@baselineskip=\dimen259
 )
 File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count295
-\lst@gtempboxa=\box49
-\lst@token=\toks31
-\lst@length=\count296
-\lst@currlwidth=\dimen259
-\lst@column=\count297
-\lst@pos=\count298
-\lst@lostspace=\dimen260
-\lst@width=\dimen261
-\lst@newlines=\count299
-\lst@lineno=\count300
-\lst@maxwidth=\dimen262
+\lst@mode=\count304
+\lst@gtempboxa=\box50
+\lst@token=\toks33
+\lst@length=\count305
+\lst@currlwidth=\dimen260
+\lst@column=\count306
+\lst@pos=\count307
+\lst@lostspace=\dimen261
+\lst@width=\dimen262
+\lst@newlines=\count308
+\lst@lineno=\count309
+\lst@maxwidth=\dimen263
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count301
-\lst@skipnumbers=\count302
-\lst@framebox=\box50
+\c@lstnumber=\count310
+\lst@skipnumbers=\count311
+\lst@framebox=\box51
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
@@ -537,62 +570,115 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip65
-\f@nch@O@elh=\skip66
-\f@nch@O@erh=\skip67
-\f@nch@O@olh=\skip68
-\f@nch@O@orh=\skip69
-\f@nch@O@elf=\skip70
-\f@nch@O@erf=\skip71
-\f@nch@O@olf=\skip72
-\f@nch@O@orf=\skip73
+\f@nch@headwidth=\skip66
+\f@nch@O@elh=\skip67
+\f@nch@O@erh=\skip68
+\f@nch@O@olh=\skip69
+\f@nch@O@orh=\skip70
+\f@nch@O@elf=\skip71
+\f@nch@O@erf=\skip72
+\f@nch@O@olf=\skip73
+\f@nch@O@orf=\skip74
 )
-\c@stronyPozaNumeracja=\count303
+\c@stronyPozaNumeracja=\count312
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'polish'.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count304
-\l__pdf_internal_box=\box51
+\l__kernel_color_stack_int=\count313
+\l__pdf_internal_box=\box52
 )
 (./thesis.aux (./Introduction/introduction.aux) (./Analysis/analysis.aux)
-(./Tools/tools.aux) (./External_specification/external.aux))
+(./Tools/tools.aux) (./External_specification/external.aux
+
+LaTeX Warning: Label `fig:f1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:f1' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `fig:f1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:f1' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `fig:f1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:f1' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `fig:f1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:f1' multiply defined.
+
+
+LaTeX Warning: Label `fig:f2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:f2' multiply defined.
+
+) (./Internal_specification/internal.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 21
-0.
+5.
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count305
-\scratchdimen=\dimen263
-\scratchbox=\box52
-\nofMPsegments=\count306
-\nofMParguments=\count307
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count308
-\MPscratchDim=\dimen264
-\MPnumerator=\count309
-\makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks33
+\scratchcounter=\count314
+\scratchdimen=\dimen264
+\scratchbox=\box53
+\nofMPsegments=\count315
+\nofMParguments=\count316
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count317
+\MPscratchDim=\dimen265
+\MPnumerator=\count318
+\makeMPintoPDFobject=\count319
+\everyMPtoPDFconversion=\toks35
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -602,8 +688,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box53
-Package hyperref Info: Link coloring OFF on input line 210.
+\AtBeginShipoutBox=\box54
+Package hyperref Info: Link coloring OFF on input line 215.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -614,11 +700,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count311
+\c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 210.
-LaTeX Info: Redefining \pageref on input line 210.
-LaTeX Info: Redefining \nameref on input line 210.
+LaTeX Info: Redefining \ref on input line 215.
+LaTeX Info: Redefining \pageref on input line 215.
+LaTeX Info: Redefining \nameref on input line 215.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
@@ -664,7 +750,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count312
+\c@lstlisting=\count321
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -698,17 +784,17 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
-21.
+26.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<logo_pl.jpg, id=111, 746.79pt x 960.58875pt>
+<logo_pl.jpg, id=227, 746.79pt x 960.58875pt>
 File: logo_pl.jpg Graphic file (type jpg)
 <use logo_pl.jpg>
-Package pdftex.def Info: logo_pl.jpg  used on input line 225.
+Package pdftex.def Info: logo_pl.jpg  used on input line 230.
 (pdftex.def)             Requested size: 82.51299pt x 106.13412pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 22
-9.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 23
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -716,11 +802,47 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo_pl.jpg>] (./thesis.
-toc)
-\tf@toc=\write4
-\openout4 = `thesis.toc'.
+toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
+.
 
- [1
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+5.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+5.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 
 ]
@@ -730,12 +852,16 @@ Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[2
+[2])
+\tf@toc=\write4
+\openout4 = `thesis.toc'.
+
+ [3] [4
 
 ]
 Rozdzia\l  1.
 
-Overfull \hbox (27.60684pt too wide) in paragraph at lines 297--298
+Overfull \hbox (27.60684pt too wide) in paragraph at lines 302--303
 [] \T1/lmr/m/n/12 Praca in-»y-nier-ska ›oz-po-zna-wa-nie obiek-tów z wy-ko-rzy-
 sta-niem bi-blio-teki OpenCV",
  []
@@ -744,7 +870,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.313 \include{Introduction/introduction}
+l.318 \include{Introduction/introduction}
                                           [1
 
 ]
@@ -787,7 +913,7 @@ LaTeX Warning: Citation `bib:url' on page 5 undefined on input line 6.
  (./Tools/tools.tex
 Rozdzia\l  4.
 
-Underfull \vbox (badness 3849) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7
 
@@ -817,75 +943,102 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
-) [12]
-<example-image-a.pdf, id=193, 321.2pt x 240.9pt>
+)
+<example-image-a.pdf, id=360, 321.2pt x 240.9pt>
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
 Package pdftex.def Info: example-image-a.pdf  used on input line 52.
 (pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
- [13 </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image-a.pdf>]
+ [12] [13 </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image-a.pdf>]
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 81.
+Package pdftex.def Info: example-image-a.pdf  used on input line 98.
 (pdftex.def)             Requested size: 207.7052pt x 155.7818pt.
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 83.
+Package pdftex.def Info: example-image-a.pdf  used on input line 100.
 (pdftex.def)             Requested size: 207.7052pt x 155.7818pt.
  [14]
-<./images/../images/american_sign_language.jpg, id=220, 851.18pt x 567.11874pt>
+<./images/../images/american_sign_language.jpg, id=410, 851.18pt x 567.11874pt>
 
 File: ./images/../images/american_sign_language.jpg Graphic file (type jpg)
 <use ./images/../images/american_sign_language.jpg>
 Package pdftex.def Info: ./images/../images/american_sign_language.jpg  used on
- input line 100.
+ input line 117.
 (pdftex.def)             Requested size: 426.79134pt x 284.36345pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 100--101
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 117--118
  [] 
  []
 
 [15 <./images/../images/american_sign_language.jpg>]
-<./images/../images/a_b.png, id=228, 642.4pt x 560.0925pt>
+<./images/../images/a_b.png, id=416, 642.4pt x 560.0925pt>
 File: ./images/../images/a_b.png Graphic file (type png)
 <use ./images/../images/a_b.png>
-Package pdftex.def Info: ./images/../images/a_b.png  used on input line 110.
+Package pdftex.def Info: ./images/../images/a_b.png  used on input line 127.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/c_x.png, id=230, 642.4pt x 560.0925pt>
+<./images/../images/c_x.png, id=418, 642.4pt x 560.0925pt>
 File: ./images/../images/c_x.png Graphic file (type png)
 <use ./images/../images/c_x.png>
-Package pdftex.def Info: ./images/../images/c_x.png  used on input line 112.
+Package pdftex.def Info: ./images/../images/c_x.png  used on input line 129.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/f_o.png, id=231, 642.4pt x 560.0925pt>
+<./images/../images/f_o.png, id=419, 642.4pt x 560.0925pt>
 File: ./images/../images/f_o.png Graphic file (type png)
 <use ./images/../images/f_o.png>
-Package pdftex.def Info: ./images/../images/f_o.png  used on input line 114.
+Package pdftex.def Info: ./images/../images/f_o.png  used on input line 131.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 141.
+(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
  [16 <./images/../images/a_b.png> <./images/../images/c_x.png> <./images/../ima
 ges/f_o.png>]
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 124.
-(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
+Package pdftex.def Info: example-image-a.pdf  used on input line 152.
+(pdftex.def)             Requested size: 207.7052pt x 155.7818pt.
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 134.
-(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
-)
+Package pdftex.def Info: example-image-a.pdf  used on input line 154.
+(pdftex.def)             Requested size: 207.7052pt x 155.7818pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
-[18]
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 160.
+(pdftex.def)             Requested size: 207.7052pt x 155.7818pt.
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 162.
+(pdftex.def)             Requested size: 207.7052pt x 155.7818pt.
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 168.
+(pdftex.def)             Requested size: 207.7052pt x 155.7818pt.
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 170.
+(pdftex.def)             Requested size: 207.7052pt x 155.7818pt.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+[19]
 \openout2 = `Internal_specification/internal.aux'.
 
- (./Internal_specification/internal.tex
-Rozdzia\l  6.
-[19
+ (./Internal_specification/internal.tex [20
 
 
 
 ]
-<./images/../images/image_processing.png, id=261, 354.32375pt x 249.93375pt>
+Rozdzia\l  6.
+
+Underfull \vbox (badness 1122) has occurred while \output is active []
+
+ [21]
+<./images/../images/image_processing.png, id=463, 354.32375pt x 249.93375pt>
 File: ./images/../images/image_processing.png Graphic file (type png)
 <use ./images/../images/image_processing.png>
 Package pdftex.def Info: ./images/../images/image_processing.png  used on input
@@ -894,8 +1047,8 @@ Package pdftex.def Info: ./images/../images/image_processing.png  used on input
 
 Underfull \vbox (badness 1755) has occurred while \output is active []
 
- [20 <./images/../images/image_processing.png (PNG copy)>]
-<./images/../images/hand_landmarks.png, id=269, 1548.78625pt x 540.0175pt>
+ [22 <./images/../images/image_processing.png (PNG copy)>]
+<./images/../images/hand_landmarks.png, id=469, 1548.78625pt x 540.0175pt>
 File: ./images/../images/hand_landmarks.png Graphic file (type png)
 <use ./images/../images/hand_landmarks.png>
 Package pdftex.def Info: ./images/../images/hand_landmarks.png  used on input l
@@ -906,88 +1059,47 @@ Overfull \hbox (8.53766pt too wide) in paragraph at lines 72--73
  [] 
  []
 
-[21 <./images/../images/hand_landmarks.png>]
-<./images/../images/full_algorithm.png, id=277, 310.15875pt x 422.57875pt>
+[23 <./images/../images/hand_landmarks.png>]
+<./images/../images/full_algorithm.png, id=476, 310.15875pt x 422.57875pt>
 File: ./images/../images/full_algorithm.png Graphic file (type png)
 <use ./images/../images/full_algorithm.png>
 Package pdftex.def Info: ./images/../images/full_algorithm.png  used on input l
 ine 103.
 (pdftex.def)             Requested size: 227.62204pt x 310.12416pt.
 
-Underfull \vbox (badness 4792) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-<./images/../images/get_data.png, id=287, 439.6425pt x 732.7375pt>
+ [24]
+<./images/../images/get_data.png, id=481, 439.6425pt x 732.7375pt>
 File: ./images/../images/get_data.png Graphic file (type png)
 <use ./images/../images/get_data.png>
 Package pdftex.def Info: ./images/../images/get_data.png  used on input line 11
 5.
 (pdftex.def)             Requested size: 284.52756pt x 474.22768pt.
 
-[23 <./images/../images/full_algorithm.png (PNG copy)>] [24 <./images/../images
-/get_data.png (PNG copy)>]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-24.
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-24.
-
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-124.
-
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-124.
-
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 124.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 124.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 124.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 124
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 124
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [25]
-<./images/../images/train_models.png, id=310, 443.6575pt x 452.69125pt>
+[25 <./images/../images/full_algorithm.png (PNG copy)>] [26 <./images/../images
+/get_data.png (PNG copy)>] [27]
+<./images/../images/train_models.png, id=504, 443.6575pt x 452.69125pt>
 File: ./images/../images/train_models.png Graphic file (type png)
 <use ./images/../images/train_models.png>
 Package pdftex.def Info: ./images/../images/train_models.png  used on input lin
 e 180.
 (pdftex.def)             Requested size: 312.9803pt x 319.34769pt.
- [26 <./images/../images/train_models.png (PNG copy)>]
+ [28 <./images/../images/train_models.png (PNG copy)>]
 
-LaTeX Warning: Hyper reference `openleap-file1' on page 27 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file1' on page 29 undefined on input l
 ine 216.
 
 
-LaTeX Warning: Hyper reference `openleap-file2' on page 27 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file2' on page 29 undefined on input l
 ine 216.
 
 
-LaTeX Warning: Hyper reference `openleap-file3' on page 27 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file3' on page 29 undefined on input l
 ine 216.
 
 
-LaTeX Warning: Hyper reference `openleap-file4' on page 27 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file4' on page 29 undefined on input l
 ine 216.
 
 
@@ -995,7 +1107,7 @@ Overfull \hbox (10.71848pt too wide) in paragraph at lines 216--216
 []|\T1/lmtt/m/n/12 sign_language_alphabet.pkl| 
  []
 
-[27]
+[29]
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
 Package pdftex.def Info: example-image-a.pdf  used on input line 234.
@@ -1003,47 +1115,47 @@ Package pdftex.def Info: example-image-a.pdf  used on input line 234.
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
-[29] [30
+ [30]
+[31] [32
 
 
 ]
 Rozdzia\l  7.
-[31] [32]
+[33] [34]
 Rozdzia\l  8.
 No file thesis.bbl.
-[33
+[35
 
-] [34
+] [36
 
-] [35] [36] [37
+] [37] [38] [39
 
-] [38
-
-] [39] [40
+] [40
 
 ] [41] [42
+
+] [43] [44
 
 ] (./thesis.lof)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [43] [44
+ [45] [46
 
 ]
 (./thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 421.
- [45]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 421.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 426.
+ [47]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 426.
  (./thesis.aux (./Introduction/introduction.aux)
 (./Analysis/analysis.aux) (./Tools/tools.aux)
 (./External_specification/external.aux) (./Internal_specification/internal.aux)
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 421.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 421.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 426.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 426.
 
 
 Package rerunfilecheck Warning: File `thesis.out' has changed.
@@ -1051,24 +1163,24 @@ Package rerunfilecheck Warning: File `thesis.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: BB9190911A78B83627B93AA35997F455;1776
-(rerunfilecheck)             After:  5EA681EA86A497FC0E3856A8DCECC8A2;3897.
+(rerunfilecheck)             Before: 6DF96F1D663162DAA7E926B451863398;3897
+(rerunfilecheck)             After:  3024E302EE3867BE5F6639EA1D6A2FF7;4036.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 421.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 426.
  ) 
 Here is how much of TeX's memory you used:
- 12860 strings out of 483148
- 189535 string characters out of 5965415
- 680676 words of memory out of 5000000
- 27412 multiletter control sequences out of 15000+600000
+ 14106 strings out of 483148
+ 208552 string characters out of 5965415
+ 716350 words of memory out of 5000000
+ 28616 multiletter control sequences out of 15000+600000
  600292 words of font info for 66 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 50i,11n,53p,757b,1316s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,11n,53p,911b,1316s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -1086,10 +1198,10 @@ f/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
 hvr8a.pfb>
-Output written on thesis.pdf (48 pages, 703987 bytes).
+Output written on thesis.pdf (52 pages, 713604 bytes).
 PDF statistics:
- 526 PDF objects out of 1000 (max. 8388607)
- 439 compressed objects within 5 object streams
- 137 named destinations out of 1000 (max. 500000)
- 272 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 715 PDF objects out of 1000 (max. 8388607)
+ 622 compressed objects within 7 object streams
+ 161 named destinations out of 1000 (max. 500000)
+ 504 words of extra memory for PDF output out of 10000 (max. 10000000)
 
