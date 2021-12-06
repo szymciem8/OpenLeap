@@ -49,7 +49,7 @@ controller.loop()
 ```
 
 <p align="center">
-  <img src="Documentation/images/example_program.gif" width="820" />
+  <img src="Documentation/images/example_program.gif" width="850" />
 </p>
 
 OpenLeap returns relative position of each hand, distance between thumb tip and index finger tip, rotation angle by wrist point and recognized gesture. There are two models for gesture recognition. 
@@ -57,7 +57,7 @@ OpenLeap returns relative position of each hand, distance between thumb tip and 
 The first one can recognized wheter hand is opened or closed into fist, second model can recognized sign language alphabet as shown below. 
 
 <p align="center">
-  <img src="https://pastevents.impactcee.com/wp-content/uploads/2016/10/DayTranslationsBlog-Learn-American-Sign-Language.jpg" width="820" />
+  <img src="https://pastevents.impactcee.com/wp-content/uploads/2016/10/DayTranslationsBlog-Learn-American-Sign-Language.jpg" width="850" />
 </p>
 
 
