@@ -230,13 +230,13 @@ class OpenLeap():
 
                     if field == 'distance' or field == 'angle':
                         text = f'{field} = {int(value)}'
-                        cv2.putText(image, text, (10+(1-index)*400, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
+                        cv2.putText(image, text, (10+(1-index)*420, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
                     elif field in ['x', 'y', 'z']:
                         text = f'{field} = {round(value, 3)}'
-                        cv2.putText(image, text, (10+(1-index)*400, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
+                        cv2.putText(image, text, (10+(1-index)*420, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
                     else:
                         text = f'{field} = {value}'
-                        cv2.putText(image, text, (10+(1-index)*400, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
+                        cv2.putText(image, text, (10+(1-index)*420, 25*i), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 1, cv2.LINE_AA)
                     i+=1
     
     def get_gesture(self, index):
@@ -370,7 +370,7 @@ if __name__=='__main__':
     Use example of OpenLeap object. 
     '''
 
-    controller = OpenLeap(show_data_in_console=True, screen_show=True, screen_type='BLACK', show_data_on_image=True)
+    controller = OpenLeap(show_data_in_console=True, screen_show=True, screen_type='BLACK', show_data_on_image=True, gesture_model='basic')
 
     while True:
         controller.main()

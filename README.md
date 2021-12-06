@@ -49,7 +49,7 @@ controller.loop()
 ```
 
 <p align="center">
-  <img src="Documentation/images/example_program.gif" width="850" />
+  <img src="https://raw.githubusercontent.com/szymciem8/OpenLeap/main/Documentation/images/example_program.gif?token=AMBI64BGASHC4OPJW6OD3YDBV2BJK" width="850" />
 </p>
 
 OpenLeap returns relative position of each hand, distance between thumb tip and index finger tip, rotation angle by wrist point and recognized gesture. There are two models for gesture recognition. 

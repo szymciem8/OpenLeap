@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  6 DEC 2021 14:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  6 DEC 2021 22:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -953,35 +953,47 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<example-image-a.pdf, id=389, 321.2pt x 240.9pt>
-File: example-image-a.pdf Graphic file (type pdf)
-<use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 37.
-(pdftex.def)             Requested size: 256.0748pt x 192.06227pt.
- [12 </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image-a.pdf>]
+<./images/../images/pypi_page.png, id=389, 1005.7575pt x 1074.0125pt>
+File: ./images/../images/pypi_page.png Graphic file (type png)
+<use ./images/../images/pypi_page.png>
+Package pdftex.def Info: ./images/../images/pypi_page.png  used on input line 3
+7.
+(pdftex.def)             Requested size: 426.79134pt x 455.75278pt.
+
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 37--38
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
+) [13 <./images/../images/pypi_page.png>]
 <./images/../images/example_program.png, id=405, 642.4pt x 560.0925pt>
 File: ./images/../images/example_program.png Graphic file (type png)
 <use ./images/../images/example_program.png>
 Package pdftex.def Info: ./images/../images/example_program.png  used on input 
 line 61.
 (pdftex.def)             Requested size: 256.0748pt x 223.2724pt.
- [13 <./images/../images/example_program.png>]
+ [14 <./images/../images/example_program.png>]
 File: ./images/../images/example_program.png Graphic file (type png)
 <use ./images/../images/example_program.png>
 Package pdftex.def Info: ./images/../images/example_program.png  used on input 
 line 107.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/cam_example.png, id=422, 642.4pt x 560.0925pt>
+<./images/../images/cam_example.png, id=424, 642.4pt x 560.0925pt>
 File: ./images/../images/cam_example.png Graphic file (type png)
 <use ./images/../images/cam_example.png>
 Package pdftex.def Info: ./images/../images/cam_example.png  used on input line
  109.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
- [14]
-<./images/../images/american_sign_language.jpg, id=441, 851.18pt x 567.11874pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+<./images/../images/american_sign_language.jpg, id=440, 851.18pt x 567.11874pt>
 
 File: ./images/../images/american_sign_language.jpg Graphic file (type jpg)
 <use ./images/../images/american_sign_language.jpg>
@@ -993,18 +1005,18 @@ Overfull \hbox (8.53766pt too wide) in paragraph at lines 126--127
  [] 
  []
 
-[15 <./images/../images/cam_example.png>]
-<./images/../images/a_b.png, id=451, 642.4pt x 560.0925pt>
+[16 <./images/../images/cam_example.png>]
+<./images/../images/a_b.png, id=450, 642.4pt x 560.0925pt>
 File: ./images/../images/a_b.png Graphic file (type png)
 <use ./images/../images/a_b.png>
 Package pdftex.def Info: ./images/../images/a_b.png  used on input line 136.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/c_x.png, id=452, 642.4pt x 560.0925pt>
+<./images/../images/c_x.png, id=451, 642.4pt x 560.0925pt>
 File: ./images/../images/c_x.png Graphic file (type png)
 <use ./images/../images/c_x.png>
 Package pdftex.def Info: ./images/../images/c_x.png  used on input line 138.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/f_o.png, id=453, 642.4pt x 560.0925pt>
+<./images/../images/f_o.png, id=452, 642.4pt x 560.0925pt>
 File: ./images/../images/f_o.png Graphic file (type png)
 <use ./images/../images/f_o.png>
 Package pdftex.def Info: ./images/../images/f_o.png  used on input line 140.
@@ -1012,8 +1024,8 @@ Package pdftex.def Info: ./images/../images/f_o.png  used on input line 140.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 <./images/../images/american_sign_language.jpg>]
-<./images/../images/checkout_window.png, id=459, 903.375pt x 913.4125pt>
+ [17 <./images/../images/american_sign_language.jpg>]
+<./images/../images/checkout_window.png, id=458, 903.375pt x 913.4125pt>
 File: ./images/../images/checkout_window.png Graphic file (type png)
 <use ./images/../images/checkout_window.png>
 Package pdftex.def Info: ./images/../images/checkout_window.png  used on input 
@@ -1027,30 +1039,30 @@ Overfull \hbox (8.53766pt too wide) in paragraph at lines 150--151
 
 Underfull \vbox (badness 6510) has occurred while \output is active []
 
- [17 <./images/../images/a_b.png> <./images/../images/c_x.png> <./images/../ima
+ [18 <./images/../images/a_b.png> <./images/../images/c_x.png> <./images/../ima
 ges/f_o.png>]
 Underfull \vbox (badness 2486) has occurred while \output is active []
 
- [18 <./images/../images/checkout_window.png>]
-<./images/../images/yellow_hand_deg.png, id=477, 642.4pt x 560.0925pt>
+ [19 <./images/../images/checkout_window.png>]
+<./images/../images/yellow_hand_deg.png, id=476, 642.4pt x 560.0925pt>
 File: ./images/../images/yellow_hand_deg.png Graphic file (type png)
 <use ./images/../images/yellow_hand_deg.png>
 Package pdftex.def Info: ./images/../images/yellow_hand_deg.png  used on input 
 line 165.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/yellow.png, id=478, 903.375pt x 933.4875pt>
+<./images/../images/yellow.png, id=477, 903.375pt x 933.4875pt>
 File: ./images/../images/yellow.png Graphic file (type png)
 <use ./images/../images/yellow.png>
 Package pdftex.def Info: ./images/../images/yellow.png  used on input line 167.
 
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
-<./images/../images/blueish_hand_deg.png, id=479, 642.4pt x 560.0925pt>
+<./images/../images/blueish_hand_deg.png, id=478, 642.4pt x 560.0925pt>
 File: ./images/../images/blueish_hand_deg.png Graphic file (type png)
 <use ./images/../images/blueish_hand_deg.png>
 Package pdftex.def Info: ./images/../images/blueish_hand_deg.png  used on input
  line 173.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/blueish.png, id=480, 903.375pt x 933.4875pt>
+<./images/../images/blueish.png, id=479, 903.375pt x 933.4875pt>
 File: ./images/../images/blueish.png Graphic file (type png)
 <use ./images/../images/blueish.png>
 Package pdftex.def Info: ./images/../images/blueish.png  used on input line 175
@@ -1059,7 +1071,7 @@ Package pdftex.def Info: ./images/../images/blueish.png  used on input line 175
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19 <./images/../images/yellow_hand_deg.png> <./images/../images/yellow.png>]
+ [20 <./images/../images/yellow_hand_deg.png> <./images/../images/yellow.png>]
 <./images/../images/pink_hand_deg.png, id=490, 642.4pt x 560.0925pt>
 File: ./images/../images/pink_hand_deg.png Graphic file (type png)
 <use ./images/../images/pink_hand_deg.png>
@@ -1083,27 +1095,27 @@ File: ./images/../images/zero_sat.png Graphic file (type png)
 Package pdftex.def Info: ./images/../images/zero_sat.png  used on input line 19
 3.
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
- [20 <./images/../images/blueish_hand_deg.png> <./images/../images/blueish.png>
- <./images/../images/pink_hand_deg.png> <./images/../images/pink.png>]) [21 <./
+ [21 <./images/../images/blueish_hand_deg.png> <./images/../images/blueish.png>
+ <./images/../images/pink_hand_deg.png> <./images/../images/pink.png>]) [22 <./
 images/../images/zero_sat_hand_deg.png> <./images/../images/zero_sat.png>]
 \openout2 = `Internal_specification/internal.aux'.
 
 
-(./Internal_specification/internal.tex [22
+(./Internal_specification/internal.tex
+Rozdzia\l  6.
+[23
 
 
 
 ]
-Rozdzia\l  6.
-[23]
-<./images/../images/image_processing.png, id=526, 354.32375pt x 249.93375pt>
+<./images/../images/image_processing.png, id=521, 354.32375pt x 249.93375pt>
 File: ./images/../images/image_processing.png Graphic file (type png)
 <use ./images/../images/image_processing.png>
 Package pdftex.def Info: ./images/../images/image_processing.png  used on input
  line 44.
 (pdftex.def)             Requested size: 284.52756pt x 200.70619pt.
  [24 <./images/../images/image_processing.png (PNG copy)>]
-<./images/../images/hand_landmarks.png, id=532, 1548.78625pt x 540.0175pt>
+<./images/../images/hand_landmarks.png, id=527, 1548.78625pt x 540.0175pt>
 File: ./images/../images/hand_landmarks.png Graphic file (type png)
 <use ./images/../images/hand_landmarks.png>
 Package pdftex.def Info: ./images/../images/hand_landmarks.png  used on input l
@@ -1119,7 +1131,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
 [26 <./images/../images/hand_landmarks.png>]
-<./images/../images/full_algorithm.png, id=544, 310.15875pt x 422.57875pt>
+<./images/../images/full_algorithm.png, id=539, 310.15875pt x 422.57875pt>
 File: ./images/../images/full_algorithm.png Graphic file (type png)
 <use ./images/../images/full_algorithm.png>
 Package pdftex.def Info: ./images/../images/full_algorithm.png  used on input l
@@ -1129,7 +1141,7 @@ ine 111.
 Underfull \vbox (badness 2717) has occurred while \output is active []
 
  [27 <./images/../images/full_algorithm.png (PNG copy)>]
-<./images/../images/get_data.png, id=550, 439.6425pt x 732.7375pt>
+<./images/../images/get_data.png, id=545, 439.6425pt x 732.7375pt>
 File: ./images/../images/get_data.png Graphic file (type png)
 <use ./images/../images/get_data.png>
 Package pdftex.def Info: ./images/../images/get_data.png  used on input line 12
@@ -1145,7 +1157,7 @@ Underfull \vbox (badness 1320) has occurred while \output is active []
 Underfull \vbox (badness 1616) has occurred while \output is active []
 
  [30]
-<./images/../images/train_models.png, id=571, 443.6575pt x 452.69125pt>
+<./images/../images/train_models.png, id=566, 443.6575pt x 452.69125pt>
 File: ./images/../images/train_models.png Graphic file (type png)
 <use ./images/../images/train_models.png>
 Package pdftex.def Info: ./images/../images/train_models.png  used on input lin
@@ -1227,9 +1239,9 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 426.
  ) 
 Here is how much of TeX's memory you used:
  14187 strings out of 483148
- 210943 string characters out of 5965415
- 712021 words of memory out of 5000000
- 28677 multiletter control sequences out of 15000+600000
+ 210969 string characters out of 5965415
+ 714021 words of memory out of 5000000
+ 28676 multiletter control sequences out of 15000+600000
  600292 words of font info for 66 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  50i,12n,53p,911b,1316s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1243,17 +1255,16 @@ f/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
 8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
-hvr8a.pfb>
-Output written on thesis.pdf (54 pages, 1399970 bytes).
+lic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on thesis.pdf (54 pages, 1468056 bytes).
 PDF statistics:
- 780 PDF objects out of 1000 (max. 8388607)
- 663 compressed objects within 7 object streams
+ 774 PDF objects out of 1000 (max. 8388607)
+ 657 compressed objects within 7 object streams
  170 named destinations out of 1000 (max. 500000)
  607 words of extra memory for PDF output out of 10000 (max. 10000000)
 
