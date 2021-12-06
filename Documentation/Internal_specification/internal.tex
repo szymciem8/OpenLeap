@@ -24,7 +24,24 @@ Jeśli to Specyfikacja wewnętrzna:
 
     \section{Struktury danych}
     \subsection{Dataclass}
+
+    \quad Strukura typu \textbf{Dataclass} pozwala na stworznie struktury podobnej do \textbf{struct} istniejącej w języku programowania \textbf{C}. Taka klasa pozwala na storzenie obiektu składającego się jedynie z atrybutów wymaganych do opisue elementów klasy kontrolera. Dodatkowym atutem takiej klasy jest możliwość prostego odczytu zapisanych danych, korzystając z operatora kropki, a nie z operatrów opisujących słownik lub listę. 
+
+    \begin{lstlisting}[language=python]
+        @dataclass
+        class Data:
+            x : float = 0
+            y : float = 0
+            z : float = 0
+            distance: float = 0.0
+            angle: float = 0.0
+            gesture: str = None
+    \end{lstlisting}
+
+    \quad W języku Python stworzenie klasy typu \textbf{dataclass} zaczyna się od zapisania dekoratora. W tym wypadku nie jest wymagana funkcja inicjalizująca obiekt, czyli \textbf{\_\_init\_\_}. Parametetry początkowe można podać w chwili tworzenia obiektu, lub później. W programie zostały przypisane wartości początkowej, tak jak w przykładzie powyżej. 
+
     \subsection{Pickle}
+    \quad Modele matematyczne, które zostaną wytrenowane muszą zostać zapisane, tak aby można było je wykorzystać ponownie. Z tego powodu został wykorzystany plik typi \textbf{pickle}, który umożliwia zapis zmiennych oraz obiektów w postaci binarnej. Dzięki czemu można je wykorzystać ponownie pomimo restartu programu. 
 
     \section{Rozpoznawanie dłoni}
     

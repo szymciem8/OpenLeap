@@ -40,11 +40,11 @@
 \contentsline {section}{\numberline {6.2}Struktury danych}{24}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Dataclass}{24}{subsection.6.2.1}%
 \contentsline {subsection}{\numberline {6.2.2}Pickle}{24}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Rozpoznawanie dłoni}{24}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}OpenCV - przygotowanie obrazu z kamery}{24}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}MediaPipe - Elementy charakterystyczne}{25}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Generowanie grafiki dłoni}{26}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}SciKit Learn - uczenie maszynowe}{26}{section.6.4}%
+\contentsline {section}{\numberline {6.3}Rozpoznawanie dłoni}{25}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}OpenCV - przygotowanie obrazu z kamery}{25}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}MediaPipe - Elementy charakterystyczne}{26}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Generowanie grafiki dłoni}{27}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}SciKit Learn - uczenie maszynowe}{27}{section.6.4}%
 \contentsline {subsection}{\numberline {6.4.1}Przygotowanie modeli uczenia maszynowego}{27}{subsection.6.4.1}%
 \contentsline {subsection}{\numberline {6.4.2}Zebranie danych}{28}{subsection.6.4.2}%
 \contentsline {subsection}{\numberline {6.4.3}Metody klasyfikacji - uczenie maszynowe}{31}{subsection.6.4.3}%
