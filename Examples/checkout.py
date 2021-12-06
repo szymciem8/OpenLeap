@@ -73,12 +73,14 @@ buttons['taco'] = pygame.Rect(buttons_x, 450, 250, 200)
 buttons['fries'] = pygame.Rect(buttons_x, 670, 250, 200)
 
 images = {}
-
 this_dir, this_filename = os.path.split(__file__)  # Get path of data.pkl
 # images['burger'] = pygame.image.load('graphics/burger.png')
 for key, element in buttons.items():
     data_path = os.path.join(this_dir, 'graphics/'+key+'.png')
     images[key] = pygame.image.load(data_path)
+
+checkout_button = pygame.Rect(450, 770, 300, 100)
+
 
 '''
 ORDER LIST
@@ -99,7 +101,7 @@ while True:
     #Background
     screen.fill(pygame.Color(0, 150, 150))
 
-    #Buttons
+    #Buttons for products
     for key, element in buttons.items():
 
         if element.colliderect(cursor):
@@ -125,6 +127,13 @@ while True:
             screen.blit(order_list_font_small.render(f'{i+1}. {key}, x {element}', False, (0,0,0)), (480, 150+50*i))
         i += 1
 
+    # Checkout button
+    if checkout_button.colliderect(cursor):
+        pygame.draw.rect(screen, LIGHT_BUTTON_COLOR, checkout_button)
+    else:
+        pygame.draw.rect(screen, DARK_BUTTON_COLOR, checkout_button)
+
+    screen.blit(order_list_font_big.render('Checkout', False, (0,0,0)), (465, 785))
 
     #Cursor
     draw_cursor()

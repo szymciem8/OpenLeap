@@ -40,7 +40,7 @@ Jeśli to Specyfikacja zewnętrzna:
     controller = openleap.OpenLeap(screen_show=True, 
                                    screeen_type='BLACK', 
                                    show_data_on_image=True, 
-                                   gesture_model='sign_language')
+                                   gesture_model='basic')
     
     controller.loop()
 \end{lstlisting}
@@ -49,7 +49,7 @@ Jeśli to Specyfikacja zewnętrzna:
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=9cm]{example-image-a}
+        \includegraphics[width=9cm]{../images/example_program.png}
         \caption{Zrzut ekranu programu testowego}
     \end{center}
 \end{figure}
@@ -95,9 +95,9 @@ Jeśli to Specyfikacja zewnętrzna:
 
 \begin{figure}[H]
     \centering
-    \subfloat[Obraz z kamery.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f1}}
+    \subfloat[Obraz z kamery.]{\includegraphics[width=7.3cm]{../images/example_program.png}\label{fig:f1}}
     \hfill
-    \subfloat[Czarne tło.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f2}}
+    \subfloat[Czarne tło.]{\includegraphics[width=7.3cm]{../images/cam_example.png}\label{fig:f2}}
     \caption{Parametry wyświetlanego obrazu.}
 \end{figure}
 
@@ -138,10 +138,14 @@ Jeśli to Specyfikacja zewnętrzna:
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=9cm]{example-image-a}
+        \includegraphics[width=15cm]{../images/checkout_window.png}
         \caption{Zrzut ekranu kiosku interaktywnego}
     \end{center}
 \end{figure}
+
+\quad Wskaźnik kiosku interaktywnego jest sterowany poprzez pozycję dłoni. Kliknięcie w przycisk zostaje aktywowane za pomocą wykrycia odpowiednio małej odlęgłości między końcówką palca wskazującego, a końcówką kciuka. 
+
+\quad Odległość między tymi dwoma punktami jest obliczana automatycznie poprzez wbudowaną funkcję klasy OpenLeap. 
 
 \subsection{Dobór koloru}
 \quad Ostatnim przykładem jest wykorzystanie dłoni jako kontrolera, za którego pomocą można wybrać dowolny kolor. Takie zastosowanie może zostać wykorzystane w pracy grafika komputerowego. Dzięki temu użytkownik będzie mógł zmieniać kolor wykorzysytywanego narzędzia bez przerywania pracy, na przykład malowania. 
@@ -163,10 +167,4 @@ Jeśli to Specyfikacja zewnętrzna:
     \caption{Obrót dłoni o.}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f1}}
-    \hfill
-    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{example-image-a}\label{fig:f2}}
-    \caption{Obrót dłoni o.}
-\end{figure}
+\quad Podobnie jak obliczenie odległości między palcami, biblioteka oblicza obrót dłoni wokół osi Z punktu opisującego pozycję nadgarstka.
