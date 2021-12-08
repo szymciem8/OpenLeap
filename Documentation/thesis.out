@@ -43,20 +43,21 @@
 \BOOKMARK [2][-]{subsection.6.3.1}{OpenCV - przygotowanie obrazu z kamery}{section.6.3}% 43
 \BOOKMARK [2][-]{subsection.6.3.2}{MediaPipe - Elementy charakterystyczne}{section.6.3}% 44
 \BOOKMARK [2][-]{subsection.6.3.3}{Generowanie grafiki d\233oni}{section.6.3}% 45
-\BOOKMARK [1][-]{section.6.4}{SciKit Learn - uczenie maszynowe}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.4}{Uczenie Maszynowe}{chapter.6}% 46
 \BOOKMARK [2][-]{subsection.6.4.1}{Przygotowanie modeli uczenia maszynowego}{section.6.4}% 47
 \BOOKMARK [2][-]{subsection.6.4.2}{Zebranie danych}{section.6.4}% 48
-\BOOKMARK [2][-]{subsection.6.4.3}{Metody klasyfikacji - uczenie maszynowe}{section.6.4}% 49
-\BOOKMARK [2][-]{subsection.6.4.4}{Ponowne wykorzystanie modelu}{section.6.4}% 50
-\BOOKMARK [1][-]{section.6.5}{Budowa Klasy}{chapter.6}% 51
-\BOOKMARK [1][-]{section.6.6}{Paczka PyPi}{chapter.6}% 52
-\BOOKMARK [2][-]{subsection.6.6.1}{Budowa paczki}{section.6.6}% 53
-\BOOKMARK [2][-]{subsection.6.6.2}{Struktura Paczki}{section.6.6}% 54
-\BOOKMARK [2][-]{subsection.6.6.3}{Pliki Konfiguracyjne}{section.6.6}% 55
-\BOOKMARK [2][-]{subsection.6.6.4}{Za\233adowanie paczki do repozytorium}{section.6.6}% 56
-\BOOKMARK [0][-]{chapter.7}{Weryfikacja i walidacja}{}% 57
-\BOOKMARK [0][-]{chapter.8}{Podsumowanie i wnioski}{}% 58
-\BOOKMARK [0][-]{chapter.8}{Bibliografia}{}% 59
-\BOOKMARK [0][-]{appendix*.19}{Spis skr\363t\363w i symboli}{}% 60
-\BOOKMARK [0][-]{appendix*.20}{Zr\363d\233a}{}% 61
-\BOOKMARK [0][-]{appendix*.21}{Zawartosc do\233aczonej p\233yty}{}% 62
+\BOOKMARK [2][-]{subsection.6.4.3}{Bucowa pliku CSV}{section.6.4}% 49
+\BOOKMARK [2][-]{subsection.6.4.4}{Metody klasyfikacji - uczenie maszynowe}{section.6.4}% 50
+\BOOKMARK [2][-]{subsection.6.4.5}{Ponowne wykorzystanie modelu}{section.6.4}% 51
+\BOOKMARK [1][-]{section.6.5}{Budowa Klasy}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.6}{Paczka PyPi}{chapter.6}% 53
+\BOOKMARK [2][-]{subsection.6.6.1}{Budowa paczki}{section.6.6}% 54
+\BOOKMARK [2][-]{subsection.6.6.2}{Struktura Paczki}{section.6.6}% 55
+\BOOKMARK [2][-]{subsection.6.6.3}{Pliki Konfiguracyjne}{section.6.6}% 56
+\BOOKMARK [2][-]{subsection.6.6.4}{Za\233adowanie paczki do repozytorium}{section.6.6}% 57
+\BOOKMARK [0][-]{chapter.7}{Weryfikacja i walidacja}{}% 58
+\BOOKMARK [0][-]{chapter.8}{Podsumowanie i wnioski}{}% 59
+\BOOKMARK [0][-]{chapter.8}{Bibliografia}{}% 60
+\BOOKMARK [0][-]{appendix*.19}{Spis skr\363t\363w i symboli}{}% 61
+\BOOKMARK [0][-]{appendix*.20}{Zr\363d\233a}{}% 62
+\BOOKMARK [0][-]{appendix*.21}{Zawartosc do\233aczonej p\233yty}{}% 63
