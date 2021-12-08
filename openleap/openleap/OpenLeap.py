@@ -28,7 +28,9 @@ class OpenLeap():
                 show_data_in_console=False, 
                 show_data_on_image=False, 
                 normalized_position=True,
-                gesture_model='sign_language'
+                gesture_model='sign_language', 
+                l_or_r_mode='AI',
+                activate_data=True,
         ):
 
         super().__init__()
