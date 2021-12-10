@@ -3,34 +3,34 @@
 % \chapter{Wymagania i narzędzia}
 
 \chapter{[Właściwy dla kierunku - np. Specyfikacja zewnętrzna]}
-Jeśli to Specyfikacja zewnętrzna:
-\begin{itemize}
-\item  wymagania sprzętowe i programowe
-\item  sposób instalacji
-\item  sposób aktywacji
-\item  kategorie użytkowników
-\item  sposób obsługi
-\item   administracja systemem
-\item  kwestie bezpieczeństwa
-\item  przykład działania
-\item  scenariusze korzystania z systemu (ilustrowane zrzutami z ekranu lub generowanymi dokumentami)
-\end{itemize}
+% Jeśli to Specyfikacja zewnętrzna:
+% \begin{itemize}
+% \item  wymagania sprzętowe i programowe
+% \item  sposób instalacji
+% \item  sposób aktywacji
+% \item  kategorie użytkowników
+% \item  sposób obsługi
+% \item   administracja systemem
+% \item  kwestie bezpieczeństwa
+% \item  przykład działania
+% \item  scenariusze korzystania z systemu (ilustrowane zrzutami z ekranu lub generowanymi dokumentami)
+% \end{itemize}
 
 \section{Wymagania sprzętowe}
 \subsection{Kamera}
-\quad Elementem niezbędnym do korzystania z modułu OpenLeap jest kamera, która pozwoli na pozyskanie obrazu dłoni. Rozdzielczość matrycy kamery powinna pozwolić na rozpoznanie dłoni. Liczba klatek na sekundę powinna być wystarczająco wysoka, tak aby można było sprawnie korzystać z paczki. 
+\quad Elementem niezbędnym do korzystania z modułu OpenLeap jest kamera, która pozwoli na pozyskanie obrazu dłoni. Rozdzielczość matrycy kamery powinna pozwolić na rozpoznanie dłoni. Liczba klatek na sekundę powinna być wystarczająco wysoka, tak aby można było sprawnie korzystać z paczki. Nie ma tutaj minimalnych wymagań, lepsza kamera pozwoli jedynie na sprawniejsze działanie oprogramowania. 
 
 \section{Wymagania programowe}
-\quad Pierszym elementem jest język Python, który pozwoli na interpetację napisanego modułu. Reszta potrzebnych zależności zostanie zainstalowana automatycznie. 
+\quad Pierszym elementem jest język Python, który pozwoli na interpetację napisanego modułu. Reszta potrzebnych zależności, takich jak MediaPipe czy OpenCV zostanie zainstalowana automatycznie, jeśli moduł zostanie pobrany za pomocą programu pip. 
 
 \section{Instalacja paczki}
-\quad Instalcja paczki odbywa się poprzez wykorzystanie programu pip, który jest instalowany automatycznie razem z językiem Python. W zależności od wybranego systemu operacyjnego, komenda może przybierać inne formy 
+\quad Instalcja paczki odbywa się poprzez wykorzystanie programu pip, który jest instalowany automatycznie razem z językiem Python. W zależności od wybranego systemu operacyjnego, komenda może przybierać inne formy. 
 
 \begin{lstlisting}[language=bash]
     $ pip install openleap
 \end{lstlisting}
 
-\quad Informacje na temat biblioteki można znaleźć na platfomie PyPi pod linkiem: \href{https://pypi.org/project/openleap/}{https://pypi.org/project/openleap/}. Na tej stronie znajduje się opis modułu, instrukcja instalacji oraz przykładowy program.
+\quad Informacje na temat biblioteki można znaleźć na platfomie PyPi pod linkiem: \href{https://pypi.org/project/openleap/}{https://pypi.org/project/openleap/}. Na tej stronie znajduje się opis modułu, instrukcja instalacji oraz przykładowe programy i wykorzystania.
 
 \begin{figure}[H]
     \begin{center}
@@ -197,3 +197,6 @@ Jeśli to Specyfikacja zewnętrzna:
 
 
 \quad Podobnie jak obliczenie odległości między palcami, biblioteka oblicza obrót dłoni wokół osi Z punktu opisującego pozycję nadgarstka.
+
+
+\section{Stworzenie nowego modelu przez użytkownika}

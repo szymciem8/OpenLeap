@@ -40,12 +40,22 @@ Jeśli to Specyfikacja wewnętrzna:
 
     \quad W języku Python stworzenie klasy typu \textbf{dataclass} zaczyna się od zapisania dekoratora. W tym wypadku nie jest wymagana funkcja inicjalizująca obiekt, czyli \textbf{\_\_init\_\_}. Parametetry początkowe można podać w chwili tworzenia obiektu, lub później. W programie zostały przypisane wartości początkowej, tak jak w przykładzie powyżej. 
 
+    \subsection{Słownik}
+
+    \quad Instancja stworzonego typu \textbf{Data} zostnie zainicjowana dla każdej dłoni (lewej oraz prawej). Te instacje zostaną zapisane w słowniku. 
+
+    \begin{lstlisting}[language=python]
+        data = {'right':Data(), 'left':Data()}
+    \end{lstlisting}
+
+    \quad Taka konstrukcja pozwoli użytkownikowi w prosty i przejrzysty sposób na odnajodowania potrzebnych wartości oraz informacji. 
+
     \subsection{Pickle}
     \quad Modele matematyczne, które zostaną wytrenowane muszą zostać zapisane, tak aby można było je wykorzystać ponownie. Z tego powodu został wykorzystany plik typi \textbf{pickle}, który umożliwia zapis zmiennych oraz obiektów w postaci binarnej. Dzięki czemu można je wykorzystać ponownie pomimo restartu programu. 
 
     \section{Rozpoznawanie dłoni}
     
-    \quad Pierwszym elementem projektu jest rozpoznanie dłoni poprzez wyznacznie pozycji elementów charakterystycznych. Pozycja każdego z tych elementów jest względna wedłgu pozycji nadgarstka. ????
+    \quad Pierwszym elementem projektu jest rozpoznanie dłoni poprzez wyznacznie pozycji elementów charakterystycznych. Pozycja każdego z tych elementów, jak już zostało to opisane, jest względna według lewego górnego rogu obrazu kamery. 
 
 
 
@@ -104,13 +114,23 @@ Jeśli to Specyfikacja wewnętrzna:
     \subsection{Generowanie grafiki dłoni}
     
     \quad Generowanie grafiki nałożonej na daną dłoń wykonuje się przy pomocy przygotowanej funkcji biblioteki MediaPipe, która współpracuje z OpenCV.   
+
+    \section{Pomiary oraz inne ważne elementy}
+
+    \subsection{Pozycja dłoni}
+
+    \subsection{Obrót dłoni}
+
+    \subsection{Odległość między palcami}
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%% SciKit Learn %%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     
-    \section{Uczenie Maszynowe}
+    % \section{Uczenie Maszynowe}
+
+    \section{Rozpoznawanie gestów}
     
     \quad SciKit Learn to biblioteka, która oferuje różnego typu metody uczenia maszynowego. Biblioteka zawiera algorytmy klasyfikacji, regresjii oraz analizy skupień. Przykładowym algorytmami w bibliotece są:
     \begin{itemize}
@@ -196,7 +216,7 @@ Jeśli to Specyfikacja wewnętrzna:
     
     \quad Każdy nowy wektor zostaje zapisany do pliku CSV z odpwowiednią etykietą. Zebrane dane posłużą do wytrenowania algorytmów uczenia maszynowego.     
     
-    \subsection{Bucowa pliku CSV}
+    \subsection{Budowa pliku CSV}
 
     \subsection{Metody klasyfikacji - uczenie maszynowe}
     
@@ -210,12 +230,14 @@ Jeśli to Specyfikacja wewnętrzna:
     \end{figure}
     
     \quad W celu wybrania najlepszej metody klasyfikacji, zostnie wybranych kilka algorytmów. Każdy z nich stworzy swój model, a ostatecznie zostanie sprawdzona ich poprawności z wykorzystaniem grupy testowej. Model z najepszym wynikiem zostanie zapisany do pliku typu \textbf{pickle}. W języku Python pliki typu \textbf{pickle} pozwalają na zapis zmiennych, obiektów lub innych struktur danych, które mają zostać wykorzystane w po zakończeniu programu. 
+
+    \subsection{Wybrane algorytmy klasyfikujące}
+
+    \subsection{Badanie dokładności każdego z algorytmów}
     
     \subsection{Ponowne wykorzystanie modelu}
     
     \quad Gotowy model pobieramy i testujemy w przykładowym programie. 
-
-    \section{Budowa Klasy}
     
     \section{Paczka PyPi}
 

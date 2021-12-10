@@ -34,30 +34,37 @@
 \BOOKMARK [2][-]{subsection.5.6.1}{Rozpoznawanie alfabetu w jezyku migowym}{section.5.6}% 34
 \BOOKMARK [2][-]{subsection.5.6.2}{Interaktywny Kiosk}{section.5.6}% 35
 \BOOKMARK [2][-]{subsection.5.6.3}{Dob\363r koloru}{section.5.6}% 36
-\BOOKMARK [0][-]{chapter.6}{[W\233asciwy dla kierunku - np.Specyfikacja wewnetrzna]}{}% 37
-\BOOKMARK [1][-]{section.6.1}{Budowa klasy}{chapter.6}% 38
-\BOOKMARK [1][-]{section.6.2}{Struktury danych}{chapter.6}% 39
-\BOOKMARK [2][-]{subsection.6.2.1}{Dataclass}{section.6.2}% 40
-\BOOKMARK [2][-]{subsection.6.2.2}{Pickle}{section.6.2}% 41
-\BOOKMARK [1][-]{section.6.3}{Rozpoznawanie d\233oni}{chapter.6}% 42
-\BOOKMARK [2][-]{subsection.6.3.1}{OpenCV - przygotowanie obrazu z kamery}{section.6.3}% 43
-\BOOKMARK [2][-]{subsection.6.3.2}{MediaPipe - Elementy charakterystyczne}{section.6.3}% 44
-\BOOKMARK [2][-]{subsection.6.3.3}{Generowanie grafiki d\233oni}{section.6.3}% 45
-\BOOKMARK [1][-]{section.6.4}{Uczenie Maszynowe}{chapter.6}% 46
-\BOOKMARK [2][-]{subsection.6.4.1}{Przygotowanie modeli uczenia maszynowego}{section.6.4}% 47
-\BOOKMARK [2][-]{subsection.6.4.2}{Zebranie danych}{section.6.4}% 48
-\BOOKMARK [2][-]{subsection.6.4.3}{Bucowa pliku CSV}{section.6.4}% 49
-\BOOKMARK [2][-]{subsection.6.4.4}{Metody klasyfikacji - uczenie maszynowe}{section.6.4}% 50
-\BOOKMARK [2][-]{subsection.6.4.5}{Ponowne wykorzystanie modelu}{section.6.4}% 51
-\BOOKMARK [1][-]{section.6.5}{Budowa Klasy}{chapter.6}% 52
-\BOOKMARK [1][-]{section.6.6}{Paczka PyPi}{chapter.6}% 53
-\BOOKMARK [2][-]{subsection.6.6.1}{Budowa paczki}{section.6.6}% 54
-\BOOKMARK [2][-]{subsection.6.6.2}{Struktura Paczki}{section.6.6}% 55
-\BOOKMARK [2][-]{subsection.6.6.3}{Pliki Konfiguracyjne}{section.6.6}% 56
-\BOOKMARK [2][-]{subsection.6.6.4}{Za\233adowanie paczki do repozytorium}{section.6.6}% 57
-\BOOKMARK [0][-]{chapter.7}{Weryfikacja i walidacja}{}% 58
-\BOOKMARK [0][-]{chapter.8}{Podsumowanie i wnioski}{}% 59
-\BOOKMARK [0][-]{chapter.8}{Bibliografia}{}% 60
-\BOOKMARK [0][-]{appendix*.19}{Spis skr\363t\363w i symboli}{}% 61
-\BOOKMARK [0][-]{appendix*.20}{Zr\363d\233a}{}% 62
-\BOOKMARK [0][-]{appendix*.21}{Zawartosc do\233aczonej p\233yty}{}% 63
+\BOOKMARK [1][-]{section.5.7}{Stworzenie nowego modelu przez uzytkownika}{chapter.5}% 37
+\BOOKMARK [0][-]{chapter.6}{[W\233asciwy dla kierunku - np.Specyfikacja wewnetrzna]}{}% 38
+\BOOKMARK [1][-]{section.6.1}{Budowa klasy}{chapter.6}% 39
+\BOOKMARK [1][-]{section.6.2}{Struktury danych}{chapter.6}% 40
+\BOOKMARK [2][-]{subsection.6.2.1}{Dataclass}{section.6.2}% 41
+\BOOKMARK [2][-]{subsection.6.2.2}{S\233ownik}{section.6.2}% 42
+\BOOKMARK [2][-]{subsection.6.2.3}{Pickle}{section.6.2}% 43
+\BOOKMARK [1][-]{section.6.3}{Rozpoznawanie d\233oni}{chapter.6}% 44
+\BOOKMARK [2][-]{subsection.6.3.1}{OpenCV - przygotowanie obrazu z kamery}{section.6.3}% 45
+\BOOKMARK [2][-]{subsection.6.3.2}{MediaPipe - Elementy charakterystyczne}{section.6.3}% 46
+\BOOKMARK [2][-]{subsection.6.3.3}{Generowanie grafiki d\233oni}{section.6.3}% 47
+\BOOKMARK [1][-]{section.6.4}{Pomiary oraz inne wazne elementy}{chapter.6}% 48
+\BOOKMARK [2][-]{subsection.6.4.1}{Pozycja d\233oni}{section.6.4}% 49
+\BOOKMARK [2][-]{subsection.6.4.2}{Obr\363t d\233oni}{section.6.4}% 50
+\BOOKMARK [2][-]{subsection.6.4.3}{Odleg\233osc miedzy palcami}{section.6.4}% 51
+\BOOKMARK [1][-]{section.6.5}{Rozpoznawanie gest\363w}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.6.5.1}{Przygotowanie modeli uczenia maszynowego}{section.6.5}% 53
+\BOOKMARK [2][-]{subsection.6.5.2}{Zebranie danych}{section.6.5}% 54
+\BOOKMARK [2][-]{subsection.6.5.3}{Budowa pliku CSV}{section.6.5}% 55
+\BOOKMARK [2][-]{subsection.6.5.4}{Metody klasyfikacji - uczenie maszynowe}{section.6.5}% 56
+\BOOKMARK [2][-]{subsection.6.5.5}{Wybrane algorytmy klasyfikujace}{section.6.5}% 57
+\BOOKMARK [2][-]{subsection.6.5.6}{Badanie dok\233adnosci kazdego z algorytm\363w}{section.6.5}% 58
+\BOOKMARK [2][-]{subsection.6.5.7}{Ponowne wykorzystanie modelu}{section.6.5}% 59
+\BOOKMARK [1][-]{section.6.6}{Paczka PyPi}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.6.1}{Budowa paczki}{section.6.6}% 61
+\BOOKMARK [2][-]{subsection.6.6.2}{Struktura Paczki}{section.6.6}% 62
+\BOOKMARK [2][-]{subsection.6.6.3}{Pliki Konfiguracyjne}{section.6.6}% 63
+\BOOKMARK [2][-]{subsection.6.6.4}{Za\233adowanie paczki do repozytorium}{section.6.6}% 64
+\BOOKMARK [0][-]{chapter.7}{Weryfikacja i walidacja}{}% 65
+\BOOKMARK [0][-]{chapter.8}{Podsumowanie i wnioski}{}% 66
+\BOOKMARK [0][-]{chapter.8}{Bibliografia}{}% 67
+\BOOKMARK [0][-]{appendix*.19}{Spis skr\363t\363w i symboli}{}% 68
+\BOOKMARK [0][-]{appendix*.20}{Zr\363d\233a}{}% 69
+\BOOKMARK [0][-]{appendix*.21}{Zawartosc do\233aczonej p\233yty}{}% 70
