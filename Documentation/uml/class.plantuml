@@ -1,0 +1,29 @@
+@startuml
+
+scale 5
+
+class OpenLeap{
+
+    +close_window()
+    +detect_key()
+    +left_or_right()
+    +get_position()
+    +get_distance_between_landmarks()
+    +get_angle()
+    +show_data()
+    +main()
+    +loop()
+
+    **bool** screen_show
+    **bool** show_data_in_console
+    **bool** show_data_on_image
+    **bool** normalized_position
+    **string** model
+    **string** screen_type
+    **class** mp_drawings
+    **class** mp_hands
+    **class** hands 
+    **class** results
+}
+
+@enduml
