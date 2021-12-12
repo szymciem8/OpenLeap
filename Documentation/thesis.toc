@@ -56,20 +56,20 @@
 \contentsline {subsection}{\numberline {6.5.3}Budowa pliku CSV}{34}{subsection.6.5.3}%
 \contentsline {subsection}{\numberline {6.5.4}Metody klasyfikacji - uczenie maszynowe}{34}{subsection.6.5.4}%
 \contentsline {subsection}{\numberline {6.5.5}Wybrane algorytmy klasyfikujące}{35}{subsection.6.5.5}%
-\contentsline {subsection}{\numberline {6.5.6}Badanie dokładności każdego z algorytmów}{35}{subsection.6.5.6}%
-\contentsline {subsection}{\numberline {6.5.7}Ponowne wykorzystanie modelu}{35}{subsection.6.5.7}%
-\contentsline {section}{\numberline {6.6}Paczka PyPi}{35}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}Budowa paczki}{35}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}Struktura Paczki}{35}{subsection.6.6.2}%
-\contentsline {subsection}{\numberline {6.6.3}Pliki Konfiguracyjne}{36}{subsection.6.6.3}%
-\contentsline {subsection}{\numberline {6.6.4}Załadowanie paczki do repozytorium}{36}{subsection.6.6.4}%
-\contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{37}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Podsumowanie i wnioski}{39}{chapter.8}%
-\contentsline {chapter}{Bibliografia}{39}{chapter.8}%
-\contentsline {chapter}{Spis skrótów i symboli}{43}{appendix*.19}%
+\contentsline {subsection}{\numberline {6.5.6}Badanie dokładności każdego z algorytmów}{36}{subsection.6.5.6}%
+\contentsline {subsection}{\numberline {6.5.7}Ponowne wykorzystanie modelu}{36}{subsection.6.5.7}%
+\contentsline {section}{\numberline {6.6}Paczka PyPi}{36}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Budowa paczki}{36}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Struktura Paczki}{36}{subsection.6.6.2}%
+\contentsline {subsection}{\numberline {6.6.3}Pliki Konfiguracyjne}{37}{subsection.6.6.3}%
+\contentsline {subsection}{\numberline {6.6.4}Załadowanie paczki do repozytorium}{37}{subsection.6.6.4}%
+\contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{39}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Podsumowanie i wnioski}{41}{chapter.8}%
+\contentsline {chapter}{Bibliografia}{41}{chapter.8}%
+\contentsline {chapter}{Spis skrótów i symboli}{45}{appendix*.19}%
 \babel@toc {british}{}
 \babel@toc {polish}{}
 \babel@toc {british}{}
 \babel@toc {polish}{}
-\contentsline {chapter}{Źródła}{45}{appendix*.20}%
-\contentsline {chapter}{Zawartość dołączonej płyty}{47}{appendix*.21}%
+\contentsline {chapter}{Źródła}{47}{appendix*.20}%
+\contentsline {chapter}{Zawartość dołączonej płyty}{49}{appendix*.21}%

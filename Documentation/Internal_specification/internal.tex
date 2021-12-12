@@ -162,7 +162,8 @@ Jeśli to Specyfikacja wewnętrzna:
         \end{center}
     \end{figure}
     
-    \quad Przygotowanie danych do przetworzenia będzie wymagało paru opercaji matematycznych. Współrzędne opisujące pozycje elementów charakterystycznych są znormalizowane względem wielkości obrazu pobranego z kamery, z czego wynika, że środek układu współrzęnych jest w prawym górnym rogu obrazu pobranego z kamery. W takim wypadku należy przprowadzić transformację, tutaj akurat przesunięcie układu współrzędnych do pozycji nadgarstka. Taka operacja pozwoli na pozbycie się uniezależnienie zmiennych od pozycji elementów dłoni na obrazie. Ostatecznie pozbywamy się pozycji nadarstka z wektora danych, ponieważ jest ona środkiem nowego układu współrzędnych. 
+    \quad Gest dłoni, można scharakteryzować na podstawie pozycji elementów dłoni. Podstawowym problemem jest fakt, że pozycje elementów charakterystycznych są opisane względem układu współrzędnych, którego środek znajduje się w lewym górnym rogu obrazu pobranego z kamery. Pozycja dłoni na obrazie nie ma żadnego znaczenia w kwestii określania gestu. Poprawnie przygotowane pozycje elementów powinnny zostać pozbawione zależności od pozycji dłoni względem obrazu. 
+    \quad Przygotowanie danych do przetworzenia będzie wymagało paru opercaji matematycznych. W takim wypadku należy przprowadzić transformację, tutaj akurat przesunięcie układu współrzędnych do pozycji nadgarstka. Taka operacja pozwoli na opis pozycji elementów względem nagarstka. Ostatecznie pozbywamy się pozycji nadarstka z wektora danych, ponieważ jest ona środkiem nowego układu współrzędnych. 
     
     \quad \textbf{Macierz przesunięcia}
     
@@ -172,6 +173,18 @@ Jeśli to Specyfikacja wewnętrzna:
         1 & 0 & 0 & -x_0 \\
         0 & 1 & 0 & -y_0 \\
         0 & 0 & 1 & -z_0 \\
+        0 & 0 & 0 & 1
+        \end{bmatrix}
+    \end{equation*}
+
+    \quad Tak naprawdę, przesunięcie układu współrzędnych w osi Z nie będzie miało miejsca. Wartości współrzędnej Z reszty elementów, oprócz elementu z indeksem równym 0, czyli nadgarstka, są określane właśnie nadgarstka. Dlatego też, macierz przesunięcia w osi Z jest równa 0. 
+
+    \begin{equation*}
+        M_p = 
+        \begin{bmatrix}
+        1 & 0 & 0 & -x_0 \\
+        0 & 1 & 0 & -y_0 \\
+        0 & 0 & 1 & 0 \\
         0 & 0 & 0 & 1
         \end{bmatrix}
     \end{equation*}
@@ -217,6 +230,7 @@ Jeśli to Specyfikacja wewnętrzna:
     \quad Każdy nowy wektor zostaje zapisany do pliku CSV z odpwowiednią etykietą. Zebrane dane posłużą do wytrenowania algorytmów uczenia maszynowego.     
     
     \subsection{Budowa pliku CSV}
+    \quad Dane zapisane w pliku CSV opisują przykładowe współrzędne wszysktich elementów dłoni wraz z przypisaną etykietą oznaczającą gest. 
 
     \subsection{Metody klasyfikacji - uczenie maszynowe}
     
@@ -232,6 +246,18 @@ Jeśli to Specyfikacja wewnętrzna:
     \quad W celu wybrania najlepszej metody klasyfikacji, zostnie wybranych kilka algorytmów. Każdy z nich stworzy swój model, a ostatecznie zostanie sprawdzona ich poprawności z wykorzystaniem grupy testowej. Model z najepszym wynikiem zostanie zapisany do pliku typu \textbf{pickle}. W języku Python pliki typu \textbf{pickle} pozwalają na zapis zmiennych, obiektów lub innych struktur danych, które mają zostać wykorzystane w po zakończeniu programu. 
 
     \subsection{Wybrane algorytmy klasyfikujące}
+
+    \quad Do wytrenowania modeli uczenia maszynowego z biblioteki SciKit Learn zostały wybrane następujące algorytmy. 
+
+    \begin{itemize}
+        \item Logistic Regression
+        \item Nearest Centroid 
+        \item Decision Tree Classifier 
+        \item Random Forest Classifier 
+        \item SGD Classifier
+        \item Gradient Boosting Classifier
+        \item MPL Classifier
+    \end{itemize}
 
     \subsection{Badanie dokładności każdego z algorytmów}
     
