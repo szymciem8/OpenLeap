@@ -1,0 +1,7 @@
+\BOOKMARK [2][-]{subsection.0.1}{Instrukcja przedstawiajaca proces uczenia modelu rozpoznajacego dowolne gesty d\233oni.}{}% 1
+\BOOKMARK [1][-]{section.1}{1. Rysowanie D\233oni}{}% 2
+\BOOKMARK [1][-]{section.2}{2. Zapis pozycji element\363w charakterystycznych do pliku CSV}{}% 3
+\BOOKMARK [1][-]{section.3}{3. Trening modeli z wykorzystaniem Scikit Learn}{}% 4
+\BOOKMARK [1][-]{section.4}{4. Trenowanie Klasyfikujacych Modeli Uczenia Maszynowego}{}% 5
+\BOOKMARK [1][-]{section.5}{5. Ewaluacja Modelu}{}% 6
+\BOOKMARK [1][-]{section.6}{5. Detekcje}{}% 7
