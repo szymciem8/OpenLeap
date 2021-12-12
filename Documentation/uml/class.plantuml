@@ -10,6 +10,7 @@ class OpenLeap{
     +get_position()
     +get_distance_between_landmarks()
     +get_angle()
+    +get_gesture()
     +show_data()
     +main()
     +loop()

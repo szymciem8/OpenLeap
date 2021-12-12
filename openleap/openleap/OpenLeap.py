@@ -103,7 +103,7 @@ class OpenLeap():
 
         return False
 
-    def left_or_right(self, index, hand, mode='AI'):
+    def left_or_right(self, index, mode='AI', hand=None):
         """
         Recognizes if visible hands (or hand) are left or right. 
 
@@ -113,8 +113,6 @@ class OpenLeap():
         """
 
         label = 'right'
-
-        coords = np.array((hand.landmark[self.mp_hands.HandLandmark.WRIST].x, hand.landmark[self.mp_hands.HandLandmark.WRIST].y))
 
         if mode == 'AI':
             for idx, classification in enumerate(self.results.multi_handedness):
@@ -128,6 +126,8 @@ class OpenLeap():
 
 
         elif mode == 'position':
+            coords = np.array((hand.landmark[self.mp_hands.HandLandmark.WRIST].x, hand.landmark[self.mp_hands.HandLandmark.WRIST].y))
+
             #Get x values from both hands and compare
             if len(self.results.multi_handedness) >= 2:
                 for i in [0, 1]:
@@ -329,7 +329,7 @@ class OpenLeap():
             if self.results.multi_hand_landmarks:
                 n_hands = len(self.results.multi_hand_landmarks)
                 for index, hand in enumerate(self.results.multi_hand_landmarks):
-        
+                    print(hand)
                     if n_hands >= 1:
                         #If there are two hands
                         if self.left_or_right(index, hand, self.lr_mode):
