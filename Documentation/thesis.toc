@@ -13,12 +13,13 @@
 \contentsline {section}{\numberline {4.1}Wymagania Funkcjonalne i Niefunkcjonalne}{9}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Narzędzia}{9}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}System operacyjny Ubuntu}{10}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Python}{10}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}iPython}{10}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Jupyter Notebook}{10}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Visual Studio Code - Środowisko Pracy}{11}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Platforma PyPi}{11}{subsection.4.2.6}%
-\contentsline {subsection}{\numberline {4.2.7}Programy bdist\_wheel oraz sdist}{11}{subsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.2.2}GitHub}{10}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Python}{10}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}iPython}{10}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Jupyter Notebook}{11}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Visual Studio Code - Środowisko Pracy}{11}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}Platforma PyPi}{11}{subsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.2.8}Programy bdist\_wheel oraz sdist}{11}{subsection.4.2.8}%
 \contentsline {section}{\numberline {4.3}Biblioteki}{12}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}OpenCV}{12}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}MediaPipe}{12}{subsection.4.3.2}%
