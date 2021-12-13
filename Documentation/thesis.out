@@ -9,7 +9,7 @@
 \BOOKMARK [1][-]{section.3.1}{Sformu\233owanie problemu}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.2}{Podobne rozwiazania}{chapter.3}% 10
 \BOOKMARK [0][-]{chapter.4}{Wymagania i narzedzia}{}% 11
-\BOOKMARK [1][-]{section.4.1}{Wymagania}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.1}{Wymagania Funkcjonalne i Niefunkcjonalne}{chapter.4}% 12
 \BOOKMARK [1][-]{section.4.2}{Narzedzia}{chapter.4}% 13
 \BOOKMARK [2][-]{subsection.4.2.1}{System operacyjny Ubuntu}{section.4.2}% 14
 \BOOKMARK [2][-]{subsection.4.2.2}{Python}{section.4.2}% 15
@@ -18,60 +18,61 @@
 \BOOKMARK [2][-]{subsection.4.2.5}{Visual Studio Code - Srodowisko Pracy}{section.4.2}% 18
 \BOOKMARK [2][-]{subsection.4.2.6}{Platforma PyPi}{section.4.2}% 19
 \BOOKMARK [2][-]{subsection.4.2.7}{Programy bdist\137wheel oraz sdist}{section.4.2}% 20
-\BOOKMARK [1][-]{section.4.3}{OpenCV}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.4}{MediaPipe}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.5}{SciKit Learn}{chapter.4}% 23
-\BOOKMARK [0][-]{chapter.5}{[W\233asciwy dla kierunku - np. Specyfikacja zewnetrzna]}{}% 24
-\BOOKMARK [1][-]{section.5.1}{Wymagania sprzetowe}{chapter.5}% 25
-\BOOKMARK [2][-]{subsection.5.1.1}{Kamera}{section.5.1}% 26
-\BOOKMARK [1][-]{section.5.2}{Wymagania programowe}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.3}{Instalacja paczki}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.4}{Przyk\233adowy program}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.5}{Funkcjonalnosc modu\233u}{chapter.5}% 30
-\BOOKMARK [2][-]{subsection.5.5.1}{Parametry}{section.5.5}% 31
-\BOOKMARK [2][-]{subsection.5.5.2}{Dostepne funkcje}{section.5.5}% 32
-\BOOKMARK [2][-]{subsection.5.5.3}{G\233\363wny watek}{section.5.5}% 33
-\BOOKMARK [1][-]{section.5.6}{Przyk\233ady uzycia}{chapter.5}% 34
-\BOOKMARK [2][-]{subsection.5.6.1}{Rozpoznawanie alfabetu w jezyku migowym}{section.5.6}% 35
-\BOOKMARK [2][-]{subsection.5.6.2}{Interaktywny Kiosk}{section.5.6}% 36
-\BOOKMARK [2][-]{subsection.5.6.3}{Dob\363r koloru}{section.5.6}% 37
-\BOOKMARK [1][-]{section.5.7}{Stworzenie nowego modelu przez uzytkownika}{chapter.5}% 38
-\BOOKMARK [0][-]{chapter.6}{[W\233asciwy dla kierunku - np.Specyfikacja wewnetrzna]}{}% 39
-\BOOKMARK [1][-]{section.6.1}{Klasa OpenLeap}{chapter.6}% 40
-\BOOKMARK [2][-]{subsection.6.1.1}{Relacja klas - kompozycja}{section.6.1}% 41
-\BOOKMARK [2][-]{subsection.6.1.2}{Budowa klasy}{section.6.1}% 42
-\BOOKMARK [2][-]{subsection.6.1.3}{Atrybuty klasy}{section.6.1}% 43
-\BOOKMARK [2][-]{subsection.6.1.4}{Metody klasy}{section.6.1}% 44
-\BOOKMARK [1][-]{section.6.2}{Struktury danych}{chapter.6}% 45
-\BOOKMARK [2][-]{subsection.6.2.1}{Struktura mp\137hands}{section.6.2}% 46
-\BOOKMARK [2][-]{subsection.6.2.2}{Struktura results}{section.6.2}% 47
-\BOOKMARK [2][-]{subsection.6.2.3}{Dataclass}{section.6.2}% 48
-\BOOKMARK [2][-]{subsection.6.2.4}{S\233ownik}{section.6.2}% 49
-\BOOKMARK [2][-]{subsection.6.2.5}{Pickle}{section.6.2}% 50
-\BOOKMARK [1][-]{section.6.3}{Rozpoznawanie d\233oni}{chapter.6}% 51
-\BOOKMARK [2][-]{subsection.6.3.1}{OpenCV - przygotowanie obrazu z kamery}{section.6.3}% 52
-\BOOKMARK [2][-]{subsection.6.3.2}{MediaPipe - Elementy charakterystyczne}{section.6.3}% 53
-\BOOKMARK [2][-]{subsection.6.3.3}{Generowanie grafiki d\233oni}{section.6.3}% 54
-\BOOKMARK [1][-]{section.6.4}{Pomiary oraz inne wazne elementy}{chapter.6}% 55
-\BOOKMARK [2][-]{subsection.6.4.1}{Pozycja d\233oni}{section.6.4}% 56
-\BOOKMARK [2][-]{subsection.6.4.2}{Obr\363t d\233oni}{section.6.4}% 57
-\BOOKMARK [2][-]{subsection.6.4.3}{Odleg\233osc miedzy palcami}{section.6.4}% 58
-\BOOKMARK [1][-]{section.6.5}{Rozpoznawanie gest\363w}{chapter.6}% 59
-\BOOKMARK [2][-]{subsection.6.5.1}{Przygotowanie modeli uczenia maszynowego}{section.6.5}% 60
-\BOOKMARK [2][-]{subsection.6.5.2}{Zebranie danych}{section.6.5}% 61
-\BOOKMARK [2][-]{subsection.6.5.3}{Budowa pliku CSV}{section.6.5}% 62
-\BOOKMARK [2][-]{subsection.6.5.4}{Metody klasyfikacji - uczenie maszynowe}{section.6.5}% 63
-\BOOKMARK [2][-]{subsection.6.5.5}{Wybrane algorytmy klasyfikujace}{section.6.5}% 64
-\BOOKMARK [2][-]{subsection.6.5.6}{Badanie dok\233adnosci kazdego z algorytm\363w}{section.6.5}% 65
-\BOOKMARK [2][-]{subsection.6.5.7}{Ponowne wykorzystanie modelu}{section.6.5}% 66
-\BOOKMARK [1][-]{section.6.6}{Paczka PyPi}{chapter.6}% 67
-\BOOKMARK [2][-]{subsection.6.6.1}{Budowa paczki}{section.6.6}% 68
-\BOOKMARK [2][-]{subsection.6.6.2}{Struktura Paczki}{section.6.6}% 69
-\BOOKMARK [2][-]{subsection.6.6.3}{Pliki Konfiguracyjne}{section.6.6}% 70
-\BOOKMARK [2][-]{subsection.6.6.4}{Za\233adowanie paczki do repozytorium}{section.6.6}% 71
-\BOOKMARK [0][-]{chapter.7}{Weryfikacja i walidacja}{}% 72
-\BOOKMARK [0][-]{chapter.8}{Podsumowanie i wnioski}{}% 73
-\BOOKMARK [0][-]{chapter.8}{Bibliografia}{}% 74
-\BOOKMARK [0][-]{appendix*.21}{Spis skr\363t\363w i symboli}{}% 75
-\BOOKMARK [0][-]{appendix*.22}{Zr\363d\233a}{}% 76
-\BOOKMARK [0][-]{appendix*.23}{Zawartosc do\233aczonej p\233yty}{}% 77
+\BOOKMARK [1][-]{section.4.3}{Biblioteki}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.3.1}{OpenCV}{section.4.3}% 22
+\BOOKMARK [2][-]{subsection.4.3.2}{MediaPipe}{section.4.3}% 23
+\BOOKMARK [2][-]{subsection.4.3.3}{SciKit Learn}{section.4.3}% 24
+\BOOKMARK [0][-]{chapter.5}{[W\233asciwy dla kierunku \205 np. Specyfikacja zewnetrzna]}{}% 25
+\BOOKMARK [1][-]{section.5.1}{Wymagania sprzetowe}{chapter.5}% 26
+\BOOKMARK [2][-]{subsection.5.1.1}{Kamera}{section.5.1}% 27
+\BOOKMARK [1][-]{section.5.2}{Wymagania programowe}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.3}{Instalacja paczki}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.4}{Przyk\233adowy program}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.5}{Funkcjonalnosc modu\233u}{chapter.5}% 31
+\BOOKMARK [2][-]{subsection.5.5.1}{Parametry}{section.5.5}% 32
+\BOOKMARK [2][-]{subsection.5.5.2}{Dostepne funkcje}{section.5.5}% 33
+\BOOKMARK [2][-]{subsection.5.5.3}{G\233\363wny watek}{section.5.5}% 34
+\BOOKMARK [1][-]{section.5.6}{Przyk\233ady uzycia}{chapter.5}% 35
+\BOOKMARK [2][-]{subsection.5.6.1}{Rozpoznawanie alfabetu w jezyku migowym}{section.5.6}% 36
+\BOOKMARK [2][-]{subsection.5.6.2}{Interaktywny Kiosk}{section.5.6}% 37
+\BOOKMARK [2][-]{subsection.5.6.3}{Dob\363r koloru}{section.5.6}% 38
+\BOOKMARK [1][-]{section.5.7}{Stworzenie nowego modelu}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{[W\233asciwy dla kierunku - np.Specyfikacja wewnetrzna]}{}% 40
+\BOOKMARK [1][-]{section.6.1}{Klasa OpenLeap}{chapter.6}% 41
+\BOOKMARK [2][-]{subsection.6.1.1}{Relacja klas - kompozycja}{section.6.1}% 42
+\BOOKMARK [2][-]{subsection.6.1.2}{Budowa klasy}{section.6.1}% 43
+\BOOKMARK [2][-]{subsection.6.1.3}{Atrybuty klasy}{section.6.1}% 44
+\BOOKMARK [2][-]{subsection.6.1.4}{Metody klasy}{section.6.1}% 45
+\BOOKMARK [1][-]{section.6.2}{Struktury danych}{chapter.6}% 46
+\BOOKMARK [2][-]{subsection.6.2.1}{Struktura mp\137hands}{section.6.2}% 47
+\BOOKMARK [2][-]{subsection.6.2.2}{Struktura results}{section.6.2}% 48
+\BOOKMARK [2][-]{subsection.6.2.3}{Dataclass}{section.6.2}% 49
+\BOOKMARK [2][-]{subsection.6.2.4}{S\233ownik}{section.6.2}% 50
+\BOOKMARK [2][-]{subsection.6.2.5}{Pickle}{section.6.2}% 51
+\BOOKMARK [1][-]{section.6.3}{Rozpoznawanie d\233oni}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.6.3.1}{OpenCV - przygotowanie obrazu z kamery}{section.6.3}% 53
+\BOOKMARK [1][-]{section.6.4}{MediaPipe - Elementy charakterystyczne}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.4.1}{Generowanie grafiki d\233oni}{section.6.4}% 55
+\BOOKMARK [1][-]{section.6.5}{Pomiary oraz inne wazne elementy}{chapter.6}% 56
+\BOOKMARK [2][-]{subsection.6.5.1}{Pozycja d\233oni}{section.6.5}% 57
+\BOOKMARK [2][-]{subsection.6.5.2}{Obr\363t d\233oni}{section.6.5}% 58
+\BOOKMARK [2][-]{subsection.6.5.3}{Odleg\233osc miedzy palcami}{section.6.5}% 59
+\BOOKMARK [1][-]{section.6.6}{Rozpoznawanie gest\363w}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.6.1}{Przygotowanie modeli uczenia maszynowego}{section.6.6}% 61
+\BOOKMARK [2][-]{subsection.6.6.2}{Zebranie danych}{section.6.6}% 62
+\BOOKMARK [2][-]{subsection.6.6.3}{Budowa pliku CSV}{section.6.6}% 63
+\BOOKMARK [2][-]{subsection.6.6.4}{Metody klasyfikacji - uczenie maszynowe}{section.6.6}% 64
+\BOOKMARK [2][-]{subsection.6.6.5}{Wybrane algorytmy klasyfikujace}{section.6.6}% 65
+\BOOKMARK [2][-]{subsection.6.6.6}{Badanie dok\233adnosci kazdego z algorytm\363w}{section.6.6}% 66
+\BOOKMARK [2][-]{subsection.6.6.7}{Ponowne wykorzystanie modelu}{section.6.6}% 67
+\BOOKMARK [1][-]{section.6.7}{Paczka PyPi}{chapter.6}% 68
+\BOOKMARK [2][-]{subsection.6.7.1}{Budowa paczki}{section.6.7}% 69
+\BOOKMARK [2][-]{subsection.6.7.2}{Struktura Paczki}{section.6.7}% 70
+\BOOKMARK [2][-]{subsection.6.7.3}{Pliki Konfiguracyjne}{section.6.7}% 71
+\BOOKMARK [2][-]{subsection.6.7.4}{Za\233adowanie paczki do repozytorium}{section.6.7}% 72
+\BOOKMARK [0][-]{chapter.7}{Weryfikacja i walidacja}{}% 73
+\BOOKMARK [0][-]{chapter.8}{Podsumowanie i wnioski}{}% 74
+\BOOKMARK [0][-]{chapter.8}{Bibliografia}{}% 75
+\BOOKMARK [0][-]{appendix*.21}{Spis skr\363t\363w i symboli}{}% 76
+\BOOKMARK [0][-]{appendix*.22}{Zr\363d\233a}{}% 77
+\BOOKMARK [0][-]{appendix*.23}{Zawartosc do\233aczonej p\233yty}{}% 78

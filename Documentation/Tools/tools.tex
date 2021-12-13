@@ -1,23 +1,29 @@
 \chapter{Wymagania i narzędzia}
 
-\begin{itemize}
-\item wymagania funkcjonalne i niefunkcjonalne
-\item przypadki użycia (diagramy UML) - dla prac, w których mają zastosowanie
-\item opis narzędzi, metod eksperymentalnych, metod modelowania itp.
-\item metodyka pracy nad projektowaniem i implementacją - dla prac, w których ma to zastosowanie
-\end{itemize}
+% \begin{itemize}
+% \item wymagania funkcjonalne i niefunkcjonalne
+% \item przypadki użycia (diagramy UML) - dla prac, w których mają zastosowanie
+% \item opis narzędzi, metod eksperymentalnych, metod modelowania itp.
+% \item metodyka pracy nad projektowaniem i implementacją - dla prac, w których ma to zastosowanie
+% \end{itemize}
 
 
-\section{Wymagania}
+\section{Wymagania Funkcjonalne i Niefunkcjonalne}
 
-\quad Klasa powinna zawierać w sobie wszystkie niezbędne funkcje oraz parametry pozwalające na wykorzysatnie jej w dowolnym projekcie. Modele rozpoznające gesty powinny zostać uprzednio przygotowane. 
+\quad Klasa powinna zawierać w sobie wszystkie niezbędne funkcje oraz parametry pozwalające na wykorzystanie jej w dowolnym projekcie, takie jak na przykład obliczanie kąta obrotu dłoni względem nadgarstka czy rozpoznawanie gestów. Dwa podstawowe modele rozpoznające gesty powinny zostać uprzednio przygotowane, natomiast użytkownik powinien mieć dodatkowo możliwość stworzenia własnego modelu rozpoznającego wybrane ułożenie dłoni. 
 
-\quad Pobranie modułu powinno być możliwe poprzez wykorzystanie standardowego programu do zarządzania paczkami \textbf{pip}. Ten menedżer pozwala na instalacje paczki wraz z jej zależnościami, czyli innymi paczkami wymaganami do porwanego działania pobieranego modułu. 
+\quad Pobranie modułu powinno być możliwe poprzez wykorzystanie standardowego menedżera do zarządzania paczkami w języku Python, czyli programu \textbf{pip}. Ten menedżer pozwala na instalacje paczki wraz z jej zależnościami, czyli innymi paczkami wymaganiami do poprawnego działania pobieranej biblioteki. 
+
+\quad Na głównej stronie projektu powinna zostać zamieszczona krótka dokumentacja w postaci pliku \textbf{README.md}, w którym zostanie opisany proces instalacji paczki, jej funkcjonalność oraz przykładowe programy. 
 
 \section{Narzędzia}
 
+\quad Przy tworzeniu modułu ważne są wykorzystywane narzędzia, zaczynając od wybranego systemu operacyjnego, a kończąc na programach pozwalających na przygotowanie plików źródłowych wysyłanych na zdalne repozytorium PyPi, każde z nich jest kluczowe do zbudowania pełnego projektu. 
+
 \subsection{System operacyjny Ubuntu}
-\quad Do stworzenia oprogramowania została wybrana dystrybucja Ubuntu systemu Linux. Dzięki takim elementom jak menedżer pakietów lub wbudowane wspracie dla języka Python.
+\quad Do stworzenia oprogramowania została wybrana dystrybucja Ubuntu w wersji 20.04 LTS. System został wybrany dzięki takim elementom jak menedżer pakietów lub oraz wsparcie dla języka Python. 
+
+\quad Głównym atutem systemu jest rozbudowany terminal, który pozwala na wykorzystanie programów systemu kontroli 
 
 \subsection{Python}
 \quad Do napisanie biblioteki został wykorzystany język skryptowy Python. Ze względu na swoją budowę, Python nie należy do najbardziej wydajnych języków. Python jest językiem interpretowalnym, co oznacza, że jego program nie zostaje przekompilowany do kodu maszynowego, a zostaje on zinterpretowany przez program nazywany interpreterem. 
@@ -61,9 +67,11 @@
 
 % \section{SciKit Learn - uczenie maszynowe}
 
-\section{OpenCV}
+\section{Biblioteki}
 
-\section{MediaPipe}
+\subsection{OpenCV}
+
+\subsection{MediaPipe}
 
 \quad Biblioteka MediaPipe o otwartym źródle, udostępnia wieloplatformowe oraz konfigurowalne rozwiązania wykrzustujące uczenie maszynowe w dziedzienie rozpoznawania, segmentacji oraz klasyfikacji obiektów wizji komputerowej. Niektórymi z rozwiązań są:
 
@@ -76,7 +84,7 @@
 
 \quad Model modułu MediaPipe pozwala na wyznaczenie pozycji 21 elementów charakterystycznych dłoni. Współrzędne X i Y są znomralizowane względem rozdzielczości obrazu kamery. Współrzędna X względem liczby pikseli w osi X, a współrzędna Y względem liczby pikseli w osi Y. Oś Z jest prostopadła do osi X i Y, z punktem początkowym w punkcie określającym pozycję nadgarstka. Współrzędna Z jest znormalizowana względem szerokości obrazu kamery, tak jak współrzędna X. 
 
-\section{SciKit Learn}
+\subsection{SciKit Learn}
 
 \quad SciKit Learn to biblioteka, która oferuje różnego typu metody uczenia maszynowego. Biblioteka zawiera algorytmy klasyfikacji, regresjii oraz analizy skupień. Przykładowym algorytmami w bibliotece są:
 \begin{itemize}
