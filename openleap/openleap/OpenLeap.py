@@ -113,8 +113,8 @@ class OpenLeap():
         """
 
         label = 'right'
-
         if mode == 'AI':
+            
             for idx, classification in enumerate(self.results.multi_handedness):
                 if classification.classification[0].index == index:
 
@@ -310,7 +310,7 @@ class OpenLeap():
 
             #Detections
             self.results = self.hands.process(image)
-            # print(self.results)
+            # print(self.results.multi_hand_landmarks)
 
             #Set flag back to True
             image.flags.writeable = True
@@ -329,7 +329,8 @@ class OpenLeap():
             if self.results.multi_hand_landmarks:
                 n_hands = len(self.results.multi_hand_landmarks)
                 for index, hand in enumerate(self.results.multi_hand_landmarks):
-                    print(hand)
+                    # print(hand)
+                    print(type([0,0]))
                     if n_hands >= 1:
                         #If there are two hands
                         if self.left_or_right(index, hand, self.lr_mode):
@@ -388,7 +389,7 @@ if __name__=='__main__':
     Use example of OpenLeap object. 
     '''
 
-    controller = OpenLeap(show_data_in_console=True, 
+    controller = OpenLeap(show_data_in_console=False, 
                  screen_show=True, screen_type='BLACK', 
                  show_data_on_image=True, 
                  gesture_model='basic', 

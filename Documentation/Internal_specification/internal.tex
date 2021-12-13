@@ -119,8 +119,58 @@ Jeśli to Specyfikacja wewnętrzna:
 
 \subsection{Struktura mp\_hands}
 
+\quad Struktura mp\_hands jest enumeratorem. Przechowuje ona informacje o indeksach wszystkich elementów dłoni. Została ona stworzona po to, aby łatwiej było zapisywać program, który odczutje informacje o danym elemencie. 
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{../images/hand_landmarks.png}
+        \caption{Elementy charakterystyczne dłoni}
+    \end{center}
+\end{figure}
+
+\quad Pierwszym elementem określanym przez enumerator jest nadgarstek. Dalej znajduje się reszta indeksów, oznaczająca resztę części palców i dłoni.  
+
+\begin{lstlisting}[caption={Przykładowe wykorzystanie \textbf{mp\_hands}},captionpos=b,language=python]
+    x = hand.landmark[self.mp_hands.HandLandmark.WRIST].x
+\end{lstlisting}
+
+\quad Tak jak zostało to ukazane powyżej, enumerator może zostać wykorzystany, na przykłd do odczytu wpółrzędnej danego puntku. Jest to ułatwienie, dzięki któremu program staje się czytelnieszy dla programisty lub osoby przeglądającej program. 
+
 \subsection{Struktura results}
 
+\quad Struktura \textbf{results} jest obiektem, który przechowuje informacje zwrócone przez metodę \textbf{hands.process()}. Klasa OpenLeap korzysta z dwóch typów informacji zwracanych przez tą metodę. 
+
+\begin{itemize}
+    \item \textbf{multi\_hand\_landmarks} - obiekt przechowujący dane o pozycjach wszystkich elementów dłoni. Przykład wykorzystania został przedstawiony powyżej. 
+    
+    \begin{lstlisting}[caption={Przykład elementu obiektu},captionpos=b,language=python]
+        [landmark {
+            x: 0.7409825921058655
+            y: 0.6843034029006958
+            z: 0.0
+            }
+            .s
+            .
+            .
+            landmark {
+            x: 0.7874422073364258
+            y: 0.26234549283981323
+            z: -0.16528795659542084
+            }
+        ]
+    \end{lstlisting}
+    
+
+    \item \textbf{multi\_handedness} - lista przechowująca dane o wszysktich dłoniach widocznych na obraze. Danymi są indeks, typ dłoni oraz punktacja określającą pewność poprawnego rozpoznania dłoni. 
+    \begin{lstlisting}[caption={Przykład elementu obiektu},captionpos=b,language=python]
+        [classification {
+                index: 1
+                score: 0.9482673406600952
+                label: "Right"
+            }
+        ]
+    \end{lstlisting}
+\end{itemize}
 
 \subsection{Dataclass}
 
@@ -159,7 +209,7 @@ Jeśli to Specyfikacja wewnętrzna:
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=10cm]{../images/image_processing.png}
-        \caption{Elementy charakterystyczne dłoni}
+        \caption{Przygotowanie obrazu}
     \end{center}
 \end{figure}
 
@@ -204,24 +254,6 @@ Jeśli to Specyfikacja wewnętrzna:
 
 \subsection{MediaPipe - Elementy charakterystyczne}
 
-\quad Biblioteka MediaPipe o otwartym źródle, udostępnia wieloplatformowe oraz konfigurowalne rozwiązania wykrzustujące uczenie maszynowe w dziedzienie rozpoznawania, segmentacji oraz klasyfikacji obiektów wizji komputerowej. Niektórymi z rozwiązań są:
-
-\begin{itemize}
-    \item Rozpoznawanie twarzy
-    \item Segmentacjia włosów oraz twarzy
-    \item Rozpoznawnie oraz określanie rozmiarów obiektów trójwymiarowych 
-            na podstawie obrazu dwuwymiarowego. 
-\end{itemize}
-
-\quad Model modułu MediaPipe pozwala na wyznaczenie pozycji 21 elementów charakterystycznych dłoni. Współrzędne X i Y są znomralizowane względem rozdzielczości obrazu kamery. Współrzędna X względem liczby pikseli w osi X, a współrzędna Y względem liczby pikseli w osi Y. Oś Z jest prostopadła do osi X i Y, z punktem początkowym w punkcie określającym pozycję nadgarstka. Współrzędna Z jest znormalizowana względem szerokości obrazu kamery, tak jak współrzędna X. 
-
-\begin{figure}[H]
-\begin{center}
-    \includegraphics[width=15cm]{../images/hand_landmarks.png}
-    \caption{Elementy charakterystyczne dłoni}
-\end{center}
-\end{figure}
-
 \quad Pozycje nadgarstka, paliczków oraz stawów dłoni zostaną wykorzystane do obliczenia obrotu dłoni względem punkut 0 oraz do wytrenowania modeli uczenia maszynowego, których zadaniem będzie rozpoznawnie wybranych gestów. 
 
 \subsection{Generowanie grafiki dłoni}
@@ -244,14 +276,6 @@ Jeśli to Specyfikacja wewnętrzna:
 % \section{Uczenie Maszynowe}
 
 \section{Rozpoznawanie gestów}
-
-\quad SciKit Learn to biblioteka, która oferuje różnego typu metody uczenia maszynowego. Biblioteka zawiera algorytmy klasyfikacji, regresjii oraz analizy skupień. Przykładowym algorytmami w bibliotece są:
-\begin{itemize}
-    \item Las losowy - polegająca na konstruowaniu wielu drzew decyzyjnych w czasie uczenia. 
-    \item Algorytm centroidów - algorytm wykorzystywany w analizie skupień.
-    \item Maszyna wektorów nośnoych - algorytm klasyfikujący, często wykorzystywany w procesie rozpoznawania obrazów. 
-\end{itemize}
-O wszystkich dostępnych algorytmach informacje można znaleźć w ogólnodostępnej dokumentacji biblioteki. 
 
 \subsection{Przygotowanie modeli uczenia maszynowego}
 \quad Celem programu będzie stworzenie modeli matematycznych przy pomocy metod uczenia maszynowego, których celem będzie rozpoznawanie gestów dłoni. Proces tworzenie takiego modelu można podzielić na trzy kroki przedstawione na schemacie 6.3. 
