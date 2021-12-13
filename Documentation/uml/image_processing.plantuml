@@ -6,7 +6,7 @@ start
 
 :Obróbka obrazu z wykorzystaniem OpenCV;
 :Algorytm rozpoznawania dłoni biblioteki MediaPipe;
-:Model rozponający gest;
+:Główny program;
 
 stop
 

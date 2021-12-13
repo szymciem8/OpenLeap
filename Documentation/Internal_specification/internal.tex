@@ -18,20 +18,34 @@ Jeśli to Specyfikacja wewnętrzna:
 \item metodyka pracy nad projektowaniem i implementacją - dla prac, w których ma to zastosowanie
 \end{itemize}
 
-\section{Budowa klasy}
+\section{Klasa OpenLeap}
 
-\quad Część atrybutów klasy została opisana w podrozdziale \textbf{\nameref{parametry}}, są to te elementy, które mogą zostać zdefiniowane przez użytkownika. Druga część atrybutów jest generowana automatycznie. 
+\subsection{Relacja klas - kompozycja}
+\quad Klasa OpenLeap korzysta z różnych bibliotek oraz klas. Natomiast nie dziedziczy ona żadnej klasy. Zostały jedynie wykorzystane wybrane metody tworzonych obiektów wewnątrz klasy. 
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=10cm]{example-image-a}
+        \caption{Relacja klas} 
+    \end{center}
+\end{figure}
+
+\quad OpenLeap wykorzstuje metody klasy \textbf{mediapipe.solutions.hands.Hands} oraz \textbf{cv2.VideoCapture}. Pierwsza klasa pozwala na stworzenie obiektu, któreg zadaniem jest rozpoznawanie dłoni na podstawie podawanego obrazu. Druga klasa tworzy obiekt, który pozwala na pobranie obrazu z kamery, określenie jego wielkości oraz sprawdzenia czy kamery jest aktualnie dostępna. 
+
+\subsection{Budowa klasy}
+
+\quad 
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=10cm]{../images/class.png}
-        \caption{Schemat klasy OpenLeap}
+        \caption{Schemat klasy OpenLeap} 
     \end{center}
 \end{figure}
 
-\subsection{Opis atrybutów klasy}
+\subsection{Atrybuty klasy}
 
-\quad Tak jak zostało to wspomnianie wcześniej, część atrybutów została już opisana. W tym podrozdziale zostanie opisana reszta atrybutów. 
+\quad Część atrybutów klasy została opisana w podrozdziale \textbf{\nameref{parametry}}, są to te elementy, które mogą zostać zdefiniowane przez użytkownika. Druga część atrybutów jest generowana automatycznie. 
 
 \begin{itemize}
     \item \textbf{mp\_drawings} - obiekt pobierany z bilbioteki \textbf{MediaPipe} pozwalająca na rysowanie obrysu dłoni w oknie generowanym przez OpenCV.
@@ -44,7 +58,7 @@ Jeśli to Specyfikacja wewnętrzna:
     \item \textbf{results} - obiekt przechowujący informacje o rozpoznanych dłoniach i ich elementach. 
 \end{itemize}
 
-\subsection{Opis metod klasy}
+\subsection{Metody klasy}
 
 \begin{enumerate}
     \item \textbf{close\_window()} - zamknięcie wszytkich okien biblioteki OpenCV.
@@ -142,15 +156,6 @@ Jeśli to Specyfikacja wewnętrzna:
 
 \quad Pierwszym elementem projektu jest rozpoznanie dłoni poprzez wyznacznie pozycji elementów charakterystycznych. Pozycja każdego z tych elementów, jak już zostało to opisane, jest względna według lewego górnego rogu obrazu kamery. 
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPEN CV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{OpenCV - przygotowanie obrazu z kamery}
-
-\quad Poprawne działanie modelu MediaPipe wymaga odpowiedniego przygotowania obrazu kamery. Działanie kontrolerolera odbywa się poprzez główną metodę \textbf{main()}.
-
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=10cm]{../images/image_processing.png}
@@ -158,17 +163,40 @@ Jeśli to Specyfikacja wewnętrzna:
     \end{center}
 \end{figure}
 
-\quad Metoda \textbf{main()} jest główną funkcją, w której dokonywane są obliczenia oraz przeszktałcenia pozwalające na obliczenie obrotu dłonie, odległości między wybranymi palcami oraz na wykrycie gestu. 
+\quad W pierwszym kroku obraz powinnien zostać pozyskany z kamery oraz odpowiednio przetworzony przez funkcje biblioteki OpenCV. 
+
+\quad Kolejnym krokiem jest rozpoznanie elementów charakterystycznych dłoni przez model biblioteki MediaPipe. 
+
+\quad Na końcu powinna zostać wykonana główna część programu. Na przykład ropoznanie gestu czy obliczenia kąt obrotu. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPEN CV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{OpenCV - przygotowanie obrazu z kamery}
+
+\quad W pierszym kroku należy zainicjalizować obiekt obsługujący kamerę. Argumntem jest identyfikator określający, która kamera podłączona do systemu ma zostać wykorzystana. W przypadku kiedy dostępna jest tylko jedna kamera wystarczy wpisać wartość równą 0, tak jak poniżej.  
 
 % \inputminted[firstline=51, lastline=52]{python}{../OpenLeap.py}
 
-% \lstinputlisting[language=python, firstline=51, lastline=52]{../OpenLeap.py}
+\lstinputlisting[language=python, firstline=81, lastline=81]{../openleap/openleap/OpenLeap.py}
 
-\quad W pierwszym kroku tworzymy instancję klasy \textbf{VideoCapture} biblioteki \textbf{OpenCV}, która pozwoli na odczytywanie obrazu kamery. 
+\quad W metodzie \textbf{main()} w pierwszym kroku warunek określa czy zostało otwarte połączenia z kamerą. Jeśli tak to należy pobrać z niej aktualną klatkę obrazu (\textbf{frame}). 
 
-% \lstinputlisting[language=python, firstline=272, lastline=297]{../OpenLeap.py}
+\lstinputlisting[language=python, firstline=293, lastline=301]{../openleap/openleap/OpenLeap.py}
 
-% \inputminted[firstline=272, lastline=297]{python}{../OpenLeap.py}
+\quad Model rozpoznający dłoń korzysta z przestrzeni barw RGB (red, green, blue), a nie BGR (blue, green, red). Dlatego należy obraz przekształcić właśnie na przesrzeń RGB. Dodatkowo, obraz powinnien zostać obrócony horyzntalnie, tak aby stworzył lustrzane odbicie względem użytkownika ustawionego na przeciwko kamery. 
+
+\lstinputlisting[language=python, firstline=302, lastline=307]{../openleap/openleap/OpenLeap.py}
+
+\quad Flage \textbf{writeable} ustawiona na \textbf{False} pozwala na uzyskanie lepszej wydajności przy przetwarzaniu obrazu w ramach modelu rozpoznającego dłonie. 
+
+\lstinputlisting[language=python, firstline=308, lastline=316]{../openleap/openleap/OpenLeap.py}
+
+\quad Przestrzeń barw zostaje przywrócona do RGB, aby była mogła zostać poprawnie wyświetlona przez funkcję biblioteki OpenCV. 
+
+\lstinputlisting[language=python, firstline=318, lastline=320]{../openleap/openleap/OpenLeap.py}
+
+% \inputminted[language=python, firstline=272, lastline=297]{python}{../openleap/openleap/OpenLeap}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIA PIPE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
