@@ -32,11 +32,17 @@
 \quad Ze względu na swoją budowę, Python nie należy do najwydajniejszych języków. Python jest językiem interpretowanym, co oznacza, że jego program nie zostaje skompilowany do kodu maszynowego, a zostaje on zinterpretowany przez interpreter. Ma ta jednak swoje zalety, skrypt można wykonywać w częściach, co pozwala na testowanie działania programu. Dzięki czemu łatwiej jest znajdować błędy i na bieżąco je likwidować. Potencjał tego w pełni wykorzystuje interaktywna powłoka iPython. 
 
 \subsection{iPython}
-\quad To iteraktywna powłoka dla języka Python, która rozszerza jego działanie o interospekcję, czyli możliwość wykonywania poprzednich części programu zapisanych w komórkach. Dodatkowo IPython oferuje dodatkową składnię powołoki oraz wykonywanie komend wiersza poleceń. 
+\quad To interaktywna powłoka dla języka Python, która rozszerza jego działanie o introspekcję, czyli możliwość wykonywania poprzednich części programu. W praktyce oznacza to, że użytkownik ma możliwość wykonywania programu zawartego w komórkach w dowolnej kolejności, nawet jeśli oznacza to wykonywanie programu zapisanego w komórkach poprzedzających aktualną. 
+
+\quad Dodatkowo iPython oferuje możliwość korzystania z komend wiersza poleceń. Pozwala to, na przykład na instalowanie modułów wewnątrz programu. 
 
 \subsection{Jupyter Notebook}
-\quad Dodatkowym narzędziem jest Jupyter Notebook, który pozwala na wykonwyanie części programu w osobnych komórkach. Pozwala to na łatwiejsze odnajdowanie błędów w programie.
-\quad Jupyter Notebook został wykorzystany do napisania programu trenującego modele uczenia mszynowego rozponzące gesty. Dzięki strukturze takiego pliku, można w prosty sposób wykonywać program w danej komórce wiele razy. Na przykład pobieranie danych, dla różnych gestów. 
+
+\quad Do obsługi interaktywnego języka Python, wykorzystany został Jupyter Notebook (\enquote{notatnik}), czyli webowy interfejs, który został stworzony z myślą o pracy związaną z danymi oraz obliczeniami naukowymi. 
+
+\quad Notatnik pozwala na zapis tekstu w języku Markdown, czyli języku znaczników stosowanym do formatowania tekstu. Co pozwala na czytelny opis programu oraz wstawianie obrazów, jeśli są wymagane. 
+
+\quad Jupyter Notebook wraz z powłoką iPython pozwolą na pracę gdzie wymagane jest stworzenie modelu rozpoznającego gesty. 
 
 \subsection{Visual Studio Code - Środowisko Pracy}
 \quad Całość klasy została napisana z wykorzystaniem edytora Visual Studio Code. Ten edytor został wybrany ze względu na jego wielozadaniowość. Visual Studio Code obsługuje jednocześnie programy napisane w Pythonie oraz pliki z rozszerzeniem \textbf{.ipynb}, czyli tak zwane zeszyty, które wykorzystują interaktywnego Pythona, czyli język iPython. 
@@ -46,6 +52,7 @@
 
 \subsection{Programy bdist\_wheel oraz sdist}
 \quad Oba programy są niezbędne do przygotowania w pełni działającej paczki udostępnionej przez platforme PyPi. Program \textbf{sdist} pozwala na stworzenie źródłowej dystrubucji, czyli w praktce pliku typu \textbf{.zip}, \textbf{.tar} czy też \textbf{.rar} oraz wielu innych, w których znajdują się wybrane pliki. 
+
 \quad Kolejnym programem jest \textbf{bdist\_wheel}, który odpowiada za stworzenie uprzednio paczki typu \textbf{WHEEL}, która w przypadku wykorzystania plików napisanych w języku \textbf{C} uprzednio je kompiluje, dzięki czemu nie jest wymagany kompilator po stronie użytkownika. Ostatecznie, \textbf{WHEEL} pozwala na szybszą instalację paczki w porównaniu z budowaniem jej z plików źródłowych. 
 
 
