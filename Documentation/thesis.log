@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  14 DEC 2021 00:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  15 DEC 2021 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -923,7 +923,7 @@ Rozdzia\l  4.
 
 
 ] [10]
-Overfull \hbox (7.95677pt too wide) in paragraph at lines 49--51
+Overfull \hbox (7.95677pt too wide) in paragraph at lines 50--52
 \T1/lmr/m/n/12 czemu nie jest wy-ma-gany kom-pi-la-tor po stro-nie u»yt-kow-nik
 a. Osta-tecz-nie, \T1/lmr/bx/n/12 WHEEL
  []
@@ -1211,15 +1211,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 430.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 430.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 430.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: F399178BEAA44598D8D0A0C991DC5A90;5525.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: 03BAA404E9893E156DE6B334714B3856;5522
-(rerunfilecheck)             After:  F399178BEAA44598D8D0A0C991DC5A90;5525.
 
 LaTeX Warning: There were undefined references.
 
@@ -1231,7 +1225,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 430.
 Here is how much of TeX's memory you used:
  14374 strings out of 483148
  213794 string characters out of 5965415
- 713923 words of memory out of 5000000
+ 712923 words of memory out of 5000000
  28745 multiletter control sequences out of 15000+600000
  597623 words of font info for 66 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
@@ -1253,7 +1247,7 @@ xmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
 c/uhvr8a.pfb>
-Output written on thesis.pdf (64 pages, 1631015 bytes).
+Output written on thesis.pdf (64 pages, 1631641 bytes).
 PDF statistics:
  1015 PDF objects out of 1200 (max. 8388607)
  883 compressed objects within 9 object streams
