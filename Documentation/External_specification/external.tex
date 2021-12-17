@@ -16,6 +16,9 @@
 % \item  scenariusze korzystania z systemu (ilustrowane zrzutami z ekranu lub generowanymi dokumentami)
 % \end{itemize}
 
+% \section{Funkcjonalność modułu}
+% \quad Paczkę można wykorzystać tam, gdzie wymagane jest wykorzystanie gestów oraz ruchów dłoni. Paczka może znnaaleźć zastosowanie aplikacjach użytku codziennego, robotyce lub pełnić formę peryferium komputerowego.  
+
 \section{Wymagania sprzętowe}
 \subsection{Kamera}
 \quad Elementem niezbędnym do korzystania z modułu OpenLeap jest kamera, która pozwoli na pozyskanie obrazu. Rozdzielczość matrycy kamery powinna być wystarczająco duża, aby pozwolić na rozpoznanie dłoni. Nie ma tutaj minimalnych wymagań, większa rozdzielczość, czy też lepsza praca w warunkach niskiego oświetlenia kamery pozwoli na poprawniejsze działania algorytmów identyfikujących dłoń. Podobnie ma się liczba klatek na sekundę, która powinna być wystarczająco wysoka, tak aby można było sprawnie korzystać z możliwości oprogramowania. 
@@ -27,7 +30,7 @@
 \section{Instalacja paczki}
 \quad Instalacja paczki odbywa się poprzez wykorzystanie programu \textbf{pip}, który jest instalowany automatycznie razem z językiem Python. W zależności od wybranego systemu operacyjnego komenda może przybierać różne formy, ogólnie można przyjąć poniższy zapis \ref{lst:installcom}. Komenda powinna zostać wykonane poprzez powłokę \textbf{bash} lub inną dostępną w systemie Unix-owym lub poprzez wiersz poleceń w systemie Windows. 
 
-\begin{lstlisting}[language=bash, style=command, label={lst:installcom}, caption={Instalacja paczki}, captionpos=b]
+\begin{lstlisting}[language=bash, style=command, label={lst:installcom}, caption={Instalacja paczki}]
     $ pip install openleap
 \end{lstlisting}
 
@@ -40,11 +43,11 @@
     \end{center}
 \end{figure}
 
-\section{Przykładowy program}
+\section{Program testowy}
 
-\quad Paczkę można przetestować korzystając z dostępnych funkcji klasy. Program można napisać w powłoce języka Python lub po prostu zapisać krótki program.
+\quad Paczkę można przetestować korzystając z dostępnych metod klasy. W ramach testu istnieje możliwość napisania programu wyłącznie w powłoce języka Python. W pierwszym kroku programu zostaje zaimportowana paczka \textbf{openleap}. Zostaje stworzony obiekt kontrolera z wybranymi parametrami, dokładny opis parametrów znajduje się w późniejszej części rozdziału, w podsekcji (\ref{parametry}). Metoda \textbf{loop()} odpowiada za wywołanie głównej logiki programu odpowiedzialnej za generowanie danych oraz wyświetlanie ich w wybranym miejscu (powłoka, okno graficzne). 
 
-\begin{lstlisting}[language=python, style=programming]
+\begin{lstlisting}[language=python, style=programming, label={lst:simple_program}, caption={Program testowy}]
     import openleap
 
     controller = openleap.OpenLeap(screen_show=True, 
@@ -65,43 +68,41 @@
     \end{center}
 \end{figure}
 
-\quad Dane zostają zapisane w liście składającej się z obiektów typu \textbf{dataclass}, struktura danych, która zostanie dokładnie opisana w kolejnym rozdziale, dla dłoni lewej i prawej, które przechowują wygenerowane informacje o danej dłoni. Operację pobrania danych można wykonać w poniżej przedstawiony sposób. 
+\quad Dane zostają zapisane w słowniku składającym się z obiektów typu \textbf{dataclass}, które przechowują wygenerowane informacje o danej dłoni. Operację pobrania danych można wykonać w poniżej przedstawiony sposób. Klasa \textbf{dataclass} zostanie dokładniej opisana w kolejnym rozdziale.
 
-\begin{lstlisting}[language=python, style=programming]
-    Zbierz dane
+\begin{lstlisting}[language=python, style=programming, caption={Odczyt gestów}]
+    if controller.data['right'].gesture == 'open':
+        print('Right hand is opened!')
+    elif controller.data['right'].gesture == 'fist':
+        print('Right hand is closed!')
 \end{lstlisting}
 
-\section{Funkcjonalność modułu}
-\quad Paczkę można wykorzystać tam gdzie wymagane jest wykorzystanie gestów oraz ruchów dłoni. Paczka może znaleźć zastosowanie aplikacjach użytku codziennego, robotyce lub pełnić formę peryferium komputerowego.  
+\quad Program oferuje możliwość odczytu odległości między końcem palca wskazującego a końcem kciuka. Te punkty zostały oznaczone poprzez niebieską linię oraz wartość \textbf{distance}, co można zobaczyć na rysunku \ref{fig:prog_screen_1}. Przykład odczytu tej wartości znajduje się w poniższym przykładzie. 
+
+\begin{lstlisting}[language=python, style=programming, caption={Odczyt edległości między palcami}]
+    if controller.data['right'].distance < 20:
+        print('Click has been detected!')
+\end{lstlisting}
 
 \subsection{Parametry}
 \label{parametry}
-\quad Obiekt kontrolera może zostać stworzony z wybranymi parametrami. Można wybrać czy należy wyświetlić podgląd kamery, czy wyświetlić dane na podglądzie oraz w konsoli oraz wybrać tło podglądu, czarne lub obraz z kamery. 
-
-% \begin{itemize}
-%     \item \textbf{screen\_show} - podgląd okna
-%     \item \textbf{screen\_type} - typ tła: kamera ("CAM") lub czarne ("BLACK")
-%     \item \textbf{show\_data\_in\_console} - wyświetlanie danych w konsoli
-%     \item \textbf{show\_data\_on\_image} - wyświetlanie danych w oknie graficznym
-%     \item \textbf{normalized\_position} - wyświetlanie
-%     \item \textbf{gestrure\_model} - wybór modelu rozpoznającego gesty
-% \end{itemize}
+\quad Obiekt kontrolera może zostać stworzony z wybranymi parametrami. Można wybrać czy należy wyświetlić podgląd kamery, czy wyświetlić dane na podglądzie oraz w konsoli, oraz wybrać tło podglądu, czarne lub obraz z kamery. 
 
 \begin{enumerate}
     \item \textbf{screen\_show} - podgląd okna, typ \textbf{boolean}
     \item \textbf{screen\_type} - typ tła
-    \begin{enumerate}
+    \begin{itemize}
         \item \enquote{CAM} - obraz z kamery
         \item \enquote{BLACK} - czarne tło
-    \end{enumerate}
+    \end{itemize}
     \item \textbf{show\_data\_in\_console} - wyświetlanie danych w konsoli, typ \textbf{boolean}
     \item \textbf{show\_data\_on\_image} - wyświetlanie danych w oknie graficznym, typ \textbf{boolean}
     \item \textbf{normalized\_position} - wyświetlanie znormalizowanej pozycji, typ \textbf{boolean}
     \item \textbf{model} - wybór modelu rozpoznającego gesty
-    \begin{enumerate}
+    \begin{itemize}
         \item \enquote{basic} - gesty podstawowe
         \item \enquote{sign\_language} - język migowy
-    \end{enumerate}
+    \end{itemize}
 \end{enumerate}
 
 
