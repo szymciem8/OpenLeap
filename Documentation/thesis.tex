@@ -22,6 +22,7 @@
 \usepackage{geometry}
 \usepackage{amsmath}
 \usepackage[page]{appendix} % toc,
+\usepackage{wrapfig}
 \renewcommand{\appendixtocname}{Dodatki}
 \renewcommand{\appendixpagename}{Dodatki}
 \renewcommand{\appendixname}{Dodatek}
@@ -80,7 +81,7 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.9,0.9,0.9}
 
-\lstdefinestyle{mystyle}{
+\lstdefinestyle{programming}{
     backgroundcolor=\color{backcolour},   
 	morekeywords={self},
     commentstyle=\color{codegreen},
@@ -100,12 +101,32 @@
     % tabsize=2
 }
 
-\lstset{style=mystyle}
-
-\lstset{%
-	language=bash,%
-	commentstyle=\textit,%
+\lstdefinestyle{command}{
+    backgroundcolor=\color{backcolour},   
+	morekeywords={self},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codegreen},
+    % numberstyle=\ttfamily,
+    % stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    % breakatwhitespace=false,         
+    breaklines=true,                 
+    % captionpos=b,                    
+    % keepspaces=true,                 
+    % numbers=left,                    
+    numbersep=10pt,           
+    % showspaces=false,                
+    % showstringspaces=false,
+    showtabs=false,                  
+    % tabsize=2
 }
+
+% \lstset{style=mystyle}
+
+% \lstset{%
+% 	language=bash,%
+% 	commentstyle=\textit,%
+% }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

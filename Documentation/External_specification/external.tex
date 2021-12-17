@@ -18,19 +18,20 @@
 
 \section{Wymagania sprzętowe}
 \subsection{Kamera}
-\quad Elementem niezbędnym do korzystania z modułu OpenLeap jest kamera, która pozwoli na pozyskanie obrazu dłoni. Rozdzielczość matrycy kamery powinna pozwolić na rozpoznanie dłoni. Liczba klatek na sekundę powinna być wystarczająco wysoka, tak aby można było sprawnie korzystać z paczki. Nie ma tutaj minimalnych wymagań, lepsza kamera pozwoli jedynie na sprawniejsze działanie oprogramowania. 
+\quad Elementem niezbędnym do korzystania z modułu OpenLeap jest kamera, która pozwoli na pozyskanie obrazu. Rozdzielczość matrycy kamery powinna być wystarczająco duża, aby pozwolić na rozpoznanie dłoni. Nie ma tutaj minimalnych wymagań, większa rozdzielczość, czy też lepsza praca w warunkach niskiego oświetlenia kamery pozwoli na poprawniejsze działania algorytmów identyfikujących dłoń. Podobnie ma się liczba klatek na sekundę, która powinna być wystarczająco wysoka, tak aby można było sprawnie korzystać z możliwości oprogramowania. 
 
-\section{Wymagania programowe}
-\quad Pierszym elementem jest język Python, który pozwoli na interpetację napisanego modułu. Reszta potrzebnych zależności, takich jak MediaPipe czy OpenCV zostanie zainstalowana automatycznie, jeśli moduł zostanie pobrany za pomocą programu pip. 
+\subsection{Komputer}
+\quad Jednostka obliczeniowa powinna zostać wyposażona w system operacyjny dający możliwość obsługi języka Python, taki warunek spełnia większość systemów operacyjnych na rynku. Komputer powinien spełniać minimalne wymagania w kwestii wydajności przetwarzania obrazu. Fakt istnienia możliwości instalacji i wykorzystania biblioteki MediaPipe przez minikomputery Raspberry Pi w wersji 3 i 4 oznacza, że wymagania nie są wysokie. 
+
 
 \section{Instalacja paczki}
-\quad Instalcja paczki odbywa się poprzez wykorzystanie programu pip, który jest instalowany automatycznie razem z językiem Python. W zależności od wybranego systemu operacyjnego, komenda może przybierać inne formy. 
+\quad Instalacja paczki odbywa się poprzez wykorzystanie programu \textbf{pip}, który jest instalowany automatycznie razem z językiem Python. W zależności od wybranego systemu operacyjnego komenda może przybierać różne formy, ogólnie można przyjąć poniższy zapis \ref{lst:installcom}. Komenda powinna zostać wykonane poprzez powłokę \textbf{bash} lub inną dostępną w systemie Unix-owym lub poprzez wiersz poleceń w systemie Windows. 
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}[language=bash, style=command, label={lst:installcom}, caption={Instalacja paczki}, captionpos=b]
     $ pip install openleap
 \end{lstlisting}
 
-\quad Informacje na temat biblioteki można znaleźć na platfomie PyPi pod linkiem: \href{https://pypi.org/project/openleap/}{https://pypi.org/project/openleap/}. Na tej stronie znajduje się opis modułu, instrukcja instalacji oraz przykładowe programy i wykorzystania.
+\quad Informacje na temat biblioteki można znaleźć na platformie PyPi pod linkiem: \textbf{\href{https://pypi.org/project/openleap/}{https://pypi.org/project/openleap/}}. Na tej stronie znajduje się opis modułu, instrukcja instalacji oraz przykładowe programy i możliwości wykorzystania.
 
 \begin{figure}[H]
     \begin{center}
@@ -41,9 +42,9 @@
 
 \section{Przykładowy program}
 
-\quad Paczkę można przetestować korzystając z wybodowanych gotowych funkcji. Program można napisać w powłoce języka Python lub po prostu zapisać go do pliku. 
+\quad Paczkę można przetestować korzystając z dostępnych funkcji klasy. Program można napisać w powłoce języka Python lub po prostu zapisać krótki program.
 
-\begin{lstlisting}[language=python]
+\begin{lstlisting}[language=python, style=programming]
     import openleap
 
     controller = openleap.OpenLeap(screen_show=True, 
@@ -54,18 +55,19 @@
     controller.loop()
 \end{lstlisting}
 
-\quad Taki krótki program pozwoli na wyświetlenie okna z widocznymi dłońmi z oznaczonymi punktami charakterystycznymi wraz z opisem parametrów, takich jak obrót dłoni, jej pozycja czy rozpoznany gest. Zrzut ekranu testowego programu znajduje się poniżej. 
+\quad Przykładowy program pozwoli na wyświetlenie okna z widocznymi dłońmi wraz z oznaczonymi punktami charakterystycznymi oraz opisem parametrów, takich jak obrót dłoni względem nadgarstka, jej pozycja względem lewego górnego rogu obrazu kamery czy rozpoznany gest. Zrzut ekranu testowego programu znajduje się poniżej na rysunku \ref{fig:prog_screen_1}. 
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=9cm]{../images/example_program.png}
         \caption{Zrzut ekranu programu testowego}
+        \label{fig:prog_screen_1}
     \end{center}
 \end{figure}
 
-\quad Dane zostają zapisane w liście składającej się z obiektów typu dataclass dla dłoni lewej i prawej, które przechowują wygenerowane informacje o danej dłoni. Operację pobrania danych można wykonać w poniżej przedstawiony sposób. 
+\quad Dane zostają zapisane w liście składającej się z obiektów typu \textbf{dataclass}, struktura danych, która zostanie dokładnie opisana w kolejnym rozdziale, dla dłoni lewej i prawej, które przechowują wygenerowane informacje o danej dłoni. Operację pobrania danych można wykonać w poniżej przedstawiony sposób. 
 
-\begin{lstlisting}[language=python]
+\begin{lstlisting}[language=python, style=programming]
     Zbierz dane
 \end{lstlisting}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  17 DEC 2021 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  17 DEC 2021 15:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,20 +417,28 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@ppsavesec=\count279
 \c@@ppsaveapp=\count280
 )
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen185
+\WF@size=\dimen186
+\c@WF@wrappedlines=\count281
+\WF@box=\box47
+\WF@everypar=\toks29
+Package: wrapfig 2003/01/31  v 3.6
+)
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count281
+\etb@tempcnta=\count282
 )
-\csq@reset=\count282
-\csq@gtype=\count283
-\csq@glevel=\count284
-\csq@qlevel=\count285
-\csq@maxlvl=\count286
-\csq@tshold=\count287
-\csq@ltx@everypar=\toks29
+\csq@reset=\count283
+\csq@gtype=\count284
+\csq@glevel=\count285
+\csq@qlevel=\count286
+\csq@maxlvl=\count287
+\csq@tshold=\count288
+\csq@ltx@everypar=\toks30
 
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
@@ -444,11 +452,11 @@ File: csquotes.cfg
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip60
-\enit@outerparindent=\dimen185
-\enit@toks=\toks30
-\enit@inbox=\box47
-\enit@count@id=\count288
-\enitdp@description=\count289
+\enit@outerparindent=\dimen187
+\enit@toks=\toks31
+\enit@inbox=\box48
+\enit@count@id=\count289
+\enitdp@description=\count290
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -476,40 +484,41 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen186
-\captionmargin@=\dimen187
-\captionwidth=\dimen188
-\caption@tempdima=\dimen189
-\caption@indent=\dimen190
-\caption@parindent=\dimen191
-\caption@hangindent=\dimen192
+\captionmargin=\dimen188
+\captionmargin@=\dimen189
+\captionwidth=\dimen190
+\caption@tempdima=\dimen191
+\caption@indent=\dimen192
+\caption@parindent=\dimen193
+\caption@hangindent=\dimen194
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count290
-\c@continuedfloat=\count291
+\c@caption@flags=\count291
+\c@continuedfloat=\count292
 Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
 )
-\c@KVtest=\count292
+\c@KVtest=\count293
 \sf@farskip=\skip61
-\sf@captopadj=\dimen193
+\sf@captopadj=\dimen195
 \sf@capskip=\skip62
 \sf@nearskip=\skip63
-\c@subfigure=\count293
-\c@subfigure@save=\count294
-\c@lofdepth=\count295
-\c@subtable=\count296
-\c@subtable@save=\count297
-\c@lotdepth=\count298
+\c@subfigure=\count294
+\c@subfigure@save=\count295
+\c@lofdepth=\count296
+\c@subtable=\count297
+\c@subtable@save=\count298
+\c@lotdepth=\count299
 \sf@top=\skip64
 \sf@bottom=\skip65
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count299
-\float@exts=\toks31
-\float@box=\box48
-\@float@everytoks=\toks32
-\@floatcapt=\box49
+\c@float@type=\count300
+\float@exts=\toks32
+\float@box=\box49
+\@float@everytoks=\toks33
+\@floatcapt=\box50
 )
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
@@ -519,54 +528,48 @@ Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 
 (/usr/share/texlive/texmf-dist/tex/generic/dirtree/dirtree.tex
 `dirtree' v0.32, 2012/12/11 (jcc)
-\DT@offset=\dimen194
-\DT@width=\dimen195
-\DT@sep=\dimen196
-\DT@all=\dimen197
-\DT@rulewidth=\dimen198
-\DT@dotwidth=\dimen199
-\DTbaselineskip=\dimen256
-\DT@counti=\count300
-\DT@countii=\count301
-\DT@countiii=\count302
-\DT@countiv=\count303
-\DT@indent=\dimen257
-\DT@parskip=\dimen258
-\DT@baselineskip=\dimen259
+\DT@offset=\dimen196
+\DT@width=\dimen197
+\DT@sep=\dimen198
+\DT@all=\dimen199
+\DT@rulewidth=\dimen256
+\DT@dotwidth=\dimen257
+\DTbaselineskip=\dimen258
+\DT@counti=\count301
+\DT@countii=\count302
+\DT@countiii=\count303
+\DT@countiv=\count304
+\DT@indent=\dimen259
+\DT@parskip=\dimen260
+\DT@baselineskip=\dimen261
 )
 File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count304
-\lst@gtempboxa=\box50
-\lst@token=\toks33
-\lst@length=\count305
-\lst@currlwidth=\dimen260
-\lst@column=\count306
-\lst@pos=\count307
-\lst@lostspace=\dimen261
-\lst@width=\dimen262
-\lst@newlines=\count308
-\lst@lineno=\count309
-\lst@maxwidth=\dimen263
+\lst@mode=\count305
+\lst@gtempboxa=\box51
+\lst@token=\toks34
+\lst@length=\count306
+\lst@currlwidth=\dimen262
+\lst@column=\count307
+\lst@pos=\count308
+\lst@lostspace=\dimen263
+\lst@width=\dimen264
+\lst@newlines=\count309
+\lst@lineno=\count310
+\lst@maxwidth=\dimen265
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count310
-\lst@skipnumbers=\count311
-\lst@framebox=\box51
+\c@lstnumber=\count311
+\lst@skipnumbers=\count312
+\lst@framebox=\box52
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
 Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
@@ -580,7 +583,7 @@ s
 \f@nch@O@olf=\skip73
 \f@nch@O@orf=\skip74
 )
-\c@stronyPozaNumeracja=\count312
+\c@stronyPozaNumeracja=\count313
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -588,8 +591,8 @@ Package csquotes Info: Redefining alias 'default' -> 'polish'.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count313
-\l__pdf_internal_box=\box52
+\l__kernel_color_stack_int=\count314
+\l__pdf_internal_box=\box53
 )
 (./thesis.aux (./Introduction/introduction.aux) (./Analysis/analysis.aux)
 (./Tools/tools.aux) (./External_specification/external.aux
@@ -656,41 +659,41 @@ LaTeX Warning: Label `sub@fig:f2' multiply defined.
 ) (./Internal_specification/internal.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 218.
-LaTeX Font Info:    ... okay on input line 218.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 21
-8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 239.
+LaTeX Font Info:    ... okay on input line 239.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 239.
+LaTeX Font Info:    ... okay on input line 239.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 239.
+LaTeX Font Info:    ... okay on input line 239.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 239.
+LaTeX Font Info:    ... okay on input line 239.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 239.
+LaTeX Font Info:    ... okay on input line 239.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 239.
+LaTeX Font Info:    ... okay on input line 239.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 239.
+LaTeX Font Info:    ... okay on input line 239.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 239.
+LaTeX Font Info:    ... okay on input line 239.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 23
+9.
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count314
-\scratchdimen=\dimen264
-\scratchbox=\box53
-\nofMPsegments=\count315
-\nofMParguments=\count316
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count317
-\MPscratchDim=\dimen265
-\MPnumerator=\count318
-\makeMPintoPDFobject=\count319
-\everyMPtoPDFconversion=\toks35
+\scratchcounter=\count315
+\scratchdimen=\dimen266
+\scratchbox=\box54
+\nofMPsegments=\count316
+\nofMParguments=\count317
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen267
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
+\everyMPtoPDFconversion=\toks36
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -700,8 +703,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 218.
+\AtBeginShipoutBox=\box55
+Package hyperref Info: Link coloring OFF on input line 239.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -712,11 +715,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count320
+\c@section@level=\count321
 )
-LaTeX Info: Redefining \ref on input line 218.
-LaTeX Info: Redefining \pageref on input line 218.
-LaTeX Info: Redefining \nameref on input line 218.
+LaTeX Info: Redefining \ref on input line 239.
+LaTeX Info: Redefining \pageref on input line 239.
+LaTeX Info: Redefining \nameref on input line 239.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
@@ -762,7 +765,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count321
+\c@lstlisting=\count322
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -796,17 +799,17 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
-29.
+50.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 <logo_pl.jpg, id=319, 746.79pt x 960.58875pt>
 File: logo_pl.jpg Graphic file (type jpg)
 <use logo_pl.jpg>
-Package pdftex.def Info: logo_pl.jpg  used on input line 233.
+Package pdftex.def Info: logo_pl.jpg  used on input line 254.
 (pdftex.def)             Requested size: 82.51299pt x 106.13412pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 23
-7.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 25
+8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -876,7 +879,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.322 \include{Introduction/introduction}
+l.343 \include{Introduction/introduction}
                                           [1
 
 ]
@@ -931,135 +934,143 @@ Rozdzia\l  4.
 
 ]
 Rozdzia\l  5.
-[15]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-9.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+[15] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 30.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
+0.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<./images/../images/pypi_page.png, id=492, 1005.7575pt x 1074.0125pt>
+<./images/../images/pypi_page.png, id=493, 1005.7575pt x 1074.0125pt>
 File: ./images/../images/pypi_page.png Graphic file (type png)
 <use ./images/../images/pypi_page.png>
 Package pdftex.def Info: ./images/../images/pypi_page.png  used on input line 3
-7.
+8.
 (pdftex.def)             Requested size: 426.79134pt x 455.75278pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 37--38
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 38--39
  [] 
  []
 
 [16] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) [17 <./images/../images/pypi_page.png>]
-<./images/../images/example_program.png, id=507, 642.4pt x 560.0925pt>
+<./images/../images/example_program.png, id=509, 642.4pt x 560.0925pt>
 File: ./images/../images/example_program.png Graphic file (type png)
 <use ./images/../images/example_program.png>
 Package pdftex.def Info: ./images/../images/example_program.png  used on input 
-line 61.
+line 62.
 (pdftex.def)             Requested size: 256.0748pt x 223.2724pt.
  [18 <./images/../images/example_program.png>]
 File: ./images/../images/example_program.png Graphic file (type png)
 <use ./images/../images/example_program.png>
 Package pdftex.def Info: ./images/../images/example_program.png  used on input 
-line 108.
+line 110.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/cam_example.png, id=525, 642.4pt x 560.0925pt>
+<./images/../images/cam_example.png, id=527, 642.4pt x 560.0925pt>
 File: ./images/../images/cam_example.png Graphic file (type png)
 <use ./images/../images/cam_example.png>
 Package pdftex.def Info: ./images/../images/cam_example.png  used on input line
- 110.
+ 112.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
 
 [19]
-<./images/../images/american_sign_language.jpg, id=540, 851.18pt x 567.11874pt>
+<./images/../images/american_sign_language.jpg, id=542, 851.18pt x 567.11874pt>
 
 File: ./images/../images/american_sign_language.jpg Graphic file (type jpg)
 <use ./images/../images/american_sign_language.jpg>
 Package pdftex.def Info: ./images/../images/american_sign_language.jpg  used on
- input line 127.
+ input line 129.
 (pdftex.def)             Requested size: 426.79134pt x 284.36345pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 127--128
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 129--130
  [] 
  []
 
 [20 <./images/../images/cam_example.png>]
-<./images/../images/a_b.png, id=551, 642.4pt x 560.0925pt>
+<./images/../images/a_b.png, id=553, 642.4pt x 560.0925pt>
 File: ./images/../images/a_b.png Graphic file (type png)
 <use ./images/../images/a_b.png>
-Package pdftex.def Info: ./images/../images/a_b.png  used on input line 137.
+Package pdftex.def Info: ./images/../images/a_b.png  used on input line 139.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/c_x.png, id=552, 642.4pt x 560.0925pt>
+<./images/../images/c_x.png, id=554, 642.4pt x 560.0925pt>
 File: ./images/../images/c_x.png Graphic file (type png)
 <use ./images/../images/c_x.png>
-Package pdftex.def Info: ./images/../images/c_x.png  used on input line 139.
+Package pdftex.def Info: ./images/../images/c_x.png  used on input line 141.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/f_o.png, id=553, 642.4pt x 560.0925pt>
+<./images/../images/f_o.png, id=555, 642.4pt x 560.0925pt>
 File: ./images/../images/f_o.png Graphic file (type png)
 <use ./images/../images/f_o.png>
-Package pdftex.def Info: ./images/../images/f_o.png  used on input line 141.
+Package pdftex.def Info: ./images/../images/f_o.png  used on input line 143.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
  [21 <./images/../images/american_sign_language.jpg>]
-<./images/../images/checkout_window.png, id=559, 903.375pt x 913.4125pt>
+<./images/../images/checkout_window.png, id=561, 903.375pt x 913.4125pt>
 File: ./images/../images/checkout_window.png Graphic file (type png)
 <use ./images/../images/checkout_window.png>
 Package pdftex.def Info: ./images/../images/checkout_window.png  used on input 
-line 151.
+line 153.
 (pdftex.def)             Requested size: 426.79134pt x 431.53395pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 151--152
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 153--154
  [] 
  []
 
 [22 <./images/../images/a_b.png> <./images/../images/c_x.png> <./images/../imag
 es/f_o.png>] [23 <./images/../images/checkout_window.png>]
-<./images/../images/yellow_hand_deg.png, id=577, 642.4pt x 560.0925pt>
+<./images/../images/yellow_hand_deg.png, id=579, 642.4pt x 560.0925pt>
 File: ./images/../images/yellow_hand_deg.png Graphic file (type png)
 <use ./images/../images/yellow_hand_deg.png>
 Package pdftex.def Info: ./images/../images/yellow_hand_deg.png  used on input 
-line 166.
+line 168.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/yellow.png, id=578, 903.375pt x 933.4875pt>
+<./images/../images/yellow.png, id=580, 903.375pt x 933.4875pt>
 File: ./images/../images/yellow.png Graphic file (type png)
 <use ./images/../images/yellow.png>
-Package pdftex.def Info: ./images/../images/yellow.png  used on input line 168.
+Package pdftex.def Info: ./images/../images/yellow.png  used on input line 170.
 
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
-<./images/../images/blueish_hand_deg.png, id=579, 642.4pt x 560.0925pt>
+<./images/../images/blueish_hand_deg.png, id=581, 642.4pt x 560.0925pt>
 File: ./images/../images/blueish_hand_deg.png Graphic file (type png)
 <use ./images/../images/blueish_hand_deg.png>
 Package pdftex.def Info: ./images/../images/blueish_hand_deg.png  used on input
- line 174.
+ line 176.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/blueish.png, id=580, 903.375pt x 933.4875pt>
+<./images/../images/blueish.png, id=582, 903.375pt x 933.4875pt>
 File: ./images/../images/blueish.png Graphic file (type png)
 <use ./images/../images/blueish.png>
-Package pdftex.def Info: ./images/../images/blueish.png  used on input line 176
+Package pdftex.def Info: ./images/../images/blueish.png  used on input line 178
 .
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
  [24 <./images/../images/yellow_hand_deg.png> <./images/../images/yellow.png>]
-<./images/../images/pink_hand_deg.png, id=591, 642.4pt x 560.0925pt>
+<./images/../images/pink_hand_deg.png, id=593, 642.4pt x 560.0925pt>
 File: ./images/../images/pink_hand_deg.png Graphic file (type png)
 <use ./images/../images/pink_hand_deg.png>
 Package pdftex.def Info: ./images/../images/pink_hand_deg.png  used on input li
-ne 182.
+ne 184.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/pink.png, id=592, 903.375pt x 933.4875pt>
+<./images/../images/pink.png, id=594, 903.375pt x 933.4875pt>
 File: ./images/../images/pink.png Graphic file (type png)
 <use ./images/../images/pink.png>
-Package pdftex.def Info: ./images/../images/pink.png  used on input line 184.
+Package pdftex.def Info: ./images/../images/pink.png  used on input line 186.
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
-<./images/../images/zero_sat_hand_deg.png, id=593, 642.4pt x 560.0925pt>
+<./images/../images/zero_sat_hand_deg.png, id=595, 642.4pt x 560.0925pt>
 File: ./images/../images/zero_sat_hand_deg.png Graphic file (type png)
 <use ./images/../images/zero_sat_hand_deg.png>
 Package pdftex.def Info: ./images/../images/zero_sat_hand_deg.png  used on inpu
-t line 192.
+t line 194.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/zero_sat.png, id=594, 903.375pt x 933.4875pt>
+<./images/../images/zero_sat.png, id=596, 903.375pt x 933.4875pt>
 File: ./images/../images/zero_sat.png Graphic file (type png)
 <use ./images/../images/zero_sat.png>
 Package pdftex.def Info: ./images/../images/zero_sat.png  used on input line 19
-4.
+6.
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
  [25 <./images/../images/blueish_hand_deg.png> <./images/../images/blueish.png>
  <./images/../images/pink_hand_deg.png> <./images/../images/pink.png>]) [26 <./
@@ -1074,12 +1085,12 @@ Rozdzia\l  6.
 
 
 ]
-<example-image-a.pdf, id=624, 321.2pt x 240.9pt>
+<example-image-a.pdf, id=626, 321.2pt x 240.9pt>
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
 Package pdftex.def Info: example-image-a.pdf  used on input line 28.
 (pdftex.def)             Requested size: 284.52756pt x 213.40048pt.
-<./images/../images/class.png, id=625, 987.69pt x 1300.86pt>
+<./images/../images/class.png, id=627, 987.69pt x 1300.86pt>
 File: ./images/../images/class.png Graphic file (type png)
 <use ./images/../images/class.png>
 Package pdftex.def Info: ./images/../images/class.png  used on input line 41.
@@ -1092,7 +1103,7 @@ li-cza-j¡ca od-le-gªo±¢ mi¦-
  []
 
 [31]
-<./images/../images/hand_landmarks.png, id=660, 1548.78625pt x 540.0175pt>
+<./images/../images/hand_landmarks.png, id=662, 1548.78625pt x 540.0175pt>
 File: ./images/../images/hand_landmarks.png Graphic file (type png)
 <use ./images/../images/hand_landmarks.png>
 Package pdftex.def Info: ./images/../images/hand_landmarks.png  used on input l
@@ -1103,16 +1114,14 @@ Overfull \hbox (8.53766pt too wide) in paragraph at lines 128--129
  [] 
  []
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 135.
-[32 <./images/../images/hand_landmarks.png>]
+[32 <./images/../images/hand_landmarks.png>] [33]
 Overfull \hbox (3.41638pt too wide) in paragraph at lines 179--180
 [] \T1/lmr/m/n/12 Stru-kura typu \T1/lmr/bx/n/12 Da-tac-lass \T1/lmr/m/n/12 po-
 zwala na stworz-nie struk-tury po-dob-nej do \T1/lmr/bx/n/12 struct
  []
 
-[33] [34]
-<./images/../images/image_processing.png, id=713, 359.3425pt x 292.09125pt>
+[34]
+<./images/../images/image_processing.png, id=716, 359.3425pt x 292.09125pt>
 File: ./images/../images/image_processing.png Graphic file (type png)
 <use ./images/../images/image_processing.png>
 Package pdftex.def Info: ./images/../images/image_processing.png  used on input
@@ -1120,44 +1129,45 @@ Package pdftex.def Info: ./images/../images/image_processing.png  used on input
 (pdftex.def)             Requested size: 284.52756pt x 231.29329pt.
  [35 <./images/../images/image_processing.png (PNG copy)>]
 (../openleap/openleap/OpenLeap.py) (../openleap/openleap/OpenLeap.py)
-(../openleap/openleap/OpenLeap.py) (../openleap/openleap/OpenLeap.py [36])
+(../openleap/openleap/OpenLeap.py) [36] (../openleap/openleap/OpenLeap.py)
 (../openleap/openleap/OpenLeap.py) [37]
-<./images/../images/full_algorithm.png, id=758, 310.15875pt x 422.57875pt>
+<./images/../images/full_algorithm.png, id=760, 310.15875pt x 422.57875pt>
 File: ./images/../images/full_algorithm.png Graphic file (type png)
 <use ./images/../images/full_algorithm.png>
 Package pdftex.def Info: ./images/../images/full_algorithm.png  used on input l
 ine 287.
 (pdftex.def)             Requested size: 227.62204pt x 310.12416pt.
- [38 <./images/../images/full_algorithm.png (PNG copy)>]
-<./images/../images/get_data.png, id=765, 439.6425pt x 732.7375pt>
+ [38]
+<./images/../images/get_data.png, id=766, 439.6425pt x 732.7375pt>
 File: ./images/../images/get_data.png Graphic file (type png)
 <use ./images/../images/get_data.png>
 Package pdftex.def Info: ./images/../images/get_data.png  used on input line 29
 9.
 (pdftex.def)             Requested size: 284.52756pt x 474.22768pt.
- [39 <./images/../images/get_data.png (PNG copy)>] [40]
-<./images/../images/train_models.png, id=781, 443.6575pt x 452.69125pt>
+ [39 <./images/../images/full_algorithm.png (PNG copy)>] [40 <./images/../image
+s/get_data.png (PNG copy)>]
+[41]
+<./images/../images/train_models.png, id=786, 443.6575pt x 452.69125pt>
 File: ./images/../images/train_models.png Graphic file (type png)
 <use ./images/../images/train_models.png>
 Package pdftex.def Info: ./images/../images/train_models.png  used on input lin
 e 380.
 (pdftex.def)             Requested size: 312.9803pt x 319.34769pt.
+ [42] [43 <./images/../images/train_models.png (PNG copy)>]
 
-[41] [42 <./images/../images/train_models.png (PNG copy)>]
-
-LaTeX Warning: Hyper reference `openleap-file1' on page 43 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file1' on page 44 undefined on input l
 ine 430.
 
 
-LaTeX Warning: Hyper reference `openleap-file2' on page 43 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file2' on page 44 undefined on input l
 ine 430.
 
 
-LaTeX Warning: Hyper reference `openleap-file3' on page 43 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file3' on page 44 undefined on input l
 ine 430.
 
 
-LaTeX Warning: Hyper reference `openleap-file4' on page 43 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file4' on page 44 undefined on input l
 ine 430.
 
 
@@ -1165,48 +1175,48 @@ Overfull \hbox (10.71848pt too wide) in paragraph at lines 430--430
 []|\T1/lmtt/m/n/12 sign_language_alphabet.pkl| 
  []
 
-[43]) [44]
+[44]) [45] [46
+
+
+]
 Rozdzia\l  7.
-[45
-
-
-] [46]
+[47] [48]
 Rozdzia\l  8.
 No file thesis.bbl.
-[47
+[49
 
-] [48
+] [50
 
-] [49] [50] [51
+] [51] [52] [53
 
-] [52
-
-] [53] [54
+] [54
 
 ] [55] [56
+
+] [57] [58
 
 ] (./thesis.lof)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [57] [58
+ [59] [60
 
 ]
 (./thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 430.
- [59]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 430.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 451.
+ [61]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 451.
  (./thesis.aux (./Introduction/introduction.aux)
 (./Analysis/analysis.aux) (./Tools/tools.aux)
 (./External_specification/external.aux) (./Internal_specification/internal.aux)
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 430.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 430.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 451.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 451.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 06C83C9CAFB9CC374B18B2FBF6914347;5518.
+(rerunfilecheck)             Checksum: D39BB6FC5AC80D85BD794D583BA64706;5513.
 
 
 LaTeX Warning: There were undefined references.
@@ -1214,16 +1224,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 430.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 451.
  ) 
 Here is how much of TeX's memory you used:
- 14367 strings out of 483148
- 213704 string characters out of 5965415
- 713923 words of memory out of 5000000
- 28738 multiletter control sequences out of 15000+600000
- 597623 words of font info for 66 fonts, out of 8000000 for 9000
+ 14423 strings out of 483148
+ 214454 string characters out of 5965415
+ 685373 words of memory out of 5000000
+ 28789 multiletter control sequences out of 15000+600000
+ 597304 words of font info for 65 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 50i,12n,53p,932b,2026s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,12n,55p,932b,2086s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -1237,14 +1247,13 @@ sr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
-c/uhvr8a.pfb>
-Output written on thesis.pdf (64 pages, 1633042 bytes).
+xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on thesis.pdf (66 pages, 1615490 bytes).
 PDF statistics:
- 1015 PDF objects out of 1200 (max. 8388607)
- 883 compressed objects within 9 object streams
- 274 named destinations out of 1000 (max. 500000)
+ 1021 PDF objects out of 1200 (max. 8388607)
+ 888 compressed objects within 9 object streams
+ 276 named destinations out of 1000 (max. 500000)
  753 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -26,18 +26,18 @@
 \BOOKMARK [0][-]{chapter.5}{[W\233asciwy dla kierunku \205 np. Specyfikacja zewnetrzna]}{}% 26
 \BOOKMARK [1][-]{section.5.1}{Wymagania sprzetowe}{chapter.5}% 27
 \BOOKMARK [2][-]{subsection.5.1.1}{Kamera}{section.5.1}% 28
-\BOOKMARK [1][-]{section.5.2}{Wymagania programowe}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.3}{Instalacja paczki}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.4}{Przyk\233adowy program}{chapter.5}% 31
-\BOOKMARK [1][-]{section.5.5}{Funkcjonalnosc modu\233u}{chapter.5}% 32
-\BOOKMARK [2][-]{subsection.5.5.1}{Parametry}{section.5.5}% 33
-\BOOKMARK [2][-]{subsection.5.5.2}{Dostepne funkcje}{section.5.5}% 34
-\BOOKMARK [2][-]{subsection.5.5.3}{G\233\363wny watek}{section.5.5}% 35
-\BOOKMARK [1][-]{section.5.6}{Przyk\233ady uzycia}{chapter.5}% 36
-\BOOKMARK [2][-]{subsection.5.6.1}{Rozpoznawanie alfabetu w jezyku migowym}{section.5.6}% 37
-\BOOKMARK [2][-]{subsection.5.6.2}{Interaktywny Kiosk}{section.5.6}% 38
-\BOOKMARK [2][-]{subsection.5.6.3}{Dob\363r koloru}{section.5.6}% 39
-\BOOKMARK [1][-]{section.5.7}{Stworzenie nowego modelu}{chapter.5}% 40
+\BOOKMARK [2][-]{subsection.5.1.2}{Komputer}{section.5.1}% 29
+\BOOKMARK [1][-]{section.5.2}{Instalacja paczki}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.3}{Przyk\233adowy program}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.4}{Funkcjonalnosc modu\233u}{chapter.5}% 32
+\BOOKMARK [2][-]{subsection.5.4.1}{Parametry}{section.5.4}% 33
+\BOOKMARK [2][-]{subsection.5.4.2}{Dostepne funkcje}{section.5.4}% 34
+\BOOKMARK [2][-]{subsection.5.4.3}{G\233\363wny watek}{section.5.4}% 35
+\BOOKMARK [1][-]{section.5.5}{Przyk\233ady uzycia}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.5.1}{Rozpoznawanie alfabetu w jezyku migowym}{section.5.5}% 37
+\BOOKMARK [2][-]{subsection.5.5.2}{Interaktywny Kiosk}{section.5.5}% 38
+\BOOKMARK [2][-]{subsection.5.5.3}{Dob\363r koloru}{section.5.5}% 39
+\BOOKMARK [1][-]{section.5.6}{Stworzenie nowego modelu}{chapter.5}% 40
 \BOOKMARK [0][-]{chapter.6}{[W\233asciwy dla kierunku - np.Specyfikacja wewnetrzna]}{}% 41
 \BOOKMARK [1][-]{section.6.1}{Klasa OpenLeap}{chapter.6}% 42
 \BOOKMARK [2][-]{subsection.6.1.1}{Relacja klas - kompozycja}{section.6.1}% 43
