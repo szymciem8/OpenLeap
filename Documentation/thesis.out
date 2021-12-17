@@ -16,13 +16,13 @@
 \BOOKMARK [2][-]{subsection.4.2.3}{Python}{section.4.2}% 16
 \BOOKMARK [2][-]{subsection.4.2.4}{iPython}{section.4.2}% 17
 \BOOKMARK [2][-]{subsection.4.2.5}{Jupyter Notebook}{section.4.2}% 18
-\BOOKMARK [2][-]{subsection.4.2.6}{Visual Studio Code - Srodowisko Pracy}{section.4.2}% 19
-\BOOKMARK [2][-]{subsection.4.2.7}{Platforma PyPi}{section.4.2}% 20
-\BOOKMARK [2][-]{subsection.4.2.8}{Programy bdist\137wheel oraz sdist}{section.4.2}% 21
+\BOOKMARK [2][-]{subsection.4.2.6}{Visual Studio Code}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.7}{Python Package Index}{section.4.2}% 20
+\BOOKMARK [2][-]{subsection.4.2.8}{Programy bdist\137wheel, sdist orz twine}{section.4.2}% 21
 \BOOKMARK [1][-]{section.4.3}{Biblioteki}{chapter.4}% 22
 \BOOKMARK [2][-]{subsection.4.3.1}{OpenCV}{section.4.3}% 23
 \BOOKMARK [2][-]{subsection.4.3.2}{MediaPipe}{section.4.3}% 24
-\BOOKMARK [2][-]{subsection.4.3.3}{SciKit Learn}{section.4.3}% 25
+\BOOKMARK [2][-]{subsection.4.3.3}{SciKit-Learn}{section.4.3}% 25
 \BOOKMARK [0][-]{chapter.5}{[W\233asciwy dla kierunku \205 np. Specyfikacja zewnetrzna]}{}% 26
 \BOOKMARK [1][-]{section.5.1}{Wymagania sprzetowe}{chapter.5}% 27
 \BOOKMARK [2][-]{subsection.5.1.1}{Kamera}{section.5.1}% 28

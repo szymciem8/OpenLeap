@@ -38,67 +38,58 @@
 
 \subsection{Jupyter Notebook}
 
-\quad Do obsługi interaktywnego języka Python, wykorzystany został Jupyter Notebook (\enquote{notatnik}), czyli webowy edytor, który został stworzony z myślą o pracy związanej z analizą danych oraz obliczeniami naukowymi. 
+\quad Do obsługi interaktywnej powłoki iPython, wykorzystany został Jupyter Notebook (\enquote{notatnik}), czyli webowy edytor, który został stworzony z myślą o pracy związanej z analizą danych oraz obliczeniami naukowymi. 
 
-\quad Notatnik pozwala na zapis tekstu w języku Markdown, czyli języku znaczników stosowanym do formatowania tekstu. Co pozwala na czytelny opis programu oraz wstawianie obrazów, jeśli są wymagane. Dodatkowo wszystkie wykresy generowane przez na przykład bibliotekę \textbf{matplotlib} będą wyświetlane na stałe pod komórką, w której został wykonany program. 
+\quad Dodatkowym atutem jest fakt, że Jupyter Notebook pozwala na zapis tekstu w języku Markdown, czyli języku znaczników stosowanym do formatowania tekstu. Co pozwala na czytelny opis programu oraz wstawianie obrazów, jeśli są wymagane. Dodatkowo wszystkie wykresy generowane przez na przykład bibliotekę \textbf{matplotlib} będą wyświetlane na stałe pod komórką, w której został wykonany program. Pozwala to na stworzenie programu, który może służyć jednocześnie jako interaktywna instrukcja. 
 
-\subsection{Visual Studio Code - Środowisko Pracy}
-\quad Ten edytor został wybrany ze względu na jego wielozadaniowość. Visual Studio Code obsługuje jednocześnie programy napisane w Pythonie oraz pliki z rozszerzeniem \textbf{.ipynb}, czyli tak zwane zeszyty, które wykorzystują interaktywnego Pythona, czyli język iPython. 
+\subsection{Visual Studio Code}
 
-\subsection{Platforma PyPi}
-\quad Platforma PyPi jest platformą, na której udostępniane są modułu napisane w języku Python. Aktualnie jest ona zarządzana poprzez fundację "Python Software Foundation". Dzięki tej platfomie, zupełnie za darmo można pobierać znajdujące się na niej oprogramowanie oraz udostępniać własne. Program \textbf{pip} w głónwej mierze korzysta z PyPi jako głównego repozytorium z paczkami. 
+\quad Do stworzenia oprogramowania został wybrany edytor Visual Studio Code. Edytor jest programem o otwartym kodzie źródłowy i został stworzony przez korporację Microsoft. Aplikacja posiada wiele darmowych rozszerzeń, często tworzonych przez użytkowników edytora. To właśnie dzięki rozszerzeniom program pozwala na pracę z wieloma typami plików oraz języków programowania.  
 
-\subsection{Programy bdist\_wheel oraz sdist}
-\quad Oba programy są niezbędne do przygotowania w pełni działającej paczki udostępnionej przez platforme PyPi. Program \textbf{sdist} pozwala na stworzenie źródłowej dystrubucji, czyli w praktce pliku typu \textbf{.zip}, \textbf{.tar} czy też \textbf{.rar} oraz wielu innych, w których znajdują się wybrane pliki. 
+\subsection{Python Package Index}
+\quad Python Package Index, w skrócie PyPi, jest platformą, na której udostępniane są moduły dla języka Python. Aktualnie jest ona zarządzana przez fundację \enquote{Python Software Foundation}. Paczki pobierane są przy pomocy programu \textbf{pip}, standardowo instalowanego wraz z językiem Python, co oznacza, że PyPi jest oficjalnym repozytorium oprogramowania właśnie dla tego języka. 
 
-\quad Kolejnym programem jest \textbf{bdist\_wheel}, który odpowiada za stworzenie uprzednio paczki typu \textbf{WHEEL}, która w przypadku wykorzystania plików napisanych w języku \textbf{C} uprzednio je kompiluje, dzięki czemu nie jest wymagany kompilator po stronie użytkownika. Ostatecznie, \textbf{WHEEL} pozwala na szybszą instalację paczki w porównaniu z budowaniem jej z plików źródłowych. 
+\quad Każdy użytkownik, organizacja lub firma mają możliwość stworzenia swojej własnej paczki i udostępnienia jej na repozytorium wraz z krótką dokumentacją oraz instrukcją instalacji.
 
+\subsection{Programy bdist\_wheel, sdist orz twine}
+\quad Oba programy są niezbędne do przygotowania w pełni działającej paczki udostępnianej na repozytorium PyPi. Program \textbf{sdist} pozwala na stworzenie źródłowej dystrybucji, czyli w praktyce pliku typu \textbf{.zip}, \textbf{.tar} czy też \textbf{.gztar}, w których znajdują się wybrane pliki będące częścią biblioteki. 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPEN CV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{OpenCV - przygotowanie obrazu z kamery}
+\quad Kolejnym programem jest \textbf{bdist\_wheel}, który odpowiada za stworzenie paczki typu \textbf{WHEEL}, która pozwala na szybszą instalację niż w przypadku instalacji wykorzystującej pliki źródłowe. WHEEL pozwala na pominięcie etapu kompilacji, przez co kompilator nie jest wymagany na sprzęcie użytkownika. 
 
+\quad Ostatnim program jest \textbf{twine}, który pozwala na załadowanie gotowej paczki na repozytorium wraz z autoryzacją poprzez HTTPS. Program wspiera różne typy paczek, w tym typ WHEEL. 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIA PIPE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOTEKI %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \subsection{MediaPipe - Elementy charakterystyczne}
-
-% \subsection{Generowanie grafiki dłoni}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%% SciKit Learn %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{SciKit Learn - uczenie maszynowe}
 
 \section{Biblioteki}
 
+\quad Biblioteki opisane w tej sekcji są bibliotekami o otwartym kodzie źródłowym. Pozwala to na wykorzystanie ich w projekcie bez opłacania lub łamania żadnych licencji. 
+
 \subsection{OpenCV}
+
+\quad OpenCV jest biblioteką, która zajmuje się wizją komputerową, w tym głównie przetwarzaniem obrazów w czasie rzeczywistym. Projekt został rozpoczęty przez firmę Intel w 2001 roku, a później był wspierany przez laboratorium Willow Garge, które jest odpowiedzialne za stworzenie systemu ROS. OpenCV wspiera wiele języków programowania: C++, C\#, Python, Java oraz JavaScript, co oznacza, że jest to biblioteka wieloplatformowa i znajduje ona zastosowanie w wielu aplikacjach oraz systemach. 
 
 \subsection{MediaPipe}
 
-\quad Biblioteka MediaPipe o otwartym źródle, udostępnia wieloplatformowe oraz konfigurowalne rozwiązania wykrzustujące uczenie maszynowe w dziedzienie rozpoznawania, segmentacji oraz klasyfikacji obiektów wizji komputerowej. Niektórymi z rozwiązań są:
+\quad Biblioteka MediaPipe, która została stworzona przy wsparciu firmy Google, udostępnia wieloplatformowe oraz konfigurowalne rozwiązania wykorzystujące uczenie maszynowe w dziedzinie rozpoznawania, segmentacji oraz klasyfikacji obiektów wizji komputerowej. Niektórymi z rozwiązań są:
 
 \begin{itemize}
-    \item Rozpoznawanie twarzy
-    \item Segmentacjia włosów oraz twarzy
-    \item Rozpoznawnie oraz określanie rozmiarów obiektów trójwymiarowych 
-            na podstawie obrazu dwuwymiarowego. 
+    \item Segmentacja włosów oraz twarzy
+    \item Śledzenie pozycji obiektów
+    \item Rozpoznawanie dłoni
 \end{itemize}
 
-\quad Model modułu MediaPipe pozwala na wyznaczenie pozycji 21 elementów charakterystycznych dłoni. Współrzędne X i Y są znomralizowane względem rozdzielczości obrazu kamery. Współrzędna X względem liczby pikseli w osi X, a współrzędna Y względem liczby pikseli w osi Y. Oś Z jest prostopadła do osi X i Y, z punktem początkowym w punkcie określającym pozycję nadgarstka. Współrzędna Z jest znormalizowana względem szerokości obrazu kamery, tak jak współrzędna X. 
+\quad Oprogramowanie tworzone przez MediaPipe jest wysoce zoptymalizowane, co pozwala na wykorzystanie go na urządzeniach codziennego użytku, smartfonach, czy komputerach osobistych. 
 
-\subsection{SciKit Learn}
+% \quad Model modułu MediaPipe pozwala na wyznaczenie pozycji 21 elementów charakterystycznych dłoni. Współrzędne X i Y są znomralizowane względem rozdzielczości obrazu kamery. Współrzędna X względem liczby pikseli w osi X, a współrzędna Y względem liczby pikseli w osi Y. Oś Z jest prostopadła do osi X i Y, z punktem początkowym w punkcie określającym pozycję nadgarstka. Współrzędna Z jest znormalizowana względem szerokości obrazu kamery, tak jak współrzędna X. 
 
-\quad SciKit Learn to biblioteka, która oferuje różnego typu metody uczenia maszynowego. Biblioteka zawiera algorytmy klasyfikacji, regresjii oraz analizy skupień. Przykładowym algorytmami w bibliotece są:
+\subsection{SciKit-Learn}
+
+\quad SciKit-Learn początkowo został stworzony jako dodatek do biblioteki SciPy jako projekt w ramach \textbf{Google Summer of Code} w roku 2007. Biblioteka oferuje różnego typu metody uczenia maszynowego, w tym algorytmy klasyfikacji, regresji oraz analizy skupień. Przykładowym algorytmami w bibliotece są:
 \begin{itemize}
-    \item Las losowy - polegająca na konstruowaniu wielu drzew decyzyjnych w czasie uczenia. 
-    \item Algorytm centroidów - algorytm wykorzystywany w analizie skupień.
-    \item Maszyna wektorów nośnoych - algorytm klasyfikujący, często wykorzystywany w procesie rozpoznawania obrazów. 
+    \item Las losowy -- polegająca na konstruowaniu wielu drzew decyzyjnych w czasie uczenia. 
+    \item Algorytm centroidów -- algorytm wykorzystywany w analizie skupień.
+    \item Maszyna wektorów nośnych -- algorytm klasyfikujący, często wykorzystywany w procesie rozpoznawania obrazów. 
 \end{itemize}
-O wszystkich dostępnych algorytmach informacje można znaleźć w ogólnodostępnej dokumentacji biblioteki. 
-
-
