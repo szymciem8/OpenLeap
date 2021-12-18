@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  18 DEC 2021 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  18 DEC 2021 01:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -973,52 +973,52 @@ line 65.
 File: ./images/../images/example_program.png Graphic file (type png)
 <use ./images/../images/example_program.png>
 Package pdftex.def Info: ./images/../images/example_program.png  used on input 
-line 111.
+line 113.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
 <./images/../images/cam_example.png, id=534, 642.4pt x 560.0925pt>
 File: ./images/../images/cam_example.png Graphic file (type png)
 <use ./images/../images/cam_example.png>
 Package pdftex.def Info: ./images/../images/cam_example.png  used on input line
- 113.
+ 115.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
- [20 <./images/../images/cam_example.png>]
-<./images/../images/american_sign_language.jpg, id=551, 851.18pt x 567.11874pt>
+ [20]
+<./images/../images/american_sign_language.jpg, id=546, 851.18pt x 567.11874pt>
 
 File: ./images/../images/american_sign_language.jpg Graphic file (type jpg)
 <use ./images/../images/american_sign_language.jpg>
 Package pdftex.def Info: ./images/../images/american_sign_language.jpg  used on
- input line 130.
+ input line 132.
 (pdftex.def)             Requested size: 426.79134pt x 284.36345pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 130--131
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 132--133
  [] 
  []
 
-[21]
+[21 <./images/../images/cam_example.png>]
 <./images/../images/a_b.png, id=556, 642.4pt x 560.0925pt>
 File: ./images/../images/a_b.png Graphic file (type png)
 <use ./images/../images/a_b.png>
-Package pdftex.def Info: ./images/../images/a_b.png  used on input line 140.
+Package pdftex.def Info: ./images/../images/a_b.png  used on input line 142.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
 <./images/../images/c_x.png, id=557, 642.4pt x 560.0925pt>
 File: ./images/../images/c_x.png Graphic file (type png)
 <use ./images/../images/c_x.png>
-Package pdftex.def Info: ./images/../images/c_x.png  used on input line 142.
+Package pdftex.def Info: ./images/../images/c_x.png  used on input line 144.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
 <./images/../images/f_o.png, id=558, 642.4pt x 560.0925pt>
 File: ./images/../images/f_o.png Graphic file (type png)
 <use ./images/../images/f_o.png>
-Package pdftex.def Info: ./images/../images/f_o.png  used on input line 144.
+Package pdftex.def Info: ./images/../images/f_o.png  used on input line 146.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
  [22 <./images/../images/american_sign_language.jpg>]
 <./images/../images/checkout_window.png, id=564, 903.375pt x 913.4125pt>
 File: ./images/../images/checkout_window.png Graphic file (type png)
 <use ./images/../images/checkout_window.png>
 Package pdftex.def Info: ./images/../images/checkout_window.png  used on input 
-line 154.
+line 156.
 (pdftex.def)             Requested size: 426.79134pt x 431.53395pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 154--155
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 156--157
  [] 
  []
 
@@ -1028,24 +1028,24 @@ es/f_o.png>] [24 <./images/../images/checkout_window.png>]
 File: ./images/../images/yellow_hand_deg.png Graphic file (type png)
 <use ./images/../images/yellow_hand_deg.png>
 Package pdftex.def Info: ./images/../images/yellow_hand_deg.png  used on input 
-line 169.
+line 171.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
 <./images/../images/yellow.png, id=584, 903.375pt x 933.4875pt>
 File: ./images/../images/yellow.png Graphic file (type png)
 <use ./images/../images/yellow.png>
-Package pdftex.def Info: ./images/../images/yellow.png  used on input line 171.
+Package pdftex.def Info: ./images/../images/yellow.png  used on input line 173.
 
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
 <./images/../images/blueish_hand_deg.png, id=585, 642.4pt x 560.0925pt>
 File: ./images/../images/blueish_hand_deg.png Graphic file (type png)
 <use ./images/../images/blueish_hand_deg.png>
 Package pdftex.def Info: ./images/../images/blueish_hand_deg.png  used on input
- line 177.
+ line 179.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
 <./images/../images/blueish.png, id=586, 903.375pt x 933.4875pt>
 File: ./images/../images/blueish.png Graphic file (type png)
 <use ./images/../images/blueish.png>
-Package pdftex.def Info: ./images/../images/blueish.png  used on input line 179
+Package pdftex.def Info: ./images/../images/blueish.png  used on input line 181
 .
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
  [25 <./images/../images/yellow_hand_deg.png> <./images/../images/yellow.png>]
@@ -1053,24 +1053,24 @@ Package pdftex.def Info: ./images/../images/blueish.png  used on input line 179
 File: ./images/../images/pink_hand_deg.png Graphic file (type png)
 <use ./images/../images/pink_hand_deg.png>
 Package pdftex.def Info: ./images/../images/pink_hand_deg.png  used on input li
-ne 185.
+ne 187.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
 <./images/../images/pink.png, id=597, 903.375pt x 933.4875pt>
 File: ./images/../images/pink.png Graphic file (type png)
 <use ./images/../images/pink.png>
-Package pdftex.def Info: ./images/../images/pink.png  used on input line 187.
+Package pdftex.def Info: ./images/../images/pink.png  used on input line 189.
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
 <./images/../images/zero_sat_hand_deg.png, id=598, 642.4pt x 560.0925pt>
 File: ./images/../images/zero_sat_hand_deg.png Graphic file (type png)
 <use ./images/../images/zero_sat_hand_deg.png>
 Package pdftex.def Info: ./images/../images/zero_sat_hand_deg.png  used on inpu
-t line 195.
+t line 197.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
 <./images/../images/zero_sat.png, id=599, 903.375pt x 933.4875pt>
 File: ./images/../images/zero_sat.png Graphic file (type png)
 <use ./images/../images/zero_sat.png>
 Package pdftex.def Info: ./images/../images/zero_sat.png  used on input line 19
-7.
+9.
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
  [26 <./images/../images/blueish_hand_deg.png> <./images/../images/blueish.png>
  <./images/../images/pink_hand_deg.png> <./images/../images/pink.png>]) [27 <./
@@ -1250,7 +1250,7 @@ lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (68 pages, 1619129 bytes).
+Output written on thesis.pdf (68 pages, 1619332 bytes).
 PDF statistics:
  1030 PDF objects out of 1200 (max. 8388607)
  895 compressed objects within 9 object streams
