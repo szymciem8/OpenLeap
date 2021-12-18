@@ -70,7 +70,7 @@
 
 \quad Dane zostają zapisane w słowniku składającym się z obiektów typu \textbf{dataclass}, które przechowują wygenerowane informacje o danej dłoni. Operację pobrania danych można wykonać w poniżej przedstawiony sposób. Klasa \textbf{dataclass} zostanie dokładniej opisana w kolejnym rozdziale.
 
-\begin{lstlisting}[language=python, style=programming, caption={Odczyt gestów}]
+\begin{lstlisting}[language=python, style=programming, caption={Odczyt gestów}, label={lst:get_data1}]
     if controller.data['right'].gesture == 'open':
         print('Right hand is opened!')
     elif controller.data['right'].gesture == 'fist':
@@ -86,37 +86,43 @@
 
 \subsection{Parametry}
 \label{parametry}
-\quad Obiekt kontrolera może zostać stworzony z wybranymi parametrami. Można wybrać czy należy wyświetlić podgląd kamery, czy wyświetlić dane na podglądzie oraz w konsoli, oraz wybrać tło podglądu, czarne lub obraz z kamery. 
 
-\quad Obiekt klasy openleap przyjmuje do inicjalizatora parametry, określające czy należy wyświetlić okno graficzne, dane lub który model rozpoznający gesty wybrać. Wszystkie atrybuty klasy zostaną dokładnie opisane w kolejnym rozdziale. 
+\quad Obiekt klasy \textbf{openleap} przyjmuje za argumenty inicjalizatora parametry, określające działanie programu. Parametry określają czy należy wyświetlić okno graficzne, wartości obliczanych danych oraz model rozpoznający gesty. Wszystkie atrybuty klasy zostaną dokładnie opisane w kolejnym rozdziale. W tej sekcji zostały opisane jedynie parametry inicjalizatora wraz ze swoimi typami.\newline
 
+Parametry Inicjalizatora:
 \begin{enumerate}
-    \item \textbf{screen\_show} - podgląd okna, typ \textbf{boolean}
-    \item \textbf{screen\_type} - typ tła
+    \item \textbf{screen\_show} - podgląd okna (boolean)
+    \item \textbf{screen\_type} - typ tła wyświetlany w oknie graficznym (string)
     \begin{itemize}
-        \item \enquote{CAM} - obraz z kamery
-        \item \enquote{BLACK} - czarne tło
+        \item \enquote{cam} - obraz z kamery
+        \item \enquote{black} - czarne tło
     \end{itemize}
-    \item \textbf{show\_data\_in\_console} - wyświetlanie danych w konsoli, typ \textbf{boolean}
-    \item \textbf{show\_data\_on\_image} - wyświetlanie danych w oknie graficznym, typ \textbf{boolean}
-    \item \textbf{normalized\_position} - wyświetlanie znormalizowanej pozycji, typ \textbf{boolean}
-    \item \textbf{model} - wybór modelu rozpoznającego gesty
+    \item \textbf{show\_data\_in\_console} - wyświetlanie danych w konsoli (boolean)
+    \item \textbf{show\_data\_on\_image} - wyświetlanie danych w oknie graficznym (boolean)
+    \item \textbf{normalized\_position} - wyświetlanie znormalizowanej pozycji (boolean)
+    \item \textbf{gesture\_model} - wybór modelu rozpoznającego gesty (string)
     \begin{itemize}
         \item \enquote{basic} - gesty podstawowe
         \item \enquote{sign\_language} - język migowy
     \end{itemize}
+    \item \textbf{lr\_mode} - metoda rozpoznawania typu dłoni (string)
+    \begin{itemize}
+        \item \enquote{AI}
+        \item \enquote{position}
+    \end{itemize}
+    \item \textbf{activate\_data} - warunek odpowiadający za ciągły zapis do struktury danych \textbf{data}, opisanej w przykładzie programu \ref{lst:get_data1}
 \end{enumerate}
 
 
 \begin{figure}[H]
     \centering
-    \subfloat[Obraz z kamery.]{\includegraphics[width=7.3cm]{../images/example_program.png}\label{fig:f1}}
+    \subfloat[Czarne tło.]{\includegraphics[width=7.3cm]{../images/example_program.png}\label{fig:f1}}
     \hfill
-    \subfloat[Czarne tło.]{\includegraphics[width=7.3cm]{../images/cam_example.png}\label{fig:f2}}
-    \caption{Parametry wyświetlanego obrazu.}
+    \subfloat[Obraz z kamery.]{\includegraphics[width=7.3cm]{../images/cam_example.png}\label{fig:f2}}
+    \caption{Parametr określający typ tła.}
 \end{figure}
 
-\subsection{Dostępne funkcje}
+% \subsection{Dostępne funkcje}
 
 \subsection{Główny wątek}
 \quad Działanie kontrolera opiera się na wywoływaniu funkcji \textbf{main()}. Tą funkcję można wywołać za pomocą wybudowanej funkcji \textbf{loop()}, która po prostu wywołuje funkcję \textbf{main()} w pętli wraz z warunkiem wyjścia z programu. Takie podejście może ułatwić stosowanie kontrolera w osobnym wątku aplikacji. 

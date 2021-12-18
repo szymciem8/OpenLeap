@@ -25,7 +25,7 @@ class OpenLeap():
 
     def __init__(self, 
                 screen_show=False, 
-                screen_type='BLACK', 
+                screen_type='black', 
                 show_data_in_console=False, 
                 show_data_on_image=False, 
                 normalized_position=True,
@@ -319,10 +319,10 @@ class OpenLeap():
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
             if self.screen_show:
-                if self.screen_type=='BLACK':
+                if self.screen_type=='black':
                     background = np.zeros([self.HEIGHT,self.WIDTH,3], dtype=np.uint8)
                     background.fill(0)
-                elif self.screen_type == 'CAM':
+                elif self.screen_type == 'cam':
                     background = image
 
             #Rendering results
@@ -389,7 +389,7 @@ if __name__=='__main__':
     '''
 
     controller = OpenLeap(show_data_in_console=True, 
-                 screen_show=True, screen_type='BLACK', 
+                 screen_show=True, screen_type='black', 
                  show_data_on_image=True, 
                  gesture_model='basic', 
                  activate_data=True)
