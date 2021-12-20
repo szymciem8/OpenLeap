@@ -46,11 +46,11 @@
 \contentsline {subsection}{\numberline {6.2.1}Struktura mp\_hands}{35}{subsection.6.2.1}%
 \contentsline {subsection}{\numberline {6.2.2}Struktura results}{36}{subsection.6.2.2}%
 \contentsline {subsection}{\numberline {6.2.3}Dataclass}{37}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Słownik}{37}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.4}Słownik}{38}{subsection.6.2.4}%
 \contentsline {subsection}{\numberline {6.2.5}Pickle}{38}{subsection.6.2.5}%
 \contentsline {section}{\numberline {6.3}Rozpoznawanie dłoni}{38}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}OpenCV - przygotowanie obrazu z kamery}{39}{subsection.6.3.1}%
-\contentsline {section}{\numberline {6.4}MediaPipe - Elementy charakterystyczne}{40}{section.6.4}%
+\contentsline {section}{\numberline {6.4}MediaPipe - Elementy charakterystyczne}{41}{section.6.4}%
 \contentsline {subsection}{\numberline {6.4.1}Generowanie grafiki dłoni}{41}{subsection.6.4.1}%
 \contentsline {section}{\numberline {6.5}Pomiary oraz inne ważne elementy}{41}{section.6.5}%
 \contentsline {subsection}{\numberline {6.5.1}Pozycja dłoni}{41}{subsection.6.5.1}%

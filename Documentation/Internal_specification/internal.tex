@@ -134,30 +134,31 @@
 
 \section{Struktury danych}
 
-\quad Klasa zawiera w sobie parę struktur danych, które są kluczowe dla wygodnego korzystania z klasy.  
+\quad Klasa zawiera w sobie parę struktur danych, które są kluczowe dla poprawnej pracy klasy oraz przechowywania informacji. Dobrze dobrane i zaprojektowane struktury danych pozwalają na pisanie programu, który jest przejrzysty i czytelny, na przykład poprzez wykorzystanie klasy \textbf{dataclass} zamiast tablicy czy słownika. 
 
 \subsection{Struktura mp\_hands}
 
-\quad Struktura mp\_hands jest enumeratorem. Przechowuje ona informacje o indeksach wszystkich elementów dłoni. Została ona stworzona po to, aby łatwiej było zapisywać program, który odczutje informacje o danym elemencie. 
+\quad Struktura mp\_hands jest enumeratorem. Przechowuje ona informacje o indeksach wszystkich elementów dłoni. Została ona stworzona po to, aby łatwiej było zapisywać program, który odczytuje informacje o danym elemencie. Ta struktura jest częścią biblioteki MediaPipe, więc jest już z góry zdefiniowana. 
+
+\quad Pierwszym elementem określanym przez enumerator jest nadgarstek. Dalej znajduje się reszta indeksów, oznaczająca resztę części palców i dłoni. Wszystkie elementy wraz z ich indeksami można zobaczyć na poniższej grafice \ref{img:hand_points}. 
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=12.8cm]{../images/hand_landmarks.png}
         \caption{Elementy charakterystyczne dłoni}
+        \label{img:hand_points}
     \end{center}
 \end{figure}
-
-\quad Pierwszym elementem określanym przez enumerator jest nadgarstek. Dalej znajduje się reszta indeksów, oznaczająca resztę części palców i dłoni.  
 
 \begin{lstlisting}[language=python, style=programming, caption={Przykładowe wykorzystanie \textbf{mp\_hands}},captionpos=b]
     x = hand.landmark[self.mp_hands.HandLandmark.WRIST].x
 \end{lstlisting}
 
-\quad Tak jak zostało to ukazane powyżej, enumerator może zostać wykorzystany, na przykłd do odczytu wpółrzędnej danego puntku. Jest to ułatwienie, dzięki któremu program staje się czytelnieszy dla programisty lub osoby przeglądającej program. 
+\quad Tak jak zostało to ukazane powyżej, enumerator może zostać wykorzystany, na przykład do odczytu współrzędnej danego punktu. Jest to ułatwienie, dzięki któremu program staje się czytelnieszy dla programisty lub osoby przeglądającej program. 
 
 \subsection{Struktura results}
 
-\quad Struktura \textbf{results} jest obiektem, który przechowuje informacje zwrócone przez metodę \textbf{hands.process()}. Klasa OpenLeap korzysta z dwóch typów informacji zwracanych przez tą metodę. 
+\quad Struktura \textbf{results} jest obiektem, który przechowuje informacje zwrócone przez metodę \textbf{hands.process()}. Klasa OpenLeap korzysta z dwóch typów informacji zwracanych przez tę metodę. 
 
 \begin{itemize}
     \item \textbf{multi\_hand\_landmarks} - obiekt przechowujący dane o pozycjach wszystkich elementów dłoni. Przykład wykorzystania został przedstawiony powyżej. 

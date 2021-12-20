@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  21 DEC 2021 00:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  21 DEC 2021 00:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1131,92 +1131,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
  []
 
 [32 <./images/../images/class.png (PNG copy)>] [33] [34]
-<./images/../images/hand_landmarks.png, id=673, 1548.78625pt x 540.0175pt>
+<./images/../images/hand_landmarks.png, id=674, 1548.78625pt x 540.0175pt>
 File: ./images/../images/hand_landmarks.png Graphic file (type png)
 <use ./images/../images/hand_landmarks.png>
 Package pdftex.def Info: ./images/../images/hand_landmarks.png  used on input l
-ine 145.
+ine 147.
 (pdftex.def)             Requested size: 364.19536pt x 126.97829pt.
- [35 <./images/../images/hand_landmarks.png>] [36]
-Overfull \hbox (3.41638pt too wide) in paragraph at lines 196--197
+ [35] [36 <./images/../images/hand_landmarks.png>]
+Overfull \hbox (3.41638pt too wide) in paragraph at lines 197--198
 [] \T1/lmr/m/n/12 Stru-kura typu \T1/lmr/bx/n/12 Da-tac-lass \T1/lmr/m/n/12 po-
 zwala na stworz-nie struk-tury po-dob-nej do \T1/lmr/bx/n/12 struct
  []
 
 [37]
-<./images/../images/image_processing.png, id=725, 359.3425pt x 292.09125pt>
+<./images/../images/image_processing.png, id=726, 359.3425pt x 292.09125pt>
 File: ./images/../images/image_processing.png Graphic file (type png)
 <use ./images/../images/image_processing.png>
 Package pdftex.def Info: ./images/../images/image_processing.png  used on input
- line 230.
+ line 231.
 (pdftex.def)             Requested size: 284.52756pt x 231.29329pt.
- [38 <./images/../images/image_processing.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
+ [38]
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
 (../openleap/openleap/OpenLeap.py)
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
+
+ []
+
+[39 <./images/../images/image_processing.png (PNG copy)>]
+(../openleap/openleap/OpenLeap.py)
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 
  []
 
 (../openleap/openleap/OpenLeap.py)
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
-
- []
-
-[39] (../openleap/openleap/OpenLeap.py)
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 (../openleap/openleap/OpenLeap.py)
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
-(../openleap/openleap/OpenLeap.py) [40]
-<./images/../images/full_algorithm.png, id=775, 310.15875pt x 422.57875pt>
+[40] (../openleap/openleap/OpenLeap.py)
+<./images/../images/full_algorithm.png, id=772, 310.15875pt x 422.57875pt>
 File: ./images/../images/full_algorithm.png Graphic file (type png)
 <use ./images/../images/full_algorithm.png>
 Package pdftex.def Info: ./images/../images/full_algorithm.png  used on input l
-ine 304.
+ine 305.
 (pdftex.def)             Requested size: 227.62204pt x 310.12416pt.
  [41]
-<./images/../images/get_data.png, id=780, 439.6425pt x 732.7375pt>
+<./images/../images/get_data.png, id=781, 439.6425pt x 732.7375pt>
 File: ./images/../images/get_data.png Graphic file (type png)
 <use ./images/../images/get_data.png>
 Package pdftex.def Info: ./images/../images/get_data.png  used on input line 31
-6.
+7.
 (pdftex.def)             Requested size: 284.52756pt x 474.22768pt.
  [42 <./images/../images/full_algorithm.png (PNG copy)>] [43 <./images/../image
 s/get_data.png (PNG copy)>]
 [44]
-<./images/../images/train_models.png, id=802, 443.6575pt x 452.69125pt>
+<./images/../images/train_models.png, id=803, 443.6575pt x 452.69125pt>
 File: ./images/../images/train_models.png Graphic file (type png)
 <use ./images/../images/train_models.png>
 Package pdftex.def Info: ./images/../images/train_models.png  used on input lin
-e 397.
+e 398.
 (pdftex.def)             Requested size: 312.9803pt x 319.34769pt.
  [45] [46 <./images/../images/train_models.png (PNG copy)>]
 
 LaTeX Warning: Hyper reference `openleap-file1' on page 47 undefined on input l
-ine 447.
+ine 448.
 
 
 LaTeX Warning: Hyper reference `openleap-file2' on page 47 undefined on input l
-ine 447.
+ine 448.
 
 
 LaTeX Warning: Hyper reference `openleap-file3' on page 47 undefined on input l
-ine 447.
+ine 448.
 
 
 LaTeX Warning: Hyper reference `openleap-file4' on page 47 undefined on input l
-ine 447.
+ine 448.
 
 
-Overfull \hbox (10.71848pt too wide) in paragraph at lines 447--447
+Overfull \hbox (10.71848pt too wide) in paragraph at lines 448--448
 []|\T1/lmtt/m/n/12 sign_language_alphabet.pkl| 
  []
 
@@ -1269,13 +1270,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 455.
  ) 
 Here is how much of TeX's memory you used:
- 14463 strings out of 483148
- 215053 string characters out of 5965415
- 714417 words of memory out of 5000000
- 28810 multiletter control sequences out of 15000+600000
+ 14464 strings out of 483148
+ 215070 string characters out of 5965415
+ 732485 words of memory out of 5000000
+ 28811 multiletter control sequences out of 15000+600000
  597304 words of font info for 65 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 50i,12n,55p,932b,2122s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,12n,55p,932b,2126s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -1291,10 +1292,10 @@ re/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (68 pages, 1672844 bytes).
+Output written on thesis.pdf (68 pages, 1673903 bytes).
 PDF statistics:
- 1037 PDF objects out of 1200 (max. 8388607)
- 901 compressed objects within 10 object streams
+ 1038 PDF objects out of 1200 (max. 8388607)
+ 902 compressed objects within 10 object streams
  293 named destinations out of 1000 (max. 500000)
  729 words of extra memory for PDF output out of 10000 (max. 10000000)
 
