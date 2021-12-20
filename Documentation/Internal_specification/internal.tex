@@ -150,11 +150,13 @@
     \end{center}
 \end{figure}
 
-\begin{lstlisting}[language=python, style=programming, caption={Przykładowe wykorzystanie \textbf{mp\_hands}},captionpos=b]
+\quad Przykład wykorzystania polega na odczytaniu współrzędnej X nadgarstka z listy o nazwie \textbf{landmark} będącej częścią obiektu \textbf{hand}. Jak można zobaczyć na przykładzie \ref{lst:enum}, wykorzystaniem enumeratora pomaga w stworzeniu zapisu, który jest czytelny. \newline
+
+\begin{lstlisting}[language=python, style=programming, caption={Przykładowe wykorzystanie \textbf{mp\_hands}},captionpos=b, label={lst:enum}]
     x = hand.landmark[self.mp_hands.HandLandmark.WRIST].x
 \end{lstlisting}
 
-\quad Tak jak zostało to ukazane powyżej, enumerator może zostać wykorzystany, na przykład do odczytu współrzędnej danego punktu. Jest to ułatwienie, dzięki któremu program staje się czytelnieszy dla programisty lub osoby przeglądającej program. 
+\quad Jest to ułatwienie, dzięki któremu program staje się czytelniejszy dla programisty lub osoby przeglądającej program. 
 
 \subsection{Struktura results}
 
