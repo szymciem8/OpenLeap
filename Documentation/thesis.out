@@ -23,7 +23,7 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{OpenCV}{section.4.3}% 23
 \BOOKMARK [2][-]{subsection.4.3.2}{MediaPipe}{section.4.3}% 24
 \BOOKMARK [2][-]{subsection.4.3.3}{SciKit-Learn}{section.4.3}% 25
-\BOOKMARK [0][-]{chapter.5}{[W\233asciwy dla kierunku \205 np. Specyfikacja zewnetrzna]}{}% 26
+\BOOKMARK [0][-]{chapter.5}{Specyfikacja Zewnetrzna}{}% 26
 \BOOKMARK [1][-]{section.5.1}{Wymagania sprzetowe}{chapter.5}% 27
 \BOOKMARK [2][-]{subsection.5.1.1}{Kamera}{section.5.1}% 28
 \BOOKMARK [2][-]{subsection.5.1.2}{Komputer}{section.5.1}% 29
@@ -35,9 +35,9 @@
 \BOOKMARK [2][-]{subsection.5.4.2}{Interaktywny Kiosk}{section.5.4}% 35
 \BOOKMARK [2][-]{subsection.5.4.3}{Dob\363r koloru}{section.5.4}% 36
 \BOOKMARK [1][-]{section.5.5}{Stworzenie nowego modelu}{chapter.5}% 37
-\BOOKMARK [0][-]{chapter.6}{[W\233asciwy dla kierunku - np.Specyfikacja wewnetrzna]}{}% 38
+\BOOKMARK [0][-]{chapter.6}{Specyfikacja Wewnetrzna}{}% 38
 \BOOKMARK [1][-]{section.6.1}{Klasa OpenLeap}{chapter.6}% 39
-\BOOKMARK [2][-]{subsection.6.1.1}{Relacja klas - kompozycja}{section.6.1}% 40
+\BOOKMARK [2][-]{subsection.6.1.1}{Wykorzystanie innych klas}{section.6.1}% 40
 \BOOKMARK [2][-]{subsection.6.1.2}{Budowa klasy}{section.6.1}% 41
 \BOOKMARK [2][-]{subsection.6.1.3}{Atrybuty klasy}{section.6.1}% 42
 \BOOKMARK [2][-]{subsection.6.1.4}{Metody klasy}{section.6.1}% 43
@@ -71,6 +71,6 @@
 \BOOKMARK [0][-]{chapter.7}{Weryfikacja i walidacja}{}% 71
 \BOOKMARK [0][-]{chapter.8}{Podsumowanie i wnioski}{}% 72
 \BOOKMARK [0][-]{chapter.8}{Bibliografia}{}% 73
-\BOOKMARK [0][-]{appendix*.22}{Spis skr\363t\363w i symboli}{}% 74
-\BOOKMARK [0][-]{appendix*.23}{Zr\363d\233a}{}% 75
-\BOOKMARK [0][-]{appendix*.24}{Zawartosc do\233aczonej p\233yty}{}% 76
+\BOOKMARK [0][-]{appendix*.21}{Spis skr\363t\363w i symboli}{}% 74
+\BOOKMARK [0][-]{appendix*.22}{Zr\363d\233a}{}% 75
+\BOOKMARK [0][-]{appendix*.23}{Zawartosc do\233aczonej p\233yty}{}% 76

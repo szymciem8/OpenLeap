@@ -1,123 +1,140 @@
-\chapter{[Właściwy dla kierunku - np.Specyfikacja wewnętrzna]}
-Jeśli to Specyfikacja wewnętrzna:
-\begin{itemize}
-\item przedstawienie idei
-\item architektura systemu
-\item opis struktur danych (i organizacji baz danych)
-\item komponenty, moduły, biblioteki, przegląd ważniejszych klas (jeśli występują)
-\item przegląd ważniejszych algorytmów (jeśli występują)
-\item szczegóły implementacji wybranych fragmentów, zastosowane wzorce projektowe
-\item diagramy UML
-\end{itemize}
+\chapter{Specyfikacja Wewnętrzna}
+
+% \chapter{[Właściwy dla kierunku - np.Specyfikacja wewnętrzna]}
+% Jeśli to Specyfikacja wewnętrzna:
+% \begin{itemize}
+% \item przedstawienie idei
+% \item architektura systemu
+% \item opis struktur danych (i organizacji baz danych)
+% \item komponenty, moduły, biblioteki, przegląd ważniejszych klas (jeśli występują)
+% \item przegląd ważniejszych algorytmów (jeśli występują)
+% \item szczegóły implementacji wybranych fragmentów, zastosowane wzorce projektowe
+% \item diagramy UML
+% \end{itemize}
 
 
-\begin{itemize}
-\item wymagania funkcjonalne i niefunkcjonalne
-\item przypadki użycia (diagramy UML) - dla prac, w których mają zastosowanie
-\item opis narzędzi, metod eksperymentalnych, metod modelowania itp.
-\item metodyka pracy nad projektowaniem i implementacją - dla prac, w których ma to zastosowanie
-\end{itemize}
+% \begin{itemize}
+% \item wymagania funkcjonalne i niefunkcjonalne
+% \item przypadki użycia (diagramy UML) - dla prac, w których mają zastosowanie
+% \item opis narzędzi, metod eksperymentalnych, metod modelowania itp.
+% \item metodyka pracy nad projektowaniem i implementacją - dla prac, w których ma to zastosowanie
+% \end{itemize}
 
 \section{Klasa OpenLeap}
 
-\subsection{Relacja klas - kompozycja}
-\quad Klasa OpenLeap korzysta z różnych bibliotek oraz klas. Natomiast nie dziedziczy ona żadnej klasy. Zostały jedynie wykorzystane wybrane metody tworzonych obiektów wewnątrz klasy. 
+\subsection{Wykorzystanie innych klas}
+\quad Klasa OpenLeap korzysta z różnych bibliotek. Natomiast nie dziedziczy ona żadnej klasy. Zostały jedynie wykorzystane wybrane metody tworzonych obiektów wewnątrz klasy. 
 
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=10cm]{example-image-a}
-        \caption{Relacja klas} 
-    \end{center}
-\end{figure}
+% \begin{figure}[H]
+%     \begin{center}
+%         \includegraphics[width=10cm]{example-image-a}
+%         \caption{Relacja klas} 
+%     \end{center}
+% \end{figure}
 
-\quad OpenLeap wykorzstuje metody klasy \textbf{mediapipe.solutions.hands.Hands} oraz \textbf{cv2.VideoCapture}. Pierwsza klasa pozwala na stworzenie obiektu, któreg zadaniem jest rozpoznawanie dłoni na podstawie podawanego obrazu. Druga klasa tworzy obiekt, który pozwala na pobranie obrazu z kamery, określenie jego wielkości oraz sprawdzenia czy kamery jest aktualnie dostępna. 
+\quad OpenLeap wykorzystuje metody klasy \textbf{mediapipe.solutions.hands.Hands} oraz \textbf{cv2.VideoCapture}. Pierwsza klasa pozwala na stworzenie obiektu, którego zadaniem jest rozpoznawanie dłoni na podstawie podawanego obrazu. Druga klasa tworzy obiekt, który pozwala na pobranie obrazu z kamery, określenie jego wielkości oraz sprawdzenia, czy kamera jest w ogóle dostępna. 
 
+\newpage
 \subsection{Budowa klasy}
 
-\quad 
-
-\begin{figure}[H]
+\begin{wrapfigure}[16]{r}{0.5\textwidth}
     \begin{center}
-        \includegraphics[width=10cm]{../images/class.png}
-        \caption{Schemat klasy OpenLeap} 
-    \end{center}
-\end{figure}
+        \includegraphics[width=0.48\textwidth]{../images/class.png}
+        \end{center}
+    \caption{Schemat klasy OpenLeap}
+\end{wrapfigure}
+
+\quad Klasa posiada atrybuty, których część jest parametrami, czyli dokładnie argumentami inicjalizatora klasy. Oprócz parametrów istnieją jeszcze zmienne oraz obiekty klas odpowiadające za rozpoznanie dłoni, czy wykonanie operacji związanych z obliczeniem wartości zapisywanych w słowniku data, który też jest atrybutem klasy.
+
+\quad Niektóre metody klasy mogą zostać wykonane automatycznie poprzez funkcje \textbf{main()} lub \textbf{loop()}. Natomiast można też wykonać potrzebne operacje bezpośrednio z wykorzystaniem wbudowanych metod, co może pomóc w optymalizacji programu. \newline\newline\newline\newline\newline\newline
+
+% \begin{figure}[H]
+%     \begin{center}
+%         \includegraphics[width=7.5cm]{../images/class.png}
+%         \caption{Schemat klasy OpenLeap} 
+%     \end{center}
+% \end{figure}
+
 
 \subsection{Atrybuty klasy}
 
 \quad Część atrybutów klasy została opisana w podrozdziale \textbf{\nameref{parametry}}, są to te elementy, które mogą zostać zdefiniowane przez użytkownika. Druga część atrybutów jest generowana automatycznie. 
 
-\begin{itemize}
-    \item \textbf{mp\_drawings} - obiekt pobierany z bilbioteki \textbf{MediaPipe} pozwalająca na rysowanie obrysu dłoni w oknie generowanym przez OpenCV.
-    \item \textbf{mp\_hands} - obiekt przechowujący informacje, na przykład o indeksach opisujących poszczególne elementy charakterystyczne dłoni. 
-    \item \textbf{hands} - model biblioteki MediaPipe rozpoznający dłonie. Inicjalizacja tego obiektu wymaga podnania dwóch parametrów. 
+\begin{enumerate}
+    \item \textbf{mp\_drawings} --- Obiekt pobierany z biblioteki \textbf{MediaPipe} pozwalająca na rysowanie obrysu dłoni w oknie generowanym przez OpenCV.
+    \item \textbf{mp\_hands} -- Obiekt przechowujący informacje, na przykład o indeksach opisujących poszczególne elementy charakterystyczne dłoni. 
+    \item \textbf{hands} -- Model biblioteki MediaPipe rozpoznający dłonie. Inicjalizacja tego obiektu wymaga podania dwóch parametrów. 
     \begin{itemize}
-        \item \textbf{min\_detection\_confidence} - minimalna wartość szacunkowa, dla której model określa czy została wykryta dłoń.
-        \item \textbf{min\_tracking\_confidence} - minilana wartość szacunkowa, pozwalająca określić dokładność śledzenia dłoni. 
+        \item \textbf{min\_detection\_confidence} -- Minimalna wartość szacunkowa, dla której model określa czy została wykryta dłoń.
+        \item \textbf{min\_tracking\_confidence} -- Minimalna wartość szacunkowa, pozwalająca określić dokładność śledzenia dłoni. 
     \end{itemize}
-    \item \textbf{results} - obiekt przechowujący informacje o rozpoznanych dłoniach i ich elementach. 
-\end{itemize}
+    \item \textbf{results} -- Obiekt przechowujący informacje o rozpoznanych dłoniach i ich elementach. 
+    \item \textbf{data} -- Słownik, w którym są przechowywane informacje o obydwóch dłoniach. 
+\end{enumerate}
 
 \subsection{Metody klasy}
 
-\quad W klasie zostały stworzone metody, które 
+\quad W klasie zostały stworzone metody, które pozwalają na zbudowanie logiki programu. 
 
 \begin{enumerate}
-    \item \textbf{close\_window()} - zamknięcie wszytkich okien biblioteki OpenCV.
-    \item \textbf{detect\_key()} - wykrycie kliknięcia wybranego przycisku podanego w argumencie.
-    \item \textbf{left\_or\_right()} - metoda rozpoznająca lewą oraz prawą dłoń. Metoda za arugmenty przyjmuje:
+    \item \textbf{close\_window()} -- Zamknięcie wszystkich okien biblioteki OpenCV.
+    \item \textbf{detect\_key()} -- Wykrycie kliknięcia wybranego przycisku podanego w argumencie.
+    \item \textbf{left\_or\_right()} -- Metoda rozpoznająca lewą oraz prawą dłoń. Metoda za argumenty przyjmuje:
     \begin{itemize}
-        \item \textbf{index} - indeks badanej dłoni. 
-        \item \textbf{mode} - metoda określania typu dłoni. 
+        \item \textbf{index} -- indeks badanej dłoni
+        \item \textbf{mode} -- metoda określania typu dłoni 
         \begin{itemize}
-            \item \textbf{AI} - wykorzystuje gotowy model MediaPipe. Niestety ten może nie zawsze działać poprawnie. 
-            \item \textbf{position} - drugą metodą jest bazowanie na pozycji dłoni, dłoń po prawej stronie względem drugiej dłoni jest dłonią prawą i odwrotnie. Jeśli na ekranie widoczna jest jedna dłoń, wtedy funkcja jest wywoływana ponownie z metodą 'AI'.
+            \item \textbf{\enquote{AI}} -- Wykorzystuje gotowy model MediaPipe. Niestety ten może nie zawsze działać poprawnie. 
+            \item \textbf{\enquote{position}} -- Drugą metodą jest bazowanie na pozycji dłoni, dłoń po prawej stronie względem drugiej dłoni jest dłonią prawą i odwrotnie. Jeśli na ekranie widoczna jest jedna dłoń, wtedy funkcja jest wywoływana ponownie z argumentem \textbf{mode} ustawionym na \textbf{\enquote{AI}}.
         \end{itemize}
-        \item \textbf{hand} - obiekt przechowujący współrzędne elementów charakterystycznych danej dłoni. 
+        \item \textbf{hand} -- Obiekt przechowujący współrzędne elementów charakterystycznych danej dłoni. 
     \end{itemize}
-    \item \textbf{get\_position()} - Funkcja zwraca pozycję elementu danej dłoni. 
+    \item \textbf{get\_position()} -- Funkcja zwraca pozycję elementu danej dłoni. 
     \begin{itemize}
-        \item \textbf{index} - indeks badanej dłoni. 
-        \item \textbf{landmark\_idx} - indeks elementu charakterystycznego, którego pozycję ma zwrócić funkcja. 
-        \item \textbf{normalized} - parametr określający czy zwrócone współrzędne mają zostać znoramalizowane czy nie. 
+        \item \textbf{index} -- indeks badanej dłoni
+        \item \textbf{landmark\_idx} -- indeks elementu charakterystycznego, którego pozycję ma zwrócić funkcja
+        \item \textbf{normalized} -- Parametr określający czy zwrócone współrzędne mają zostać znormalizowane.
     \end{itemize}
-    \item \textbf{get\_distance\_between\_landmarks()} - Metoda obliczająca odległość między dwoma wybranymi elementami charakterystycznymi.
+    \item \textbf{get\_distance\_between\_landmarks()} -- Metoda obliczająca odległość między dwoma wybranymi elementami charakterystycznymi.
     \begin{itemize}
-        \item \textbf{index} - indeks dłoni, na której znajdują się mierzone elementy. 
-        \item \textbf{landmark\_1} - indeks pierwszego elementu dłoni. 
-        \item \textbf{landmark\_2} - indeks drugiego elementu dłoni. 
-        \item \textbf{normalized} - parametr określający czy odległość ma zostać znomralizowana. 
+        \item \textbf{index} -- Indeks dłoni, na której znajdują się mierzone elementy.
+        \item \textbf{landmark\_1} -- indeks pierwszego elementu dłoni
+        \item \textbf{landmark\_2} -- indeks drugiego elementu dłoni
+        \item \textbf{normalized} -- Parametr określający czy odległość ma zostać znormalizowane.
     \end{itemize}
-    \item \textbf{get\_angle()} - metod zwracająca kąt obrotu wybranego elementu charakterystycznego dłoni względem nadgarstka. 
+    \item \textbf{get\_angle()} -- Metod zwracająca kąt obrotu wybranego elementu charakterystycznego dłoni względem nadgarstka. 
     \begin{itemize}
-        \item \textbf{index} - indeks wybranej dłoni. 
-        \item \textbf{landmark\_idx} - indeks elementu względem, którego obliczany jest kąt. 
+        \item \textbf{index} -- indeks wybranej dłoni 
+        \item \textbf{landmark\_idx} -- Indeks elementu względem, którego obliczany jest kąt.
         \item \textbf{mode}
         \begin{itemize}
-            \item \textbf{half} - zwraca kąt półpełny
-            \item \textbf{full} - zwraca kąt pełny
+            \item \textbf{half} -- kąt półpełny
+            \item \textbf{full} -- kąt pełny
         \end{itemize}
         \item \textbf{unit}
         \begin{itemize}
-            \item \textbf{radians} - jednostka kąta w radianach
-            \item \textbf{degrees} - jednostka kąta w stopniach
+            \item \textbf{radians} -- jednostka kąta w radianach
+            \item \textbf{degrees} -- jednostka kąta w stopniach
         \end{itemize}
     \end{itemize}
-    \item \textbf{get\_gesture()} - metoda określa gest wybranej dłoni. 
+    \item \textbf{get\_gesture()} -- Metoda określa gest wybranej dłoni. 
     \begin{itemize}
-        \item \textbf{index} - indeks wybranej dłoni. 
+        \item \textbf{index} -- indeks wybranej dłoni
     \end{itemize}
-    \item \textbf{show\_data()} - metoda wyświetlająca dane w oknie lub w konsoli w zleżności od wybranej opcji. 
+    \newpage
+    \item \textbf{show\_data()} -- Metoda wyświetlająca dane w oknie lub w konsoli w zależności od wybranej opcji. 
     \begin{itemize}
-        \item \textbf{console} - flaga określająca czy dane mają zostać wypisane w konsoli.
-        \item \textbf{on\_image} - flaga określająca czy dane mają zostać wypisane na ekranie. 
-        \item \textbf{image} - wybrany obraz, na którym mają zostać wypisane dane.
+        \item \textbf{console} -- Flaga określająca czy dane mają zostać wypisane w konsoli.
+        \item \textbf{on\_image} -- Flaga określająca czy dane mają zostać wypisane na ekranie. 
+        \item \textbf{image} -- Wybrany obraz, na którym mają zostać wypisane dane.
     \end{itemize}
-    \item \textbf{main()} - główna metoda, w której wykonywane są niezbędne obliczenia oraz funkcje. 
-    \item \textbf{loop()} - metoda, w której wywoływana jest metoda main() w pętli. 
+    \item \textbf{main()} -- Główna metoda, w której wykonywane są niezbędne obliczenia oraz funkcje. 
+    \item \textbf{loop()} -- Metoda, w której wywoływana jest metoda \textbf{main()} w pętli. 
 \end{enumerate}
 
 \section{Struktury danych}
+
+\quad Klasa zawiera w sobie parę struktur danych, które są kluczowe dla wygodnego korzystania z klasy.  
 
 \subsection{Struktura mp\_hands}
 
@@ -125,14 +142,14 @@ Jeśli to Specyfikacja wewnętrzna:
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=15cm]{../images/hand_landmarks.png}
+        \includegraphics[width=12.8cm]{../images/hand_landmarks.png}
         \caption{Elementy charakterystyczne dłoni}
     \end{center}
 \end{figure}
 
 \quad Pierwszym elementem określanym przez enumerator jest nadgarstek. Dalej znajduje się reszta indeksów, oznaczająca resztę części palców i dłoni.  
 
-\begin{lstlisting}[caption={Przykładowe wykorzystanie \textbf{mp\_hands}},captionpos=b,language=python]
+\begin{lstlisting}[language=python, style=programming, caption={Przykładowe wykorzystanie \textbf{mp\_hands}},captionpos=b]
     x = hand.landmark[self.mp_hands.HandLandmark.WRIST].x
 \end{lstlisting}
 
@@ -145,26 +162,26 @@ Jeśli to Specyfikacja wewnętrzna:
 \begin{itemize}
     \item \textbf{multi\_hand\_landmarks} - obiekt przechowujący dane o pozycjach wszystkich elementów dłoni. Przykład wykorzystania został przedstawiony powyżej. 
     
-    \begin{lstlisting}[caption={Przykład elementu obiektu},captionpos=b,language=python]
-        [landmark {
-            x: 0.7409825921058655
-            y: 0.6843034029006958
-            z: 0.0
-            }
-            .s
-            .
-            .
-            landmark {
-            x: 0.7874422073364258
-            y: 0.26234549283981323
-            z: -0.16528795659542084
-            }
-        ]
+    \begin{lstlisting}[caption={Przykład elementu obiektu},captionpos=b,language=python, style=command]
+    [landmark {
+        x: 0.7409825921058655
+        y: 0.6843034029006958
+        z: 0.0
+        }
+        .
+        .
+        .
+        landmark {
+        x: 0.7874422073364258
+        y: 0.26234549283981323
+        z: -0.16528795659542084
+        }
+    ]
     \end{lstlisting}
     
 
     \item \textbf{multi\_handedness} - lista przechowująca dane o wszysktich dłoniach widocznych na obraze. Danymi są indeks, typ dłoni oraz punktacja określającą pewność poprawnego rozpoznania dłoni. 
-    \begin{lstlisting}[caption={Przykład elementu obiektu},captionpos=b,language=python]
+    \begin{lstlisting}[caption={Przykład elementu obiektu},captionpos=b,language=python,style=command]
         [classification {
                 index: 1
                 score: 0.9482673406600952
@@ -178,7 +195,7 @@ Jeśli to Specyfikacja wewnętrzna:
 
 \quad Strukura typu \textbf{Dataclass} pozwala na stworznie struktury podobnej do \textbf{struct} istniejącej w języku programowania \textbf{C}. Taka klasa pozwala na storzenie obiektu składającego się jedynie z atrybutów wymaganych do opisue elementów klasy kontrolera. Dodatkowym atutem takiej klasy jest możliwość prostego odczytu zapisanych danych, korzystając z operatora kropki, a nie z operatrów opisujących słownik lub listę. 
 
-\begin{lstlisting}[language=python]
+\begin{lstlisting}[language=python, style=programming]
     @dataclass
     class Data:
         x : float = 0
@@ -195,7 +212,7 @@ Jeśli to Specyfikacja wewnętrzna:
 
 \quad Instancja stworzonego typu \textbf{Data} zostnie zainicjowana dla każdej dłoni (lewej oraz prawej). Te instacje zostaną zapisane w słowniku. 
 
-\begin{lstlisting}[language=python]
+\begin{lstlisting}[language=python, style=programming]
     data = {'right':Data(), 'left':Data()}
 \end{lstlisting}
 
@@ -226,27 +243,27 @@ Jeśli to Specyfikacja wewnętrzna:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{OpenCV - przygotowanie obrazu z kamery}
 
-\quad W pierszym kroku należy zainicjalizować obiekt obsługujący kamerę. Argumntem jest identyfikator określający, która kamera podłączona do systemu ma zostać wykorzystana. W przypadku kiedy dostępna jest tylko jedna kamera wystarczy wpisać wartość równą 0, tak jak poniżej.  
+\quad W pierszym kroku należy zainicjalizować obiekt obsługujący kamerę. Argumntem jest identyfikator określający, która kamera podłączona do systemu ma zostać wykorzystana. W przypadku kiedy dostępna jest tylko jedna kamera wystarczy wpisać wartość równą 0, tak jak poniżej.\newline
 
 % \inputminted[firstline=51, lastline=52]{python}{../OpenLeap.py}
 
-\lstinputlisting[language=python, firstline=81, lastline=81]{../openleap/openleap/OpenLeap.py}
+\lstinputlisting[language=python, firstline=81, lastline=81, style=programming]{../openleap/openleap/OpenLeap.py}
 
-\quad W metodzie \textbf{main()} w pierwszym kroku warunek określa czy zostało otwarte połączenia z kamerą. Jeśli tak to należy pobrać z niej aktualną klatkę obrazu (\textbf{frame}). 
+\quad W metodzie \textbf{main()} w pierwszym kroku warunek określa czy zostało otwarte połączenia z kamerą. Jeśli tak to należy pobrać z niej aktualną klatkę obrazu (\textbf{frame}). \newline
 
-\lstinputlisting[language=python, firstline=293, lastline=301]{../openleap/openleap/OpenLeap.py}
+\lstinputlisting[language=python, firstline=293, lastline=301, style=programming]{../openleap/openleap/OpenLeap.py}
 
-\quad Model rozpoznający dłoń korzysta z przestrzeni barw RGB (red, green, blue), a nie BGR (blue, green, red). Dlatego należy obraz przekształcić właśnie na przesrzeń RGB. Dodatkowo, obraz powinnien zostać obrócony horyzntalnie, tak aby stworzył lustrzane odbicie względem użytkownika ustawionego na przeciwko kamery. 
+\quad Model rozpoznający dłoń korzysta z przestrzeni barw RGB (red, green, blue), a nie BGR (blue, green, red). Dlatego należy obraz przekształcić właśnie na przesrzeń RGB. Dodatkowo, obraz powinnien zostać obrócony horyzntalnie, tak aby stworzył lustrzane odbicie względem użytkownika ustawionego na przeciwko kamery. \newline
 
-\lstinputlisting[language=python, firstline=302, lastline=307]{../openleap/openleap/OpenLeap.py}
+\lstinputlisting[language=python, firstline=302, lastline=307, style=programming]{../openleap/openleap/OpenLeap.py}
 
-\quad Flage \textbf{writeable} ustawiona na \textbf{False} pozwala na uzyskanie lepszej wydajności przy przetwarzaniu obrazu w ramach modelu rozpoznającego dłonie. 
+\quad Flage \textbf{writeable} ustawiona na \textbf{False} pozwala na uzyskanie lepszej wydajności przy przetwarzaniu obrazu w ramach modelu rozpoznającego dłonie.\newline 
 
-\lstinputlisting[language=python, firstline=308, lastline=316]{../openleap/openleap/OpenLeap.py}
+\lstinputlisting[language=python, firstline=308, lastline=316, style=programming]{../openleap/openleap/OpenLeap.py}
 
-\quad Przestrzeń barw zostaje przywrócona do RGB, aby była mogła zostać poprawnie wyświetlona przez funkcję biblioteki OpenCV. 
+\quad Przestrzeń barw zostaje przywrócona do RGB, aby była mogła zostać poprawnie wyświetlona przez funkcję biblioteki OpenCV. \newline
 
-\lstinputlisting[language=python, firstline=318, lastline=320]{../openleap/openleap/OpenLeap.py}
+\lstinputlisting[language=python, firstline=318, lastline=320, style=programming]{../openleap/openleap/OpenLeap.py}
 
 % \inputminted[language=python, firstline=272, lastline=297]{python}{../openleap/openleap/OpenLeap}
 

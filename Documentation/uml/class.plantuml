@@ -19,12 +19,19 @@ class OpenLeap{
     **bool** show_data_in_console
     **bool** show_data_on_image
     **bool** normalized_position
+    **bool** activate_data
     **string** model
     **string** screen_type
-    **class** mp_drawings
-    **class** mp_hands
-    **class** hands 
-    **class** results
+    **string** lr_mode
+    **obj** mp_drawings
+    **obj** mp_hands
+    **obj** hands 
+    **obj** results
+    **obj** data
+    **obj** cap
+    **const** WIDTH
+    **const** HEIGHT
+    **const** DIMENSIONS
 }
 
 @enduml

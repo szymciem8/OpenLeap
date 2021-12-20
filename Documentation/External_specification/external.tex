@@ -2,7 +2,9 @@
 
 % \chapter{Wymagania i narzędzia}
 
-\chapter{[Właściwy dla kierunku -- np. Specyfikacja zewnętrzna]}
+\chapter{Specyfikacja Zewnętrzna}
+
+% \chapter{[Właściwy dla kierunku -- np. Specyfikacja zewnętrzna]}
 % Jeśli to Specyfikacja zewnętrzna:
 % \begin{itemize}
 % \item  wymagania sprzętowe i programowe
@@ -161,6 +163,7 @@ Parametry Inicjalizatora:
 % \quad Działanie kontrolera opiera się na wywoływaniu funkcji \textbf{main()}. Tę funkcję można wywołać za pomocą wybudowanej funkcji \textbf{loop()}, która po prostu wywołuje funkcję \textbf{main()} w pętli wraz z warunkiem wyjścia z programu. Takie podejście może ułatwić stosowanie kontrolera w osobnym wątku aplikacji. 
 % \quad Alternatywnym podejściem jest po prostu zastosowanie funkcji \textbf{main()} w pętli budowanego programu. Takie rozwiązanie daje podobny rezultat, ale bez konieczności wykorzystania osobnego wątku. 
 
+\newpage
 \section{Przykłady użycia}
 \subsection{Rozpoznawanie alfabetu w języku migowym}
 \quad Pierwszym przykładem zastosowania jest wykorzystanie paczki do rozpoznawania alfabetu języka migowego. Taki program może umożliwić komunikację między osobą głuchoniemą posługującą się językiem migowym a osobą, która takiego języka nie zna. Przygotowany model rozpoznaje litery przedstawione na poniższej grafice \ref{img:alphabet}. Dzięki wykorzystanym algorytmom uczenia maszynowego model potrafi rozpoznać skomplikowane ułożenie dłoni symbolizujące daną literę.  
@@ -168,7 +171,7 @@ Parametry Inicjalizatora:
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=15cm]{../images/american_sign_language.jpg}
+        \includegraphics[width=10cm]{../images/american_sign_language.jpg}
         \caption{Gesty alfabetu języka migowego}
         \label{img:alphabet}
     \end{center}
@@ -184,28 +187,38 @@ Parametry Inicjalizatora:
     \caption{Rozpoznawanie języka migowego.}
 \end{figure}
 
-\quad Oprócz modelu rozpoznającego gesty alfabetu języka migowego klasa została wyposażona w model rozpoznający podstawowe gesty, czyli gesty otwartej i zamkniętej dłoni. Wybór odpowiedniego modelu odbywa się w momencie tworzenia obiektu poprzez ustawienie parametru \textbf{gesture\_model}. Programista może wybrać model, który lepiej sprawdzi się w tworzonej aplikacji. 
-
-\begin{figure}[H]
+\newpage
+\begin{wrapfigure}[9]{r}{0.5\textwidth}
     \begin{center}
-        \includegraphics[width=7.3cm]{open_fist.png}
-        \caption{Gesty otwartej i zamkniętej dłoni}
-    \end{center}
-\end{figure}
+        \includegraphics[width=0.48\textwidth]{open_fist.png}
+        \end{center}
+    \caption{Gesty otwartej i zamkniętej dłoni}
+\end{wrapfigure}
+
+\quad Oprócz modelu rozpoznającego gesty alfabetu języka migowego klasa została wyposażona w model rozpoznający podstawowe gesty, czyli gesty otwartej i zamkniętej dłoni. Wybór odpowiedniego modelu odbywa się w momencie tworzenia obiektu poprzez ustawienie parametru \textbf{gesture\_model}. Programista może wybrać model, który lepiej sprawdzi się w tworzonej aplikacji.\newline\newline\newline
 
 \subsection{Interaktywny Kiosk}
+
 \quad Kolejnym przykładem jest Interaktywny kiosk, który pozwala na złożenie zamówienia w sposób, który nie wymaga dotykania ekranu dotykowego. Warunkiem komfortowego korzystania z aplikacji jest wysoka liczba klatek na sekundę generowana przez kamerę, co wpływa na płynność ruchu kursora. 
 
 \quad W dobie pandemii, ale i nie tylko, takie rozwiązanie może potencjalnie przyczynić się do spowolnienia rozprzestrzeniania się różnego rodzaju wirusów i drobnoustrojów, poprzez brak konieczności dotykania ekranu w kasach samoobsługowych.
 
+\quad Wskaźnik kiosku interaktywnego jest sterowany poprzez pozycję dłoni, czyli informację, która jak już wiadomo jest generowana automatycznie. Kliknięcie przycisku zostaje aktywowane poprzez wykrycie odpowiednio małej odległości między końcówką palca wskazującego a końcówką kciuka. 
+
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=15cm]{../images/checkout_window.png}
+        \includegraphics[width=10cm]{../images/checkout_window.png}
         \caption{Zrzut ekranu kiosku interaktywnego}
     \end{center}
 \end{figure}
 
-\quad Wskaźnik kiosku interaktywnego jest sterowany poprzez pozycję dłoni, czyli informację, która jak już wiadomo jest generowana automatycznie. Kliknięcie przycisku zostaje aktywowane poprzez wykrycie odpowiednio małej odległości między końcówką palca wskazującego a końcówką kciuka. 
+% \begin{wrapfigure}[18]{r}{0.6\textwidth}
+%     \begin{center}
+%         \includegraphics[width=0.68\textwidth]{../images/checkout_window.png}
+%         \end{center}
+%     \caption{Schemat klasy OpenLeap}
+% \end{wrapfigure}
+
 
 % Odległość między tymi dwoma punktami jest obliczana automatycznie poprzez wbudowaną funkcję klasy OpenLeap. 
 
