@@ -45,7 +45,7 @@
 
 \section{Program testowy}
 
-\quad Paczkę można przetestować korzystając z dostępnych metod klasy. W ramach testu istnieje możliwość napisania programu wyłącznie w powłoce języka Python. W pierwszym kroku programu zostaje zaimportowana paczka \textbf{openleap}. Zostaje stworzony obiekt kontrolera z wybranymi parametrami, dokładny opis parametrów znajduje się w późniejszej części rozdziału, w podsekcji (\ref{parametry}). Metoda \textbf{loop()} odpowiada za wywołanie głównej logiki programu odpowiedzialnej za generowanie danych oraz wyświetlanie ich w wybranym miejscu (powłoka, okno graficzne). 
+\quad Paczkę można przetestować korzystając z dostępnych metod klasy. W ramach testu istnieje możliwość napisania programu wyłącznie w powłoce języka Python. W pierwszym kroku programu zostaje zaimportowana paczka \textbf{openleap}. Zostaje stworzony obiekt kontrolera z wybranymi parametrami, dokładny opis parametrów znajduje się w późniejszej części rozdziału, w podsekcji (\ref{parametry}). Metoda \textbf{loop()} odpowiada za wywołanie głównej logiki programu odpowiedzialnej za generowanie danych oraz wyświetlanie ich w wybranym miejscu (powłoka, okno graficzne).\newline
 
 \begin{lstlisting}[language=python, style=programming, label={lst:simple_program}, caption={Program testowy}]
     import openleap
@@ -91,71 +91,73 @@
 
 Parametry Inicjalizatora:
 \begin{enumerate}
-    \item \textbf{screen\_show} - podgląd okna (boolean)
-    \item \textbf{screen\_type} - typ tła wyświetlany w oknie graficznym (string)
+    \item \textbf{screen\_show} -- podgląd okna (boolean)
+    \item \textbf{screen\_type} -- typ tła wyświetlany w oknie graficznym (string)
     \begin{itemize}
-        \item \enquote{cam} - obraz z kamery
-        \item \enquote{black} - czarne tło
+        \item \enquote{cam} -- obraz z kamery
+        \item \enquote{black} -- czarne tło
     \end{itemize}
-    \item \textbf{show\_data\_in\_console} - wyświetlanie danych w konsoli (boolean)
-    \item \textbf{show\_data\_on\_image} - wyświetlanie danych w oknie graficznym (boolean)
-    \item \textbf{normalized\_position} - wyświetlanie znormalizowanej pozycji (boolean)
-    \item \textbf{gesture\_model} - wybór modelu rozpoznającego gesty (string)
+    \item \textbf{show\_data\_in\_console} -- wyświetlanie danych w konsoli (boolean)
+    \item \textbf{show\_data\_on\_image} -- wyświetlanie danych w oknie graficznym (boolean)
+    \item \textbf{normalized\_position} -- wyświetlanie znormalizowanej pozycji (boolean)
+    \item \textbf{gesture\_model} -- wybór modelu rozpoznającego gesty (string)
     \begin{itemize}
-        \item \enquote{basic} - gesty podstawowe
-        \item \enquote{sign\_language} - język migowy
+        \item \enquote{basic} -- gesty podstawowe
+        \item \enquote{sign\_language} -- język migowy
     \end{itemize}
-    \item \textbf{lr\_mode} - metoda rozpoznawania typu dłoni (string)
+    \item \textbf{lr\_mode} -- metoda rozpoznawania typu dłoni (string)
     \begin{itemize}
-        \item \enquote{AI}
-        \item \enquote{position}
+        \item \enquote{AI} -- wykorzystanie algorytmów klasyfikacji 
+        \item \enquote{position} -- określenie typu na podstawie pozycji dłoni według siebie
     \end{itemize}
-    \item \textbf{activate\_data} - warunek odpowiadający za ciągły zapis do struktury danych \textbf{data}, opisanej w przykładzie programu \ref{lst:get_data1}
+    \item \textbf{activate\_data} -- warunek odpowiadający za ciągły zapis do struktury danych \textbf{data}, opisanej w przykładzie programu \ref{lst:get_data1}
 \end{enumerate}
 
 
 \begin{figure}[H]
     \centering
-    \subfloat[Czarne tło.]{\includegraphics[width=7.3cm]{../images/example_program.png}\label{fig:f1}}
+    \subfloat[Czarne tło.]{\includegraphics[width=7.3cm]{../images/example_program.png}\label{par_bg:f1}}
     \hfill
-    \subfloat[Obraz z kamery.]{\includegraphics[width=7.3cm]{../images/cam_example.png}\label{fig:f2}}
+    \subfloat[Obraz z kamery.]{\includegraphics[width=7.3cm]{../images/cam_example.png}\label{par_bg:f2}}
     \caption{Parametr określający typ tła.}
 \end{figure}
 
 % \subsection{Dostępne funkcje}
 
-\subsection{Główny wątek}
-\quad Działanie kontrolera opiera się na wywoływaniu funkcji \textbf{main()}. Tą funkcję można wywołać za pomocą wybudowanej funkcji \textbf{loop()}, która po prostu wywołuje funkcję \textbf{main()} w pętli wraz z warunkiem wyjścia z programu. Takie podejście może ułatwić stosowanie kontrolera w osobnym wątku aplikacji. 
-\quad Alternatywnym podejściem jest po prostu zastosowanie funkcji \textbf{main()} w pętli budowanego programu. Takie rozwiązanie daje podobny rezultat, ale bez konieczności wykorzystania osobnego wątku. 
+% \subsection{Główny wątek}
+% \quad Działanie kontrolera opiera się na wywoływaniu funkcji \textbf{main()}. Tę funkcję można wywołać za pomocą wybudowanej funkcji \textbf{loop()}, która po prostu wywołuje funkcję \textbf{main()} w pętli wraz z warunkiem wyjścia z programu. Takie podejście może ułatwić stosowanie kontrolera w osobnym wątku aplikacji. 
+% \quad Alternatywnym podejściem jest po prostu zastosowanie funkcji \textbf{main()} w pętli budowanego programu. Takie rozwiązanie daje podobny rezultat, ale bez konieczności wykorzystania osobnego wątku. 
 
 \section{Przykłady użycia}
 \subsection{Rozpoznawanie alfabetu w języku migowym}
-\quad Pierwszym przykładem zastosowania jest wykorzystanie paczki do rozpoznawnia alfabetu języka migowego. Taki program może umożliwić komunikację między osobą głuchoniemą posługującą się językiem migowym, a osobą, które takiego jęzka nie zna. 
+\quad Pierwszym przykładem zastosowania jest wykorzystanie paczki do rozpoznawania alfabetu języka migowego. Taki program może umożliwić komunikację między osobą głuchoniemą posługującą się językiem migowym a osobą, która takiego języka nie zna. Przygotowany model rozpoznaje litery przedstawione na poniższej grafice \ref{img:alphabet}. Dzięki wykorzystanym algorytmom uczenia maszynowego model potrafi rozpoznać skomplikowane ułożenie dłoni symbolizujące daną literę.  
 
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=15cm]{../images/american_sign_language.jpg}
         \caption{Gesty alfabetu języka migowego}
+        \label{img:alphabet}
     \end{center}
 \end{figure}
 
-\quad Oprócz modelu rozpoznającego gesty alfabetu języka migowego, klasa została wyposażona w model rozpoznający podstawowe gesty, czyli gesty otwartej i zamkniętej dłoni. Wybór odpowiedniego modelu odbywa się w momencie tworzenia obiektu poprzez ustawienie parametru \textbf{gesture\_model}.
+\quad Oprócz modelu rozpoznającego gesty alfabetu języka migowego klasa została wyposażona w model rozpoznający podstawowe gesty, czyli gesty otwartej i zamkniętej dłoni. Wybór odpowiedniego modelu odbywa się w momencie tworzenia obiektu poprzez ustawienie parametru \textbf{gesture\_model}. Programista może wybrać model, który lepiej sprawdzi się w tworzonej aplikacji. 
 
 
 \begin{figure}[H]
     \centering
-    \subfloat[Litery A i B.]{\includegraphics[width=7.3cm]{../images/a_b.png}\label{fig:f1}}
+    \subfloat[Litery A i B.]{\includegraphics[width=7.3cm]{../images/a_b.png}\label{gest_pag:f1}}
     \hfill
-    \subfloat[Litery C i X.]{\includegraphics[width=7.3cm]{../images/c_x.png}\label{fig:f2}}
+    \subfloat[Litery C i X.]{\includegraphics[width=7.3cm]{../images/c_x.png}\label{gest_pag:f2}}
     \hfill
-    \subfloat[Litery F i O.]{\includegraphics[width=7.3cm]{../images/f_o.png}\label{fig:f3}}
-    \caption{Rozpoznawanie języka migowego .}
+    \subfloat[Litery F i O.]{\includegraphics[width=7.3cm]{../images/f_o.png}\label{gest_pag:f3}}
+    \caption{Rozpoznawanie języka migowego.}
 \end{figure}
 
 \subsection{Interaktywny Kiosk}
-\quad Kolejnym przykładem jest interktywny kiosk, który pozwala na złożenie zamówienia w sposób, który nie wymaga dotykania ekranu dotykowego. W dobie pandemii takie rozwiązanie może potencjalnie przyczynić się do spowolnienia rozprzestrzeniania się różnego rodzaju wirusów i drobnoustrojów. 
+\quad Kolejnym przykładem jest Interaktywny kiosk, który pozwala na złożenie zamówienia w sposób, który nie wymaga dotykania ekranu dotykowego. Warunkiem komfortowego korzystania z aplikacji jest wysoka liczba klatek na sekundę generowana przez kamerę, co wpływa na płynność ruchu kursora. 
 
+\quad W dobie pandemii, ale i nie tylko takie rozwiązanie może potencjalnie przyczynić się do spowolnienia rozprzestrzeniania się różnego rodzaju wirusów i drobnoustrojów, ponieważ użytkownicy nie muszą dotykać ekranu. 
 
 \begin{figure}[H]
     \begin{center}
@@ -164,7 +166,9 @@ Parametry Inicjalizatora:
     \end{center}
 \end{figure}
 
-\quad Wskaźnik kiosku interaktywnego jest sterowany poprzez pozycję dłoni. Kliknięcie w przycisk zostaje aktywowane za pomocą wykrycia odpowiednio małej odlęgłości między końcówką palca wskazującego, a końcówką kciuka. 
+\quad Wskaźnik kiosku interaktywnego jest sterowany poprzez pozycję dłoni, która jest definiowana poprzez pozycję nadgarstka. 
+
+\quad Kliknięcie przycisku zostaje aktywowane poprzez wykrycie odpowiednio małej odległości między końcówką palca wskazującego a końcówką kciuka. 
 
 \quad Odległość między tymi dwoma punktami jest obliczana automatycznie poprzez wbudowaną funkcję klasy OpenLeap. 
 
@@ -174,25 +178,25 @@ Parametry Inicjalizatora:
 
 \begin{figure}[H]
     \centering
-    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/yellow_hand_deg.png}\label{fig:f1}}
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/yellow_hand_deg.png}\label{30_deg:f1}}
     \hfill
-    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/yellow.png}\label{fig:f2}}
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/yellow.png}\label{30_deg:f2}}
     \caption{Obrót dłoni o 30 stopni.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/blueish_hand_deg.png}\label{fig:f1}}
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/blueish_hand_deg.png}\label{96_deg:f1}}
     \hfill
-    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/blueish.png}\label{fig:f2}}
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/blueish.png}\label{96_deg:f2}}
     \caption{Obrót dłoni o 96 stopni.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/pink_hand_deg.png}\label{fig:f1}}
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/pink_hand_deg.png}\label{174_deg:f1}}
     \hfill
-    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/pink.png}\label{fig:f2}}
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/pink.png}\label{174_deg:f2}}
     \caption{Obrót dłoni o 174 stopni.}
 \end{figure}
 
@@ -200,9 +204,9 @@ Parametry Inicjalizatora:
 
 \begin{figure}[H]
     \centering
-    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/zero_sat_hand_deg.png}\label{fig:f1}}
+    \subfloat[Widok dłoni.]{\includegraphics[width=7.3cm]{../images/zero_sat_hand_deg.png}\label{sat:f1}}
     \hfill
-    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/zero_sat.png}\label{fig:f2}}
+    \subfloat[Dobrany kolor.]{\includegraphics[width=7.3cm]{../images/zero_sat.png}\label{sat:f2}}
     \caption{Ustawienie saturacji}
 \end{figure}
 
@@ -212,6 +216,6 @@ Parametry Inicjalizatora:
 
 \section{Stworzenie nowego modelu}
 
-\quad Użtkownik biblioteki może stworzyć własny model rozpoznający gesty. Wykorzystać do tego można program napisany przy pomocy Jupyter Notebook. Plik jest dostępny na platformie \href{https://github.com/szymciem8/OpenLeap/blob/main/Jupyter%20Notebook/Create%20your%20own%20model/Gesture%20Detection.ipynb}{\textbf{GitHub}}. Plik posiada rozszerzenie \textbf{.ipynb}.
+\quad Użtkownik biblioteki może stworzyć własny model rozpoznający gesty. Wykorzystać do tego można program napisany przy pomocy Jupyter Notebook. Plik jest dostępny na platformie \href{https://bit.ly/3J72U0z}{\textbf{GitHub}}. Plik posiada rozszerzenie \textbf{.ipynb}. Link do modelu: \href{https://bit.ly/3J72U0z}{https://bit.ly/3J72U0z}
 
-\quad Dokładny opis tworzenia modelu zostanie opisany w kolejnym rozdziale dotyczącym specyfikacji wewnętrznej. 
+\quad Plik został przygotowany w formie instrukcji, tak aby osoba korzystająca mogła krok po kroku zebrać oraz przygotować dane, a później wytrenować model i go zapisać. Zapisany model może zostać ponownie wykorzystany w programie podając go za argument \textbf{gesture\_model}
