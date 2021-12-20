@@ -124,7 +124,6 @@ class OpenLeap():
 
                     return label
 
-
         elif mode == 'position':
             coords = np.array((hand.landmark[self.mp_hands.HandLandmark.WRIST].x, hand.landmark[self.mp_hands.HandLandmark.WRIST].y))
 
@@ -141,8 +140,7 @@ class OpenLeap():
                         return label
 
             else:
-                return self.left_or_right(index, hand, mode='AI')
-
+                return self.left_or_right(index, mode='AI', hand=hand)
 
         return label
 
@@ -330,11 +328,11 @@ class OpenLeap():
                 n_hands = len(self.results.multi_hand_landmarks)
                 for index, hand in enumerate(self.results.multi_hand_landmarks):
                     # print(hand)
-                    print(type([0,0]))
+                    # print(type([0,0]))
                     if n_hands >= 1:
                         #If there are two hands
-                        if self.left_or_right(index, hand, self.lr_mode):
-                            hand_type = self.left_or_right(index, hand, self.lr_mode)
+                        if self.left_or_right(index, self.lr_mode, hand):
+                            hand_type = self.left_or_right(index, self.lr_mode, hand)
                             x, y, z = self.get_position(index, self.mp_hands.HandLandmark.WRIST, normalized=self.normalized_position)
 
                             if self.activate_data:

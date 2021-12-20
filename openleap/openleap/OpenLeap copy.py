@@ -29,8 +29,8 @@ class OpenLeap():
                 show_data_in_console=False, 
                 show_data_on_image=False, 
                 normalized_position=True,
-                gesture_model='sign_language', 
-                lr_mode='position',
+                gesture_model='basic', 
+                lr_mode='AI',
                 activate_data=True,
         ):
 
@@ -329,7 +329,7 @@ class OpenLeap():
             if self.results.multi_hand_landmarks:
                 n_hands = len(self.results.multi_hand_landmarks)
                 for index, hand in enumerate(self.results.multi_hand_landmarks):
-                    print(hand)
+
                     if n_hands >= 1:
                         #If there are two hands
                         if self.left_or_right(index, hand, self.lr_mode):

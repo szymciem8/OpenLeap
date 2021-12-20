@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  20 DEC 2021 01:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  20 DEC 2021 20:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -874,6 +874,11 @@ Rozdzia\l  4.
 
 ]
 Rozdzia\l  5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
 [15] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
@@ -881,9 +886,9 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 33.
+nput line 32.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-3.
+2.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -892,15 +897,15 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: ./images/../images/pypi_page.png Graphic file (type png)
 <use ./images/../images/pypi_page.png>
 Package pdftex.def Info: ./images/../images/pypi_page.png  used on input line 4
-1.
+0.
 (pdftex.def)             Requested size: 426.79134pt x 455.75278pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 41--42
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 40--41
  [] 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
@@ -908,152 +913,180 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
-<./images/../images/example_program.png, id=495, 642.4pt x 560.0925pt>
-File: ./images/../images/example_program.png Graphic file (type png)
-<use ./images/../images/example_program.png>
-Package pdftex.def Info: ./images/../images/example_program.png  used on input 
-line 65.
-(pdftex.def)             Requested size: 256.0748pt x 223.2724pt.
- [18]
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-[19 <./images/../images/example_program.png>]
+[18]
+<./images/../images/example_program.png, id=509, 642.4pt x 560.0925pt>
 File: ./images/../images/example_program.png Graphic file (type png)
 <use ./images/../images/example_program.png>
 Package pdftex.def Info: ./images/../images/example_program.png  used on input 
-line 119.
+line 86.
+(pdftex.def)             Requested size: 256.0748pt x 223.2724pt.
+ [19]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+[20 <./images/../images/example_program.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+[21]
+File: ./images/../images/example_program.png Graphic file (type png)
+<use ./images/../images/example_program.png>
+Package pdftex.def Info: ./images/../images/example_program.png  used on input 
+line 152.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/cam_example.png, id=525, 642.4pt x 560.0925pt>
+<./images/../images/cam_example.png, id=548, 642.4pt x 560.0925pt>
 File: ./images/../images/cam_example.png Graphic file (type png)
 <use ./images/../images/cam_example.png>
 Package pdftex.def Info: ./images/../images/cam_example.png  used on input line
- 121.
+ 154.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
- [20]
-<./images/../images/american_sign_language.jpg, id=540, 851.18pt x 567.11874pt>
+ [22 <./images/../images/cam_example.png>]
+<./images/../images/american_sign_language.jpg, id=559, 851.18pt x 567.11874pt>
 
 File: ./images/../images/american_sign_language.jpg Graphic file (type jpg)
 <use ./images/../images/american_sign_language.jpg>
 Package pdftex.def Info: ./images/../images/american_sign_language.jpg  used on
- input line 138.
+ input line 171.
 (pdftex.def)             Requested size: 426.79134pt x 284.36345pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 138--139
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 171--172
  [] 
  []
 
-[21 <./images/../images/cam_example.png>]
-<./images/../images/a_b.png, id=551, 642.4pt x 560.0925pt>
+<./images/../images/a_b.png, id=560, 642.4pt x 560.0925pt>
 File: ./images/../images/a_b.png Graphic file (type png)
 <use ./images/../images/a_b.png>
-Package pdftex.def Info: ./images/../images/a_b.png  used on input line 149.
+Package pdftex.def Info: ./images/../images/a_b.png  used on input line 179.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/c_x.png, id=552, 642.4pt x 560.0925pt>
+<./images/../images/c_x.png, id=561, 642.4pt x 560.0925pt>
 File: ./images/../images/c_x.png Graphic file (type png)
 <use ./images/../images/c_x.png>
-Package pdftex.def Info: ./images/../images/c_x.png  used on input line 151.
+Package pdftex.def Info: ./images/../images/c_x.png  used on input line 181.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/f_o.png, id=553, 642.4pt x 560.0925pt>
+<./images/../images/f_o.png, id=562, 642.4pt x 560.0925pt>
 File: ./images/../images/f_o.png Graphic file (type png)
 <use ./images/../images/f_o.png>
-Package pdftex.def Info: ./images/../images/f_o.png  used on input line 153.
+Package pdftex.def Info: ./images/../images/f_o.png  used on input line 183.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
- [22 <./images/../images/american_sign_language.jpg>] [23 <./images/../images/a
-_b.png> <./images/../images/c_x.png> <./images/../images/f_o.png>]
-<./images/../images/checkout_window.png, id=569, 903.375pt x 913.4125pt>
+[23 <./images/../images/american_sign_language.jpg>]
+<./images/open_fist.png, id=568, 642.4pt x 560.0925pt>
+File: ./images/open_fist.png Graphic file (type png)
+<use ./images/open_fist.png>
+Package pdftex.def Info: ./images/open_fist.png  used on input line 191.
+(pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
+ [24 <./images/../images/a_b.png> <./images/../images/c_x.png> <./images/../ima
+ges/f_o.png>]
+<./images/../images/checkout_window.png, id=581, 903.375pt x 913.4125pt>
 File: ./images/../images/checkout_window.png Graphic file (type png)
 <use ./images/../images/checkout_window.png>
 Package pdftex.def Info: ./images/../images/checkout_window.png  used on input 
-line 164.
+line 203.
 (pdftex.def)             Requested size: 426.79134pt x 431.53395pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 164--165
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 203--204
  [] 
  []
 
-[24 <./images/../images/checkout_window.png>]
-<./images/../images/yellow_hand_deg.png, id=576, 642.4pt x 560.0925pt>
+[25 <./images/open_fist.png>] [26 <./images/../images/checkout_window.png>]
+<./images/../images/yellow_hand_deg.png, id=595, 642.4pt x 560.0925pt>
 File: ./images/../images/yellow_hand_deg.png Graphic file (type png)
 <use ./images/../images/yellow_hand_deg.png>
 Package pdftex.def Info: ./images/../images/yellow_hand_deg.png  used on input 
-line 181.
+line 219.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/yellow.png, id=577, 903.375pt x 933.4875pt>
+<./images/../images/yellow.png, id=596, 903.375pt x 933.4875pt>
 File: ./images/../images/yellow.png Graphic file (type png)
 <use ./images/../images/yellow.png>
-Package pdftex.def Info: ./images/../images/yellow.png  used on input line 183.
+Package pdftex.def Info: ./images/../images/yellow.png  used on input line 221.
 
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
-<./images/../images/blueish_hand_deg.png, id=578, 642.4pt x 560.0925pt>
+<./images/../images/blueish_hand_deg.png, id=597, 642.4pt x 560.0925pt>
 File: ./images/../images/blueish_hand_deg.png Graphic file (type png)
 <use ./images/../images/blueish_hand_deg.png>
 Package pdftex.def Info: ./images/../images/blueish_hand_deg.png  used on input
- line 189.
+ line 227.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/blueish.png, id=579, 903.375pt x 933.4875pt>
+<./images/../images/blueish.png, id=598, 903.375pt x 933.4875pt>
 File: ./images/../images/blueish.png Graphic file (type png)
 <use ./images/../images/blueish.png>
-Package pdftex.def Info: ./images/../images/blueish.png  used on input line 191
+Package pdftex.def Info: ./images/../images/blueish.png  used on input line 229
 .
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
- [25 <./images/../images/yellow_hand_deg.png> <./images/../images/yellow.png>]
-<./images/../images/pink_hand_deg.png, id=590, 642.4pt x 560.0925pt>
+
+[27 <./images/../images/yellow_hand_deg.png> <./images/../images/yellow.png>]
+<./images/../images/pink_hand_deg.png, id=608, 642.4pt x 560.0925pt>
 File: ./images/../images/pink_hand_deg.png Graphic file (type png)
 <use ./images/../images/pink_hand_deg.png>
 Package pdftex.def Info: ./images/../images/pink_hand_deg.png  used on input li
-ne 197.
+ne 235.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/pink.png, id=591, 903.375pt x 933.4875pt>
+<./images/../images/pink.png, id=609, 903.375pt x 933.4875pt>
 File: ./images/../images/pink.png Graphic file (type png)
 <use ./images/../images/pink.png>
-Package pdftex.def Info: ./images/../images/pink.png  used on input line 199.
+Package pdftex.def Info: ./images/../images/pink.png  used on input line 237.
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
-<./images/../images/zero_sat_hand_deg.png, id=592, 642.4pt x 560.0925pt>
+<./images/../images/zero_sat_hand_deg.png, id=610, 642.4pt x 560.0925pt>
 File: ./images/../images/zero_sat_hand_deg.png Graphic file (type png)
 <use ./images/../images/zero_sat_hand_deg.png>
 Package pdftex.def Info: ./images/../images/zero_sat_hand_deg.png  used on inpu
-t line 207.
+t line 243.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/zero_sat.png, id=593, 903.375pt x 933.4875pt>
+<./images/../images/zero_sat.png, id=611, 903.375pt x 933.4875pt>
 File: ./images/../images/zero_sat.png Graphic file (type png)
 <use ./images/../images/zero_sat.png>
-Package pdftex.def Info: ./images/../images/zero_sat.png  used on input line 20
-9.
+Package pdftex.def Info: ./images/../images/zero_sat.png  used on input line 24
+5.
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
- [26 <./images/../images/blueish_hand_deg.png> <./images/../images/blueish.png>
- <./images/../images/pink_hand_deg.png> <./images/../images/pink.png>]) [27 <./
-images/../images/zero_sat_hand_deg.png> <./images/../images/zero_sat.png>]
+
+[28 <./images/../images/blueish_hand_deg.png> <./images/../images/blueish.png> 
+<./images/../images/pink_hand_deg.png> <./images/../images/pink.png>]
+Overfull \hbox (2.83563pt too wide) in paragraph at lines 252--253
+\T1/lmr/m/n/12 jest do-st¦pny do po-bra-nia na plat-for-mie []\T1/lmr/bx/n/12 G
+i-tHub[]\T1/lmr/m/n/12 . Plik po-siada roz-sze-rze-nie \T1/lmr/bx/n/12 .ipynb\T
+1/lmr/m/n/12 ,
+ []
+
+[29 <./images/../images/zero_sat_hand_deg.png> <./images/../images/zero_sat.png
+>]) [30]
 \openout2 = `Internal_specification/internal.aux'.
 
  (./Internal_specification/internal.tex
-[28
+Rozdzia\l  6.
+[31
 
 
 
 ]
-Rozdzia\l  6.
-[29]
-<example-image-a.pdf, id=628, 321.2pt x 240.9pt>
+<example-image-a.pdf, id=645, 321.2pt x 240.9pt>
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
 Package pdftex.def Info: example-image-a.pdf  used on input line 28.
 (pdftex.def)             Requested size: 284.52756pt x 213.40048pt.
-<./images/../images/class.png, id=629, 987.69pt x 1300.86pt>
+<./images/../images/class.png, id=646, 987.69pt x 1300.86pt>
 File: ./images/../images/class.png Graphic file (type png)
 <use ./images/../images/class.png>
 Package pdftex.def Info: ./images/../images/class.png  used on input line 41.
 (pdftex.def)             Requested size: 284.52756pt x 374.73871pt.
- [30 </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image-a.pdf>]
-[31 <./images/../images/class.png (PNG copy)>] [32]
+ [32 </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image-a.pdf>]
+[33 <./images/../images/class.png (PNG copy)>] [34]
 Overfull \hbox (8.8434pt too wide) in paragraph at lines 84--86
 []\T1/lmr/bx/n/12 get_distance_between_landmarks() \T1/lmr/m/n/12 - Me-toda ob-
 li-cza-j¡ca od-le-gªo±¢ mi¦-
  []
 
-[33]
-<./images/../images/hand_landmarks.png, id=665, 1548.78625pt x 540.0175pt>
+[35]
+<./images/../images/hand_landmarks.png, id=682, 1548.78625pt x 540.0175pt>
 File: ./images/../images/hand_landmarks.png Graphic file (type png)
 <use ./images/../images/hand_landmarks.png>
 Package pdftex.def Info: ./images/../images/hand_landmarks.png  used on input l
@@ -1064,60 +1097,60 @@ Overfull \hbox (8.53766pt too wide) in paragraph at lines 128--129
  [] 
  []
 
-[34 <./images/../images/hand_landmarks.png>] [35]
+[36 <./images/../images/hand_landmarks.png>] [37]
 Overfull \hbox (3.41638pt too wide) in paragraph at lines 179--180
 [] \T1/lmr/m/n/12 Stru-kura typu \T1/lmr/bx/n/12 Da-tac-lass \T1/lmr/m/n/12 po-
 zwala na stworz-nie struk-tury po-dob-nej do \T1/lmr/bx/n/12 struct
  []
 
-[36]
-<./images/../images/image_processing.png, id=718, 359.3425pt x 292.09125pt>
+[38]
+<./images/../images/image_processing.png, id=736, 359.3425pt x 292.09125pt>
 File: ./images/../images/image_processing.png Graphic file (type png)
 <use ./images/../images/image_processing.png>
 Package pdftex.def Info: ./images/../images/image_processing.png  used on input
  line 213.
 (pdftex.def)             Requested size: 284.52756pt x 231.29329pt.
- [37 <./images/../images/image_processing.png (PNG copy)>]
+ [39 <./images/../images/image_processing.png (PNG copy)>]
 (../openleap/openleap/OpenLeap.py) (../openleap/openleap/OpenLeap.py)
-(../openleap/openleap/OpenLeap.py) [38] (../openleap/openleap/OpenLeap.py)
-(../openleap/openleap/OpenLeap.py) [39]
-<./images/../images/full_algorithm.png, id=763, 310.15875pt x 422.57875pt>
+(../openleap/openleap/OpenLeap.py) [40] (../openleap/openleap/OpenLeap.py)
+(../openleap/openleap/OpenLeap.py) [41]
+<./images/../images/full_algorithm.png, id=783, 310.15875pt x 422.57875pt>
 File: ./images/../images/full_algorithm.png Graphic file (type png)
 <use ./images/../images/full_algorithm.png>
 Package pdftex.def Info: ./images/../images/full_algorithm.png  used on input l
 ine 287.
 (pdftex.def)             Requested size: 227.62204pt x 310.12416pt.
- [40]
-<./images/../images/get_data.png, id=768, 439.6425pt x 732.7375pt>
+ [42]
+<./images/../images/get_data.png, id=788, 439.6425pt x 732.7375pt>
 File: ./images/../images/get_data.png Graphic file (type png)
 <use ./images/../images/get_data.png>
 Package pdftex.def Info: ./images/../images/get_data.png  used on input line 29
 9.
 (pdftex.def)             Requested size: 284.52756pt x 474.22768pt.
- [41 <./images/../images/full_algorithm.png (PNG copy)>] [42 <./images/../image
+ [43 <./images/../images/full_algorithm.png (PNG copy)>] [44 <./images/../image
 s/get_data.png (PNG copy)>]
-[43]
-<./images/../images/train_models.png, id=788, 443.6575pt x 452.69125pt>
+[45]
+<./images/../images/train_models.png, id=809, 443.6575pt x 452.69125pt>
 File: ./images/../images/train_models.png Graphic file (type png)
 <use ./images/../images/train_models.png>
 Package pdftex.def Info: ./images/../images/train_models.png  used on input lin
 e 380.
 (pdftex.def)             Requested size: 312.9803pt x 319.34769pt.
- [44] [45 <./images/../images/train_models.png (PNG copy)>]
+ [46] [47 <./images/../images/train_models.png (PNG copy)>]
 
-LaTeX Warning: Hyper reference `openleap-file1' on page 46 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file1' on page 48 undefined on input l
 ine 430.
 
 
-LaTeX Warning: Hyper reference `openleap-file2' on page 46 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file2' on page 48 undefined on input l
 ine 430.
 
 
-LaTeX Warning: Hyper reference `openleap-file3' on page 46 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file3' on page 48 undefined on input l
 ine 430.
 
 
-LaTeX Warning: Hyper reference `openleap-file4' on page 46 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file4' on page 48 undefined on input l
 ine 430.
 
 
@@ -1125,31 +1158,31 @@ Overfull \hbox (10.71848pt too wide) in paragraph at lines 430--430
 []|\T1/lmtt/m/n/12 sign_language_alphabet.pkl| 
  []
 
-[46]) [47] [48
+[48]) [49] [50
 
 
 ]
 Rozdzia\l  7.
-[49] [50]
+[51] [52]
 Rozdzia\l  8.
 No file thesis.bbl.
-[51
+[53
 
-] [52
+] [54
 
-] [53] [54] [55
+] [55] [56] [57
 
-] [56
-
-] [57] [58
+] [58
 
 ] [59] [60
+
+] [61] [62
 
 ] (./thesis.lof)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [61] [62
+ [63] [64
 
 ]
 (./thesis.lot)
@@ -1157,7 +1190,7 @@ No file thesis.bbl.
 \openout6 = `thesis.lot'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 455.
- [63]
+ [65]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 455.
  (./thesis.aux (./Introduction/introduction.aux)
 (./Analysis/analysis.aux) (./Tools/tools.aux)
@@ -1166,7 +1199,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 455.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 455.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 455.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CF460496227CFD2AE21177FA0AB90AB0;5293.
+(rerunfilecheck)             Checksum: 432BA8E113D0FB95AE81FA8554C062C1;5293.
 
 
 LaTeX Warning: There were undefined references.
@@ -1174,10 +1207,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 455.
  ) 
 Here is how much of TeX's memory you used:
- 14444 strings out of 483148
- 214769 string characters out of 5965415
- 708492 words of memory out of 5000000
- 28807 multiletter control sequences out of 15000+600000
+ 14467 strings out of 483148
+ 215190 string characters out of 5965415
+ 708543 words of memory out of 5000000
+ 28816 multiletter control sequences out of 15000+600000
  597304 words of font info for 65 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  50i,12n,55p,932b,1343s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1197,10 +1230,10 @@ lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (68 pages, 1619626 bytes).
+Output written on thesis.pdf (70 pages, 1652006 bytes).
 PDF statistics:
- 1025 PDF objects out of 1200 (max. 8388607)
- 890 compressed objects within 9 object streams
- 279 named destinations out of 1000 (max. 500000)
- 729 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1050 PDF objects out of 1200 (max. 8388607)
+ 910 compressed objects within 10 object streams
+ 291 named destinations out of 1000 (max. 500000)
+ 734 words of extra memory for PDF output out of 10000 (max. 10000000)
 
