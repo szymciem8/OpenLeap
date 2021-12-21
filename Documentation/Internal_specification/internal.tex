@@ -140,7 +140,7 @@
 
 \quad Struktura mp\_hands jest enumeratorem. Przechowuje ona informacje o indeksach wszystkich elementów dłoni. Została ona stworzona po to, aby łatwiej było zapisywać program, który odczytuje informacje o danym elemencie. Ta struktura jest częścią biblioteki MediaPipe, więc jest już z góry zdefiniowana. 
 
-\quad Pierwszym elementem określanym przez enumerator jest nadgarstek. Dalej znajduje się reszta indeksów, oznaczająca resztę części palców i dłoni. Wszystkie elementy wraz z ich indeksami można zobaczyć na poniższej grafice \ref{img:hand_points}. 
+\quad Pierwszym elementem określanym przez enumerator jest nadgarstek. Dalej znajduje się reszta elementów, oznaczająca resztę części palców i dłoni. Wszystkie elementy wraz z ich indeksami można zobaczyć na poniższej grafice \ref{img:hand_points}. To właśnie wyznaczenie pozycji tych elementów jest najważniejszą częścią, za która jest odpowiedzialna biblioteka MediaPipe i na której bazuje biblioteka OpenLeap. 
 
 \begin{figure}[H]
     \begin{center}
@@ -150,17 +150,16 @@
     \end{center}
 \end{figure}
 
-\quad Przykład wykorzystania polega na odczytaniu współrzędnej X nadgarstka z listy o nazwie \textbf{landmark} będącej częścią obiektu \textbf{hand}. Jak można zobaczyć na przykładzie \ref{lst:enum}, wykorzystaniem enumeratora pomaga w stworzeniu zapisu, który jest czytelny. \newline
+\quad Przykład wykorzystania polega na odczytaniu współrzędnej X nadgarstka z listy o nazwie \textbf{landmark} będącej częścią obiektu \textbf{hand}. Jak można zobaczyć na przykładzie \ref{lst:enum}, wykorzystanie enumeratora pomaga w stworzeniu zapisu, który jest po prostu czytelny. \newline
 
 \begin{lstlisting}[language=python, style=programming, caption={Przykładowe wykorzystanie \textbf{mp\_hands}},captionpos=b, label={lst:enum}]
     x = hand.landmark[self.mp_hands.HandLandmark.WRIST].x
 \end{lstlisting}
 
-\quad Jest to ułatwienie, dzięki któremu program staje się czytelniejszy dla programisty lub osoby przeglądającej program. 
 
 \subsection{Struktura results}
 
-\quad Struktura \textbf{results} jest obiektem, który przechowuje informacje zwrócone przez metodę \textbf{hands.process()}. Klasa OpenLeap korzysta z dwóch typów informacji zwracanych przez tę metodę. 
+\quad Struktura \textbf{results} jest obiektem, który przechowuje informacje zwrócone przez metodę \textbf{hands.process()}. Klasa OpenLeap korzysta z dwóch typów informacji zwracanych przez tę metodę. Pierwszy typ to lista składająca się z pozycji punktów charakterystycznych. Drugim typem jest lista przechowująca informacje o wszystkich widocznych dłoniach, takie jak typ dłoni, szacunkowa poprawność oraz jej indeks.   
 
 \begin{itemize}
     \item \textbf{multi\_hand\_landmarks} - obiekt przechowujący dane o pozycjach wszystkich elementów dłoni. Przykład wykorzystania został przedstawiony powyżej. 
