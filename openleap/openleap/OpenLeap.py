@@ -119,8 +119,6 @@ class OpenLeap():
                 if classification.classification[0].index == index:
 
                     label = classification.classification[0].label.lower()
-                    #core = classification.classification[0].score
-                    #text = '{} {}'.format(label, round(score, 2))
 
                     return label
 
@@ -325,7 +323,8 @@ class OpenLeap():
 
             #Rendering results
             if self.results.multi_hand_landmarks:
-                n_hands = len(self.results.multi_hand_landmarks)
+                n_hands = len(self.results.multi_handedness)
+
                 for index, hand in enumerate(self.results.multi_hand_landmarks):
                     # print(hand)
                     # print(type([0,0]))

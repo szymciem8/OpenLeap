@@ -44,7 +44,7 @@
     \caption{Schemat klasy OpenLeap}
 \end{wrapfigure}
 
-\quad Klasa posiada atrybuty, których część jest parametrami, czyli dokładnie argumentami inicjalizatora klasy. Oprócz parametrów istnieją jeszcze zmienne oraz obiekty klas odpowiadające za rozpoznanie dłoni, czy wykonanie operacji związanych z obliczeniem wartości zapisywanych w słowniku data, który też jest atrybutem klasy.
+\quad Klasa posiada atrybuty, których część jest parametrami, czyli dokładnie argumentami inicjalizatora klasy. Oprócz parametrów istnieją jeszcze zmienne oraz obiekty klas odpowiadające za rozpoznawanie dłoni, czy wykonanie operacji związanych z obliczeniem wartości zapisywanych w słowniku data, który też jest atrybutem klasy.
 
 \quad Niektóre metody klasy mogą zostać wykonane automatycznie poprzez funkcje \textbf{main()} lub \textbf{loop()}. Natomiast można też wykonać potrzebne operacje bezpośrednio z wykorzystaniem wbudowanych metod, co może pomóc w optymalizacji programu. \newline\newline\newline\newline\newline\newline
 
@@ -132,7 +132,7 @@
     \item \textbf{loop()} -- Metoda, w której wywoływana jest metoda \textbf{main()} w pętli. 
 \end{enumerate}
 
-\section{Struktury danych}
+\section{Struktury danych oraz pliki}
 
 \quad Klasa zawiera w sobie parę struktur danych, które są kluczowe dla poprawnej pracy klasy oraz przechowywania informacji. Dobrze dobrane i zaprojektowane struktury danych pozwalają na pisanie programu, który jest przejrzysty i czytelny, na przykład poprzez wykorzystanie klasy \textbf{dataclass} zamiast tablicy czy słownika. 
 
@@ -159,12 +159,17 @@
 
 \subsection{Struktura results}
 
-\quad Struktura \textbf{results} jest obiektem, który przechowuje informacje zwrócone przez metodę \textbf{hands.process()}. Klasa OpenLeap korzysta z dwóch typów informacji zwracanych przez tę metodę. Pierwszy typ to lista składająca się z pozycji punktów charakterystycznych. Drugim typem jest lista przechowująca informacje o wszystkich widocznych dłoniach, takie jak typ dłoni, szacunkowa poprawność oraz jej indeks.   
+\quad Struktura \textbf{results} jest obiektem, który przechowuje informacje zwrócone przez metodę \textbf{hands.process()}, czyli dokładanie dane, które są wygenerowane przy rozpoznawaniu dłoni. Obiekt składa się z dwóch list, które przechowują dane ogólne o dłoniach widocznych w obrazie oraz o szczególne dotyczące każdej dłoni z osobna. 
 
 \begin{itemize}
-    \item \textbf{multi\_hand\_landmarks} - obiekt przechowujący dane o pozycjach wszystkich elementów dłoni. Przykład wykorzystania został przedstawiony powyżej. 
+    \item \textbf{multi\_hand\_landmarks} -- To pierwsza lista, która przechowuje dane o pozycjach wszystkich elementów danej dłoni. Odczyt danych wybranej dłoni wymaga podania jej indeksu. Indeksy punktów charakterystycznych można wybrać ze wcześniej wspomnianej struktury \textbf{mp\_hands}. \newpage
     
-    \begin{lstlisting}[caption={Przykład elementu obiektu},captionpos=b,language=python, style=command]
+    \begin{lstlisting}[caption={Przykład korzystania z \textbf{multi\_hand\_landmarks}},captionpos=b,language=python, style=command]
+    wrist_x = self.results.multi_hand_landmarks[index].landmark[self.mp_hands.HandLandmark.WRIST].x
+    wrist_y = self.results.multi_hand_landmarks[index].landmark[self.mp_hands.HandLandmark.WRIST].y
+    \end{lstlisting}
+
+    \begin{lstlisting}[caption={Przykład elementu listy \textbf{multi\_hand\_landmarks}},captionpos=b,language=python, style=command]
     [landmark {
         x: 0.7409825921058655
         y: 0.6843034029006958
@@ -181,23 +186,28 @@
     ]
     \end{lstlisting}
     
+      
+    \item \textbf{multi\_handedness} -- Drugim typem jest lista przechowująca dane o wszystkich dłoniach widocznych na obrazie. Danymi są indeks, typ dłoni oraz punktacja określającą pewność poprawnego rozpoznania dłoni. Może posłużyć do sprawdzenia jaka jest liczba widocznych dłoni. \newline
+    
+    \begin{lstlisting}[caption={Przykład korzystania z \textbf{multi\_handedness}},captionpos=b,language=python, style=command]
+    n_hands = len(self.results.multi_handedness)
+    \end{lstlisting}
 
-    \item \textbf{multi\_handedness} - lista przechowująca dane o wszysktich dłoniach widocznych na obraze. Danymi są indeks, typ dłoni oraz punktacja określającą pewność poprawnego rozpoznania dłoni. 
-    \begin{lstlisting}[caption={Przykład elementu obiektu},captionpos=b,language=python,style=command]
-        [classification {
-                index: 1
-                score: 0.9482673406600952
-                label: "Right"
-            }
-        ]
+    \begin{lstlisting}[caption={Przykład elementu listy \textbf{multi\_handedness}},captionpos=b,language=python,style=command]
+    [classification {
+            index: 1
+            score: 0.9482673406600952
+            label: "Right"
+        }
+    ]
     \end{lstlisting}
 \end{itemize}
 
 \subsection{Dataclass}
 
-\quad Strukura typu \textbf{Dataclass} pozwala na stworznie struktury podobnej do \textbf{struct} istniejącej w języku programowania \textbf{C}. Taka klasa pozwala na storzenie obiektu składającego się jedynie z atrybutów wymaganych do opisue elementów klasy kontrolera. Dodatkowym atutem takiej klasy jest możliwość prostego odczytu zapisanych danych, korzystając z operatora kropki, a nie z operatrów opisujących słownik lub listę. 
+\quad Klasa typu \textbf{Dataclass} pozwala na stworzenie struktury podobnej do \textbf{struct} istniejącej w języku programowania \textbf{C}. Taka klasa pozwala na stworzenie obiektu składającego się jedynie z atrybutów wymaganych do opisu danych generowanych podczas rozpoznawania dłoni. Dodatkowym atutem takiej klasy jest możliwość prostego odczytu zapisanych danych, korzystając z operatora kropki, a nie z operatorów wykorzystywanych w odczycie danych ze słownika lub listy.\newline 
 
-\begin{lstlisting}[language=python, style=programming]
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Struktura Data}]
     @dataclass
     class Data:
         x : float = 0
@@ -208,24 +218,25 @@
         gesture: str = None
 \end{lstlisting}
 
-\quad W języku Python stworzenie klasy typu \textbf{dataclass} zaczyna się od zapisania dekoratora. W tym wypadku nie jest wymagana funkcja inicjalizująca obiekt, czyli \textbf{\_\_init\_\_}. Parametetry początkowe można podać w chwili tworzenia obiektu, lub później. W programie zostały przypisane wartości początkowej, tak jak w przykładzie powyżej. 
+\quad W języku Python stworzenie klasy typu \textbf{dataclass} zaczyna się od zapisania dekoratora, który jest definiowany poprzez znak \textbf{@}. W tym wypadku nie jest wymagana funkcja inicjalizująca obiekt, czyli \textbf{\_\_init\_\_}. W definicji klasy zostały przypisane wartości początkowe tak jak w przykładzie powyżej. Dzięki czemu inicjalizacja nie wymaga podawania wartości początkowych, które i tak w chwili rozpoczęcia programu nie są potrzebne. 
 
 \subsection{Słownik}
+\quad Instancja klasy \textbf{Data} jest przypisana dla każdej dłoni (lewej oraz prawej) poprzez wykorzystanie słownika. Klucze słownika to \enquote{right} oraz \enquote{left}. 
 
-\quad Instancja stworzonego typu \textbf{Data} zostnie zainicjowana dla każdej dłoni (lewej oraz prawej). Te instacje zostaną zapisane w słowniku. 
-
-\begin{lstlisting}[language=python, style=programming]
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Słownik przechowujący dane każdej z dłoni}]
     data = {'right':Data(), 'left':Data()}
 \end{lstlisting}
 
-\quad Taka konstrukcja pozwoli użytkownikowi w prosty i przejrzysty sposób na odnajodowania potrzebnych wartości oraz informacji. 
+\quad Taka konstrukcja pozwoli użytkownikowi w prosty i przejrzysty sposób na odnajdowanie potrzebnych wartości oraz informacji. Przykład odczytu informacji z tej struktury został już opisany w przykładzie \ref{lst:get_data1}
 
 \subsection{Pickle}
-\quad Modele matematyczne, które zostaną wytrenowane muszą zostać zapisane, tak aby można było je wykorzystać ponownie. Z tego powodu został wykorzystany plik typi \textbf{pickle}, który umożliwia zapis zmiennych oraz obiektów w postaci binarnej. Dzięki czemu można je wykorzystać ponownie pomimo restartu programu. 
 
+\quad Modele rozpoznające gesty muszą zostać zapisane do pliku, tak aby można było z nich skorzystać po ich wygenerowaniu. W języku Python standardowym narzędziemy wykorzystywanym do zapisu zmiennych lub obiektów służy plik typu \textbf{pickle}, który pozwala na zapis tych elementów w postaci binarnej. Pozwala to na ponownym odczyt obiektu po restarcie programu. W przypadku modelu rozpoznających gesty będzie można je zapisać właśnie z rozszerzeniem \textbf{.pickle}, a poźniej odczytać je w chwili inicjalizacji obiektu klasy OpenLeap. 
+
+\newpage
 \section{Rozpoznawanie dłoni}
 
-\quad Pierwszym elementem projektu jest rozpoznanie dłoni poprzez wyznacznie pozycji elementów charakterystycznych. Pozycja każdego z tych elementów, jak już zostało to opisane, jest względna według lewego górnego rogu obrazu kamery. 
+\quad Pierwszym elementem projektu jest rozpoznanie dłoni poprzez wyznaczenie pozycji elementów charakterystycznych. Pozycja każdego z tych elementów, jak już zostało to opisane, jest względna według lewego górnego rogu obrazu kamery. 
 
 \begin{figure}[H]
     \begin{center}
@@ -234,69 +245,222 @@
     \end{center}
 \end{figure}
 
-\quad W pierwszym kroku obraz powinnien zostać pozyskany z kamery oraz odpowiednio przetworzony przez funkcje biblioteki OpenCV. 
-
-\quad Kolejnym krokiem jest rozpoznanie elementów charakterystycznych dłoni przez model biblioteki MediaPipe. 
-
-\quad Na końcu powinna zostać wykonana główna część programu. Na przykład ropoznanie gestu czy obliczenia kąt obrotu. 
+\quad Obraz powinien zostać pozyskany z kamery oraz odpowiednio przetworzony przez funkcje biblioteki OpenCV. Kolejnym krokiem jest rozpoznanie elementów charakterystycznych dłoni przez model biblioteki MediaPipe. Na końcu powinna zostać wykonana główna część programu. Na przykład identyfikacja gestu czy obliczenia kąta obrotu dłoni. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPEN CV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{OpenCV - przygotowanie obrazu z kamery}
+\subsection{OpenCV -- przygotowanie obrazu z kamery}
 
-\quad W pierszym kroku należy zainicjalizować obiekt obsługujący kamerę. Argumntem jest identyfikator określający, która kamera podłączona do systemu ma zostać wykorzystana. W przypadku kiedy dostępna jest tylko jedna kamera wystarczy wpisać wartość równą 0, tak jak poniżej.\newline
+\quad Na początku należy zainicjalizować obiekt obsługujący kamerę. Argumentem jest identyfikator określający, która kamera podłączona do systemu ma zostać wykorzystana. W przypadku kiedy dostępna jest tylko jedna kamera wystarczy wpisać wartość równą 0 tak jak poniżej.\newline
 
-% \inputminted[firstline=51, lastline=52]{python}{../OpenLeap.py}
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Wybór kamery}]
+    self.cap = cv2 . VideoCapture (0)
+\end{lstlisting}
 
-\lstinputlisting[language=python, firstline=81, lastline=81, style=programming]{../openleap/openleap/OpenLeap.py}
+\quad W metodzie \textbf{main()} w pierwszym kroku warunek określa czy zostało otwarte połączenie kamerą. Jeśli tak to należy pobrać z niej aktualną klatkę obrazu (\textbf{frame}). \newline
 
-\quad W metodzie \textbf{main()} w pierwszym kroku warunek określa czy zostało otwarte połączenia z kamerą. Jeśli tak to należy pobrać z niej aktualną klatkę obrazu (\textbf{frame}). \newline
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Przygotowanie funkcji głównej}]
+    def main(self):
+        """
+        Main function that runs the core of the program. 
+        """
 
-\lstinputlisting[language=python, firstline=293, lastline=301, style=programming]{../openleap/openleap/OpenLeap.py}
+        hand_type = None
+        if self.cap.isOpened():
+            ret, frame = self.cap.read()
+\end{lstlisting}
 
-\quad Model rozpoznający dłoń korzysta z przestrzeni barw RGB (red, green, blue), a nie BGR (blue, green, red). Dlatego należy obraz przekształcić właśnie na przesrzeń RGB. Dodatkowo, obraz powinnien zostać obrócony horyzntalnie, tak aby stworzył lustrzane odbicie względem użytkownika ustawionego na przeciwko kamery. \newline
+\quad Model rozpoznający dłoń korzysta z przestrzeni barw RGB (red, green, blue), a nie BGR (blue, green, red), która jest standardem w OpenCV. Dlatego należy przekształcić obraz na przestrzeń RGB. Dodatkowo obraz powinien zostać obrócony horyzontalnie, tak aby stworzył lustrzane odbicie względem użytkownika ustawionego naprzeciwko kamery. Tak ustawiony obraz będzie lepiej sprawdzał się przy sterowaniu. \newline
 
-\lstinputlisting[language=python, firstline=302, lastline=307, style=programming]{../openleap/openleap/OpenLeap.py}
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Pierwsze przekształcenie}]
+    #BGR to RGB
+    image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-\quad Flage \textbf{writeable} ustawiona na \textbf{False} pozwala na uzyskanie lepszej wydajności przy przetwarzaniu obrazu w ramach modelu rozpoznającego dłonie.\newline 
+    #Flip horizontal
+    image = cv2.flip(image, 1)
+\end{lstlisting}
 
-\lstinputlisting[language=python, firstline=308, lastline=316, style=programming]{../openleap/openleap/OpenLeap.py}
+
+\quad Flaga \textbf{writeable} ustawiona na \textbf{False} pozwala na uzyskanie lepszej wydajności przy przetwarzaniu obrazu w ramach modelu rozpoznającego dłonie. Na co wskazuje dokumentacja biblioteki MediaPipe. Przy pomocy metody \textbf{process} będącej częścią obiektu \textbf{hands} zostają wygenerowane dane zapisywane do struktury \textbf{results}. Po tym etapie flaga \textbf{writeable} może zostać ustawiona z powrotem na wartość \textbf{True}. \newline 
+
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Drugie przekształcenie}]
+    #Set flag
+    image.flags.writeable = False
+
+    #Detections
+    self.results = self.hands.process(image)
+    # print(self.results.multi_hand_landmarks)
+
+    #Set flag back to True
+    image.flags.writeable = True
+\end{lstlisting}
 
 \quad Przestrzeń barw zostaje przywrócona do RGB, aby była mogła zostać poprawnie wyświetlona przez funkcję biblioteki OpenCV. \newline
 
-\lstinputlisting[language=python, firstline=318, lastline=320, style=programming]{../openleap/openleap/OpenLeap.py}
-
-% \inputminted[language=python, firstline=272, lastline=297]{python}{../openleap/openleap/OpenLeap}
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Powrót do przestrzeni BGR}]
+    #RGB to BGR
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+\end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIA PIPE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 
-\section{MediaPipe - Elementy charakterystyczne}
+\section{Elementy charakterystyczne}
 
-\quad Pozycje nadgarstka, paliczków oraz stawów dłoni zostaną wykorzystane do obliczenia obrotu dłoni względem punkut 0 oraz do wytrenowania modeli uczenia maszynowego, których zadaniem będzie rozpoznawnie wybranych gestów. 
+\quad Pozycje nadgarstka, paliczków oraz stawów dłoni zostaną wykorzystane do obliczenia kąta obrotu dłoni względem punktu 0, oraz do wytrenowania modeli uczenia maszynowego, których zadaniem będzie rozpoznawanie wybranych gestów. 
 
 \subsection{Generowanie grafiki dłoni}
 
-\quad Generowanie grafiki nałożonej na daną dłoń wykonuje się przy pomocy przygotowanej funkcji biblioteki MediaPipe, która współpracuje z OpenCV.   
+\quad Generowanie grafiki nałożonej na daną dłoń wykonuje się przy pomocy przygotowanej funkcji biblioteki MediaPipe, która współpracuje z OpenCV. Stworzenie oznaczeń polega na nałożeniu ich na obraz, który będzie wyświetlany w oknie. W tym wypadku jest to obraz o nazwie \textbf{background}, który przybiera formę czarnego tła lub obrazu z kamery w zależności od wybranej opcji. \newline
+
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Obrys dłoni}]
+    self.mp_drawing.draw_landmarks(background, 
+            hand, 
+            self.mp_hands.HAND_CONNECTIONS,
+            self.mp_drawing.DrawingSpec(color=(75,50,200), 
+                thickness=2, 
+                circle_radius=2),
+            self.mp_drawing.DrawingSpec(color=(225,180,10), 
+                thickness=2, 
+                circle_radius=2))
+\end{lstlisting}
+
+\quad Tworzone oznaczenia istnieją w dwóch formach. W postaci kropek nałożonych na nadgarstek i stawy oraz linii, które je łączą. 
 
 \section{Pomiary oraz inne ważne elementy}
+\quad Dane zapisywane w obiektach typu \textbf{Data} są generowane poprzez odpowiednie metody, które wykorzystują między innymi punkty charakterystyczne. 
 
-\subsection{Pozycja dłoni}
+\subsection{Rozpoznawanie typu dłoni}
+
+\quad Rozpoznawanie typu dłoni wykonuje się na dwa różne sposoby. Pierwszym bazującym na metodach wykorzystujących uczenie maszynowe oraz drugim, który wykorzystuje względną pozycję dłoni względem siebie.  
+
+\begin{itemize}
+    \item \quad W pierwszym sposobie należy wyszukać w liście \textbf{multi\_handedness} słownika, który posiada w sobie indeks sprawdzanej dłoni i w tym samym słowniku sprawdzić, jaki jest jej typ. \newline
+
+    \begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Określenie typu dłoni -- Sposób nr 1}]
+def left_or_right(self, index, mode='AI', hand=None):
+    label = 'right'
+        if mode == 'AI':
+            
+            for idx, classification in enumerate(self.results.multi_handedness):
+                if classification.classification[0].index == index:
+
+                    label = classification.classification[0].label.lower()
+
+                    return label
+    \end{lstlisting}
+
+    \quad Jak się okazuje, nie jest to sposób, który daje zawsze poprawne rezultaty. Z tego powodu została stworzona alternatywny sposób wyznaczania typu dłoni. 
+
+    \item \quad Poniższy sposób bazuje na założeniu, że lewa dłoń znajduje się na lewo od dłoni prawej, a prawa na prawo od lewej. Poprawność działania tego algorytmu wymaga jeszcze jednego założenia, że na ekranie powinny znajdować się dokładnie dwie dłonie, co nie zawsze może zostać spełnione. Można temu zapobiec poprzez wywołanie ponownie tej samej metody z wykorzystaniem pierwszego sposobu, kiedy na ekranie nie ma widocznych dwóch dłoni. \newline
+
+    \begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Określenie typu dłoni -- Sposób nr 2}]
+    elif mode == 'position':
+            coords = np.array((hand.landmark[self.mp_hands.HandLandmark.WRIST].x, hand.landmark[self.mp_hands.HandLandmark.WRIST].y))
+
+            #Get x values from both hands and compare
+            if len(self.results.multi_handedness) >= 2:
+                for i in [0, 1]:
+                    if index == i:
+                        another_hand_x = self.results.multi_hand_landmarks[1-index].landmark[self.mp_hands.HandLandmark.WRIST].x
+                        if coords[index] > another_hand_x:
+                            label='right'
+                        else:
+                            label='left' 
+
+                        return label
+            else:
+                return self.left_or_right(index, mode='AI', hand=hand)
+    \end{lstlisting}
+\end{itemize}
+
+\subsection{Pozycja elementów}
+
+\quad Metoda zwraca zwykłą lub znormalizowaną pozycję wybranego elementu dłoni. W dokumentacji można znaleźć informację, że normalizacja współrzędnej Z jest wykonywana względem szerokości obrazu tak jak współrzędnej X. Stąd też w przeliczeniu wartości znormalizowanych na zwykłe należy przemnożyć współrzędną Z przez szerokość obrazu tak jak współrzędną X. \newline
+
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Pobranie pozycji}]
+def get_position(self, index=0, landmark_idx=1, normalized=False):
+    x = self.results.multi_hand_landmarks[index].landmark[landmark_idx].x
+    y = self.results.multi_hand_landmarks[index].landmark[landmark_idx].y
+    z = self.results.multi_hand_landmarks[index].landmark[landmark_idx].y
+
+    if normalized:
+        #Choose proper index instead of fixed one (idx=0)
+        return x, y, z
+    else:
+        x = int(x*self.WIDTH)
+        y = int(y*self.HEIGHT)
+        z = int(z*self.WIDTH)
+    return x, y, z
+\end{lstlisting}
+
+\subsection{Odległość między punktami}
+
+\quad Odległość jest obliczana ze standardowego wzoru na odległość między dwoma punktami w wybranym układzie współrzędnych. 
+
+\begin{equation}
+    d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}
+\end{equation}\newline
+\quad Użytkownik ma możliwość wyboru czy wartość ma być liczona za pomocą zmiennych znormalizowanych, czy nie.  \newline
+
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Obliczenie pozycji punktu charakterystycznego}]
+def get_distance_bettween_landmarks(self, index, landmark_1, landmark_2, normalized=True):
+    if normalized:
+            x1, y1, z1 = self.get_position(index, landmark_1, normalized=True)
+            x2, y2, z2 = self.get_position(index, landmark_2, normalized=True)
+        else:
+            x1, y1, z1 = self.get_position(index, landmark_1)
+            x2, y2, z2 = self.get_position(index, landmark_2)
+
+        distance = math.sqrt(((x1-x2)**2 + (y1-y2)**2))
+
+        return distance
+\end{lstlisting}
 
 \subsection{Obrót dłoni}
 
-\subsection{Odległość między palcami}
+\quad Obrót dłoni jest obliczany jako kąt obrotu ramienia, którego początek znajduje się w punkcie nadgarstka, a drugi koniec jest wybranym dowolnym punktem dłoni. Wykorzystana jest do tego funkcja \textbf{atan2()}, która za argumenty bierze współrzędne końca ramienia w układzie współrzędnych, którego środkiem jest nadgarstek. Dodatkowe argumenty funkcji \textbf{get\_angle()} określają zakres kąta oraz jego jednostkę. \newline
+
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Obliczenie odległości między wybrany punktami}]
+def get_angle(self, index, landmark_idx, mode='half', unit='radians'):
+    angle=0
+
+    wrist_x = self.results.multi_hand_landmarks[index].landmark[self.mp_hands.HandLandmark.WRIST].x
+    wrist_y = self.results.multi_hand_landmarks[index].landmark[self.mp_hands.HandLandmark.WRIST].y
+
+    landmark_x = self.results.multi_hand_landmarks[index].landmark[landmark_idx].x
+    landmark_y = self.results.multi_hand_landmarks[index].landmark[landmark_idx].y
+
+    realitive_x = landmark_x - wrist_x
+    realitive_y = landmark_y - wrist_y
+
+    angle = math.atan2(realitive_y, realitive_x)
+
+    if mode=='half' and angle>0: angle=0
+
+    if unit=='degree':
+        angle = 180*abs(angle)/math.pi
+
+    return angle
+
+\end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%% SciKit Learn %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-% \section{Uczenie Maszynowe}
-
 \section{Rozpoznawanie gestów}
+
+\quad Modele rozpoznające gesty na podstawie współrzędnych punktów zostały stworzone przy pomocy biblioteki SciKit--Learn 
+
+\subsection{Mechanizm załadowania modelu}
+
+\subsection{Wykorzystanie modelu}
+
+\section{Przygotowanie modeli uczenia maszynowego}
 
 \subsection{Przygotowanie modeli uczenia maszynowego}
 \quad Celem programu będzie stworzenie modeli matematycznych przy pomocy metod uczenia maszynowego, których celem będzie rozpoznawanie gestów dłoni. Proces tworzenie takiego modelu można podzielić na trzy kroki przedstawione na schemacie 6.3. 
