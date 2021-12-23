@@ -60,26 +60,25 @@
 \contentsline {section}{\numberline {6.6}Rozpoznawanie gestów}{48}{section.6.6}%
 \contentsline {subsection}{\numberline {6.6.1}Mechanizm załadowania modelu}{48}{subsection.6.6.1}%
 \contentsline {subsection}{\numberline {6.6.2}Wykorzystanie modelu}{48}{subsection.6.6.2}%
-\contentsline {section}{\numberline {6.7}Przygotowanie modeli uczenia maszynowego}{48}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1}Przygotowanie modeli uczenia maszynowego}{48}{subsection.6.7.1}%
-\contentsline {subsection}{\numberline {6.7.2}Zebranie danych}{49}{subsection.6.7.2}%
-\contentsline {subsection}{\numberline {6.7.3}Budowa pliku CSV}{52}{subsection.6.7.3}%
-\contentsline {subsection}{\numberline {6.7.4}Metody klasyfikacji - uczenie maszynowe}{52}{subsection.6.7.4}%
-\contentsline {subsection}{\numberline {6.7.5}Wybrane algorytmy klasyfikujące}{53}{subsection.6.7.5}%
-\contentsline {subsection}{\numberline {6.7.6}Badanie dokładności każdego z algorytmów}{54}{subsection.6.7.6}%
-\contentsline {subsection}{\numberline {6.7.7}Ponowne wykorzystanie modelu}{54}{subsection.6.7.7}%
-\contentsline {section}{\numberline {6.8}Paczka PyPi}{54}{section.6.8}%
-\contentsline {subsection}{\numberline {6.8.1}Budowa paczki}{54}{subsection.6.8.1}%
-\contentsline {subsection}{\numberline {6.8.2}Struktura Paczki}{54}{subsection.6.8.2}%
-\contentsline {subsection}{\numberline {6.8.3}Pliki Konfiguracyjne}{55}{subsection.6.8.3}%
-\contentsline {subsection}{\numberline {6.8.4}Załadowanie paczki do repozytorium}{55}{subsection.6.8.4}%
+\contentsline {section}{\numberline {6.7}Przygotowanie modeli uczenia maszynowego}{50}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Zebranie danych}{51}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Budowa pliku CSV}{53}{subsection.6.7.2}%
+\contentsline {subsection}{\numberline {6.7.3}Metody klasyfikacji - uczenie maszynowe}{53}{subsection.6.7.3}%
+\contentsline {subsection}{\numberline {6.7.4}Wybrane algorytmy klasyfikujące}{54}{subsection.6.7.4}%
+\contentsline {subsection}{\numberline {6.7.5}Badanie dokładności każdego z algorytmów}{55}{subsection.6.7.5}%
+\contentsline {subsection}{\numberline {6.7.6}Ponowne wykorzystanie modelu}{55}{subsection.6.7.6}%
+\contentsline {section}{\numberline {6.8}Paczka PyPi}{55}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Budowa paczki}{55}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Struktura Paczki}{55}{subsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.8.3}Pliki Konfiguracyjne}{56}{subsection.6.8.3}%
+\contentsline {subsection}{\numberline {6.8.4}Załadowanie paczki do repozytorium}{56}{subsection.6.8.4}%
 \contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{57}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Podsumowanie i wnioski}{59}{chapter.8}%
 \contentsline {chapter}{Bibliografia}{59}{chapter.8}%
-\contentsline {chapter}{Spis skrótów i symboli}{63}{appendix*.21}%
+\contentsline {chapter}{Spis skrótów i symboli}{63}{appendix*.25}%
 \babel@toc {british}{}
 \babel@toc {polish}{}
 \babel@toc {british}{}
 \babel@toc {polish}{}
-\contentsline {chapter}{Źródła}{65}{appendix*.22}%
-\contentsline {chapter}{Zawartość dołączonej płyty}{67}{appendix*.23}%
+\contentsline {chapter}{Źródła}{65}{appendix*.26}%
+\contentsline {chapter}{Zawartość dołączonej płyty}{67}{appendix*.27}%

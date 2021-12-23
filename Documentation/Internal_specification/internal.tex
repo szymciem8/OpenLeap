@@ -454,15 +454,40 @@ def get_angle(self, index, landmark_idx, mode='half', unit='radians'):
 
 \section{Rozpoznawanie gestów}
 
-\quad Modele rozpoznające gesty na podstawie współrzędnych punktów zostały stworzone przy pomocy biblioteki SciKit--Learn 
-
+\quad Modele pozwalają na rozpoznanie gestów na podstawie pozycji elementów dłoni. Aby było to możliwe, należy wytrenować modele na podstawie odpowiednio przygotowanych danych, czyli takich, które zależą jedynie od ułożenia dłoni. Należy również skorzystać z wcześniej opisanego pliku \textbf{pickle} tak, żeby model mógł zostać wczytany ponownie do programu. 
+ 
 \subsection{Mechanizm załadowania modelu}
+
+\quad Argumentem inicjalizatora klasy jest między innymi typ modelu rozpoznającego gesty lub ścieżka do tego pliku. Po ustaleniu odpowiedniej ścieżki należy wczytać plik jako plik binarny.  \newline 
+
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Wczytanie modelu}]
+with open(data_path, 'rb') as f:
+    self.gesture_model = pickle.load(f)
+\end{lstlisting}
 
 \subsection{Wykorzystanie modelu}
 
+\quad Do rozpoznania gestu została przygotowana funkcja, która zwraca nazwę rozpoznanego gestu. W poniższym przykładzie znajduje się jedynie linia o numerze 9, która wykorzystuje sam model. Metoda przeprowadza jeszcze odpowiednie przekształcenia danych, które zostaną opisane w podsekcji opisującej proces uczenia algorytmów. \newline
+
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Funkcja zwracająca rozpoznany gest}]
+def get_gesture(self, index):
+
+    .
+    .
+    .
+
+    with warnings.catch_warnings():
+        warnings.filterwarnings("ignore")
+        gesture_class = self.gesture_model.predict(x)[0]
+
+    return gesture_class
+\end{lstlisting}
+
+
+\newpage
 \section{Przygotowanie modeli uczenia maszynowego}
 
-\subsection{Przygotowanie modeli uczenia maszynowego}
+% \subsection{Przygotowanie modeli uczenia maszynowego}
 \quad Celem programu będzie stworzenie modeli matematycznych przy pomocy metod uczenia maszynowego, których celem będzie rozpoznawanie gestów dłoni. Proces tworzenie takiego modelu można podzielić na trzy kroki przedstawione na schemacie 6.3. 
 
 \begin{figure}[H]
@@ -472,66 +497,94 @@ def get_angle(self, index, landmark_idx, mode='half', unit='radians'):
     \end{center}
 \end{figure}
 
-\quad Całość programu została napisana w notatniku Jupyter. Pozwala to na wykonanie pewnych części programu osobno, niezależnie od reszty programu. W praktyce każdy blok opisany w powyższym schemacie UML ma swoje odwzorowanie w notatniku. Na przykład, część zapisująca współrzędne do pliku będzie wykonywana tyle razy ile jest gestów do wytrenowania. 
+\quad Całość programu została napisana osobno w notatniku Jupyter. Pozwala to na wykonanie pewnych części programu osobno, niezależnie od reszty programu. W praktyce każdy blok opisany w powyższym schemacie UML ma swoje odwzorowanie w notatniku. Na przykład, część zapisująca współrzędne do pliku będzie wykonywana tyle razy, ile jest gestów do wytrenowania. 
+
+\quad Opisywany program może również pełnić funkcję instrukcji, o czym był mowa w podsekcji \ref{ext:new_model}.
 
 \subsection{Zebranie danych}
-\quad Algorytm zebrania danych polega na pobraniu współrzędnych oszacowanych przez model MediaPipe. Należy pamiętać o tym, że środek układu współrzędnych znajduje się lewym górnym rogu obrazu kamery. Oznacza to, że współrzędne w tej postaci nie nadają się do wyuczenia modelu matematycznego. Gest nie powinnien być rozpoznawany na podstawie pozycji dłoni w obrazie lub jej odległości od kamery. Należy się tych zależności pozbyć. 
 
-\begin{figure}[H]
+\begin{wrapfigure}[22]{r}{0.5\textwidth}
     \begin{center}
-        \includegraphics[width=10cm]{../images/get_data.png}
+        \includegraphics[width=9cm]{../images/get_data.png}
         \caption{Ogólny algorytm przygotowania modeli uczenia maszynowego}
     \end{center}
+\end{wrapfigure}
+
+% \begin{figure}[H]
+%     \begin{center}
+%         \includegraphics[width=9cm]{../images/get_data.png}
+%         \caption{Ogólny algorytm przygotowania modeli uczenia maszynowego}
+%     \end{center}
+% \end{figure}
+
+\quad Algorytm rozpoznający gesty powinien zostać wytrenowany na podstawie zbiorów współrzędnych punktów charakterystycznych i przypisanych do nich nazw gestów. Za nim to jednak nastąpi, należy zauważyć parę trudności z tym związanych. Podstawowym problemem jest fakt, że pozycje elementów charakterystycznych są opisane względem układu współrzędnych (można go uznać za układ bezwzględny), którego środek znajduje się w lewym górnym rogu obrazu pobranego z kamery. Wynika, więc z tego, że skorzystanie z tych współrzędnych jako danych uczących, skutkowałoby tym, że model klasyfikowałby gest również na podstawie jego pozycji na obrazie. W takim wypadku należy przeprowadzić transformację, tutaj akurat przesunięcie układu współrzędnych do pozycji nadgarstka. Taka operacja pozwoli na uniezależnienie pozycji elementów od pozycji bezwzględnej. \newpage
+
+% \quad Algorytm zbierania danych polega na pobraniu współrzędnych punktów char. Należy pamiętać o tym, że środek układu współrzędnych znajduje się lewym górnym rogu obrazu kamery. Oznacza to, że współrzędne w tej postaci nie nadają się do wyuczenia modelu matematycznego. Gest nie powinien być rozpoznawany na podstawie pozycji dłoni w obrazie lub jej odległości od kamery. Należy się tych zależności pozbyć. 
+
+% \quad Gest dłoni, można scharakteryzować na podstawie pozycji elementów dłoni.  Pozycja dłoni na obrazie nie ma żadnego znaczenia w kwestii określania gestu. Poprawnie przygotowane pozycje elementów powinny zostać pozbawione zależności od pozycji dłoni względem obrazu. 
+
+% \quad Przygotowanie danych do przetworzenia będzie wymagało paru operacji matematycznych.   Ostatecznie pozbywamy się pozycji nadgarstka z wektora danych, ponieważ jest ona środkiem nowego układu współrzędnych. 
+
+% \quad \textbf{Macierz przesunięcia}
+
+\quad Przesunięcie układu współrzędnych można opisać poprzez macierz transformacji, gdzie wartości ${x_0, y_0, z_0}$ to współrzędne nadgarstka w bezwzględnym układzie współrzędnych.  
+
+\begin{figure}[H]
+    \begin{equation}
+        M_p = 
+        \begin{bmatrix}
+            1 & 0 & 0 & -x_0 \\
+            0 & 1 & 0 & -y_0 \\
+            0 & 0 & 1 & -z_0 \\
+            0 & 0 & 0 & 1
+        \end{bmatrix}
+    \end{equation}
+    \caption{Macierz transformacji ogólna}
 \end{figure}
 
-\quad Gest dłoni, można scharakteryzować na podstawie pozycji elementów dłoni. Podstawowym problemem jest fakt, że pozycje elementów charakterystycznych są opisane względem układu współrzędnych, którego środek znajduje się w lewym górnym rogu obrazu pobranego z kamery. Pozycja dłoni na obrazie nie ma żadnego znaczenia w kwestii określania gestu. Poprawnie przygotowane pozycje elementów powinnny zostać pozbawione zależności od pozycji dłoni względem obrazu. 
-\quad Przygotowanie danych do przetworzenia będzie wymagało paru opercaji matematycznych. W takim wypadku należy przprowadzić transformację, tutaj akurat przesunięcie układu współrzędnych do pozycji nadgarstka. Taka operacja pozwoli na opis pozycji elementów względem nagarstka. Ostatecznie pozbywamy się pozycji nadarstka z wektora danych, ponieważ jest ona środkiem nowego układu współrzędnych. 
 
-\quad \textbf{Macierz przesunięcia}
+\quad Tak naprawdę, przesunięcie układu współrzędnych wzdłuż osi Z nie będzie miało miejsca. Wartości współrzędnej Z reszty elementów, oprócz elementu z indeksem równym 0, czyli nadgarstka, są określane właśnie nadgarstka. Dlatego też macierz przesunięcia w osi Z jest równa 0. 
 
-\begin{equation*}
-    M_p = 
-    \begin{bmatrix}
-    1 & 0 & 0 & -x_0 \\
-    0 & 1 & 0 & -y_0 \\
-    0 & 0 & 1 & -z_0 \\
-    0 & 0 & 0 & 1
-    \end{bmatrix}
-\end{equation*}
+\begin{figure}[H]
+    \begin{equation}
+        M_p = 
+        \begin{bmatrix}
+        1 & 0 & 0 & -x_0 \\
+        0 & 1 & 0 & -y_0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+        \end{bmatrix}
+    \end{equation}
+    \caption{Macierz transformacji szczególna}
+\end{figure}
 
-\quad Tak naprawdę, przesunięcie układu współrzędnych w osi Z nie będzie miało miejsca. Wartości współrzędnej Z reszty elementów, oprócz elementu z indeksem równym 0, czyli nadgarstka, są określane właśnie nadgarstka. Dlatego też, macierz przesunięcia w osi Z jest równa 0. 
+\quad Aby dane mogły zostać zinterpretowane przez algorytmy uczenia maszynowego muszą one zostać przedstawione w postaci jednowymiarowej. Aktualna postać macierzy przedstawiającej współrzędne elementów charakterystycznych ma następującą postać. Indeksy współrzędnych są równoznaczne z indeksami elementów dłoni. 
 
-\begin{equation*}
-    M_p = 
-    \begin{bmatrix}
-    1 & 0 & 0 & -x_0 \\
-    0 & 1 & 0 & -y_0 \\
-    0 & 0 & 1 & 0 \\
-    0 & 0 & 0 & 1
-    \end{bmatrix}
-\end{equation*}
 
-\quad Aby dane mogły zostać zinterpretowane przez algorytmy ucznenia maszynowego muszą one zostać przedstawione w postaci jednowymiarowej. Aktualna postać macierzy przedstawiającej wpółrzędne elementów charakterystycznych ma następującą postać. Indeksy współrzędnych są równoznaczne z indeksami elementów dłoni. 
+\begin{figure}[H]
+    \begin{equation}
+        M_p = 
+        \begin{bmatrix}
+        x_1' & y_1' & z_1' \\
+        x_2' & y_2' & z_2' \\
+            & \vdots &     \\
+        x_{21}' & y_{21}' & z_{21}'
+        \end{bmatrix}
+    \end{equation}    
+    \caption{Pełna postać macierzy}
+\end{figure}
 
-\begin{equation*}
-    M_p = 
-    \begin{bmatrix}
-    x_1' & y_1' & z_1' \\
-    x_2' & y_2' & z_2' \\
-        & \vdots &     \\
-    x_{21}' & y_{21}' & z_{21}'
-    \end{bmatrix}
-\end{equation*}
+\quad Dane w postaci jednowymiarowej mają postać następującego wektora. 
 
-Dane w postaci jednowymiarowej mają postać następującego wektora. 
-
-\begin{equation*}
-    A_f=
-    \begin{bmatrix}
-        x_1 & y_1 & z_1 & x_2 & y_2 & \cdots & y_{21} & z_{21}
-    \end{bmatrix}
-\end{equation*}
-
+\begin{figure}[H]
+    \begin{equation}
+        A_f=
+        \begin{bmatrix}
+            x_1 & y_1 & z_1 & x_2 & y_2 & \cdots & y_{21} & z_{21}
+        \end{bmatrix}
+    \end{equation}  
+    \caption{Wektor danych}
+\end{figure}
 
 \quad Drugim krokiem jest uniezależnienie pozycji elementów od odległości dłoni od kamery. Najprostszym rozwiązaniem jest normalizacja wektora danych względem największej bezwzględnej wartości. 
 
@@ -545,9 +598,9 @@ Dane w postaci jednowymiarowej mają postać następującego wektora.
 % \end{equation*}
 
 
-\begin{equation*}
+\begin{equation}
     A_n=\dfrac{A_f}{max(abs(A_f))}
-\end{equation*}
+\end{equation}
 
 \quad Każdy nowy wektor zostaje zapisany do pliku CSV z odpwowiednią etykietą. Zebrane dane posłużą do wytrenowania algorytmów uczenia maszynowego.     
 

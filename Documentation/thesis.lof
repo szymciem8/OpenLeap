@@ -32,10 +32,14 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Schemat klasy OpenLeap\relax }}{32}{figure.caption.13}%
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Elementy charakterystyczne dłoni\relax }}{36}{figure.caption.14}%
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Przygotowanie obrazu\relax }}{40}{figure.caption.15}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Ogólny algorytm przygotowania modeli uczenia maszynowego\relax }}{49}{figure.caption.16}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Ogólny algorytm przygotowania modeli uczenia maszynowego\relax }}{50}{figure.caption.17}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Ogólny algorytm przygotowania modeli uczenia maszynowego\relax }}{53}{figure.caption.18}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Struktura paczki PyPi\relax }}{55}{figure.caption.19}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Ogólny algorytm przygotowania modeli uczenia maszynowego\relax }}{50}{figure.caption.16}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Ogólny algorytm przygotowania modeli uczenia maszynowego\relax }}{51}{figure.caption.17}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Macierz transformacji ogólna\relax }}{52}{figure.caption.18}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Macierz transformacji szczególna\relax }}{52}{figure.caption.19}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Pełna postać macierzy\relax }}{52}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Wektor danych\relax }}{53}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Ogólny algorytm przygotowania modeli uczenia maszynowego\relax }}{54}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Struktura paczki PyPi\relax }}{56}{figure.caption.23}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {british}{}
