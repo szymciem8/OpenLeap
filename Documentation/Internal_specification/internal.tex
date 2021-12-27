@@ -664,7 +664,9 @@ def get_gesture(self, index):
 \newpage
 \subsection{Metody klasyfikacji -- uczenie maszynowe}
 
-\quad Przygotowane dane zostają odczytane z pliku CSV. W pierwszym kroku należy rozdzielić je na dwie części: współrzędne (dane wejściowe) oraz etykiety (dane wyjściowe). W kolejnym kroku należy te dwie grupy podzielić na grupę trenującą i grupę testową. Zadaniem grupy testowej będzie trenowanie wybranych modeli matematycznych, a grupy testowej przetestowanie ich dokładności. 
+\quad Przygotowane dane zostają odczytane z pliku CSV. W pierwszym kroku należy rozdzielić je na dwie części: współrzędne (dane wejściowe) oraz etykiety (dane wyjściowe). W drugim kroku należy te dwie grupy podzielić na grupę trenującą i grupę testową. Zadaniem grupy testowej będzie trenowanie wybranych modeli, a grupy testowej przetestowanie ich dokładności. 
+
+\quad Poniższy schemat przedstawia działanie części wykorzystującej wiele algorytmów uczenia maszynowego do wyznaczenia modelu o największej poprawności działania. 
 
 \begin{figure}[H]
     \begin{center}
@@ -673,36 +675,69 @@ def get_gesture(self, index):
     \end{center}
 \end{figure}
 
-\quad W celu wybrania najlepszej metody klasyfikacji, zostnie wybranych kilka algorytmów. Każdy z nich stworzy swój model, a ostatecznie zostanie sprawdzona ich poprawności z wykorzystaniem grupy testowej. Model z najepszym wynikiem zostanie zapisany do pliku typu \textbf{pickle}. W języku Python pliki typu \textbf{pickle} pozwalają na zapis zmiennych, obiektów lub innych struktur danych, które mają zostać wykorzystane w po zakończeniu programu. 
+\quad W celu wybrania najlepszej metody klasyfikacji zostanie wybranych kilka algorytmów. Każdy z nich stworzy swój model, a ostatecznie zostanie sprawdzona ich poprawności z wykorzystaniem grupy testowej. Model z najlepszym wynikiem zostanie zapisany do pliku typu \textbf{pickle}.
 
 \subsection{Wybrane algorytmy klasyfikujące}
 
-\quad Do wytrenowania modeli uczenia maszynowego z biblioteki SciKit Learn zostały wybrane następujące algorytmy:
+\quad Do wytrenowania modeli uczenia maszynowego z biblioteki SciKit-Learn zostały wybrane następujące algorytmy:
 
 \begin{itemize}
-    \item Logistic Regression
+    \item Logistic Regressio (\enquote{Regresja Logistyczna})
     \item Nearest Centroid 
-    \item Decision Tree Classifier 
+    \item Decision Tree Classifier
+    \item Ridge Classifier 
     \item Random Forest Classifier 
     \item SGD Classifier
     \item Gradient Boosting Classifier
     \item MPL Classifier
 \end{itemize}
 
+\quad Algorytmy można zapisać w słowniku, który później pozwoli na wykorzystanie ich w pętli. 
+
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Funkcja zwracająca rozpoznany gest}]
+pipelines = {
+'lr':make_pipeline(StandardScaler(),LogisticRegression()),
+'nc':make_pipeline(StandardScaler(),NearestCentroid()),
+'dt':make_pipeline(StandardScaler(),DecisionTreeClassifier()),
+'rd':make_pipeline(StandardScaler(),RidgeClassifier()),
+'rf':make_pipeline(StandardScaler(),RandomForestClassifier()),
+'gd':make_pipeline(StandardScaler(),SGDClassifier()),
+'gb':make_pipeline(StandardScaler(),GradientBoostingClassifier()),
+'nn':make_pipeline(StandardScaler(),MLPClassifier()),
+}
+\end{lstlisting}
+
+\quad \textbf{Pipline} pozwala na zautomatyzowanie pewnych procesów związanych z uczeniem. Tutaj, na przykład zostaje wykorzystane funkcja \textbf{StandardScaler()}, która odpowiednio standaryzuje dane wejściowe. 
+
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Trenowanie modeli}]
+models = {}
+for algorithm, pipeline in pipelines.items():
+    models[algorithm] = pipeline.fit(x_train, y_train)
+\end{lstlisting}
+
+
 \subsection{Badanie dokładności każdego z algorytmów}
 
-\subsection{Ponowne wykorzystanie modelu}
+\quad Badanie poprawności działania każdego z algorytmów wykonuje się poprzez funkcję \textbf{accuracy\_score()}, która za argumenty przyjmuje dane wyjściowe odczytane z pliku CSV oraz odpowiedzi wygenerowane przez modele. Na podstawie porównania tych danych w prosty sposób można obliczyć poprawność działania danego algorytmu.  \newline
 
-\quad Gotowy model pobieramy i testujemy w przykładowym programie. 
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Sprawdzenie poprawności}]
+for algorithm, model in models.items():
+    y_predicted = model.predict(x_test)
+    print(f'{algorithm}, {round(accuracy_score(y_test, y_predicted)*100,2)}%')
+\end{lstlisting}
+
+% \subsection{Ponowne wykorzystanie modelu}
+
+% \quad Gotowy model pobieramy i testujemy w przykładowym programie. 
 
 \section{Paczka PyPi}
 
 \subsection{Budowa paczki}
 
-\quad Ostatecznym krokiem jest przygotowanie programu w formie paczki, która zostanie udostępniona na platformie PyPi. Wygama to przygotowania odpowiednich plików konfiguracyjnych oraz zostosowania stosownych narzędzi do stworznie pliku \textbf{wheel} oraz \textbf{tar}. 
+\quad Ostatecznym krokiem jest przygotowanie programu w formie paczki, która zostanie udostępniona na platformie PyPi. Wymagania to przygotowania odpowiednich plików konfiguracyjnych oraz zastosowania narzędzi do stworzenia pliku \textbf{wheel} i \textbf{tar}. 
 
 \subsection{Struktura Paczki}
-\quad Pierwszm krokiem jest przygotowanie odpowiedniej struktury paczki. Do tego celu został stworzony folder o poniższej strukturze. W tym folderze znajdują się wszystkie potrzebne elementy paczki. W podfolderze o tej samej nazwie znajduje się główna części modułu, czyli plik .py, w którym zapisana jest klasa OpenLeap. Dodatkowo w tym folderze znajdują się pliki typu \textbf{pickle}, w których zapisane są modele rozpoznające gesty.
+\quad Na początku należy przygotować odpowiednią strukturę paczki, tak jak jest to pokazane na rysunku \ref{tree:pypi_package}. W tym folderze znajdują się wszystkie potrzebne elementy paczki. W podfolderze o tej samej nazwie znajduje się główna części modułu, czyli pliki z rozszerzeniem \textbf{.py}, \textbf{\_\_init\_\_.py} oraz \textbf{OpenLeap.py}. Dodatkowo w tym folderze znajdują się pliki typu \textbf{pickle}, w których zapisane są modele rozpoznające gesty.
 
 \begin{figure}
 \centering
@@ -721,15 +756,61 @@ def get_gesture(self, index):
         } 
     \end{minipage}
     \caption{Struktura paczki PyPi}
+    \label{tree:pypi_package}
 \end{figure}
 
 \subsection{Pliki Konfiguracyjne}
-\quad Pliki setup.py oraz MANIFEST są plikami, które odpowiadają za konfigurację oraz opis paczki. W pliku setup.py zapisany jest numer aktualnej wersji, autor, kontakt do autora, nazwa paczki itp. 
+\quad Pliki \textbf{setup.py} oraz \textbf{MANIFEST} są plikami, które odpowiadają za konfigurację oraz opis paczki. W pliku \textbf{setup.py} zapisany jest numer aktualnej wersji, autor, kontakt do autora, nazwa paczki itp. Przykładowy plik \textbf{setup.py} znajduje się poniżej. \newline
 
-\quad 
+\begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Sprawdzenie poprawności}]
+    from setuptools import find_packages, setup
 
+    with open("../README.md", "r") as fh:
+        long_description = fh.read()
+    
+    setup(
+        name='openleap', 
+        version='0.5.06',
+        author='Szymon Ciemala',
+        author_email='szymciem@protonmail.com',
+        long_description=long_description,
+        long_description_content_type="text/markdown",
+        url="https://github.com/szymciem8/OpenLeap",
+        description='Hand tracking and gesture recognition module', 
+        py_modules=['OpenLeap'], 
+        classifiers=[
+             "Programming Language :: Python :: 3",
+             "License :: OSI Approved :: MIT License",
+             "Operating System :: OS Independent",
+         ],
+        package_data={'openleap':['*.pkl']},
+        packages=['openleap'],
+    
+        license='LICENSE',
+    
+        install_requires= [
+            "mediapipe ~= 0.8.8",
+            "opencv-python ~= 4.5.3.56", 
+            "pandas ~= 1.3.4"
+        ],    
+    )
+\end{lstlisting}
 
 % \subsection{Plik setup.py}
 \subsection{Załadowanie paczki do repozytorium}
 
-\quad Przed załadowaniem paczki do repozytorium, należy stworzyć zapakowaną paczkę źródłową, na przykład typu .tar oraz plik typu WHEEL. Oba pliki spełniają tą samą funkcję, czyli przechowywnie niezbędnych elementów paczki oraz umożliwiają ich instalację na systemie użytkownika. Plik WHEEL pozwala na dużo szybszy proces instalacji niż instalacja ze źródła, czyli paczki typu .tar. 
+\quad Przed załadowaniem paczki do repozytorium, należy stworzyć archiwum z plikami źródłowymi, na przykład typu \textbf{.tar} oraz plik typu \textbf{WHEEL}. Oba pliki spełniają tę samą funkcję, czyli przechowywanie niezbędnych elementów paczki oraz umożliwienie instalacji na systemie użytkownika.
+
+\quad Do stworzenia paczki z plikami źródłowymi służą komendy \textbf{bdist\_wheel}, który tworzy plik \textbf{WHEEL} oraz \textbf{sdist}, który tworzy archiwum. 
+
+\begin{lstlisting}[language=python, style=command, captionpos=b, caption={Przygotowanie plików źródłowych}]
+python3 setup.py bdist_wheel sdist
+\end{lstlisting}
+
+\quad Do załadowania całości na platformę PyPi wykorzystuje się program \textbf{twine}. Dodatkowo można wykorzystać flagę \textbf{skip-existing}, która pozwala na pominięcie wysłania istniejących już gotowych paczek.
+
+\begin{lstlisting}[language=python, style=command, captionpos=b, caption={Wysłanie paczki na repozytorium}]
+twine upload --skip-existing dist\*
+\end{lstlisting}
+
+\quad Program wymaga autoryzacji, czyli podania nazwy użytkownika i hasła do konta stworzonego na platformie PyPi. 

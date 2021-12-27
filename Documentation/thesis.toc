@@ -66,20 +66,16 @@
 \contentsline {subsection}{\numberline {6.7.3}Budowa pliku CSV}{55}{subsection.6.7.3}%
 \contentsline {subsection}{\numberline {6.7.4}Metody klasyfikacji -- uczenie maszynowe}{56}{subsection.6.7.4}%
 \contentsline {subsection}{\numberline {6.7.5}Wybrane algorytmy klasyfikujące}{57}{subsection.6.7.5}%
-\contentsline {subsection}{\numberline {6.7.6}Badanie dokładności każdego z algorytmów}{57}{subsection.6.7.6}%
-\contentsline {subsection}{\numberline {6.7.7}Ponowne wykorzystanie modelu}{57}{subsection.6.7.7}%
-\contentsline {section}{\numberline {6.8}Paczka PyPi}{57}{section.6.8}%
-\contentsline {subsection}{\numberline {6.8.1}Budowa paczki}{57}{subsection.6.8.1}%
-\contentsline {subsection}{\numberline {6.8.2}Struktura Paczki}{57}{subsection.6.8.2}%
-\contentsline {subsection}{\numberline {6.8.3}Pliki Konfiguracyjne}{58}{subsection.6.8.3}%
-\contentsline {subsection}{\numberline {6.8.4}Załadowanie paczki do repozytorium}{58}{subsection.6.8.4}%
-\contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{59}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Podsumowanie i wnioski}{61}{chapter.8}%
-\contentsline {chapter}{Bibliografia}{61}{chapter.8}%
-\contentsline {chapter}{Spis skrótów i symboli}{65}{appendix*.28}%
-\babel@toc {british}{}
-\babel@toc {polish}{}
-\babel@toc {british}{}
-\babel@toc {polish}{}
-\contentsline {chapter}{Źródła}{67}{appendix*.29}%
-\contentsline {chapter}{Zawartość dołączonej płyty}{69}{appendix*.30}%
+\contentsline {subsection}{\numberline {6.7.6}Badanie dokładności każdego z algorytmów}{58}{subsection.6.7.6}%
+\contentsline {section}{\numberline {6.8}Paczka PyPi}{58}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Budowa paczki}{58}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Struktura Paczki}{58}{subsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.8.3}Pliki Konfiguracyjne}{59}{subsection.6.8.3}%
+\contentsline {subsection}{\numberline {6.8.4}Załadowanie paczki do repozytorium}{60}{subsection.6.8.4}%
+\contentsline {chapter}{\numberline {7}Weryfikacja i walidacja}{63}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Podsumowanie i wnioski}{65}{chapter.8}%
+\contentsline {chapter}{Bibliografia}{67}{chapter*.27}%
+\contentsline {chapter}{Źródła}{71}{appendix*.28}%
+\contentsline {chapter}{Lista dodatkowych plików, uzupełniających tekst pracy (jesli dotyczy)}{73}{appendix*.29}%
+\contentsline {chapter}{Spis rysunkow}{75}{appendix*.30}%
+\contentsline {chapter}{Spis tabel}{77}{appendix*.31}%
