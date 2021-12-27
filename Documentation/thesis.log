@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  27 DEC 2021 01:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  27 DEC 2021 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -784,7 +784,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
  (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<logo_pl.jpg, id=324, 746.79pt x 960.58875pt>
+<logo_pl.jpg, id=320, 746.79pt x 960.58875pt>
 File: logo_pl.jpg Graphic file (type jpg)
 <use logo_pl.jpg>
 Package pdftex.def Info: logo_pl.jpg  used on input line 259.
@@ -875,42 +875,44 @@ l.329 \include{Synopis/synopis}
 
 ]
 Rozdzia\l  2.
-[3] [4]) [5]
-\openout2 = `Analysis/analysis.aux'.
-
- (./Analysis/analysis.tex [6
-
-
-
-]
-Rozdzia\l  3.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-.
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+[3]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+4.
+ (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
-LaTeX Warning: Citation `bib:artykul' on page 7 undefined on input line 6.
+ []
+
+) [4]
+\openout2 = `Analysis/analysis.aux'.
+
+ (./Analysis/analysis.tex
+Rozdzia\l  3.
+
+Overfull \hbox (4.74272pt too wide) in paragraph at lines 20--21
+[] \T1/lmr/m/n/12 Po-przez ªa-two±¢ u»yt-ko-wa-nia mo»na ro-zu-mie¢ opro-gra-mo
+-wa-nie za-pi-sane zgod-
+ []
+
+[5
 
 
-LaTeX Warning: Citation `bib:ksiazka' on page 7 undefined on input line 6.
 
-
-LaTeX Warning: Citation `bib:konferencja' on page 7 undefined on input line 6.
-
-[7]) [8]
+]) [6]
 \openout2 = `Tools/tools.aux'.
 
  (./Tools/tools.tex
 Rozdzia\l  4.
-[9
+[7
 
 
 
-] [10] [11] [12]) [13]
+] [8] [9] [10]) [11]
 \openout2 = `External_specification/external.aux'.
 
- (./External_specification/external.tex [14
+ (./External_specification/external.tex [12
 
 
 
@@ -921,7 +923,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-[15] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[13] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -935,7 +937,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<./images/../images/pypi_page.png, id=502, 1005.7575pt x 1074.0125pt>
+<./images/../images/pypi_page.png, id=486, 1005.7575pt x 1074.0125pt>
 File: ./images/../images/pypi_page.png Graphic file (type png)
 <use ./images/../images/pypi_page.png>
 Package pdftex.def Info: ./images/../images/pypi_page.png  used on input line 4
@@ -946,12 +948,12 @@ Overfull \hbox (8.53766pt too wide) in paragraph at lines 42--43
  [] 
  []
 
-[16]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-[17 <./images/../images/pypi_page.png>]
+[15 <./images/../images/pypi_page.png>]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
@@ -959,19 +961,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-[18]
-<./images/../images/example_program.png, id=533, 642.4pt x 560.0925pt>
+[16]
+<./images/../images/example_program.png, id=518, 642.4pt x 560.0925pt>
 File: ./images/../images/example_program.png Graphic file (type png)
 <use ./images/../images/example_program.png>
 Package pdftex.def Info: ./images/../images/example_program.png  used on input 
 line 88.
 (pdftex.def)             Requested size: 256.0748pt x 223.2724pt.
- [19]
+ [17]
 Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-[20 <./images/../images/example_program.png>]
+[18 <./images/../images/example_program.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
@@ -981,44 +983,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-[21]
+[19]
 File: ./images/../images/example_program.png Graphic file (type png)
 <use ./images/../images/example_program.png>
 Package pdftex.def Info: ./images/../images/example_program.png  used on input 
 line 154.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/cam_example.png, id=572, 642.4pt x 560.0925pt>
+<./images/../images/cam_example.png, id=556, 642.4pt x 560.0925pt>
 File: ./images/../images/cam_example.png Graphic file (type png)
 <use ./images/../images/cam_example.png>
 Package pdftex.def Info: ./images/../images/cam_example.png  used on input line
  156.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
- [22 <./images/../images/cam_example.png>]
-<./images/../images/american_sign_language.jpg, id=584, 851.18pt x 567.11874pt>
+ [20 <./images/../images/cam_example.png>]
+<./images/../images/american_sign_language.jpg, id=568, 851.18pt x 567.11874pt>
 
 File: ./images/../images/american_sign_language.jpg Graphic file (type jpg)
 <use ./images/../images/american_sign_language.jpg>
 Package pdftex.def Info: ./images/../images/american_sign_language.jpg  used on
  input line 174.
 (pdftex.def)             Requested size: 284.52756pt x 189.57274pt.
-<./images/../images/a_b.png, id=585, 642.4pt x 560.0925pt>
+<./images/../images/a_b.png, id=569, 642.4pt x 560.0925pt>
 File: ./images/../images/a_b.png Graphic file (type png)
 <use ./images/../images/a_b.png>
 Package pdftex.def Info: ./images/../images/a_b.png  used on input line 182.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/c_x.png, id=586, 642.4pt x 560.0925pt>
+<./images/../images/c_x.png, id=570, 642.4pt x 560.0925pt>
 File: ./images/../images/c_x.png Graphic file (type png)
 <use ./images/../images/c_x.png>
 Package pdftex.def Info: ./images/../images/c_x.png  used on input line 184.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/f_o.png, id=587, 642.4pt x 560.0925pt>
+<./images/../images/f_o.png, id=571, 642.4pt x 560.0925pt>
 File: ./images/../images/f_o.png Graphic file (type png)
 <use ./images/../images/f_o.png>
 Package pdftex.def Info: ./images/../images/f_o.png  used on input line 186.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
- [23 <./images/../images/american_sign_language.jpg>] [24 <./images/../images/a
+ [21 <./images/../images/american_sign_language.jpg>] [22 <./images/../images/a
 _b.png> <./images/../images/c_x.png> <./images/../images/f_o.png>]
-<./images/open_fist.png, id=604, 642.4pt x 560.0925pt>
+<./images/open_fist.png, id=589, 642.4pt x 560.0925pt>
 File: ./images/open_fist.png Graphic file (type png)
 <use ./images/open_fist.png>
 Package pdftex.def Info: ./images/open_fist.png  used on input line 193.
@@ -1049,59 +1051,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
-<./images/../images/checkout_window.png, id=605, 903.375pt x 913.4125pt>
+<./images/../images/checkout_window.png, id=590, 903.375pt x 913.4125pt>
 File: ./images/../images/checkout_window.png Graphic file (type png)
 <use ./images/../images/checkout_window.png>
 Package pdftex.def Info: ./images/../images/checkout_window.png  used on input 
 line 210.
 (pdftex.def)             Requested size: 284.52756pt x 287.68465pt.
-[25 <./images/open_fist.png>]
-<./images/../images/yellow_hand_deg.png, id=612, 642.4pt x 560.0925pt>
+[23 <./images/open_fist.png>]
+<./images/../images/yellow_hand_deg.png, id=597, 642.4pt x 560.0925pt>
 File: ./images/../images/yellow_hand_deg.png Graphic file (type png)
 <use ./images/../images/yellow_hand_deg.png>
 Package pdftex.def Info: ./images/../images/yellow_hand_deg.png  used on input 
 line 232.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/yellow.png, id=613, 903.375pt x 933.4875pt>
+<./images/../images/yellow.png, id=598, 903.375pt x 933.4875pt>
 File: ./images/../images/yellow.png Graphic file (type png)
 <use ./images/../images/yellow.png>
 Package pdftex.def Info: ./images/../images/yellow.png  used on input line 234.
 
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
- [26 <./images/../images/checkout_window.png>]
-<./images/../images/blueish_hand_deg.png, id=621, 642.4pt x 560.0925pt>
+ [24 <./images/../images/checkout_window.png>]
+<./images/../images/blueish_hand_deg.png, id=605, 642.4pt x 560.0925pt>
 File: ./images/../images/blueish_hand_deg.png Graphic file (type png)
 <use ./images/../images/blueish_hand_deg.png>
 Package pdftex.def Info: ./images/../images/blueish_hand_deg.png  used on input
  line 240.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/blueish.png, id=622, 903.375pt x 933.4875pt>
+<./images/../images/blueish.png, id=606, 903.375pt x 933.4875pt>
 File: ./images/../images/blueish.png Graphic file (type png)
 <use ./images/../images/blueish.png>
 Package pdftex.def Info: ./images/../images/blueish.png  used on input line 242
 .
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
-<./images/../images/pink_hand_deg.png, id=623, 642.4pt x 560.0925pt>
+<./images/../images/pink_hand_deg.png, id=607, 642.4pt x 560.0925pt>
 File: ./images/../images/pink_hand_deg.png Graphic file (type png)
 <use ./images/../images/pink_hand_deg.png>
 Package pdftex.def Info: ./images/../images/pink_hand_deg.png  used on input li
 ne 248.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/pink.png, id=624, 903.375pt x 933.4875pt>
+<./images/../images/pink.png, id=608, 903.375pt x 933.4875pt>
 File: ./images/../images/pink.png Graphic file (type png)
 <use ./images/../images/pink.png>
 Package pdftex.def Info: ./images/../images/pink.png  used on input line 250.
 (pdftex.def)             Requested size: 207.7052pt x 214.62639pt.
 
-[27 <./images/../images/yellow_hand_deg.png> <./images/../images/yellow.png> <.
+[25 <./images/../images/yellow_hand_deg.png> <./images/../images/yellow.png> <.
 /images/../images/blueish_hand_deg.png> <./images/../images/blueish.png>]
-<./images/../images/zero_sat_hand_deg.png, id=639, 642.4pt x 560.0925pt>
+<./images/../images/zero_sat_hand_deg.png, id=623, 642.4pt x 560.0925pt>
 File: ./images/../images/zero_sat_hand_deg.png Graphic file (type png)
 <use ./images/../images/zero_sat_hand_deg.png>
 Package pdftex.def Info: ./images/../images/zero_sat_hand_deg.png  used on inpu
 t line 256.
 (pdftex.def)             Requested size: 207.7052pt x 181.0878pt.
-<./images/../images/zero_sat.png, id=640, 903.375pt x 933.4875pt>
+<./images/../images/zero_sat.png, id=624, 903.375pt x 933.4875pt>
 File: ./images/../images/zero_sat.png Graphic file (type png)
 <use ./images/../images/zero_sat.png>
 Package pdftex.def Info: ./images/../images/zero_sat.png  used on input line 25
@@ -1114,12 +1116,12 @@ i-tHub[]\T1/lmr/m/n/12 . Plik po-siada roz-sze-rze-nie \T1/lmr/bx/n/12 .ipynb\T
 1/lmr/m/n/12 ,
  []
 
-[28 <./images/../images/pink_hand_deg.png> <./images/../images/pink.png> <./ima
+[26 <./images/../images/pink_hand_deg.png> <./images/../images/pink.png> <./ima
 ges/../images/zero_sat_hand_deg.png> <./images/../images/zero_sat.png>])
-[29]
+[27]
 \openout2 = `Internal_specification/internal.aux'.
 
- (./Internal_specification/internal.tex [30
+ (./Internal_specification/internal.tex [28
 
 
 
@@ -1131,8 +1133,8 @@ Overfull \hbox (1.5359pt too wide) in paragraph at lines 35--36
 a-pipe.solutions.hands.Hands
  []
 
-[31]
-<./images/../images/class.png, id=669, 987.69pt x 1660.2025pt>
+[29]
+<./images/../images/class.png, id=654, 987.69pt x 1660.2025pt>
 File: ./images/../images/class.png Graphic file (type png)
 <use ./images/../images/class.png>
 Package pdftex.def Info: ./images/../images/class.png  used on input line 42.
@@ -1172,19 +1174,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-[32 <./images/../images/class.png (PNG copy)>] [33] [34]
-<./images/../images/hand_landmarks.png, id=698, 1548.78625pt x 540.0175pt>
+[30 <./images/../images/class.png (PNG copy)>] [31] [32]
+<./images/../images/hand_landmarks.png, id=683, 1548.78625pt x 540.0175pt>
 File: ./images/../images/hand_landmarks.png Graphic file (type png)
 <use ./images/../images/hand_landmarks.png>
 Package pdftex.def Info: ./images/../images/hand_landmarks.png  used on input l
 ine 147.
 (pdftex.def)             Requested size: 364.19536pt x 126.97829pt.
- [35]
+ [33]
 Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
-[36 <./images/../images/hand_landmarks.png>]
+[34 <./images/../images/hand_landmarks.png>]
 Overfull \hbox (1.56772pt too wide) in paragraph at lines 190--191
 []\T1/lmr/bx/n/12 multi_handedness \T1/lmr/m/n/12 -- Dru-gim ty-pem jest li-sta
  prze-cho-wu-j¡ca dane o wszyst-
@@ -1195,13 +1197,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-[37]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
-[38] [39]
-<./images/../images/image_processing.png, id=768, 359.3425pt x 292.09125pt>
+[36] [37]
+<./images/../images/image_processing.png, id=752, 359.3425pt x 292.09125pt>
 File: ./images/../images/image_processing.png Graphic file (type png)
 <use ./images/../images/image_processing.png>
 Package pdftex.def Info: ./images/../images/image_processing.png  used on input
@@ -1212,7 +1214,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 255--256
 
  []
 
-[40 <./images/../images/image_processing.png (PNG copy)>]
+[38 <./images/../images/image_processing.png (PNG copy)>]
 Overfull \hbox (4.02637pt too wide) in paragraph at lines 261--262
 \T1/lmr/m/n/12 po-ª¡-cze-nie ka-mer¡. Je-±li tak to na-le»y po-bra¢ z niej ak-t
 u-aln¡ klatk¦ ob-razu (\T1/lmr/bx/n/12 frame\T1/lmr/m/n/12 ). 
@@ -1233,17 +1235,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
-[41]
+[39]
 Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
-[42]
+[40]
 Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
  []
 
-[43]
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
@@ -1253,22 +1255,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
-[44]
+[42]
 Underfull \hbox (badness 10000) in paragraph at lines 382--383
 
  []
 
-[45]
+[43]
 Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
-[46]
+[44]
 Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
-[47]
+[45]
 Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
@@ -1278,15 +1280,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 470--471
 
  []
 
-[48] [49]
-<./images/../images/full_algorithm.png, id=950, 310.15875pt x 422.57875pt>
+[46] [47]
+<./images/../images/full_algorithm.png, id=935, 310.15875pt x 422.57875pt>
 File: ./images/../images/full_algorithm.png Graphic file (type png)
 <use ./images/../images/full_algorithm.png>
 Package pdftex.def Info: ./images/../images/full_algorithm.png  used on input l
 ine 495.
 (pdftex.def)             Requested size: 227.62204pt x 310.12416pt.
- [50 <./images/../images/full_algorithm.png (PNG copy)>]
-<./images/../images/get_data.png, id=958, 439.6425pt x 732.7375pt>
+ [48 <./images/../images/full_algorithm.png (PNG copy)>]
+<./images/../images/get_data.png, id=942, 439.6425pt x 732.7375pt>
 File: ./images/../images/get_data.png Graphic file (type png)
 <use ./images/../images/get_data.png>
 Package pdftex.def Info: ./images/../images/get_data.png  used on input line 50
@@ -1302,7 +1304,7 @@ Underfull \hbox (badness 1275) in paragraph at lines 521--521
 \T1/lmr/m/n/12 no-±ci z tym zwi¡-za-nych. Pod-sta-wo-
  []
 
-[51 <./images/../images/get_data.png (PNG copy)>] [52] [53]
+[49 <./images/../images/get_data.png (PNG copy)>] [50] [51]
 Underfull \hbox (badness 10000) in paragraph at lines 615--616
 
  []
@@ -1317,7 +1319,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
  []
 
-[54]
+[52]
 Underfull \hbox (badness 10000) in paragraph at lines 648--649
 
  []
@@ -1327,39 +1329,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 656--657
 
  []
 
-[55]
-<./images/../images/train_models.png, id=1018, 443.6575pt x 452.69125pt>
+[53]
+<./images/../images/train_models.png, id=1003, 443.6575pt x 452.69125pt>
 File: ./images/../images/train_models.png Graphic file (type png)
 <use ./images/../images/train_models.png>
 Package pdftex.def Info: ./images/../images/train_models.png  used on input lin
 e 673.
 (pdftex.def)             Requested size: 312.9803pt x 319.34769pt.
- [56 <./images/../images/train_models.png (PNG copy)>]
+ [54 <./images/../images/train_models.png (PNG copy)>]
 Overfull \hbox (1.07321pt too wide) in paragraph at lines 710--711
 [] \T1/lmr/bx/n/12 Pi-pline \T1/lmr/m/n/12 po-zwala na zauto-ma-ty-zo-wa-nie pe
 w-nych pro-ce-sów zwi¡-za-nych z ucze-
  []
 
-[57]
+[55]
 Underfull \hbox (badness 10000) in paragraph at lines 721--722
 
  []
 
-[58]
+[56]
 
-LaTeX Warning: Hyper reference `openleap-file1' on page 59 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file1' on page 57 undefined on input l
 ine 756.
 
 
-LaTeX Warning: Hyper reference `openleap-file2' on page 59 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file2' on page 57 undefined on input l
 ine 756.
 
 
-LaTeX Warning: Hyper reference `openleap-file3' on page 59 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file3' on page 57 undefined on input l
 ine 756.
 
 
-LaTeX Warning: Hyper reference `openleap-file4' on page 59 undefined on input l
+LaTeX Warning: Hyper reference `openleap-file4' on page 57 undefined on input l
 ine 756.
 
 
@@ -1372,42 +1374,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 763--764
 
  []
 
-[59] [60]) [61] [62
+[57] [58]) [59] [60
 
 
 ]
 Rozdzia\l  7.
-[63]
+[61]
 \openout2 = `Summary/summary.aux'.
 
- (./Summary/summary.tex [64
+ (./Summary/summary.tex [62
 
 
 ]
 Rozdzia\l  8.
-) [65] (./thesis.bbl [66
+) [63] (./thesis.bbl [64
 
 
-]) [67] [68
+]) [65] [66
 
-] [69] [70] [71
+] [67] [68] [69
 
-] [72
+] [70
 
-] [73] [74
+] [71] [72
 
 ]
 (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [75] [76
+ [73] [74
 
 ] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- [77]
+ [75]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 413.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 413.
  (./thesis.aux
@@ -1418,7 +1420,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 413.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 413.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 413.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0D1900ECF6BB2D998CEA181C95A5804A;5545.
+(rerunfilecheck)             Checksum: 77F9088C30E04AD48D924E315B1B8F09;5456.
 
 
 LaTeX Warning: There were undefined references.
@@ -1426,10 +1428,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 413.
  ) 
 Here is how much of TeX's memory you used:
- 16093 strings out of 483148
- 251648 string characters out of 5965415
- 790516 words of memory out of 5000000
- 30179 multiletter control sequences out of 15000+600000
+ 16089 strings out of 483148
+ 251610 string characters out of 5965415
+ 790489 words of memory out of 5000000
+ 30178 multiletter control sequences out of 15000+600000
  594312 words of font info for 64 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  50i,12n,55p,932b,2140s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1447,10 +1449,10 @@ ublic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (82 pages, 1712328 bytes).
+Output written on thesis.pdf (80 pages, 1709999 bytes).
 PDF statistics:
- 1361 PDF objects out of 1440 (max. 8388607)
- 1209 compressed objects within 13 object streams
- 503 named destinations out of 1000 (max. 500000)
- 761 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1346 PDF objects out of 1440 (max. 8388607)
+ 1197 compressed objects within 12 object streams
+ 500 named destinations out of 1000 (max. 500000)
+ 753 words of extra memory for PDF output out of 10000 (max. 10000000)
 

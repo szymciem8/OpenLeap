@@ -1,27 +1,44 @@
-\chapter{[Analiza tematu]}
+\chapter{Analiza Tematu}
+
+% \begin{itemize}
+% \item sformułowanie problemu
+% \item osadzenie tematu w kontekście aktualnego stanu wiedzy ( state of the art ) o poruszanym problemie
+% \item  studia literaturowe \cite{bib:artykul,bib:ksiazka,bib:konferencja,bib:url} -  opis znanych rozwiązań (także opisanych naukowo, jeżeli problem jest poruszany w publikacjach naukowych), algorytmów, 
+% \end{itemize}
+
+
+\section{Założenia}
+
+\quad Wymagane możliwości oprogramowania można podzielić na trzy elementy:
 
 \begin{itemize}
-\item sformułowanie problemu
-\item osadzenie tematu w kontekście aktualnego stanu wiedzy ( state of the art ) o poruszanym problemie
-\item  studia literaturowe \cite{bib:artykul,bib:ksiazka,bib:konferencja,bib:url} -  opis znanych rozwiązań (także opisanych naukowo, jeżeli problem jest poruszany w publikacjach naukowych), algorytmów, 
+    \item Łatwość użytkowania
+    \item Dostępność
+    \item Możliwość dokładania własnych elementów
 \end{itemize}
+
+\quad Poprzez łatwość użytkowania można rozumieć oprogramowanie zapisane zgodnie z powszechnie stosowanymi standardami (\enquote{Zen of Python}) oraz przygotowaną dokumentację wraz z przykładami wykorzystania.  
+
+\quad Paczka powinna być dostępna poprzez menedżer \textbf{pip}, dzięki czemu użytkownik ma możliwość instalacji z repozytorium paczki przy pomocy jednej komendy.
+
+\quad Użytkownik powinien mieć możliwość stworzenia własnego modelu rozpoznającego gesty, na przykład przy pomocy interaktywnej instrukcji.
 
 \section {Sformułowanie problemu}
-\quad Problem można podzielić na trzy części. Każda z nich odpowiada za wybraną część funkcjonalności biblioteki. 
+% \quad Problem można podzielić na trzy części. Każda z nich odpowiada za wybraną część funkcjonalności biblioteki. 
 
-\begin{itemize}
-    \item Wyznaczenie pozyci dłoni, odległości pomiędzy wybranymi palcami oraz jej kąta obrotu. 
-    \item Rozpoznawanie gestów dłoni w dwóch trybach: prostym (parę dostępnych gestów) oraz zaawansowanym, który rozoznaje alfabet języka migowego. 
-    \item Dostępność biblioteki poprzez platfromę PyPi. 
-\end{itemize}
+% \begin{itemize}
+%     \item Wyznaczenie pozyci dłoni, odległości pomiędzy wybranymi palcami oraz jej kąta obrotu. 
+%     \item Rozpoznawanie gestów dłoni w dwóch trybach: prostym (parę dostępnych gestów) oraz zaawansowanym, który rozoznaje alfabet języka migowego. 
+%     \item Dostępność biblioteki poprzez platfromę PyPi. 
+% \end{itemize}
 
-\quad Stworzenie modułu będzie wymagało napisania klasy wykorzystującej odpowiednie biblioteki pozwalających na rozpoznanie elementów charakterystycznych dłoni oraz przetworzenia obrazu. Obraz będzie pochodził z kamerki internetowej, który zostanie odpowiednio przetworzony z wykorzystaniem funkcji dostępnych poprzez bibliotekę OpenCV. Przetworzony obraz zostanie wykorzystany przez metody biblioteki MediaPipe, która pozowli na rozpoznanie elementów charakterystycznych dłoni. W napisanej klasie zostaną zaimplementowane metody, które pozowlą na rozpoznanie typu dłoni (prawa, lewa), odległości między paliczkiem palca wskazującego oraz kciuka, oraz obrotu dłoni. 
+\quad Stworzenie modułu będzie wymagało napisania klasy pozwalającej na rozpoznanie elementów charakterystycznych dłoni oraz przetworzenia obrazu. Obraz będzie pochodził z kamerki internetowej, który zostanie odpowiednio przetworzony z wykorzystaniem funkcji dostępnych poprzez bibliotekę OpenCV. Przetworzony obraz zostanie wykorzystany przez metody biblioteki MediaPipe, która pozwoli na rozpoznanie elementów charakterystycznych dłoni. W napisanej klasie zostaną zaimplementowane metody, które pozwolą na rozpoznanie typu dłoni (prawa, lewa), odległości między paliczkiem palca wskazującego oraz kciuka, oraz obrotu dłoni. 
 
-\quad Kolejnym elementem jest wygenerowanie modelu matematycznych klasyfikujących gesty dłoni. W tym celu zostanie wykorzystana bibliotegk SciKit Learn wraz z dostępnymi poprzez nią algorytmamy ucznia maszynowego. Odpowiednio zebrane dane pozowlą na przeprowadzeni procesu ucznie dla paru wybranych algorytmów. 
+\quad Kolejnym elementem jest wygenerowanie modelu matematycznych klasyfikujących gesty dłoni. W tym celu zostanie wykorzystana biblioteka SciKit-Learn wraz z dostępnymi poprzez nią algorytmami ucznia maszynowego. Odpowiednio zebrane dane pozwolą na przeprowadzenie procesu ucznia dla kilku wybranych algorytmów. 
 
-\quad Najważniejszym elementem pracy jest powyżej wymieniony ostatni punkt listy. Dzięki wykorzystaniu platformy PyPi deweloperzy będą mogli przy pomocy programu \textbf{pip} za pomocą jednej komendy zainstalować paczkę wraz ze wszystkimi wymaganymi zależnościami. 
+% \quad Najważniejszym elementem pracy jest powyżej wymieniony ostatni punkt listy. Dzięki wykorzystaniu platformy PyPi deweloperzy będą mogli przy pomocy programu \textbf{pip} za pomocą jednej komendy zainstalować paczkę wraz ze wszystkimi wymaganymi zależnościami. 
 
-\section{Podobne rozwiązania}
+% \section{Podobne rozwiązania}
 
 % \chapter{Założenia projektowe}
 
