@@ -1,4 +1,4 @@
-\chapter{Analiza Tematu}
+\chapter{Analiza tematu}
 
 % \begin{itemize}
 % \item sformułowanie problemu
@@ -12,16 +12,11 @@
 \quad Wymagane możliwości oprogramowania można podzielić na trzy elementy:
 
 \begin{itemize}
-    \item Łatwość użytkowania
-    \item Dostępność
-    \item Możliwość dokładania własnych elementów
+    \item Łatwość użytkowania -- Poprzez łatwość użytkowania można rozumieć oprogramowanie zapisane zgodnie z powszechnie stosowanymi standardami (\enquote{Zen of Python}) oraz przygotowaną dokumentację wraz z przykładami wykorzystania. 
+    \item Dostępność -- Paczka powinna być dostępna poprzez menedżer \textbf{pip}, dzięki czemu użytkownik ma możliwość instalacji z repozytorium paczki przy pomocy jednej komendy.
+    \item Możliwość dokładania własnych elementów -- Użytkownik powinien mieć możliwość stworzenia własnego modelu rozpoznającego gesty, na przykład przy pomocy interaktywnej instrukcji.
 \end{itemize}
 
-\quad Poprzez łatwość użytkowania można rozumieć oprogramowanie zapisane zgodnie z powszechnie stosowanymi standardami (\enquote{Zen of Python}) oraz przygotowaną dokumentację wraz z przykładami wykorzystania.  
-
-\quad Paczka powinna być dostępna poprzez menedżer \textbf{pip}, dzięki czemu użytkownik ma możliwość instalacji z repozytorium paczki przy pomocy jednej komendy.
-
-\quad Użytkownik powinien mieć możliwość stworzenia własnego modelu rozpoznającego gesty, na przykład przy pomocy interaktywnej instrukcji.
 
 \section {Sformułowanie problemu}
 % \quad Problem można podzielić na trzy części. Każda z nich odpowiada za wybraną część funkcjonalności biblioteki. 
@@ -32,9 +27,9 @@
 %     \item Dostępność biblioteki poprzez platfromę PyPi. 
 % \end{itemize}
 
-\quad Stworzenie modułu będzie wymagało napisania klasy pozwalającej na rozpoznanie elementów charakterystycznych dłoni oraz przetworzenia obrazu. Obraz będzie pochodził z kamerki internetowej, który zostanie odpowiednio przetworzony z wykorzystaniem funkcji dostępnych poprzez bibliotekę OpenCV. Przetworzony obraz zostanie wykorzystany przez metody biblioteki MediaPipe, która pozwoli na rozpoznanie elementów charakterystycznych dłoni. W napisanej klasie zostaną zaimplementowane metody, które pozwolą na rozpoznanie typu dłoni (prawa, lewa), odległości między paliczkiem palca wskazującego oraz kciuka, oraz obrotu dłoni. 
+\quad Stworzenie modułu będzie wymagało napisania klasy pozwalającej na rozpoznanie elementów charakterystycznych dłoni oraz przetworzenia obrazu. Obraz będzie pochodził z kamery internetowej, który zostanie odpowiednio przetworzony z wykorzystaniem funkcji dostępnych poprzez bibliotekę OpenCV. Przetworzony obraz zostanie wykorzystany przez metody biblioteki MediaPipe, która pozwoli na rozpoznanie elementów charakterystycznych dłoni. W napisanej klasie zostaną zaimplementowane metody, które pozwolą na rozpoznanie typu dłoni (prawa, lewa), odległości między paliczkiem palca wskazującego oraz kciuka, oraz obrotu dłoni. 
 
-\quad Kolejnym elementem jest wygenerowanie modelu matematycznych klasyfikujących gesty dłoni. W tym celu zostanie wykorzystana biblioteka SciKit-Learn wraz z dostępnymi poprzez nią algorytmami ucznia maszynowego. Odpowiednio zebrane dane pozwolą na przeprowadzenie procesu ucznia dla kilku wybranych algorytmów. 
+\quad Kolejnym elementem jest wygenerowanie modelu matematycznego klasyfikujących gesty wykonywane przez dłonie. W tym celu zostanie wykorzystana biblioteka SciKit-Learn wraz z dostępnymi poprzez nią algorytmami ucznia maszynowego. Odpowiednio zebrane dane pozwolą na przeprowadzenie procesu uczenia dla kilku wybranych algorytmów. 
 
 % \quad Najważniejszym elementem pracy jest powyżej wymieniony ostatni punkt listy. Dzięki wykorzystaniu platformy PyPi deweloperzy będą mogli przy pomocy programu \textbf{pip} za pomocą jednej komendy zainstalować paczkę wraz ze wszystkimi wymaganymi zależnościami. 
 

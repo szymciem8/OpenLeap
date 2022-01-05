@@ -220,6 +220,7 @@
 
 \quad W języku Python stworzenie klasy typu \textbf{dataclass} zaczyna się od zapisania dekoratora, który jest definiowany poprzez znak \textbf{@}. W tym wypadku nie jest wymagana funkcja inicjalizująca obiekt, czyli \textbf{\_\_init\_\_}. W definicji klasy zostały przypisane wartości początkowe tak jak w przykładzie powyżej. Dzięki czemu inicjalizacja nie wymaga podawania wartości początkowych, które i tak w chwili rozpoczęcia programu nie są potrzebne. 
 
+\newpage
 \subsection{Słownik}
 \quad Instancja klasy \textbf{Data} jest przypisana dla każdej dłoni (lewej oraz prawej) poprzez wykorzystanie słownika. Klucze słownika to \enquote{right} oraz \enquote{left}. 
 
@@ -603,9 +604,12 @@ def get_gesture(self, index):
 
 \quad Kolejnym krokiem jest uniezależnienie pozycji elementów od odległości dłoni od kamery. Rozwiązaniem jest normalizacja wektora danych względem największej bezwzględnej wartości. 
 
+\begin{figure}[H]
 \begin{equation}
     A_n=\dfrac{A_f}{max(abs(A_f))}
 \end{equation}
+\caption{normalizacja wektora danych}
+\end{figure}
 
 \quad Każdy nowy wektor zostaje zapisany do pliku CSV z odpowiednią etykietą. Tak zebrane i przetworzone dane posłużą do wytrenowania algorytmów uczenia maszynowego.
 
@@ -682,7 +686,7 @@ def get_gesture(self, index):
 \quad Do wytrenowania modeli uczenia maszynowego z biblioteki SciKit-Learn zostały wybrane następujące algorytmy:
 
 \begin{itemize}
-    \item Logistic Regressio (\enquote{Regresja Logistyczna})
+    \item Logistic Regression %(\enquote{Regresja Logistyczna})
     \item Nearest Centroid 
     \item Decision Tree Classifier
     \item Ridge Classifier 
@@ -736,7 +740,7 @@ for algorithm, model in models.items():
 
 \quad Ostatecznym krokiem jest przygotowanie programu w formie paczki, która zostanie udostępniona na platformie PyPi. Wymagania to przygotowania odpowiednich plików konfiguracyjnych oraz zastosowania narzędzi do stworzenia pliku \textbf{wheel} i \textbf{tar}. 
 
-\subsection{Struktura Paczki}
+\subsection{Struktura paczki}
 \quad Na początku należy przygotować odpowiednią strukturę paczki, tak jak jest to pokazane na rysunku \ref{tree:pypi_package}. W tym folderze znajdują się wszystkie potrzebne elementy paczki. W podfolderze o tej samej nazwie znajduje się główna części modułu, czyli pliki z rozszerzeniem \textbf{.py}, \textbf{\_\_init\_\_.py} oraz \textbf{OpenLeap.py}. Dodatkowo w tym folderze znajdują się pliki typu \textbf{pickle}, w których zapisane są modele rozpoznające gesty.
 
 \begin{figure}
@@ -759,7 +763,7 @@ for algorithm, model in models.items():
     \label{tree:pypi_package}
 \end{figure}
 
-\subsection{Pliki Konfiguracyjne}
+\subsection{Pliki konfiguracyjne}
 \quad Pliki \textbf{setup.py} oraz \textbf{MANIFEST} są plikami, które odpowiadają za konfigurację oraz opis paczki. W pliku \textbf{setup.py} zapisany jest numer aktualnej wersji, autor, kontakt do autora, nazwa paczki itp. Przykładowy plik \textbf{setup.py} znajduje się poniżej. \newline
 
 \begin{lstlisting}[language=python, style=programming, captionpos=b, caption={Sprawdzenie poprawności}]

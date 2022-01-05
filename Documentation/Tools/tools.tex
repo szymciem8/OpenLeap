@@ -8,7 +8,7 @@
 % \end{itemize}
 
 
-\section{Wymagania Funkcjonalne i Niefunkcjonalne}
+\section{Wymagania funkcjonalne i niefunkcjonalne}
 
 \quad Klasa powinna zawierać w sobie wszystkie niezbędne funkcje oraz parametry pozwalające na wykorzystanie jej w dowolnym projekcie, takie jak na przykład obliczanie kąta obrotu dłoni względem nadgarstka czy rozpoznawanie gestów. Dwa podstawowe modele rozpoznające gesty powinny zostać uprzednio przygotowane, natomiast użytkownik powinien mieć dodatkowo możliwość stworzenia własnego modelu rozpoznającego wybrane ułożenie dłoni. 
 
@@ -21,15 +21,15 @@
 \quad Przy tworzeniu modułu ważne są wykorzystywane narzędzia, zaczynając od wybranego systemu operacyjnego, a kończąc na programach pozwalających na przygotowanie plików źródłowych wysyłanych na zdalne repozytorium PyPi, każde z nich jest kluczowe do zbudowania pełnego projektu. 
 
 \subsection{System operacyjny Ubuntu}
-\quad Do stworzenia oprogramowania została wybrana dystrybucja Ubuntu w wersji 20.04 LTS. System został wybrany ze względu na istnienie takich elementów jak powłoka systemowa \textbf{bash}, menedżer pakietów oraz wsparcie dla języka Python. 
+\quad Do stworzenia oprogramowania została wybrana dystrybucja Ubuntu w wersji 20.04 LTS. System został wybrany ze względu na istnienie takich elementów jak powłoka systemowa \textbf{bash}, menedżer pakietów oraz wsparcie dla języka Python. Główny powodem, dla którego ten system został wybrany, jest fakt istnienia rozbudowanej społeczność, która pomaga w rozwiązywaniu problemów. 
 
 \subsection{GitHub}
-\quad Platforma GitHub, która wykorzystuje rozproszony system kontroli Git, pozwala na stworzenie głównej strony biblioteki, na której znajdą się pliki programu wraz z dokumentacją oraz instrukcją instalacji i korzystania. W czasie pracy nad modułem system Git pomaga w tworzeniu kopii zapasowych. W przypadku dalszego rozwoju projektu GitHub może posłużyć jako medium pracy innych kontrybutorów. 
+\quad Platforma GitHub, która wykorzystuje rozproszony system kontroli Git, pozwala na stworzenie głównej strony biblioteki, na której znajdą się pliki programu wraz z dokumentacją oraz instrukcją instalacji i korzystania. W czasie pracy nad modułem system Git pomaga w tworzeniu kopii zapasowych. Zważając na fakt, że biblioteka jest wolnoźródłowa, GitHub może posłużyć jako system, który pozwala na rozbudowywanie projektu przez innych użytkowników lub tworzenia własnej i niezależnej wersji tego oprogramowania. 
 
 \subsection{Python}
-\quad Do napisania biblioteki został wykorzystany język skryptowy Python. Dzięki swojej popularności oraz dostępności, Python stał się językiem powszechnie stosowanym w pracy związanej z zagadnieniami uczenia maszynowego, analizy danych oraz przetwarzania obrazów. Na platformie PyPi można znaleźć wiele narzędzi pozwalających na pracę właśnie w tych dziedzinach, jak i również wielu innych. 
+\quad Do napisania biblioteki został wykorzystany język skryptowy Python. Dzięki swojej popularności oraz dostępności Python stał się językiem powszechnie stosowanym w pracy związanej z zagadnieniami uczenia maszynowego, analizy danych oraz przetwarzania obrazów. Na platformie PyPi można znaleźć wiele narzędzi pozwalających na pracę właśnie w tych dziedzinach, jak i również wielu innych. 
 
-\quad Ze względu na swoją budowę, Python nie należy do najwydajniejszych języków. Python jest językiem interpretowanym, co oznacza, że jego program nie zostaje skompilowany do kodu maszynowego, a zostaje on zinterpretowany przez interpreter. Ma ta jednak swoje zalety, skrypt można wykonywać w częściach, co pozwala na testowanie działania programu. Dzięki czemu łatwiej jest znajdować błędy i na bieżąco je likwidować. Potencjał tego w pełni wykorzystuje interaktywna powłoka iPython. 
+\quad Ze względu na swoją budowę, Python nie należy do najwydajniejszych języków. Python jest językiem interpretowanym, co oznacza, że jego program nie zostaje skompilowany do kodu maszynowego, a zostaje on zinterpretowany przez interpreter. Ma to jednak swoje zalety, skrypt można wykonywać w częściach, co pozwala na testowanie działania programu. Dzięki czemu łatwiej jest znajdować błędy i na bieżąco je likwidować. Potencjał tego w pełni wykorzystuje interaktywna powłoka iPython. 
 
 \subsection{iPython}
 \quad To interaktywna powłoka dla języka Python, która rozszerza jego działanie o introspekcję, czyli możliwość wykonywania poprzednich części programu. W praktyce oznacza to, że użytkownik ma możliwość wykonywania programu zawartego w komórkach w dowolnej kolejności, nawet jeśli oznacza to wykonywanie programu zapisanego w komórkach poprzedzających aktualną. 
@@ -40,11 +40,11 @@
 
 \quad Do obsługi interaktywnej powłoki iPython, wykorzystany został Jupyter Notebook (\enquote{notatnik}), czyli webowy edytor, który został stworzony z myślą o pracy związanej z analizą danych oraz obliczeniami naukowymi. 
 
-\quad Dodatkowym atutem jest fakt, że Jupyter Notebook pozwala na zapis tekstu w języku Markdown, czyli języku znaczników stosowanym do formatowania tekstu. Co pozwala na czytelny opis programu oraz wstawianie obrazów, jeśli są wymagane. Dodatkowo wszystkie wykresy generowane przez na przykład bibliotekę \textbf{matplotlib} będą wyświetlane na stałe pod komórką, w której został wykonany program. Pozwala to na stworzenie programu, który może służyć jednocześnie jako interaktywna instrukcja. 
+\quad Dodatkowym atutem jest fakt, że Jupyter Notebook pozwala na zapis tekstu w języku Markdown, czyli języku znaczników stosowanym do formatowania tekstu. Co pozwala na czytelny opis programu oraz wstawianie obrazów, jeśli są wymagane. Dodatkowo wszystkie wykresy generowane przez na przykład przez bibliotekę \textbf{matplotlib} będą wyświetlane na stałe pod komórką, w której został wykonany program. Pozwala to na stworzenie programu, który może służyć jednocześnie jako interaktywna instrukcja. 
 
 \subsection{Visual Studio Code}
 
-\quad Do stworzenia oprogramowania został wybrany edytor Visual Studio Code. Edytor jest programem o otwartym kodzie źródłowy i został stworzony przez korporację Microsoft. Aplikacja posiada wiele darmowych rozszerzeń, często tworzonych przez użytkowników edytora. To właśnie dzięki rozszerzeniom program pozwala na pracę z wieloma typami plików oraz języków programowania.  
+\quad Do stworzenia oprogramowania został wybrany edytor Visual Studio Code. Edytor jest programem o otwartym kodzie źródłowym i został stworzony przez korporację Microsoft. Aplikacja posiada wiele darmowych rozszerzeń, często tworzonych przez użytkowników edytora. To właśnie dzięki rozszerzeniom program pozwala na pracę z wieloma typami plików oraz języków programowania.  
 
 \subsection{Python Package Index}
 \quad Python Package Index, w skrócie PyPi, jest platformą, na której udostępniane są moduły dla języka Python. Aktualnie jest ona zarządzana przez fundację \enquote{Python Software Foundation}. Paczki pobierane są przy pomocy programu \textbf{pip}, standardowo instalowanego wraz z językiem Python, co oznacza, że PyPi jest oficjalnym repozytorium oprogramowania właśnie dla tego języka. 
@@ -69,11 +69,11 @@
 
 \subsection{OpenCV}
 
-\quad OpenCV jest biblioteką, która zajmuje się wizją komputerową, w tym głównie przetwarzaniem obrazów w czasie rzeczywistym. Projekt został rozpoczęty przez firmę Intel w 2001 roku, a później był wspierany przez laboratorium Willow Garge, które jest odpowiedzialne za stworzenie systemu ROS. OpenCV wspiera wiele języków programowania: C++, C\#, Python, Java oraz JavaScript, co oznacza, że jest to biblioteka wieloplatformowa i znajduje ona zastosowanie w wielu aplikacjach oraz systemach. 
+\quad OpenCV \cite{bib:opencv_book} \cite{bib:opencv} jest biblioteką, która zajmuje się wizją komputerową, w tym głównie przetwarzaniem obrazów w czasie rzeczywistym. Projekt został rozpoczęty przez firmę Intel w 2001 roku, a później był wspierany przez laboratorium Willow Garge, które jest odpowiedzialne za stworzenie systemu ROS. OpenCV wspiera wiele języków programowania: C++, C\#, Python, Java oraz JavaScript, co oznacza, że jest to biblioteka wieloplatformowa i znajduje ona zastosowanie w wielu aplikacjach oraz systemach. 
 
 \subsection{MediaPipe}
 
-\quad Biblioteka MediaPipe, która została stworzona przy wsparciu firmy Google, udostępnia wieloplatformowe oraz konfigurowalne rozwiązania wykorzystujące uczenie maszynowe w dziedzinie rozpoznawania, segmentacji oraz klasyfikacji obiektów wizji komputerowej. Niektórymi z rozwiązań są:
+\quad Biblioteka MediaPipe \cite{bib:mediapipe} \cite{bib:mediapipe_1}, która została stworzona przy wsparciu firmy Google, udostępnia wieloplatformowe oraz konfigurowalne rozwiązania wykorzystujące uczenie maszynowe w dziedzinie rozpoznawania, segmentacji oraz klasyfikacji obiektów wizji komputerowej. Niektórymi z rozwiązań są:
 
 \begin{itemize}
     \item Segmentacja włosów oraz twarzy
@@ -87,7 +87,7 @@
 
 \subsection{SciKit-Learn}
 
-\quad SciKit-Learn początkowo został stworzony jako dodatek do biblioteki SciPy jako projekt w ramach \textbf{Google Summer of Code} w roku 2007. Biblioteka oferuje różnego typu metody uczenia maszynowego, w tym algorytmy klasyfikacji, regresji oraz analizy skupień. Przykładowym algorytmami w bibliotece są:
+\quad SciKit-Learn \cite{bib:scikit} \cite{bib:scikit_basics} początkowo został stworzony jako dodatek do biblioteki SciPy jako projekt w ramach \textbf{Google Summer of Code} w roku 2007. Biblioteka oferuje różnego typu metody uczenia maszynowego, w tym algorytmy klasyfikacji, regresji oraz analizy skupień. Przykładowym algorytmami w bibliotece są:
 \begin{itemize}
     \item Las losowy -- polegająca na konstruowaniu wielu drzew decyzyjnych w czasie uczenia. 
     \item Algorytm centroidów -- algorytm wykorzystywany w analizie skupień.
