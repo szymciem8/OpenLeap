@@ -1,0 +1,18 @@
+\chapter{Analiza tematu}
+
+\section{Założenia}
+
+\quad Wymagane możliwości oprogramowania można podzielić na trzy elementy:
+
+\begin{itemize}
+    \item Łatwość użytkowania -- Poprzez łatwość użytkowania można rozumieć oprogramowanie zapisane zgodnie z powszechnie stosowanymi standardami (\enquote{Zen of Python}) oraz przygotowaną dokumentację wraz z przykładami wykorzystania. 
+    \item Dostępność -- Paczka powinna być dostępna poprzez menedżer \textbf{pip}, dzięki czemu użytkownik ma możliwość instalacji z repozytorium paczki przy pomocy jednej komendy.
+    \item Możliwość dokładania własnych elementów -- Użytkownik powinien mieć możliwość stworzenia własnego modelu rozpoznającego gesty, na przykład przy pomocy interaktywnej instrukcji.
+\end{itemize}
+
+
+\section {Sformułowanie problemu}
+
+\quad Stworzenie modułu będzie wymagało napisania klasy pozwalającej na rozpoznanie elementów charakterystycznych dłoni oraz przetworzenia obrazu. Obraz będzie pochodził z kamery internetowej, który zostanie odpowiednio przetworzony z wykorzystaniem funkcji dostępnych poprzez bibliotekę OpenCV. Przetworzony obraz zostanie wykorzystany przez metody biblioteki MediaPipe, która pozwoli na rozpoznanie elementów charakterystycznych dłoni. W napisanej klasie zostaną zaimplementowane metody, które pozwolą na rozpoznanie typu dłoni (prawa, lewa), odległości między paliczkiem palca wskazującego oraz kciuka, oraz obrotu dłoni. 
+
+\quad Kolejnym elementem jest wygenerowanie modelu matematycznego klasyfikujących gesty wykonywane przez dłonie. W tym celu zostanie wykorzystana biblioteka SciKit-Learn wraz z dostępnymi poprzez nią algorytmami ucznia maszynowego. Odpowiednio zebrane dane pozwolą na przeprowadzenie procesu uczenia dla kilku wybranych algorytmów. 

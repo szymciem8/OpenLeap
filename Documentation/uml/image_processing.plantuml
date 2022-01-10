@@ -1,0 +1,13 @@
+@startuml
+
+title Interpretacja Obrazu\n
+
+start
+
+:Obróbka obrazu z wykorzystaniem OpenCV;
+:Algorytm rozpoznawania dłoni biblioteki MediaPipe;
+:Główny program;
+
+stop
+
+@enduml

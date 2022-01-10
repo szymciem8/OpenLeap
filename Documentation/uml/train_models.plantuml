@@ -1,0 +1,19 @@
+@startuml
+
+start
+
+partition "Trenowanie modeli"{
+    :Stworzenie listy algorytmów uczenia maszynowego;
+    repeat
+        :trenowanie modelu na grupie trenującej;
+    repeat while (kolejny model?) is (tak)
+    ->nie;
+    
+    :Określenie dokładności modelu na podstawie grupy testowej;
+    :Zapis najdokładniejszego modelu do pliku typu **pickle**;
+}
+
+
+stop
+
+@enduml
