@@ -1,8 +1,5 @@
 # OpenLeap
-
-[![pip][]](https://pypi.org/project/openleap/)
-
-[![build_status][]](https://github.com/petgraph/petgraph/actions)
+[![build_status][]](https://github.com/petgraph/petgraph/actions) [![crates][]](https://crates.io/crates/petgraph) [![gitter][]](https://gitter.im/petgraph-rs/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Table of contents
 - [OpenLeap](#openleap)
