@@ -1,5 +1,7 @@
 # OpenLeap
 
+[![pypi][]](https://pypi.org/project/openleap/)
+
 ## Table of contents
 - [OpenLeap](#openleap)
   - [Table of contents](#table-of-contents)
