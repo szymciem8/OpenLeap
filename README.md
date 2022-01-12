@@ -1,5 +1,5 @@
 # OpenLeap
-![license][] ![pypi][](https://pypi.org/project/openleap/)
+![license][] [![pypi][]](https://pypi.org/project/openleap/)
 
 ## Table of contents
 - [OpenLeap](#openleap)
