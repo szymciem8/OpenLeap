@@ -1,5 +1,6 @@
 # OpenLeap
 [![pypi][]](https://pypi.org/project/openleap/)
+[![license][]]
 
 ## Table of contents
 - [OpenLeap](#openleap)
@@ -103,3 +104,4 @@ if controller.data['right'].distance < 20:
 ```
 
 [pypi]:https://pypi.org/project/openleap/
+[license]:https://img.shields.io/github/license/szymciem8/OpenLeap
