@@ -1,5 +1,5 @@
 # OpenLeap
-![license][] [![pypi][]](https://pypi.org/project/openleap/)
+![python][] ![license][] [![pypi][]](https://pypi.org/project/openleap/)
 
 ## Table of contents
 - [OpenLeap](#openleap)
@@ -102,5 +102,6 @@ if controller.data['right'].distance < 20:
     print('Click has been detected!')
 ```
 
+[python]:https://img.shields.io/pypi/pyversions/openleap
 [pypi]:https://img.shields.io/pypi/v/openleap
 [license]:https://img.shields.io/github/license/szymciem8/OpenLeap
