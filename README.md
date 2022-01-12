@@ -1,5 +1,5 @@
 # OpenLeap
-[![build_status][]](https://github.com/petgraph/petgraph/actions) [![crates][]](https://crates.io/crates/petgraph) [![gitter][]](https://gitter.im/petgraph-rs/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![pypi][]](https://pypi.org/project/openleap/)
 
 ## Table of contents
 - [OpenLeap](#openleap)
@@ -101,3 +101,5 @@ elif controller.data['right'].gesture == 'fist':
 if controller.data['right'].distance < 20:
     print('Click has been detected!')
 ```
+
+[pypi]:https://pypi.org/project/openleap/
