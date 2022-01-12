@@ -2,6 +2,8 @@
 
 [![pip][]](https://pypi.org/project/openleap/)
 
+[![build_status][]](https://github.com/petgraph/petgraph/actions)
+
 ## Table of contents
 - [OpenLeap](#openleap)
   - [Table of contents](#table-of-contents)
