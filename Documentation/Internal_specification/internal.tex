@@ -715,6 +715,27 @@ for algorithm, model in models.items():
     print(f'{algorithm}, {round(accuracy_score(y_test, y_predicted)*100,2)}%')
 \end{lstlisting}
 
+\begin{figure}[H]
+    \begin{center}
+        \begin{tabular}{ |c|c| } 
+            \hline
+            Algorytm & Poprawność \\
+            \hline
+            lr & 99.0\% \\
+            nc & 88.0\% \\
+            dt & 99.67\% \\
+            rd & 98.67\% \\ 
+            rf & 99.67\% \\ 
+            gd & 96.67\% \\ 
+            gb & 99.0\% \\
+            nn & 99.33\% \\ 
+            \hline
+        \end{tabular}
+    \end{center}    
+    \caption{Poprawność wybranych algorytmów}
+\end{figure}
+
+\quad W tym wypadku został wybrany model bazujący na algorytmie \enquote{rf}, czyli \enquote{Random Forest} do rozpoznawania gestów. 
 
 \section{Paczka PyPi}
 
@@ -725,7 +746,7 @@ for algorithm, model in models.items():
 \subsection{Struktura paczki}
 \quad Na początku należy przygotować odpowiednią strukturę paczki, tak jak jest to pokazane na rysunku \ref{tree:pypi_package}. W tym folderze znajdują się wszystkie potrzebne elementy paczki. W podfolderze o tej samej nazwie znajduje się główna części modułu, czyli pliki z rozszerzeniem \textbf{.py}, \textbf{\_\_init\_\_.py} oraz \textbf{OpenLeap.py}. Dodatkowo w tym folderze znajdują się pliki typu \textbf{pickle}, w których zapisane są modele rozpoznające gesty.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
     \begin{minipage}{7cm}
         \dirtree{%
