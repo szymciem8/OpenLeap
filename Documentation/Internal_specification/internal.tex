@@ -678,7 +678,7 @@ def get_gesture(self, index):
     \item Random Forest Classifier 
     \item SGD Classifier
     \item Gradient Boosting Classifier
-    \item MPL Classifier
+    \item MLP Classifier
 \end{itemize}
 
 \quad Algorytmy można zapisać w słowniku, który później pozwoli na wykorzystanie ich w pętli. \newline
@@ -715,7 +715,7 @@ for algorithm, model in models.items():
     print(f'{algorithm}, {round(accuracy_score(y_test, y_predicted)*100,2)}%')
 \end{lstlisting}
 
-\begin{figure}[H]
+\begin{table}[H]
     \begin{center}
         \begin{tabular}{ |c|c| } 
             \hline
@@ -733,7 +733,7 @@ for algorithm, model in models.items():
         \end{tabular}
     \end{center}    
     \caption{Poprawność wybranych algorytmów}
-\end{figure}
+\end{table}
 
 \quad W tym wypadku został wybrany model bazujący na algorytmie \enquote{rf}, czyli \enquote{Random Forest} do rozpoznawania gestów. 
 
